@@ -1,0 +1,35 @@
+/*
+
+  Website Loading Bar
+
+  Jú Gonçalves <github@jugoncalv.es>
+  MIT
+
+*/
+
+
+websiteBar(bg = gray, height = 5, color)
+  position absolute
+  top 0
+  left 0
+  height height * 1px
+  width 100%
+  background #e0e0e0
+  &:after
+    position absolute
+    width 0%
+    height (height - 2) * 1px
+    content ''
+    background color
+  &.hipstyl-website-bar-anim
+    &:after
+      animation-fill-mode both
+      animation hipstyl-website-bar-loading 5s infinite
+
+@keyframes hipstyl-website-bar-loading
+  0%
+    width 0%
+  100%
+    width 100%
+
+

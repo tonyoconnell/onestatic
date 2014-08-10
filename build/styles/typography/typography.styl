@@ -1,0 +1,58 @@
+// 
+// Display fonts on all devices
+@import 'typography/font-face'
+
+
+html
+  font-face(mco)
+  font-family font
+  font-size base-font-size
+  
+p 
+// Size 
+  font-size base-font-size
+  margin 10px 0
+  +tablet()
+    font-size 120%
+    margin 15px 0
+  +desktop()
+    font-size 125%
+    margin 20px 0
+  
+// Progresively enhancing
+h3 
+  font-size 120%
+  margin 10px 0
+  +tablet()
+    font-size 140%
+  +desktop()
+    font-size 140%
+h2 
+  font-size 130%
+  margin 10px 0
+  +tablet()
+    font-size 160%
+  +desktop()
+    font-size 160%
+h1 
+  font-size 170%
+  margin 10px 0
+  +tablet()
+    font-size 180%
+  +desktop()
+    font-size 200%
+
+// Links 
+a
+  color primary-color
+  font-weight bold
+  text-decoration none
+  &:hover 
+    color secondary-color
+ 
+.col-main li 
+  font-size base-font-size
+  +tablet()
+    font-size 115%
+  +desktop()
+    font-size 125%

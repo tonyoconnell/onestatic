@@ -1,0 +1,185 @@
+/*
+ ██████╗ ███╗   ██╗███████╗
+██╔═══██╗████╗  ██║██╔════╝
+██║   ██║██╔██╗ ██║█████╗  
+██║   ██║██║╚██╗██║██╔══╝  
+╚██████╔╝██║ ╚████║███████╗
+ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+===
+Your Style. Simple. Succint.
+===
+Version: 1.0.0
+Author: Tony O'Connell
+tony@one.ie
+http://one.ie
+
+ONE
+=====
+“Art is the elimination of the unnecessary.”
+― Pablo Picasso
+
+Follow a concise, easy way to converse with your customers, staff and friends in style.  
+Design elegant web and mobile experiences quickly. 
+
+1. Define your colours
+2. Add your logo
+3. Design your type
+4. Layout screens - text first, progresively enhancing to large, high definition displays 
+5. Display media - pages, pictures, animation and video. 
+
+/*
+Colors 
+=========
+*/
+
+// Your brand color. Used in logo, links, buttons etc.
+primary-color = #111
+// Complimentary colour used for hover and secondary buttons
+secondary-color = goldenrod
+
+
+// Dark color for font, backgrounds etc.
+dark-color = #111
+// Light color font, backgrounds etc.
+light-color = #eee
+
+
+/*
+Logo 
+=========
+*/
+
+// Location of logo
+logo = '../pictures/logo.png'
+
+// High definition version of logo for retina screens
+logo-xl = '../pictures/logo-xl.png'
+
+.logo
+  max-width 550px
+
+logo img
+  width 400px
+  height 60px
+  padding 10px
+  background white
+
+
+logo-text  
+  font-size 30px 
+  
+/*
+Screens 
+====
+*/
+
+@import 'screens'
+
+
+
+/*
+Type 
+====
+*/
+
+// Font : Your font
+
+font = mco
+base-font-size = 16px
+
+// Paragraph Text : Mobile first 
+
+    
+// Line height 
+p
+  line-height 150%
+// Margin
+  margin = 10px 0
+
+// Smallest Text  
+tiny 
+  font-size 10px
+
+// Heading Font : Font for headings
+font-headings = mco
+
+@import 'typography'
+ 
+
+/*
+Patterns
+========
+*/
+// Light Background Pattern
+light-background()
+  background: url('../pictures/patterns/background.png') repeat
+light-background-secondary()
+  background: url('../pictures/patterns/furley.png') repeat
+grey-background()
+  background: url('../pictures/patterns/furley.png') repeat  
+// Dark Background Pattern
+dark-background()
+  background: url('../pictures/patterns/assault.png') repeat
+  
+body  
+  light-background()
+
+  
+
+/*
+Buttons
+========
+*/
+.button
+  position relative
+  display inline-block
+  margin 20px auto
+  padding 15px
+  
+  dark-background()
+
+  border: 1px solid #ccc;
+
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  
+  transform-style: flat;
+  transition: all 250ms ease-out;
+  
+  &:before,
+  &:after 
+      content: "";
+      position: absolute;
+      z-index: -2;
+      transition: all 250ms ease-out;
+  
+  &:before 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+  
+  &:hover 
+    border-color: #dedede;
+    background-color: white
+    light-background-secondary()
+    color black
+    
+    &:before 
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1) inset;
+
+.button-secondary
+  background: #fff;
+  color black
+  padding: 7px 15px;
+
+
+/*
+Scroll
+========
+*/
+@import 'navigation/one-page'
+

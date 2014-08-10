@@ -1,0 +1,32 @@
+extends ../templates/page
+
+append page-info
+  - title = 'This is the Title'
+  - description = 'This is the description.'
+  - keywords = 'keyword1, keyword2'
+ 
+block content
+    .wrap
+      .section.sTop
+        .inner
+          h1.title Network One
+          h2.subtitle One page template
+      include ../blocks/top-nav
+      .section.s1
+        .inner
+          h1 Section 1
+      .section.s2
+        .inner
+          h1 Section 2
+          p
+            a.intLink(href='#s4') Internal Link: Jump to Section 4
+          p
+            a.intLink(href='#sTop') Internal Link: Back to Top
+      .section.s3
+        .inner
+          h1 Section 3
+      .section.s4
+        h1 Section 4
+      .section.s5
+        .inner
+          h1 Section 5

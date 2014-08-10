@@ -1,0 +1,28 @@
+/*
+
+  Raised Shadow
+
+  Jú Gonçalves <github@jugoncalv.es>
+  MIT
+
+*/
+
+.animated
+    transition: all 500ms ease-in-quad
+    
+
+raised(color, box = false)
+  if box
+    prop = 'color'
+  else
+    prop = 'background-color'
+  box-shadow
+    0px 1px darken(color, 20%),
+    0px 2px darken(color, 20%)),
+    0px 3px darken(color, 20%)),
+    0px 4px darken(color, 20%)),
+    0px 5px darken(color, 20%)),
+    0px 5px 10px rgba(1,1,1,0.25),
+    0px 5px 3px rgba(1,1,1,0.8);
+  {prop} color
+  transform rotate3d(1, 2.0, 3.0, -10deg) skewX(-10deg)

@@ -1,0 +1,19 @@
+block page-info
+
+doctype html
+html(lang='en')
+  head
+  title #{title}
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+  meta(name='viewport', content='width=device-width')
+  meta(name = 'description', content = description)
+  meta(name = 'keywords', content = keywords)
+  link(href = './styles/one.css', rel = 'stylesheet')
+  link(rel='stylesheet', href='styles/one.css')
+  link(rel='stylesheet', href='styles/libraries/sidr-dark.css')
+
+  body
+  block content
+
+  script(src='/scripts/app.js')

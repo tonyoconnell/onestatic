@@ -1,0 +1,476 @@
+/*
+ ██████╗ ███╗   ██╗███████╗
+██╔═══██╗████╗  ██║██╔════╝
+██║   ██║██╔██╗ ██║█████╗  
+██║   ██║██║╚██╗██║██╔══╝  
+╚██████╔╝██║ ╚████║███████╗
+ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+===
+Your Style. Simple. Succint.
+===
+Version: 1.0.0
+Author: Tony O'Connell
+tony@one.ie
+http://one.ie
+
+ONE
+=====
+“Art is the elimination of the unnecessary.”
+― Pablo Picasso
+
+Follow a concise, easy way to converse with your customers, staff and friends in style.  
+Design elegant web and mobile experiences quickly. 
+
+1. Define your colours
+2. Add your logo
+3. Design your type
+4. Layout screens - text first, progresively enhancing to large, high definition displays 
+5. Display media - pages, pictures, animation and video. 
+
+/*
+Colors 
+=========
+*/
+/*
+Logo 
+=========
+*/
+.logo {
+  max-width: 550px;
+}
+logo img {
+  width: 400px;
+  height: 60px;
+  padding: 10px;
+  background: #fff;
+}
+logo-text {
+  font-size: 30px;
+}
+/*
+Screens 
+====
+*/
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+@media only screen and (min-width: 1050px) {
+  html {
+    *zoom: 1;
+    width: auto;
+    max-width: 100%;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  html:before,
+  html:after {
+    content: '';
+    display: table;
+  }
+  html:after {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .logo {
+    padding-left: 30px;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  .logo {
+    padding-left: 30px;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  logo img {
+    width: 55px;
+    height: 55px;
+  }
+}
+header-search {
+  margin-right: 30px;
+}
+book h1 {
+  max-width: 300px !important;
+  position: relative;
+  top: 0px;
+  left: 50px;
+  right: 0px;
+}
+@media only screen and (min-width: 1050px) {
+  book h1 {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    font-size: 40px;
+  }
+}
+img {
+  max-width: 100%;
+}
+overview {
+  *zoom: 1;
+  float: left;
+  display: inline;
+  clear: none;
+  text-align: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+overview:before,
+overview:after {
+  content: '';
+  display: table;
+}
+overview:after {
+  clear: both;
+}
+overview:last-child {
+  margin-right: 0%;
+}
+@media only screen and (min-width: 900px) {
+  overview {
+    *zoom: 1;
+    float: left;
+    display: inline;
+    clear: none;
+    text-align: inherit;
+    padding-left: 0;
+    padding-right: 0;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%;
+    background: #00f;
+  }
+  overview:before,
+  overview:after {
+    content: '';
+    display: table;
+  }
+  overview:after {
+    clear: both;
+  }
+  overview:last-child {
+    margin-right: 0%;
+  }
+}
+about {
+  *zoom: 1;
+  float: left;
+  display: inline;
+  clear: none;
+  text-align: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+about:before,
+about:after {
+  content: '';
+  display: table;
+}
+about:after {
+  clear: both;
+}
+about:last-child {
+  margin-right: 0%;
+}
+@media only screen and (min-width: 900px) {
+  about {
+    *zoom: 1;
+    float: left;
+    display: inline;
+    clear: none;
+    text-align: inherit;
+    padding-left: 0;
+    padding-right: 0;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  about:before,
+  about:after {
+    content: '';
+    display: table;
+  }
+  about:after {
+    clear: both;
+  }
+  about:last-child {
+    margin-right: 0%;
+  }
+}
+.toolbar {
+  display: none !important;
+}
+/*
+Type 
+====
+*/
+p {
+  line-height: 150%;
+}
+tiny {
+  font-size: 10px;
+}
+html {
+  font-family: mco;
+  font-size: 16px;
+}
+@font-face {
+  font-family: mco;
+  src: url("../fonts/mco.eot");
+  font-weight: normal;
+  font-style: normal;
+}
+p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  p {
+    font-size: 120%;
+    margin: 15px 0;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  p {
+    font-size: 125%;
+    margin: 20px 0;
+  }
+}
+h3 {
+  font-size: 120%;
+  margin: 10px 0;
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  h3 {
+    font-size: 140%;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  h3 {
+    font-size: 140%;
+  }
+}
+h2 {
+  font-size: 130%;
+  margin: 10px 0;
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  h2 {
+    font-size: 160%;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  h2 {
+    font-size: 160%;
+  }
+}
+h1 {
+  font-size: 170%;
+  margin: 10px 0;
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  h1 {
+    font-size: 180%;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  h1 {
+    font-size: 200%;
+  }
+}
+a {
+  color: #111;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  color: #daa520;
+}
+.col-main li {
+  font-size: 16px;
+}
+@media only screen and (min-width: 400px) and (max-width: 1050px) {
+  .col-main li {
+    font-size: 115%;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  .col-main li {
+    font-size: 125%;
+  }
+}
+/*
+Patterns
+========
+*/
+body {
+  background: url("../pictures/patterns/background.png") repeat;
+}
+/*
+Buttons
+========
+*/
+.button {
+  position: relative;
+  display: inline-block;
+  margin: 20px auto;
+  padding: 15px;
+  background: url("../pictures/patterns/assault.png") repeat;
+  border: 1px solid #ccc;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform-style: flat;
+  transition: all 250ms ease-out;
+}
+.button:before,
+.button:after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  transition: all 250ms ease-out;
+}
+.button:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 15px 10px -10px rgba(31,31,31,0.5);
+}
+.button:hover {
+  border-color: #dedede;
+  background-color: #fff;
+  background: url("../pictures/patterns/furley.png") repeat;
+  color: #000;
+}
+.button:hover:before {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 40px rgba(128,128,128,0.1) inset;
+}
+.button-secondary {
+  background: #fff;
+  color: #000;
+  padding: 7px 15px;
+}
+/*
+Scroll
+========
+*/
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+.clear {
+  clear: both;
+}
+.wrap {
+  width: 100%;
+  max-width: 1600px;
+  min-width: 960px;
+  z-index: 10;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+}
+.section {
+  width: 100%;
+  max-width: 1600px;
+  min-width: 960px;
+  z-index: 10;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 0 20px 0;
+  height: 1500px;
+}
+.inner {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 50px;
+  padding: 30px 0;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+.inner:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.subMenu {
+  height: 50px;
+  z-index: 1000;
+  width: 100%;
+  background: #0977bc;
+}
+.subMenu .inner {
+  padding: 0;
+  font-weight: 400;
+  margin: 0 auto;
+}
+.subMenu a:hover {
+  background: #1783c7;
+}
+.subNavBtn {
+  display: block;
+  height: 35px;
+  width: 10%;
+  float: left;
+  margin: 0px 0px 0 0;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 15px 2% 0 2%;
+  text-align: center;
+  color: #fff;
+}
+.active {
+  background: #25aae1;
+}
+.end {
+  margin: 0;
+}
+.sTop {
+  min-height: 430px;
+  background: #fff;
+  color: #3d3d3d;
+  padding: 50px 0;
+  height: 300px;
+}
+.s1 {
+  background: #184764;
+  color: #fff;
+}
+.s2 {
+  background: #313131;
+}
+.s2 a {
+  color: #fff;
+}
+.s3 {
+  background: #1b83b3;
+}
+.s4 {
+  background: #5aa3c4;
+}
+.s5 {
+  background: #bce1f1;
+  color: #3d3d3d;
+}
+.s6 {
+  background: #161616;
+}

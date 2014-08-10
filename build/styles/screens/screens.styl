@@ -1,0 +1,62 @@
+@import 'libraries/jeet'
+@import 'screens/positions'
+@import 'libraries/rupture'
+
+*
+  margin 0
+  padding 0
+  outline 0
+
+html
+  +desktop()
+    center(100%)
+
+.logo
+  +tablet()
+    padding-left 30px
+  +desktop()
+    padding-left 30px
+
+
+logo img
+  +desktop()
+    width 55px
+    height 55px
+
+header-search
+  margin-right 30px
+    
+book 
+  h1
+    max-width 300px !important
+    relative top 0px left 50px right 0px
+    +desktop()
+      relative top 0px left 0px
+      font-size 40px
+  
+body
+  desktop()
+    center(80%) 
+    padding-left 100px
+    padding-right 100px
+
+process
+  ul
+    li
+      raquo()
+img 
+  max-width 100%
+  
+overview
+  col(3/3)
+  +above(900px)
+    col(1/2)
+    background blue
+  
+about 
+  col(5/5)
+  +above(900px)
+    col(1/2)
+
+.toolbar
+  display none !important
