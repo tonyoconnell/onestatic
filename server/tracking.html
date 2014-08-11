@@ -1,4 +1,14 @@
-<script type="text/javascript">
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Welcome home">
+    <meta name="keywords" content="home, keyword2">
+    <link rel="stylesheet" href="styles/one.css">
+    <link rel="stylesheet" href="styles/semantic.css"><script type="text/javascript">
   // Create a queue, but don't obliterate an existing one!
   window.analytics = window.analytics || [];
 
@@ -58,3 +68,26 @@
   // move this call however you'd like.
   window.analytics.page();
 </script>
+  </head>
+  <body>
+    <div id="one">
+      <logo><a id="left-menu" href="#left-menu"><img src="pictures/logos/logo-ram.png" alt="Mid-Century Online"></a></logo>
+      <h1>Tracking
+        <div class="ui form segment">
+          <div class="field">
+            <label>Receive our newsletter</label>
+            <div class="ui left labeled icon input">
+              <input type="text" placeholder="Email"><i class="mail icon"></i>
+              <div class="ui corner label"><i class="asterisk icon"></i></div>
+            </div>
+          </div>
+          <div class="huge green ui labeled icon button"><i class="signup icon"></i>Sign up</div>
+        </div>
+      </h1><a href="/signup" data-metric="Signup intention" data-metric-plan="free">Signup Link</a>
+      <button data-metric="Button" class="button">Button</button>
+    </div>
+    <script src="/scripts/libraries/jquery.min.js"></script>
+    <script src="/scripts/libraries/semantic.min.js"></script>
+    <script src="/scripts/analytics/analysjs.min.js"></script>
+  </body>
+</html>

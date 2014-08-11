@@ -6,7 +6,7 @@ append page-info
     - keywords = 'home, keyword2'
  
 block content
-    h1 hello ava d
+    h1 Tracking
         .ui.form.segment
           .field
             label Receive our newsletter
@@ -18,6 +18,10 @@ block content
           .huge.green.ui.labeled.icon.button
                    i.signup.icon
                    | Sign up
+    a(href='/signup', data-metric='Signup intention', data-metric-plan='free') Signup Link
+    button.button(data-metric='Button') Button
+
+
 
      
 

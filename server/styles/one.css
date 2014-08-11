@@ -39,8 +39,8 @@ Logo
   max-width: 550px;
 }
 logo img {
-  width: 400px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   padding: 10px;
   background: #fff;
 }
@@ -60,7 +60,7 @@ Screens
   html {
     *zoom: 1;
     width: auto;
-    max-width: 100%;
+    max-width: 80%;
     float: none;
     display: block;
     margin-right: auto;
@@ -77,14 +77,16 @@ Screens
     clear: both;
   }
 }
-@media only screen and (min-width: 400px) and (max-width: 1050px) {
-  .logo {
-    padding-left: 30px;
-  }
+logo {
+  position: fixed;
+  top: 0px;
+  left: 0px;
 }
 @media only screen and (min-width: 1050px) {
-  .logo {
-    padding-left: 30px;
+  logo {
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 }
 @media only screen and (min-width: 1050px) {
@@ -284,12 +286,12 @@ h1 {
 }
 @media only screen and (min-width: 400px) and (max-width: 1050px) {
   h1 {
-    font-size: 180%;
+    font-size: 220%;
   }
 }
 @media only screen and (min-width: 1050px) {
   h1 {
-    font-size: 200%;
+    font-size: 250%;
   }
 }
 a {
@@ -370,11 +372,6 @@ Buttons
 Scroll
 ========
 */
-* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-}
 .clear {
   clear: both;
 }

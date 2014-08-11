@@ -153,8 +153,8 @@ Fonts
 ----------
 */
     gulp.task('font', function() {
-    gulp.src(fonts)
-    .pipe(changed(fonts))
+    gulp.src(fonts + '*')
+    .pipe(changed(server_fonts))
     .pipe(gulp.dest(server_fonts))
     .pipe(livereload(lrserver));
 });
