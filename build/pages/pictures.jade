@@ -1,0 +1,96 @@
+extends ../templates/page
+
+append page-info
+    - title = 'Home'
+    - description = 'Welcome home'
+    - keywords = 'home, keyword2'
+ 
+block content
+    .main.container
+    .peek
+        .ui.vertical.pointing.secondary.menu
+          a.active.item Standard
+          a.item States
+          a.item Variations
+          a.item Groups
+      h2.ui.dividing.header Types
+      .example
+        h4.ui.header Image
+        p An image
+        .ui.ignored.info.message
+          | pictures will, by default, take up the same size as the original image. Specifying an image size will force an image to only take up a specific size.
+        img.ui.medium.image(src='/pictures/photos/photo.jpg')
+      .example
+        h4.ui.header Image Link
+        p An image can be formatted to link to other content
+        a.ui.medium.image(href='http://google.com')
+          img(src='/pictures/photos/photo.jpg')
+      h2.ui.dividing.header
+        | States
+      .example
+        h4.ui.header Disabled
+        p An image can show that it is disabled and cannot be selected
+        img.medium.disabled.ui.image(src='/pictures/photos/photo.jpg')
+      h2.ui.dividing.header Variations
+      .example
+        h4.ui.header Avatar
+        p An image may be formatted to appear inline with text as an avatar
+        img.ui.avatar.image(src='/pictures/photos/photo-1.jpg')
+        | Dog Doggington
+      .example
+        h4.ui.header Rounded
+        p An image may appear rounded
+        img.rounded.ui.image(src='/pictures/photos/photo-1.jpg')
+      .example
+        h4.ui.header Circular
+        p An image may appear circular
+        img.circular.ui.image(src='/pictures/photos/photo-1.jpg')
+      .example
+        h4.ui.header Floated
+        p An image can sit to the left or right of other content
+        .ui.segment
+          img.ui.small.left.floated.image(src='/pictures/photos/photo.jpg')
+          p
+            | Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.
+          img.ui.small.right.floated.image(src='/pictures/photos/photo.jpg')
+          p
+            | Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum maiestatis in.
+          p
+            | Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id.
+      .clearing.example
+        h4.ui.header Sizes
+        p An image may be formatted to be different sizes
+        img.ui.tiny.image(src='/pictures/photos/photo-1.jpg')
+        .ui.simple.ignored.divider
+        img.ui.mini.image(src='/pictures/photos/photo-1.jpg')
+        .ui.simple.ignored.divider
+        img.ui.small.image(src='/pictures/photos/photo-1.jpg')
+        .ui.simple.ignored.divider
+        img.ui.large.image(src='/pictures/photos/photo.jpg')
+        .ui.simple.ignored.divider
+        img.ui.huge.image(src='/pictures/photos/photo.jpg')
+      h2.ui.dividing.header Groups
+      .example
+        h4.ui.header Sizes
+        p A group of pictures can be formatted to have the same size.
+        .ui.small.pictures
+          img.ui.image(src='/pictures/photos/photo.jpg')
+          img.ui.image(src='/pictures/photos/photo.jpg')
+          img.ui.image(src='/pictures/photos/photo.jpg')
+          img.ui.image(src='/pictures/photos/photo.jpg')
+      .another.example
+        .ui.medium.pictures
+          img(src='/pictures/photos/photo.jpg')
+          img(src='/pictures/photos/photo.jpg')
+          img(src='/pictures/photos/photo.jpg')
+          img(src='/pictures/photos/photo.jpg')
+
+
+
+
+
+
+     
+
+
+

@@ -1,0 +1,36 @@
+    .ui.fixed.transparent.inverted.main.menu
+      .container
+        a.launch.item
+          i.icon.list.layout
+          | Content
+        .title.item
+          b UI Guide:
+          | CSS
+        .disabled.icon.item
+          i.left.arrow.icon
+        .section.ui.dropdown.link.item
+          span.count 1 of 3
+          .menu
+            .active.item
+              a(href='/guide/cssguide.html') 1. CSS
+            .item
+              a(href='/guide/javascriptguide.html') 2. Javascript
+            .item
+              a(href='/guide/styleguide.html') 3. Language
+        a.icon.item(href='/guide/javascriptguide.html')
+          i.right.arrow.icon
+        .right.menu
+          .vertically.fitted.borderless.item
+            iframe(src='http://ghbtns.com/github-btn.html?user=semantic-org&repo=semantic-ui&type=watch&count=true', allowtransparency='true', frameborder='0', scrolling='0', width='95', height='20')
+          a.popup.icon.github.item(data-content='View project on Github', href='https://github.com/quirkyinc/semantic')
+            i.icon.github
+          //
+                    <div class="ui simple dropdown item">
+                      <i class="icon tint"></i> Theme
+                      <div class="theme menu">
+                        <div class="active item" data-theme="flat">Flat</div>
+                        <div class="item" data-theme="shaded">Shaded</div>
+                        <div class="item" data-theme="classic">Classic</div>
+                      </div>
+                    </div>
+                    !
