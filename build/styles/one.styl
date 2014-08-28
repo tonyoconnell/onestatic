@@ -50,13 +50,10 @@ Logo
 */
 
 // Location of logo
-logo = '../pictures/logo.png'
+logo = '/pictures/logo.png'
 
 // High definition version of logo for retina screens
-logo-xl = '../pictures/logo-xl.png'
-
-.logo
-  max-width 550px
+logo-xl = '/pictures/logo-xl.png'
 
 logo img
   width 40px
@@ -104,27 +101,29 @@ tiny
 font-headings = mco
 
 @import 'typography'
- 
-
+@import 'libraries/nib'
+@import 'libraries/axis'
 /*
 Patterns
 ========
 */
 // Light Background Pattern
 light-background()
-  background: url('../pictures/patterns/background.png') repeat
+  background: url('/pictures/patterns/background.png') repeat
 light-background-secondary()
-  background: url('../pictures/patterns/furley.png') repeat
+  background: url('/pictures/patterns/furley.png') repeat
 grey-background()
-  background: url('../pictures/patterns/furley.png') repeat  
+  background: url('/pictures/patterns/furley.png') repeat  
 // Dark Background Pattern
 dark-background()
-  background: url('../pictures/patterns/assault.png') repeat
+  background: url('/pictures/patterns/assault.png') repeat
+
+
   
 body  
   light-background()
+  font-face(mco, '../fonts')
 
-  
 
 /*
 Buttons
@@ -175,12 +174,5 @@ Buttons
   background: #fff;
   color black
   padding: 7px 15px;
-
-
-/*
-Scroll
-========
-*/
-@import 'navigation/one-page'
 
 

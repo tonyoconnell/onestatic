@@ -71,6 +71,7 @@ var gulp = require('gulp'), // Gulp.js
     stylish = require('jshint-stylish'), // Tests Javascript for errors
     gulputil = require('gulp-util'), // Utilities for Gulp.js
     jade = require('gulp-jade'), // Utilities for Gulp.js
+    express = require('express'), // Express Server
     marked = require('marked'), // Transforms markdown files into HTML
     markdownpdf = require('gulp-markdown-pdf'),
     gulpif = require('gulp-if'), // Reloads web pages when they are changed
@@ -78,26 +79,44 @@ var gulp = require('gulp'), // Gulp.js
     rename = require('gulp-rename'), // Renames files
     changed = require('gulp-changed'), // Only executes tasks if files were changed
     es = require('event-stream'), 
-    fontface = require('stylus-font-face'),
     uncss = require('gulp-uncss'),
-    autoprefixer = require('autoprefixer-stylus'),
-    browsersync  = require('browser-sync'), // Live Reload 
+    livereload = require('gulp-livereload'), // Reloads web pages when they are changed
+    embedlr = require('gulp-embedlr'), // Adds javascript to listen and reload
+    lr = require('tiny-lr'), // Live Reload Server
     uglify = require('gulp-uglify'), // Minifies CSS
     atomic = require('gulp-atomicscss'), // Creates SCSS classes from HTML
     stylus = require('gulp-stylus');
 
 /*
 
-Local webserver
+Express
 --------
+Local webserver
 */
 
-// Start Browser-Sync server
-gulp.task('server', function(){
-  return browsersync.init(null, {server: {baseDir: '../server/'}})
-});
+var app = express(),
 
+staticServer = function(port) {
+    app = express();
+    app.use(express.static(path.resolve(server)));
+    app.listen(port, function() {
+        gulputil.log('Static server running at http://localhost:'+port);
+    });
+    return {
+        app: app
+    };
+};
+staticServer(1111);
 
+/*
+
+Live Reload
+-----------
+Refresh your browser after changes. Add .pipe(livereload(lrserver)) to any task.
+*/
+
+var lrport      = 35729,
+    lrserver    = lr();
 
 /*
 
@@ -113,7 +132,7 @@ Convert Jade to HTML and copy to the server.
       pretty: true
     }))
     .pipe(gulp.dest(server))
-    .pipe(browsersync.reload({stream: true}))
+    .pipe(livereload(lrserver))
     .pipe(notify({message: 'Page Built'}));
 });
 
@@ -126,7 +145,7 @@ Pictures
     gulp.src(pictures + '**/*.{jpg,png,gif,svg}')
     .pipe(changed(server_pictures))
     .pipe(gulp.dest(server_pictures))
-    .pipe(browsersync.reload({stream: true}));
+    .pipe(livereload(lrserver));
 });
 
 /*
@@ -137,7 +156,7 @@ Fonts
     gulp.src(fonts + '*')
     .pipe(changed(server_fonts))
     .pipe(gulp.dest(server_fonts))
-    .pipe(browsersync.reload({stream: true}));
+    .pipe(livereload(lrserver));
 });
 
 
@@ -145,20 +164,15 @@ Fonts
 Styles
 --------- 
 Build CSS classes from Stylus
-.pipe(stylus({
-            use: [autoprefixer('iOS >= 7', 'last 1 Chrome version')]
-        }))
-    .pipe(stylus({compress: true, use: fontface()}))
-
 */
 
    gulp.task('style', function () {
      gulp.src(styles + '*.styl')
     .pipe(plumber())
     .pipe(changed(styles + '*.styl'))
-    .pipe(stylus({compress: false, use: fontface()}))
+    .pipe(stylus())
     .pipe(gulp.dest(server_styles))
-    .pipe(browsersync.reload({stream: true}))
+    .pipe(livereload(lrserver))
     .pipe(size())
     .pipe(notify({message: 'Styles Applied'}));
 });
@@ -170,21 +184,46 @@ Build your scripts
 */
 
    gulp.task('script', function () {
-    gulp.src(['../build/scripts/one.js','../build/scripts/plugins/**/*.js', '!../build/scripts/**/*.min.js'])
+    gulp.src(['../build/scripts/**/*.js', '!../build/scripts/**/*.min.js'])
     .pipe(plumber())
     .pipe(changed(scripts + '**/*.js'))
     .pipe(jshint())
 /*    .pipe(jshint.reporter('default')) */
-    .pipe(concat('one.js'))
-//    .pipe(uglify())
-//     gulp.src(['../build/scripts/**/*.min.js'])
+    .pipe(concat('app.js'))
+     gulp.src(['../build/scripts/**/*.min.js'])
+    .pipe(uglify())
+    .pipe(gulp.dest(server_scripts))
+    .pipe(livereload(lrserver))
+    .pipe(size())
+    .pipe(notify({message: 'Scripts Optimised'}));
+});
+
+
+ "main": "../build/scripts/one.js",
+  "browser": {
+    "jquery": "../build/scripts/libraries/jquery.js"
+  },
+  "browserify-shim": {
+    "jquery": "$"
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
+
+     gulp.task('script', function() {
+   return browserify('../build/scripts/one.js')
+    .bundle()
+    .pipe(sourcestream('app.js'))
+    .pipe(streamify(uglify()))
     .pipe(gulp.dest(server_scripts))
     .pipe(browsersync.reload({stream: true}))
     .pipe(size())
     .pipe(notify({message: 'Scripts Optimised'}));
 });
 
+
 /*
+
 Run Tasks
 =========
 */
@@ -192,8 +231,15 @@ Run Tasks
 gulp.task('default', function() {
 
 // start these tasks 
-    gulp.start( 'page', 'picture', 'font', 'style', 'script' ,'server')
+    gulp.start( 'page', 'picture', 'font', 'style', 'script');
 
+// start livereload server
+    lrserver.listen(lrport, function (err) {
+        if (err) {
+            return console.log(err)
+        };
+        gulputil.log('Livereload server listening at http://localhost:'+lrport);
+        
 // watch for changes and run tasks
         gulp.watch('../build/pages/**/*.jade', function(event){
             gulp.start('page');
@@ -217,4 +263,4 @@ gulp.task('default', function() {
             gulp.start('script');
         });
     });
-
+});

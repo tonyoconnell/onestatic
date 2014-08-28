@@ -1,4 +1,4 @@
-extends ../templates/page
+extends ../../templates/page
 
 append page-info
     - title = 'Template : Home'
@@ -6,8 +6,6 @@ append page-info
     - keywords = 'home, keyword2'
  
 block content
-    h1 Mid-century Online Template
-      h2
-        a(href="book") Book 
+    include:md ../../words/book/milo-baughman.md
 
 
