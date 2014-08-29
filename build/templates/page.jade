@@ -4,16 +4,15 @@ doctype html
 html(lang='en')
   head  
     include ../blocks/head
-  //-    include ../blocks/head-scripts.html
-
   body
     #one
       logo
-          a#left-menu(href='#left-menu') 
+          a#ol(href='#') 
             img(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")
-                
+    include ../blocks/left-navigation
+    #content            
       block content
     
     script(src='/scripts/libraries/jquery.min.js')
     script(src='/scripts/one.js')
-    
+    include ../blocks/footer-scripts.html

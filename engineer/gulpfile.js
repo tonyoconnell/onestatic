@@ -44,6 +44,7 @@ var server = '../server/', // This is the root of your local web server
     server_fonts = server + 'fonts/', //  Fonts converted for use on all devices (TTF, ODF)
     server_styles = server + 'styles/', // Stylesheets generated, mapped, cleaned, combined, minified and obfuscated. 
     server_scripts = server + 'scripts/'; // Javascript combined, minified and obfuscated
+    server_components = server + 'components/'; // Javascript combined, minified and obfuscated
 
 /*
 
@@ -184,6 +185,19 @@ Build your scripts
     .pipe(notify({message: 'Scripts Optimised'}));
 });
 
+
+/*
+
+Components
+----------
+*/
+    gulp.task('component', function() {
+    gulp.src(['../build/components/**/*'])
+    .pipe(gulp.dest(server_components))
+    .pipe(browsersync.reload({stream: true}));
+});
+
+
 /*
 Run Tasks
 =========
@@ -200,6 +214,9 @@ gulp.task('default', function() {
         });
         gulp.watch('../build/templates/**/*.jade', function(event){
             gulp.start('page');
+        });
+        gulp.watch('../build/components/**/*', function(event){
+            gulp.start('component');
         });
         gulp.watch('../build/blocks/**/*.jade', function(event){
             gulp.start('page');

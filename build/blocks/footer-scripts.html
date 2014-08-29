@@ -1,0 +1,16 @@
+<script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('content')
+  });
+
+document.onload = function wait()
+{
+  addEvent(document.getElementById('ol'), 'click', function(){
+      snapper.open('left');
+  });
+
+  addEvent(document.getElementById('or'), 'click', function(){
+      snapper.open('right');
+  });
+}  
+</script>

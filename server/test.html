@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="no-js"> 
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles/snap.css">
+
+</head>
+<body>
+	<div class="snap-drawers">
+		<div class="snap-drawer snap-drawer-left">
+			<div>
+				<ul>
+					<li><a href="default.html">Left</a></li>
+					<li><a href="noDrag.html">No Drag</a></li>
+					<li><a href="dragElement.html">Drag Element</a></li>
+					<li><a href="rightDisabled.html">Right Disabled</a></li>
+					<li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="snap-drawer snap-drawer-right">
+			<ul>
+				<li><a href="default.html">Right</a></li>
+				<li><a href="noDrag.html">No Drag</a></li>
+				<li><a href="dragElement.html">Drag Element</a></li>
+				<li><a href="rightDisabled.html">Right Disabled</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="content" class="content">
+		<div id="toolbar">
+			<a href="#" id="open-left"></a>
+			<h1>Toggles</h1>
+		</div>
+		<div class="toggler" id="ol">Open Left</div>
+		<div class="toggler" id="or">Open Right</div>
+	</div>
+	<script src="/scripts/libraries/jquery.min.js"></script>
+	<script src="/scripts/one.js"></script><script type="text/javascript">
+	var snapper = new Snap({
+		element: document.getElementById('content')
+	});
+	addEvent(document.getElementById('ol'), 'click', function(){
+		snapper.open('left');
+	});
+
+	addEvent(document.getElementById('or'), 'click', function(){
+		snapper.open('right');
+	});
+</script>
+</body>
+</html>
+
+

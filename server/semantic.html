@@ -34,15 +34,20 @@
     <script src="/scripts/semantic/semantic.js"></script>
   </head>
   <body id="example" ontouchstart="" class="guide">
-    <div id="menu" class="ui large vertical inverted labeled icon sidebar menu"><a class="hide item"><i class="close icon"></i>Close Menu</a><a href="/build/semantic.zip" class="item"><i class="inverted circular red awesome download cloud icon"></i><b>Download</b></a>
-      <div class="item"><a href="/"><b>Introduction</b></a>
-        <div class="menu"><a href="/introduction/definitions.html" class="item">Definitions</a><a href="/introduction/overview.html" class="item">Overview</a><a href="/introduction/types.html" class="item">Types</a><a href="/introduction/variations.html" class="item">Variations</a><a href="/introduction.html" class="item">What's Different</a></div>
+    <div class="snap-drawers">
+      <div class="snap-drawer snap-drawer-left">
+        <ul>
+          <li><a href="default.html">Left</a></li>
+          <li><a href="noDrag.html">No Drag</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
       </div>
-      <div class="item"><b>Project</b>
-        <div class="menu"><a href="/project/contributing.html" class="item">Contributing</a><a href="/project/development.html" class="item">Local Docs</a></div>
-      </div>
-      <div class="item"><a href="/element.html"><b>Elements</b></a>
-        <div class="menu"><a href="/elements/button.html" class="item">Button</a><a href="/elements/divider.html" class="item">Divider</a><a href="/elements/header.html" class="item">Header</a><a href="/elements/icon.html" class="item">Icon</a></div>
+      <div class="snap-drawer snap-drawer-right">
+        <ul>
+          <li><a href="default.html">Right</a></li>
+        </ul>
       </div>
     </div>
     <div class="ui black huge launch right attached button"><i class="icon list layout"></i><span class="text">Menu</span></div>

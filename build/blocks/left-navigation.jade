@@ -1,29 +1,17 @@
-#menu.ui.large.vertical.inverted.labeled.icon.sidebar.menu
-      a.hide.item
-        i.close.icon
-        | Close Menu
-      a.item(href='/build/semantic.zip')
-        i.inverted.circular.red.awesome.download.cloud.icon
-        b Download
-      .item
-        a(href='/')
-          b Introduction
-        .menu
-          a.item(href='/introduction/definitions.html') Definitions
-          a.item(href='/introduction/overview.html') Overview
-          a.item(href='/introduction/types.html') Types
-          a.item(href='/introduction/variations.html') Variations
-          a.item(href='/introduction.html') What's Different
-      .item
-        b Project
-        .menu
-          a.item(href='/project/contributing.html') Contributing
-          a.item(href='/project/development.html') Local Docs
-      .item
-        a(href='/element.html')
-          b Elements
-        .menu
-          a.item(href='/elements/button.html') Button
-          a.item(href='/elements/divider.html') Divider
-          a.item(href='/elements/header.html') Header
-          a.item(href='/elements/icon.html') Icon
+.snap-drawers
+  .snap-drawer.snap-drawer-left
+      ul
+          li
+            a(href='default.html') Left
+          li
+            a(href='noDrag.html') No Drag
+          li
+            a(href='dragElement.html') Drag Element
+          li
+            a(href='rightDisabled.html') Right Disabled
+          li
+            a(href='hyperextend.html') Hyperextension Disabled
+  .snap-drawer.snap-drawer-right
+      ul
+        li
+          a(href='default.html') Right
