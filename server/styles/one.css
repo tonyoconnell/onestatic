@@ -32,6 +32,10 @@ Colors
 =========
 */
 /*
+Patterns
+========
+*/
+/*
 Logo 
 =========
 */
@@ -48,13 +52,33 @@ logo-text {
 Screens 
 ====
 */
-* {
+html,
+body {
   margin: 0;
   padding: 0;
-  outline: 0;
+  width: 100%;
+  height: 100%;
+}
+#screen {
+  position: absolute;
+  background: #fff;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  z-index: 2;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 @media only screen and (min-width: 1050px) {
-  html {
+  #content {
     *zoom: 1;
     width: auto;
     max-width: 800px;
@@ -64,21 +88,22 @@ Screens
     margin-left: auto;
     padding-left: 0;
     padding-right: 0;
-    overflow: hidden;
   }
-  html:before,
-  html:after {
+  #content:before,
+  #content:after {
     content: '';
     display: table;
   }
-  html:after {
+  #content:after {
     clear: both;
   }
 }
-logo {
-  position: fixed;
-  top: 0px;
-  left: 0px;
+@media only screen and (max-width: 400px) {
+  logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 }
 @media only screen and (min-width: 1050px) {
   logo {
@@ -86,6 +111,11 @@ logo {
     top: 0;
     left: 0;
   }
+}
+logo img {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 @media only screen and (min-width: 1050px) {
   logo img {
@@ -307,10 +337,6 @@ a:hover {
     font-size: 125%;
   }
 }
-/*
-Patterns
-========
-*/
 body {
   background: url("/pictures/patterns/background.png") repeat;
 }
@@ -377,36 +403,6 @@ Buttons
 Plugins
 ========
 */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-#content {
-  position: absolute;
-  padding: 10px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: auto;
-  height: auto;
-  z-index: 2;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
 .snap-drawers {
   position: absolute;
   top: 0;

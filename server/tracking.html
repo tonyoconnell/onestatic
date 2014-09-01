@@ -27,27 +27,29 @@
         </ul>
       </div>
     </div>
-    <div id="content">
+    <div id="screen">
       <logo><a id="ol" href="#"><img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online"></a></logo>
-      <h1>Tracking
-        <div class="ui form segment">
-          <div class="field">
-            <label>Receive our newsletter</label>
-            <div class="ui left labeled icon input">
-              <input type="text" placeholder="Email"><i class="mail icon"></i>
-              <div class="ui corner label"><i class="asterisk icon"></i></div>
+      <div id="content">               
+        <h1>Tracking
+          <div class="ui form segment">
+            <div class="field">
+              <label>Receive our newsletter</label>
+              <div class="ui left labeled icon input">
+                <input type="text" placeholder="Email"><i class="mail icon"></i>
+                <div class="ui corner label"><i class="asterisk icon"></i></div>
+              </div>
             </div>
+            <div class="huge green ui labeled icon button"><i class="signup icon"></i>Sign up</div>
           </div>
-          <div class="huge green ui labeled icon button"><i class="signup icon"></i>Sign up</div>
-        </div>
-      </h1><a href="/signup" data-metric="Signup intention" data-metric-plan="free">Signup Link
-        <button data-metric="Button" class="button">Button</button><a href="skype:mid-centuryonline.com?chat" data-metric="Contact" data-metric-type="skype">skype</a><a href="mailto:info@mid-centuryonline.com" data-metric="Contact" data-metric-type="email">email</a>
-        <div data-metric="Floor Lamps" data-metric-page-view="true" data-metric-page-category="Lighting"></div></a>
+        </h1><a href="/signup" data-metric="Signup intention" data-metric-plan="free">Signup Link
+          <button data-metric="Button" class="button">Button</button><a href="skype:mid-centuryonline.com?chat" data-metric="Contact" data-metric-type="skype">skype</a><a href="mailto:info@mid-centuryonline.com" data-metric="Contact" data-metric-type="email">email</a>
+          <div data-metric="Floor Lamps" data-metric-page-view="true" data-metric-page-category="Lighting"></div></a>
+      </div>
     </div>
     <script src="/scripts/libraries/jquery.min.js"></script>
     <script src="/scripts/one.js"></script><script type="text/javascript">
 var snapper = new Snap({
-      element: document.getElementById('content')
+      element: document.getElementById('screen')
   });
 document.onload = function wait()
 {

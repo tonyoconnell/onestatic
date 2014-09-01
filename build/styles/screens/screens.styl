@@ -2,24 +2,44 @@
 @import 'screens/positions'
 @import 'libraries/rupture'
 
-*
-  margin 0
-  padding 0
-  outline 0
-
-html
-  +desktop()
-    center(800px)
-    overflow hidden
+html, body
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 
 
+#screen
+  position absolute
+  background white
+  top 0
+  right 0
+  bottom 0
+  left 0
+  width auto
+  height auto
+  z-index 2
+  overflow auto
+  -webkit-overflow-scrolling touch
+  -webkit-transform translate3d(0, 0, 0)
+  -moz-transform translate3d(0, 0, 0)
+  -ms-transform translate3d(0, 0, 0)
+  -o-transform translate3d(0, 0, 0)
+  transform translate3d(0, 0, 0)
+
+#content
+    +desktop()
+      center(800px) 
+  
     
 logo
-  fixed top 0px left 0px
+  +mobile()
+    fixed top left
   +desktop()
     fixed top left
 
 logo img
+  fixed top left
   +desktop()
     width 55px
     height 55px
@@ -35,12 +55,7 @@ book
       relative top 0px left 0px
       font-size 40px
   
-body
-  desktop()
-    center(80%) 
-    padding-left 100px
-    padding-right 100px
-    overflow hidden
+
 
 process
   ul

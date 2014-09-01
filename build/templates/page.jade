@@ -7,11 +7,12 @@ html(lang='en')
   body
 
     include ../blocks/navigation/side-navigation
-    #content
+    #screen
       logo
         a#ol(href='#') 
-          img(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")            
-      block content
+          img(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")
+      #content                
+        block content
     
     script(src='/scripts/libraries/jquery.min.js')
     script(src='/scripts/one.js')
