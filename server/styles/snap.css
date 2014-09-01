@@ -9,9 +9,9 @@ html, body {
 }
 
 
-
+ 
 #content {
-  background: red;
+  light-background()
   position: absolute;
   top: 0;
   right: 0;

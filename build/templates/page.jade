@@ -5,12 +5,12 @@ html(lang='en')
   head  
     include ../blocks/head
   body
-    #one
+
+    include ../blocks/navigation/side-navigation
+    #content
       logo
-          a#ol(href='#') 
-            img(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")
-    include ../blocks/left-navigation
-    #content            
+        a#ol(href='#') 
+          img(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")            
       block content
     
     script(src='/scripts/libraries/jquery.min.js')
