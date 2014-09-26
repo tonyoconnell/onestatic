@@ -5,15 +5,15 @@ html(lang='en')
   head  
     include ../blocks/head
   body
-
     include ../blocks/navigation/side-navigation
     #screen
       logo
-        a#ol(href='#') 
-          img(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")
-      #content                
+        a#open-left.toggler(href='#') 
+          img.logo.circular.picture(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")
+      #content
         block content
     
     script(src='/scripts/libraries/jquery.min.js')
     script(src='/scripts/one.js')
     include ../blocks/footer-scripts.html
+ 

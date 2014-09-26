@@ -1,0 +1,26 @@
+extends ../templates/learn
+
+append page-info
+    - title = 'Home'
+    - description = 'Welcome home'
+    - keywords = 'home, keyword2'
+ 
+block content
+      h1 Pictures
+      p
+        | Sometimes content should be formatted differently depending on whether other content exists alongside it. A useful way to do that is use the next adjacent sibling selector '+'. The content that should have the conditional formatting should always appear second because there is no previous sibling selector in css.
+      pre
+        code
+          | .ui.widget .image {
+          | float: left;
+          | width: 2em;
+          | }
+          | .ui.widget .content {
+          | color: #000000;
+          | }
+          | /* content is only floated if image exists */
+          | .ui.widget .image + .content {
+          | margin-left: 3em;
+          | }
+
+    

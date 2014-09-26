@@ -2,13 +2,10 @@
 var snapper = new Snap({
       element: document.getElementById('screen')
   });
-document.onload = function wait()
-{
-  addEvent(document.getElementById('ol'), 'click', function(){
+  addEvent(document.getElementById('open-left-navigation'), 'click', function(){
       snapper.open('left');
   });
-  addEvent(document.getElementById('or'), 'click', function(){
+  addEvent(document.getElementById('open-right-navigation'), 'click', function(){
       snapper.open('right');
   });
-}  
 </script>

@@ -1,0 +1,17 @@
+extends ../../templates/page
+
+append page-info
+	- title = 'Template : Home'
+	- description = 'Welcome home'
+	- keywords = 'home, keyword2'
+ 
+block content
+	h1 Pictures
+	img.large.circular.picture(src='/pictures/photos/photo.jpg')
+	.ui.ribbon.label Dogs	
+	img.small.circular.picture(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")
+	pre
+		code.html 
+				| <a href="hello">hello </a>
+
+

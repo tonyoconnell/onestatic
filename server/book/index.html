@@ -11,25 +11,25 @@
     <!-- link(rel='stylesheet', href='styles/semantic.css')-->
   </head>
   <body>
-    <div class="snap-drawers">
-      <div class="snap-drawer snap-drawer-left">
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left">
         <ul>
-          <li><a href="default.html">Left</a></li>
-          <li><a href="noDrag.html">No Drag</a></li>
+          <li><a href="/blocks/pictures.html">Pictures</a></li>
+          <li><a href="noDrag.html">Labels</a></li>
           <li><a href="dragElement.html">Drag Element</a></li>
           <li><a href="rightDisabled.html">Right Disabled</a></li>
           <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
         </ul>
       </div>
-      <div class="snap-drawer snap-drawer-right">
+      <div class="side-navigation side-navigation-right">
         <ul>
           <li><a href="default.html">Right</a></li>
         </ul>
       </div>
     </div>
     <div id="screen">
-      <logo><a id="ol" href="#"><img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online"></a></logo>
-      <div id="content">               <h1 id="milo-baughman">Milo Baughman</h1>
+      <logo><a id="open-left" href="#" class="toggler"><img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="logo circular picture"></a></logo>
+      <div id="content"><h1 id="milo-baughman">Milo Baughman</h1>
 <h2 id="early-life">Early Life</h2>
 <p>Milo Ray Baughman was an American modern furniture designer. He was born in Kansas on October 7, 1923. When he was very young, his family made a big move to Long Beach, California, which was where he grew up and got most of his influences. When Milo was only 13, he already took on the task of designing both interiors and exteriors of his family home.</p>
 <p>His family expected Baughman to pursue a design degree right after he graduated from high school but this was cut short as the designer signed up for the Army Air Forces instead during the Second World War. One fascinating fact about Baughman was despite being in the Air Forces, he still dabbled in design, designing many officer’s clubs. The end of the war had him return to his hometown, where he finally pursued architectural design at L.A’s Art Center School and Chouinard Art Institute.</p>
@@ -52,15 +52,12 @@
 var snapper = new Snap({
       element: document.getElementById('screen')
   });
-document.onload = function wait()
-{
-  addEvent(document.getElementById('ol'), 'click', function(){
+  addEvent(document.getElementById('open-left-navigation'), 'click', function(){
       snapper.open('left');
   });
-  addEvent(document.getElementById('or'), 'click', function(){
+  addEvent(document.getElementById('open-right-navigation'), 'click', function(){
       snapper.open('right');
   });
-}  
 </script>
   </body>
 </html>
