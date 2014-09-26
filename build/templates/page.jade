@@ -8,11 +8,10 @@ html(lang='en')
     include ../blocks/navigation/side-navigation
     #screen
       logo
-        a#open-left.toggler(href='#') 
+        a#open-left(href='#') 
           img.logo.circular.picture(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")
       #content
         block content
-    
     script(src='/scripts/libraries/jquery.min.js')
     script(src='/scripts/one.js')
     include ../blocks/footer-scripts.html
