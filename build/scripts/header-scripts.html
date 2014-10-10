@@ -1,0 +1,12 @@
+<script>
+(function () {
+  var
+    eventSupport = ('querySelector' in document && 'addEventListener' in window)
+    jsonSupport  = (typeof JSON !== 'undefined'),
+    jQuery       = (eventSupport && jsonSupport)
+      ? '/scripts/jquery.min.js'
+      : '/scripts/jquery.legacy.min.js'
+  ;
+  document.write('<script src="' + jQuery + '"><\/script>');
+}());
+</script>

@@ -2,10 +2,16 @@
 	"folders":
 	[
 		{
-			"path": "/Users/tony/Websites/onestatic"
+			"follow_symlinks": true,
+			"path": "/Users/tony/Websites/mco"
 		},
 		{
+			"follow_symlinks": true,
 			"path": "/Users/tony/Websites/one"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/tony/Websites/onestatic"
 		}
 	]
 }

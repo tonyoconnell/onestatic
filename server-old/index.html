@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title>Template : Home</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Welcome home">
+    <meta name="keywords" content="home, keyword2">
+    <link rel="stylesheet" href="/styles/one.css">
+    <!-- link(rel='stylesheet', href='styles/semantic.css') -->
+  </head>
+  <body>
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
+      </div>
+      <div class="side-navigation side-navigation-right">
+        <ul>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/layout">Layout</a><a href="/learn/install/plugins.html">Install Plugins</a><a href="/learn/blocks/modals.html">Modals</a><a href="/learn/blocks/lightbox.html">Lightbox</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="screen">
+      <logo><a id="open-left" href="#"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="logo circular picture"></a></logo>
+      <div id="top-picture">
+      </div>
+      <div id="content">
+        <h1>Mid-century Online Template
+          <h2><a href="book">Book </a><a href="blocks/pictures.html">Pictures </a><a href="components/navigation/side-navigation">components </a></h2>
+        </h1>
+      </div>
+    </div>
+    <script src="/scripts/libraries/jquery.min.js"></script>
+    <script src="/scripts/libraries/highlight.min.js">  </script>
+    <script src="/scripts/one.js"></script><script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

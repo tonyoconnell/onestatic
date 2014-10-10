@@ -164,10 +164,14 @@ Build CSS classes from Stylus
     .pipe(changed(styles + '*.styl'))
     .pipe(stylus({compress: false, use: fontface()}))
     .pipe(gulp.dest(server_styles))
+     gulp.src(styles + '**/*.css')
+    .pipe(gulp.dest(server_styles)) 
     .pipe(browsersync.reload({stream: true}))
     .pipe(size())
     .pipe(notify({message: 'Styles Applied'}));
 });
+
+
 
 /*
 Scripts
@@ -182,8 +186,9 @@ Build your scripts
     .pipe(jshint())
 /*    .pipe(jshint.reporter('default')) */
     .pipe(concat('one.js'))
+    .pipe(gulp.dest(server_scripts))
 //    .pipe(uglify())
-//     gulp.src(['../build/scripts/**/*.min.js'])
+     gulp.src(['../build/scripts/libraries/*.min.js'])
     .pipe(gulp.dest(server_scripts))
     .pipe(browsersync.reload({stream: true}))
     .pipe(size())

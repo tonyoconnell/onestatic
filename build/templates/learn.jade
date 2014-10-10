@@ -4,6 +4,7 @@ doctype html
 html(lang='en')
   head  
     include ../blocks/head
+    link(rel='stylesheet', href='../styles/side-navigation.css') 
   body
     include ../blocks/navigation/side-navigation
     #screen
@@ -13,7 +14,7 @@ html(lang='en')
       #content
         block content
     
-    script(src='/scripts/libraries/jquery.min.js')
-    script(src='/scripts/libraries/highlight.min.js')   
+    script(src='/scripts/jquery.min.js')
+    script(src='/scripts/highlight.min.js')   
     script(src='/scripts/one.js')
-    include ../blocks/footer-scripts.html
+    include ../scripts/footer-scripts.html

@@ -10,33 +10,24 @@
     <link rel="stylesheet" href="/styles/one.css">
     <!-- link(rel='stylesheet', href='styles/semantic.css') -->
   </head>
-  <body>
-    <div class="side-navigations">
-      <div class="side-navigation side-navigation-left nav">
-        <ul id="nav">
-          <li><a href="/index.html">Home</a>
-            <ul>
-              <li><a href="/index.html">Test</a></li>
-            </ul>
-          </li>
-          <li><a href="/book">Book</a></li>
-          <li><a href="dragElement.html">Drag Element</a></li>
-          <li><a href="rightDisabled.html">Right Disabled</a></li>
-          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
-        </ul>
-      </div>
-      <div class="side-navigation side-navigation-right">
-        <ul>
-          <li><a href="/learn/index.html">Learn</a>
-            <ul>
-              <li><a href="/learn/layout">Layout</a><a href="/learn/install/plugins.html">Install Plugins</a><a href="/learn/blocks/modals.html">Modals</a><a href="/learn/blocks/lightbox.html">Lightbox</a></li>
-            </ul>
-          </li>
-        </ul>
+  <body ontouchstart=""><div class="ui menu">
+  <a class="active item">
+    <i class="home icon"></i> Home
+  </a>
+  <a class="item">
+    <i class="mail icon"></i> Messages
+  </a>
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input">
+        <input type="text" placeholder="Search...">
+        <i class="search link icon"></i>
       </div>
     </div>
+  </div>
+</div>
     <div id="screen">
-      <logo><a id="open-left" href="#"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="logo circular picture"></a></logo>
+      <logo><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="logo circular picture"></a></logo>
       <div id="top-picture">
       </div>
       <div id="content">
@@ -56,8 +47,8 @@
           <div data-metric="Floor Lamps" data-metric-page-view="true" data-metric-page-category="Lighting"></div></a>
       </div>
     </div>
-    <script src="/scripts/libraries/jquery.min.js"></script>
-    <script src="/scripts/libraries/highlight.min.js">  </script>
+    <script src="/scripts/jquery.min.js"></script>
+    <script src="/scripts/highlight.min.js">  </script>
     <script src="/scripts/one.js"></script><script type="text/javascript">
 var snapper = new Snap({
       element: document.getElementById('screen')
