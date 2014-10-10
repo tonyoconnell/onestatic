@@ -2152,3 +2152,28 @@ a.ui.teal.label:hover:before {
 .tos-touch .tos-wrapper.tos-hover .tos-play:hover {
   opacity: 0.9;
 }
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.smartmodal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 20000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.9);
+}
+.smartmodal-modal {
+  display: none;
+  position: fixed;
+  z-index: 99999 !important;
+  padding: 1em;
+  border-radius: 0.3em;
+  background: #d13f19;
+  color: #000;
+  opacity: 1;
+}

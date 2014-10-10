@@ -4,13 +4,6 @@
     <title>Modals: ONE</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Modals">
-    <meta name="keywords" content="Modals">
-    <link rel="stylesheet" href="styles/monokai.css">
-    <title>Modals: ONE</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Modals">
     <meta name="keywords" content="Modals">
@@ -44,26 +37,12 @@
     </div>
     <div id="screen">
       <logo><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="circular picture"></a></logo>
-      <div id="content"><h1 id="jquery-smartmodal">jQuery.smartModal</h1>
-<p>A simple, lightweight jQuery modal plugin that&#39;s highly configurable, easy-to-use &amp; implement. Includes multiple implementation options like timed, automatic, sticky modals and more! It has the ability to show modals only once per user using HTML5 web storage or <a href="https://github.com/carhartl/jquery-cookie">jQuery.cookie</a> as a fallback.</p>
-<p>Visit <a href="http://www.benmarshall.me/jquery-smartmodal/">http://www.benmarshall.me/jquery-smartmodal/</a> for more information.</p>
-<h2 id="installation">Installation</h2>
-<p>Include the <code>jquery.smartModal.js</code> script <em>after</em> the jQuery library (unless you are packaging scripts somehow else) then initialize the plugin:</p>
-<pre><code class="lang-html">&lt;script src=&#39;jquery.smartModal.js&#39;&gt;&lt;/script&gt;
-&lt;!-- Optional, fallback for older browsers that don&#39;t support webStorage. --&gt;
-&lt;script src=&#39;jquery.cookie.js&#39;&gt;&lt;/script&gt;
-&lt;script&gt;
-$(function() {
-  $.smartModal();
-});
-&lt;/script&gt;
-</code></pre>
-<p><strong>Do not include the script directly from GitHub</strong>. The file is being served as text/plain and as such being blocked in Internet Explorer on Windows 7 for instance (because of the wrong MIME type). Bottom line: GitHub is not a CDN.</p>
-<p>Add the CSS from the <code>jquery.smartModal.css</code> to your exisiting CSS or link to it directly:</p>
-<pre><code class="lang-html">&lt;link rel=&#39;stylesheet&#39; href=&#39;jquery.smartModal.css&#39;&gt;
-</code></pre>
-<p><em>Feel free to edit the CSS to suit your site&#39;s needs.</em></p>
-<h2 id="usage">Usage</h2>
+      <div id="content"><a href="#" class="triggerID">Click me</a> to trigger a normal modal.<br>
+<br>
+<b>For more information, see <a href="http://www.benmarshall.me/jquery-smartmodal/">jQuery.smartModal Documentation</a></b>.
+<div class="smartmodal auto" data-wait="5" id="triggerID">I'm a normal modal!<br>hello</div>
+<h1 id="modals">Modals</h1>
+<p>A simple, lightweight jQuery modal plugin that&#39;s highly configurable, easy-to-use &amp; implement. Includes multiple implementation options like timed, automatic, sticky modals and more! It has the ability to show modals only once per user </p>
 <p>To get started, create your modal box by adding the class, <code>smartmodal</code> to it. You can define a <em>trigger class</em> by specifying the <code>id</code> attribute:</p>
 <pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot; id=&quot;triggerID&quot;&gt;I&#39;m a normal modal!&lt;/div&gt;
 &lt;a href=&quot;#&quot; class=&quot;triggerID&quot;&gt;Click me&lt;/a&gt; to trigger a normal modal.
@@ -271,51 +250,6 @@ $.smartModal(&#39;init&#39;, settingsObj); // Initialize the smartModal plugin
 <li>Source hosted at <a href="https://github.com/bmarshall511/jquery-smartModal">GitHub</a></li>
 <li>Report issues, questions, feature requests on <a href="https://github.com/bmarshall511/jquery-smartModal/issues">GitHub Issues</a></li>
 </ul>
-<h3 id="changelog">Changelog</h3>
-<h4 id="version-2-2-1">Version 2.2.1</h4>
-<ul>
-<li>Updated the jquery.cookie plugin to v1.4.1</li>
-<li>Added grunt configuration files</li>
-<li>Updated the jQuery UI plugin to v1.11.0</li>
-<li>Integrated GA Universal Analytics</li>
-</ul>
-<h4 id="version-2-2-0">Version 2.2.0</h4>
-<ul>
-<li>Created callback functions for on open and on close (<a href="https://github.com/bmarshall511/jquery-smartModal/issues/19">https://github.com/bmarshall511/jquery-smartModal/issues/19</a>)</li>
-</ul>
-<h4 id="version-2-1-0">Version 2.1.0</h4>
-<ul>
-<li>Added the ability to manually trigger a modal that&#39;s set to show only once (<a href="https://github.com/bmarshall511/jquery-smartModal/issues/15">https://github.com/bmarshall511/jquery-smartModal/issues/15</a>)</li>
-</ul>
-<h4 id="version-2-0-0">Version 2.0.0</h4>
-<ul>
-<li>Fixed issue the modal woudn&#39;t initialize the settings object is defined</li>
-<li>Changed the GA event tracking naming convention structure</li>
-<li>Fixed JS error when the GA tracking script hasn&#39;t be loaded</li>
-<li>Fixed the missing <code>shortkey</code> setting</li>
-</ul>
-<h4 id="version-1-1-2">Version 1.1.2</h4>
-<ul>
-<li>Fixed issue where the modal wouldn&#39;t initialize when no settings are defined</li>
-<li>Fixed problem when trying to detect if Google Analytics tracking script has been loaded</li>
-<li>Integrated Google Event Tracking (<a href="https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide">https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide</a>)</li>
-</ul>
-<h4 id="version-1-1-1">Version 1.1.1</h4>
-<ul>
-<li>Fixed issue with close trigger</li>
-<li>Added the ability for modal animations</li>
-<li>Added minified version of the script</li>
-<li>Cleaned-up JS with JSlint.com</li>
-<li>Started on integrating Google Analytics event tracking</li>
-</ul>
-<h4 id="version-1-1-0">Version 1.1.0</h4>
-<ul>
-<li>Added API methods</li>
-<li>Fixed issue with timeouts and intervals</li>
-<li>Added the ability to create sticky timed modals</li>
-<li>Added the ability for a <em>close</em> trigger in the modal</li>
-<li>Added debugging check for smartModals with duplicate id attributes</li>
-</ul>
 <h2 id="authors">Authors</h2>
 <p><a href="http://www.benmarshall.me">Ben Marshall</a></p>
 
@@ -386,7 +320,7 @@ var snapper = new Snap({
 
 <script>
 $(function() {
-    FastClick.attach(document.body);
+  $.smartModal();
 });
 </script>
 <script>hljs.initHighlightingOnLoad();</script>

@@ -82,6 +82,7 @@ var gulp = require('gulp'), // Gulp.js
     uncss = require('gulp-uncss'),
     autoprefixer = require('autoprefixer-stylus'),
     browsersync  = require('browser-sync'), // Live Reload 
+    wait = require('gulp-wait'), // Waits a while
     uglify = require('gulp-uglify'), // Minifies CSS
     atomic = require('gulp-atomicscss'), // Creates SCSS classes from HTML
     stylus = require('gulp-stylus');
@@ -112,11 +113,12 @@ Convert Jade to HTML and copy to the server.
     gulp.task('page', function() {
      gulp.src('../build/pages/**/*.jade')
     .pipe(plumber())
-    .pipe(changed(styles + '*.jade'))    
+    .pipe(changed(pages + '**/*.jade'))    
     .pipe(jade({
       pretty: true
     }))
     .pipe(gulp.dest(server))
+    .pipe(wait(1500))
     .pipe(browsersync.reload({stream: true}))
     .pipe(notify({message: 'Page Built'}));
 });

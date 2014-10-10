@@ -4,13 +4,6 @@
     <title>Modals: ONE</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Modals">
-    <meta name="keywords" content="Modals">
-    <link rel="stylesheet" href="styles/monokai.css">
-    <title>Modals: ONE</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Modals">
     <meta name="keywords" content="Modals">
@@ -45,11 +38,19 @@
     <div id="screen">
       <logo><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="circular picture"></a></logo>
       <div id="content"><h1 id="install-javascript-jquery-plugins">Install Javascript / Jquery Plugins</h1>
-<p>Javascript plugins generally follow the following install process. </p>
+<p>It&#39;s easy to install a Javascript plugin.  </p>
 <ol>
 <li>Download to components folder</li>
-<li>Check that it is working. </li>
-<li></li>
+<li>Check that it is working</li>
+<li>Open the README file and save it to the <code>pages/learn</code> folder</li>
+<li>Copy javascript file to the <code>scripts/pulgins</code> folder</li>
+<li>Open the HTML file and copy the <code>&lt;scripts&gt;</code> into blocks/footer-scripts.html</li>
+<li>Create a new file and copy and paste in the HTML underneath the body and above scripts and save it into the <code>blocks</code> folder</li>
+<li>Optional: convert to Jade <code>html2jade modals.html</code></li>
+<li>Open the CSS and save it as .styl in the <code>build/styles</code> folder</li>
+<li>Convert to stylus <code>css2stylus file.css</code> or just save as .styl</li>
+<li>Open one.styl and import the styles </li>
+<li>Create a new file and include the HTML or Jade and the markdown</li>
 </ol>
 
       </div>
@@ -119,7 +120,7 @@ var snapper = new Snap({
 
 <script>
 $(function() {
-    FastClick.attach(document.body);
+  $.smartModal();
 });
 </script>
 <script>hljs.initHighlightingOnLoad();</script>

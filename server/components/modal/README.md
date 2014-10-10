@@ -1,7 +1,36 @@
-Modals
+jQuery.smartModal
 =================
 
-A simple, lightweight jQuery modal plugin that's highly configurable, easy-to-use &amp; implement. Includes multiple implementation options like timed, automatic, sticky modals and more! It has the ability to show modals only once per user 
+A simple, lightweight jQuery modal plugin that's highly configurable, easy-to-use &amp; implement. Includes multiple implementation options like timed, automatic, sticky modals and more! It has the ability to show modals only once per user using HTML5 web storage or [jQuery.cookie](https://github.com/carhartl/jquery-cookie) as a fallback.
+
+Visit http://www.benmarshall.me/jquery-smartmodal/ for more information.
+
+## Installation
+
+Include the `jquery.smartModal.js` script *after* the jQuery library (unless you are packaging scripts somehow else) then initialize the plugin:
+
+```html
+<script src='jquery.smartModal.js'></script>
+<!-- Optional, fallback for older browsers that don't support webStorage. -->
+<script src='jquery.cookie.js'></script>
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+```
+
+**Do not include the script directly from GitHub**. The file is being served as text/plain and as such being blocked in Internet Explorer on Windows 7 for instance (because of the wrong MIME type). Bottom line: GitHub is not a CDN.
+
+Add the CSS from the `jquery.smartModal.css` to your exisiting CSS or link to it directly:
+
+```html
+<link rel='stylesheet' href='jquery.smartModal.css'>
+```
+
+*Feel free to edit the CSS to suit your site's needs.*
+
+## Usage
 
 To get started, create your modal box by adding the class, `smartmodal` to it. You can define a *trigger class* by specifying the `id` attribute:
 
@@ -183,6 +212,49 @@ This plugin has been tested in the following browsers (should also work in IE, b
 
 * Source hosted at [GitHub](https://github.com/bmarshall511/jquery-smartModal)
 * Report issues, questions, feature requests on [GitHub Issues](https://github.com/bmarshall511/jquery-smartModal/issues)
+
+### Changelog
+
+#### Version 2.2.1
+* Updated the jquery.cookie plugin to v1.4.1
+* Added grunt configuration files
+* Updated the jQuery UI plugin to v1.11.0
+* Integrated GA Universal Analytics
+
+#### Version 2.2.0
+* Created callback functions for on open and on close (https://github.com/bmarshall511/jquery-smartModal/issues/19)
+
+#### Version 2.1.0
+* Added the ability to manually trigger a modal that's set to show only once (https://github.com/bmarshall511/jquery-smartModal/issues/15)
+
+#### Version 2.0.0
+
+* Fixed issue the modal woudn't initialize the settings object is defined
+* Changed the GA event tracking naming convention structure
+* Fixed JS error when the GA tracking script hasn't be loaded
+* Fixed the missing `shortkey` setting
+
+#### Version 1.1.2
+
+* Fixed issue where the modal wouldn't initialize when no settings are defined
+* Fixed problem when trying to detect if Google Analytics tracking script has been loaded
+* Integrated Google Event Tracking (https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide)
+
+#### Version 1.1.1
+
+* Fixed issue with close trigger
+* Added the ability for modal animations
+* Added minified version of the script
+* Cleaned-up JS with JSlint.com
+* Started on integrating Google Analytics event tracking
+
+#### Version 1.1.0
+
+* Added API methods
+* Fixed issue with timeouts and intervals
+* Added the ability to create sticky timed modals
+* Added the ability for a *close* trigger in the modal
+* Added debugging check for smartModals with duplicate id attributes
 
 ## Authors
 
