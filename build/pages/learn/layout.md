@@ -1,23 +1,34 @@
-Jeet
-====
+Layout
+======
+
+ONE allows you to create beautiful, responsive layouts your web pages using stylesheets only. 
+This means you don't have to litter your HTML with layout code. 
+Just describe each section of your webpage semantically and define your layouts in your CSS. 
+To get started open 
+```
+styles --> screens --> screens.styl
+```
+
+```
+@import 'jeet'
+@import 'rupture'
+
+body
+  center(80%)
+    overview
+        +desktop()
+        col(1/3)
+
+    process
+        +desktop()
+        col(2/3)
+        +tablet()
+        col
 
 ```
 (ratios = 1, offset = 0, cycle = 0, uncycle = 0, gutter = jeet-gutter)
 ```
-hello
-```css
-.ui.widget .image {
-float: left;
-width: 2em;
-}
-.ui.widget .content {
-color: #000000;
-}
-/* content is only floated if image exists */
-.ui.widget .image + .content {
-margin-left: 3em;
-}
-```
+
 
 COLUMN
 ------
@@ -106,19 +117,5 @@ https://github.com/mojotech/jeet/tree/master/stylus#usage-example
 https://github.com/jenius/rupture
 https://github.com/muraken720/jeet-gulp
 
-```
-@import 'jeet'
-@import 'rupture'
-
-body
-  center(80%)
-    overview
-        +desktop()
-        col(1/3)
-
-    process
-        +desktop()
-        col(2/3)
-        +tablet()
-        color red
+or red
 ``

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title>Layout</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Welcome home">
+    <meta name="keywords" content="home, keyword2">
+    <link rel="stylesheet" href="/styles/one.css">
+    <!-- link(rel='stylesheet', href='styles/semantic.css') -->
+  </head>
+  <body>
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
+      </div>
+      <div class="side-navigation side-navigation-right">
+        <ul>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/layout">Layout</a><a href="/learn/install/plugins.html">Install Plugins</a><a href="/learn/blocks/modals.html">Modals</a><a href="/learn/blocks/lightbox.html">Lightbox</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="screen">
+      <logo><a id="open-left" href="#"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="logo circular picture"></a></logo>
+      <div id="top-picture">
+      </div>
+      <div id="content">
+        <div id="intro">
+          <h1>Slideshow and Lightbox</h1>
+          <p>Scroll or swipe through all different kinds of content. On a desktop, tablet or smartphone, inside a HTML element or as a lightbox popup.</p>
+          <p></p>
+        </div>
+        <section>
+          <h2>Lightbox</h2>
+          <p>Fire the plugin on a (set of) thumbnail(s) and it will create a lightbox popup with a slider for the enlarged images.<br>Create a gallery from the targeted anchors.</p>
+          <p>This lightbox has been set up with a thumbnail pagination and inline-buttons:</p>
+          <div id="lightbox" class="small pictures">data-snap-ignore="true"<a href="/pictures/products/product-1.jpg" title="Lamps"><img src="/pictures/products/product-1-sm.jpg"></a><a href="/pictures/products/product-2.jpg" title="Chair"><img src="/pictures/products/product-2-sm.jpg"></a><a href="/pictures/products/product-3.jpg" title="Lots of Chairs"><img src="/pictures/products/product-3-sm.jpg"></a><a href="/pictures/products/product-4.jpg" title="More Chairs"><img src="/pictures/products/product-4-sm.jpg"></a></div>
+          <pre><code class="js">$("#lightbox a").tosrus({
+  buttons    : "inline",
+ pagination : {
+   add        : true,
+  type       : "thumbnails"
+  }
+});</code></pre><br>
+          <p>Besides images, you can also scroll through YouTube and Vimeo video&apos;s and any other type of HTML:</p>
+          <div id="example-3" class="links"><a href="http://www.youtube.com/watch?v=INscMGmhmX4">YouTube: Grumpy cat.</a><br><a href="http://vimeo.com/37328349">Vimeo: Flying cat.</a><br><a href="#hidden-content">Some hidden HTML.</a></div>
+          <div class="hidden">
+            <div id="hidden-content" style="max-width: 750px;"><img src="http://lorempixel.com/200/200/cats/5/" style="float: right; margin: 0 0 20px 20px;">
+              <h3>Kitty ipsum dolor sit amet</h3>
+              <p>Purr attack in viverra nullam, jump on the table puking chase the red dot biting run fluffy fur tempus et. Jump on the table iaculis tortor tail flick eat egestas, jump on the table zzz sleep in the sink chuf. Lay down in your way orci turpis knock over the lamp vestibulum aliquam, ac shed everywhere non judging you shed everywhere scratched. Accumsan egestas scratched puking scratched tincidunt a, purr dolor enim ut jump on the table orci turpis libero. Vel non vel amet, stretching jump litter box eat sagittis nunc non. Nunc chuf pellentesque leap et ac, tortor climb the curtains stuck in a tree sollicitudin. Sagittis nibh aliquam nunc, tortor stretching rhoncus suspendisse hiss accumsan rhoncus litter box. Consectetur jump on the table dolor suscipit suscipit hiss, iaculis biting mauris a I don&apos;t like that food.</p>
+              <p>Purr judging you nam dolor rip the couch, purr tincidunt a tristique give me fish aliquam climb the curtains pharetra. I don&apos;t like that food vel puking hairball, nam pellentesque attack consectetur suspendisse sleep in the sink feed me. Sleep on your face tortor faucibus chuf hairball, leap quis nunc sleep in the sink egestas meow. Tail flick sleep in the sink tincidunt a sunbathe enim, pellentesque scratched purr sleep on your face sagittis. Litter box hiss shed everywhere etiam, biting non aliquam egestas tincidunt a enim ut tail flick iaculis. Et mauris a aliquam run suscipit mauris a, attack stuck in a tree stuck in a tree iaculis lay down in your way sollicitudin.</p>
+            </div>
+          </div>
+          <pre>\n$("#example a").tosrus();
+          </pre>
+        </section>
+        <hr>
+        <section>
+          <h2>Inline slider examples</h2>
+          <p>Fire the plugin on a &quot;wrapper&quot; with existing content, and the popup gallery is replaced with an inline slider.<br>&#x9;&#x9;&#x9;&#x9;&#x9;Just like the lightbox popup, the slides in this slider are responsive by default.</p>
+          <p>This slider has been set up to show three slides and is infinite:</p>
+          <div id="carosel" data-snap-ignore="true" class="gallery"><a href="/pictures/products/product-1.jpg" title="Lamps"><img src="/pictures/products/product-1-sm.jpg"></a><a href="/pictures/products/product-2.jpg" title="Chair"><img src="/pictures/products/product-2-sm.jpg"></a><a href="/pictures/products/product-3.jpg" title="Lots of Chairs"><img src="/pictures/products/product-3-sm.jpg"></a><a href="/pictures/products/product-4.jpg" title="More Chairs"><img src="/pictures/products/product-4-sm.jpg"></a></div>
+          <pre>\n$("#example").tosrus({
+   infinite   : true,
+   slides     : {
+      visible    : 3
+   }
+});
+          </pre><br>
+          <p>This slider has been set up to so that the images fill up the wrapper. It has no buttons, only a pagination:</p>
+          <div id="slideshow" data-snap-ignore="true" class="slider"><a href="#" title="Lamps"><img src="/pictures/products/product-1.jpg"></a><a href="#" title="Chair"><img src="/pictures/products/product-2.jpg"></a><a href="#" title="Lots of Chairs"><img src="/pictures/products/product-3.jpg"></a><a href="#" title="More Chairs"><img src="/pictures/products/product-4.jpg"></a></div>
+          <pre>\n$("#example").tosrus({
+   buttons    : false,
+   pagination : {
+      add          : true
+   },
+   slides     : {
+      scale      : "fill"
+   }
+});</pre>
+        </section>
+      </div>
+    </div>
+    <script src="/scripts/libraries/jquery.min.js"></script>
+    <script src="/scripts/libraries/highlight.min.js">  </script>
+    <script src="/scripts/one.js"></script><script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+    FastClick.attach(document.body);
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

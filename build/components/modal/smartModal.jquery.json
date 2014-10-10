@@ -1,0 +1,41 @@
+{
+  "name": "smartModal",
+  "version": "2.2.1",
+  "title": "jQuery.smartModal",
+  "description": "A simple, lightweight jQuery modal plugin that's highly configurable, easy-to-use &amp; implement. Includes multiple implementation options like timed, automatic, sticky modals and more! It has the ability to show modals only once per user using HTML5 web storage or jQuery.cookie as a fallback.",
+  "keywords": [
+    "modal",
+    "lightbox",
+    "popin",
+    "popup",
+    "overlay",
+    "dialog",
+    "prompt",
+    "alert"
+  ],
+  "author": {
+    "name": "Ben Marshall",
+    "url": "http://www.benmarshall.me"
+  },
+  "maintainers": [
+    {
+      "name": "Ben Marshall",
+      "email": "me@benmarshall.me",
+      "url": "http://www.benmarshall.me"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.10",
+    "jquery-cookie": ">=1.0"
+  },
+  "homepage": "http://www.benmarshall.me/jquery-smartmodal/",
+  "docs": "https://github.com/bmarshall511/jquery-smartmodal",
+  "download": "http://plugins.jquery.com/smartModal/",
+  "bugs": "https://github.com/bmarshall511/jquery-smartModal/issues"
+}

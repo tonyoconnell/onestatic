@@ -31,7 +31,7 @@
     margin 15px
   h4
     padding 15px
-    border-top 1px solid rgba(255, 255, 255, 0.1)
+    border-top 1px solid black
     margin-bottom 0
   ul
     padding 0
@@ -40,8 +40,8 @@
   li
     & > a
       display block
-      border-bottom 1px solid rgba(0,0,0, 0.1)
-      border-top 1px solid rgba(255, 255, 255, 0.1)
+      border-bottom 1px solid black
+      border-top 1px solid black
       padding 15px
       font-weight bold
       text-shadow 0 1px 0 #000
@@ -68,6 +68,45 @@
 .snapjs-expand-left .side-navigation-left,
 .snapjs-expand-right .side-navigation-right
   width 100%
+
+#nav
+  display block
+  width 280px
+  margin 0 auto
+  li
+    ul
+      display none
+      background #4a5b78
+      li
+        a
+          display block
+          background none
+          padding 10px 0px
+          padding-left 30px
+          font-size 1.1em
+          text-decoration none
+          font-weight bold
+          color #e3e7f1
+          text-shadow 1px 1px 0px #000
+          &:hover
+            background #394963
+  & > li
+    & > a
+      display block
+      padding 16px 18px
+      font-size 1.3em
+      font-weight bold
+      color #d4d4d4
+      text-decoration none
+      border-bottom 1px solid #212121
+      background-color #343434
+
+
+#nav > li > a:hover, #nav > li > a.open
+  color #e9e9e9
+  border-bottom-color #384f76
+  background-color #6985b5
+
 
 
 

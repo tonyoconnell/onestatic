@@ -59,7 +59,6 @@ npm install module-name --save-dev
 
 var gulp = require('gulp'), // Gulp.js
     plumber = require('gulp-plumber'), // Keeps Gulp running after an error
-    imagemin = require('gulp-imagemin'), // Compress Gif, Jpeg and SVG images
     rename = require('gulp-rename'), // Renames files
     clean = require('gulp-clean'), // Cleans files and folders
     concat = require('gulp-concat'), // Combines CSS and Javascript
@@ -113,6 +112,7 @@ Convert Jade to HTML and copy to the server.
     gulp.task('page', function() {
      gulp.src('../build/pages/**/*.jade')
     .pipe(plumber())
+    .pipe(changed(styles + '*.jade'))    
     .pipe(jade({
       pretty: true
     }))
@@ -212,16 +212,16 @@ gulp.task('default', function() {
     gulp.start( 'page', 'picture', 'font', 'style', 'script' ,'server')
 
 // watch for changes and run tasks
-        gulp.watch('../build/pages/**/*.jade', function(event){
+        gulp.watch('../build/pages/**/*', function(event){
             gulp.start('page', 'reload');
         });
-        gulp.watch('../build/templates/**/*.jade', function(event){
+        gulp.watch('../build/templates/**/*', function(event){
             gulp.start('page', 'reload');
         });
         gulp.watch('../build/components/**/*', function(event){
             gulp.start('component');
         });
-        gulp.watch('../build/blocks/**/*.jade', function(event){
+        gulp.watch('../build/blocks/**/*', function(event){
             gulp.start('page', 'reload');
         });
         gulp.watch(pictures + '**/*', function(event){
@@ -230,10 +230,10 @@ gulp.task('default', function() {
         gulp.watch(fonts  + '**/*', function(event){
             gulp.start('font');
         });
-        gulp.watch(styles + '**/*.styl', function(event){
+        gulp.watch(styles + '**/*', function(event){
             gulp.start('style');
         });
-        gulp.watch(scripts + '**/*.js', function(event){
+        gulp.watch(scripts + '**/*', function(event){
             gulp.start('script', 'reload');
         });
     });

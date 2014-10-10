@@ -15,14 +15,18 @@
     <meta name="description" content="Welcome home">
     <meta name="keywords" content="home, keyword2">
     <link rel="stylesheet" href="/styles/one.css">
-    <!-- link(rel='stylesheet', href='styles/semantic.css')-->
+    <!-- link(rel='stylesheet', href='styles/semantic.css') -->
   </head>
   <body>
     <div class="side-navigations">
-      <div class="side-navigation side-navigation-left">
-        <ul>
-          <li><a href="/blocks/pictures.html">Pictures</a></li>
-          <li><a href="noDrag.html">Labels</a></li>
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
           <li><a href="dragElement.html">Drag Element</a></li>
           <li><a href="rightDisabled.html">Right Disabled</a></li>
           <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
@@ -30,27 +34,38 @@
       </div>
       <div class="side-navigation side-navigation-right">
         <ul>
-          <li><a href="default.html">Right</a></li>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/layout">Layout</a><a href="/learn/install/plugins.html">Install Plugins</a><a href="/learn/blocks/modals.html">Modals</a><a href="/learn/blocks/lightbox.html">Lightbox</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
     <div id="screen">
-      <logo><a id="open-left" href="#" class="toggler"><img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="circular picture"></a></logo>
-      <div id="content"><h1 id="jeet">Jeet</h1>
-<pre><code>(ratios = 1, offset = 0, cycle = 0, uncycle = 0, gutter = jeet-gutter)
-</code></pre><p>hello</p>
-<pre><code class="lang-css">.ui.widget .image {
-float: left;
-width: 2em;
-}
-.ui.widget .content {
-color: #000000;
-}
-/* content is only floated if image exists */
-.ui.widget .image + .content {
-margin-left: 3em;
-}
-</code></pre>
+      <logo><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="circular picture"></a></logo>
+      <div id="content"><h1 id="layout">Layout</h1>
+<p>ONE allows you to create beautiful, responsive layouts your web pages using stylesheets only. 
+This means you don&#39;t have to litter your HTML with layout code. 
+Just describe each section of your webpage semantically and define your layouts in your CSS. 
+To get started open </p>
+<pre><code>styles --&gt; screens --&gt; screens.styl
+</code></pre><pre><code>@import &#39;jeet&#39;
+@import &#39;rupture&#39;
+
+body
+  center(80%)
+    overview
+        +desktop()
+        col(1/3)
+
+    process
+        +desktop()
+        col(2/3)
+        +tablet()
+        col
+</code></pre><p>(ratios = 1, offset = 0, cycle = 0, uncycle = 0, gutter = jeet-gutter)
+```</p>
 <h2 id="column">COLUMN</h2>
 <p>column (also aliased as col). You specify an initial ratio, either as fractions or decimals, then pass the parent container&#39;s context ratio to maintain consistent gutters as you nest.</p>
 <h2 id="offset">Offset</h2>
@@ -109,20 +124,8 @@ jeet = require(&quot;jeet&quot;)</p>
 <a href="https://github.com/mojotech/jeet/tree/master/stylus#usage-example">https://github.com/mojotech/jeet/tree/master/stylus#usage-example</a>
 <a href="https://github.com/jenius/rupture">https://github.com/jenius/rupture</a>
 <a href="https://github.com/muraken720/jeet-gulp">https://github.com/muraken720/jeet-gulp</a></p>
-<p>```
-@import &#39;jeet&#39;
-@import &#39;rupture&#39;</p>
-<p>body
-  center(80%)
-    overview
-        +desktop()
-        col(1/3)</p>
-<pre><code>process
-    +desktop()
-    col(2/3)
-    +tablet()
-    color red
-</code></pre><p>``</p>
+<p>or red
+``</p>
 
       </div>
     </div>
@@ -133,5 +136,67 @@ var snapper = new Snap({
       element: document.getElementById('screen')
   });
 </script>
+
+<script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+    FastClick.attach(document.body);
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>

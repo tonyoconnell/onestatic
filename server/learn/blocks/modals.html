@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title>Modals: ONE</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modals">
+    <meta name="keywords" content="Modals">
+    <link rel="stylesheet" href="styles/monokai.css">
+    <title>Modals: ONE</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Modals">
+    <meta name="keywords" content="Modals">
+    <link rel="stylesheet" href="/styles/one.css">
+    <!-- link(rel='stylesheet', href='styles/semantic.css') -->
+  </head>
+  <body>
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
+      </div>
+      <div class="side-navigation side-navigation-right">
+        <ul>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/layout">Layout</a><a href="/learn/install/plugins.html">Install Plugins</a><a href="/learn/blocks/modals.html">Modals</a><a href="/learn/blocks/lightbox.html">Lightbox</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="screen">
+      <logo><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="circular picture"></a></logo>
+      <div id="content"><h1 id="jquery-smartmodal">jQuery.smartModal</h1>
+<p>A simple, lightweight jQuery modal plugin that&#39;s highly configurable, easy-to-use &amp; implement. Includes multiple implementation options like timed, automatic, sticky modals and more! It has the ability to show modals only once per user using HTML5 web storage or <a href="https://github.com/carhartl/jquery-cookie">jQuery.cookie</a> as a fallback.</p>
+<p>Visit <a href="http://www.benmarshall.me/jquery-smartmodal/">http://www.benmarshall.me/jquery-smartmodal/</a> for more information.</p>
+<h2 id="installation">Installation</h2>
+<p>Include the <code>jquery.smartModal.js</code> script <em>after</em> the jQuery library (unless you are packaging scripts somehow else) then initialize the plugin:</p>
+<pre><code class="lang-html">&lt;script src=&#39;jquery.smartModal.js&#39;&gt;&lt;/script&gt;
+&lt;!-- Optional, fallback for older browsers that don&#39;t support webStorage. --&gt;
+&lt;script src=&#39;jquery.cookie.js&#39;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(function() {
+  $.smartModal();
+});
+&lt;/script&gt;
+</code></pre>
+<p><strong>Do not include the script directly from GitHub</strong>. The file is being served as text/plain and as such being blocked in Internet Explorer on Windows 7 for instance (because of the wrong MIME type). Bottom line: GitHub is not a CDN.</p>
+<p>Add the CSS from the <code>jquery.smartModal.css</code> to your exisiting CSS or link to it directly:</p>
+<pre><code class="lang-html">&lt;link rel=&#39;stylesheet&#39; href=&#39;jquery.smartModal.css&#39;&gt;
+</code></pre>
+<p><em>Feel free to edit the CSS to suit your site&#39;s needs.</em></p>
+<h2 id="usage">Usage</h2>
+<p>To get started, create your modal box by adding the class, <code>smartmodal</code> to it. You can define a <em>trigger class</em> by specifying the <code>id</code> attribute:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot; id=&quot;triggerID&quot;&gt;I&#39;m a normal modal!&lt;/div&gt;
+&lt;a href=&quot;#&quot; class=&quot;triggerID&quot;&gt;Click me&lt;/a&gt; to trigger a normal modal.
+</code></pre>
+<p>Now when a user clicks on an element with the <code>triggerID</code> class, the modal will popup.</p>
+<h2 id="examples">Examples</h2>
+<p>A basic modal with a trigger:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot; id=&quot;triggerID&quot;&gt;I&#39;m a normal modal!&lt;/div&gt;
+&lt;a href=&quot;#&quot; class=&quot;triggerID&quot;&gt;Click me&lt;/a&gt;
+</code></pre>
+<p>A modal that only get&#39;s shown once:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal once&quot; id=&quot;triggerID&quot; data-expires=&quot;7&quot;&gt;I&#39;ll only get shown once!&lt;/div&gt;
+&lt;a href=&quot;#&quot; class=&quot;triggerID&quot;&gt;Click me&lt;/a&gt;
+</code></pre>
+<p>A modal that disappears after so many seconds:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot; id=&quot;triggerID&quot; data-time=&quot;5&quot;&gt;I&#39;m a timed modal!&lt;/div&gt;
+&lt;a href=&quot;#&quot; class=&quot;triggerID&quot;&gt;Click me&lt;/a&gt;
+</code></pre>
+<p>A modal that disappears after so many seconds and shows the number of remaining seconds left:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot; id=&quot;triggerID&quot; data-time=&quot;10&quot;&gt;I&#39;m a timed modal, &lt;span class=&quot;sec&quot;&gt;&lt;/span&gt; seconds before I close!&lt;/div&gt;
+&lt;a href=&quot;#&quot; class=&quot;triggerID&quot;&gt;Click me&lt;/a&gt;
+</code></pre>
+<p>A modal that automatically pops up after the page loads:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal auto&quot;&gt;I&#39;m automatic after page load!&lt;/div&gt;
+</code></pre>
+<p>A modal that automatically pops up after a specified number of seconds:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal auto&quot; data-wait=&quot;10&quot;&gt;I&#39;m automatic after 10 seconds!&lt;/div&gt;
+</code></pre>
+<p>A modal that can&#39;t be closed (sticky):</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal sticky auto&quot;&gt;I can&#39;t be closed!&lt;/div&gt;
+</code></pre>
+<p>A sticky modal that&#39;s closed after a specified number of seconds:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal sticky auto&quot; data-time=&quot;9&quot;&gt;You can&#39;t close me, but I&#39;ll close myself after &lt;span class=&quot;sec&quot;&gt;&lt;/span&gt; seconds!&lt;/div&gt;
+</code></pre>
+<p>A sticky modal that can be manually closed after a specified number of seconds:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal sticky auto&quot; data-time=&quot;9&quot; data-close=&quot;manual&quot;&gt;I can&#39;t be closed until &lt;span class=&quot;sec&quot;&gt;&lt;/span&gt; seconds! &lt;a href=&quot;#&quot; class=&quot;close&quot;&gt;Close Me&lt;/a&gt;&lt;/div&gt;
+</code></pre>
+<p>An automated timed sticky modal that can be manually closed after a specified number of seconds:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal sticky auto&quot; data-wait=&quot;10&quot;  data-time=&quot;9&quot; data-close=&quot;manual&quot;&gt;I can&#39;t be closed until &lt;span class=&quot;sec&quot;&gt;&lt;/span&gt; seconds! &lt;a href=&quot;#&quot; class=&quot;close&quot;&gt;Close Me&lt;/a&gt;&lt;/div&gt;
+</code></pre>
+<p>An animated modal:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal sticky auto&quot; data-animation=&quot;top|easeOutBounce|5000&quot;&gt;I&#39;m animated with the easeOutBounce effect that lastes 5 seconds.&lt;/div&gt;
+</code></pre>
+<h2 id="configuration-options">Configuration Options</h2>
+<p><em>smartModal</em> allows for additional configuration options to allow for more flexibility and control over the modals.</p>
+<h3 id="initialization-options">Initialization Options</h3>
+<p>You can set some default options for your modals with initializating the plugin like so:</p>
+<pre><code class="lang-javascript">$.smartModal({
+  overlayDelay: 300,
+  hideDelay: 300,
+  cookieExpires: 7
+});
+</code></pre>
+<h4 id="available-initialization-options">Available Initialization Options</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>overlayDelay</code></td>
+<td><em>Integer.</em> Number of milliseconds it takes for the modal to fade in.</td>
+</tr>
+<tr>
+<td><code>hideDelay</code></td>
+<td><em>Integer.</em> Number of milliseconds it takes for the modal to fade out.</td>
+</tr>
+<tr>
+<td><code>cookieExpires</code></td>
+<td><em>Integer.</em> Number of days until the modal cookies expire.</td>
+</tr>
+<tr>
+<td><code>debug</code></td>
+<td><em>Boolean.</em> Enable/disbale debug mode.</td>
+</tr>
+<tr>
+<td><code>shortkeys</code></td>
+<td><em>Boolean.</em> Enable/disable shortcut keys.</td>
+</tr>
+<tr>
+<td><code>clickClose</code></td>
+<td><em>Boolean.</em> Enable/disbale the ability to close the modals by clicking on the overlay.</td>
+</tr>
+<tr>
+<td><code>animationDuration</code></td>
+<td><em>Integer.</em> Default number of milliseconds for the animation duration.</td>
+</tr>
+<tr>
+<td><code>animationEasing</code></td>
+<td><em>String.</em> The default easing effect for the modal animation. See <a href="http://easings.net/">http://easings.net/</a></td>
+</tr>
+<tr>
+<td><code>gaTracking</code></td>
+<td><em>Boolean.</em> Enable/disable Google Analytics event tracking.</td>
+</tr>
+<tr>
+<td><code>onOpen</code></td>
+<td><em>Function.</em> Callback function when the modal is opened. Returns the modal ID.</td>
+</tr>
+<tr>
+<td><code>onClose</code></td>
+<td><em>Function.</em> Callback function when the modal is closed. Returns the modal ID.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modal-class-attribute-options">Modal Class Attribute Options</h3>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>once</code></td>
+<td>Will only show the modal once per page load. <a href="https://github.com/carhartl/jquery-cookie">jquery.cookie</a> will need to be loaded to enable modals to be shown once per visit.</td>
+</tr>
+<tr>
+<td><code>auto</code></td>
+<td>Enables the modal to popup automatically when the page is loaded. You can specify the <code>data-wait</code> attribute to set the number of seconds before the modal pops up.</td>
+</tr>
+<tr>
+<td><code>sticky</code></td>
+<td>Disables the ability to close the modal.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modal-attribute-options">Modal Attribute Options</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data-expires</code></td>
+<td><em>Integer.</em> Specify the number of days until the cookie expires.</td>
+</tr>
+<tr>
+<td><code>data-time</code></td>
+<td><em>Integer.</em> Specify the number of seconds the modal should be visible.</td>
+</tr>
+<tr>
+<td><code>data-wait</code></td>
+<td><em>Integer</em> Specify the number of seconds before the modal should popup. Should be used with the <code>auto</code> class.</td>
+</tr>
+<tr>
+<td><code>data-close</code></td>
+<td><em>String (manual).</em> Disables the modal from closing automatically. Used in conjunction with <code>data-time</code> and the <code>sticky</code> class.</td>
+</tr>
+<tr>
+<td><code>data-animation</code></td>
+<td><em>String (start effect duration).</em> Specifies the modals animation settings. <strong>Requires jQuery UI Effects component.</strong></td>
+</tr>
+<tr>
+<td><code>data-name</code></td>
+<td><em>String.</em> The name of the modal. Used for GA event tracking.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="additional-modal-options">Additional Modal Options</h3>
+<h4 id="show-number-of-seconds-remaining">Show number of seconds remaining</h4>
+<p>You can display the number of remaining seconds until the modal disappears within the modal by applying the <code>sec</code> class to an element:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot; data-time=&quot;10&quot;&gt;I&#39;m a timed modal &lt;span class=&quot;sec&quot;&gt;&lt;/span&gt; seconds before I close!&lt;/div&gt;
+</code></pre>
+<h4 id="add-a-close-trigger-in-the-modal">Add a close trigger in the modal</h4>
+<p>You can easily add a close trigger to allow the modal to close when a user clicks on it:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot;&gt;I&#39;m a normal modal! &lt;a href=&quot;#&quot; class=&quot;close&quot;&gt;Close Me&lt;/a&gt;&lt;/div&gt;
+</code></pre>
+<h2 id="api-methods">API Methods</h2>
+<p>To make it easy to call jQuery.smartModal&#39;s methods, you can use it&#39;s API:</p>
+<pre><code class="lang-javascript">$.smartModal(&#39;show&#39;, &#39;modalID&#39;); // Shows a modal
+$.smartModal(&#39;hide&#39;, &#39;modalID&#39;); // Hides a modal
+$.smartModal(&#39;settings&#39;, settingsObj); // Define smartModal&#39;s default settings
+$.smartModal(&#39;init&#39;, settingsObj); // Initialize the smartModal plugin
+</code></pre>
+<h2 id="cross-browser-compatibility">Cross-Browser Compatibility</h2>
+<p>This plugin has been tested in the following browsers (should also work in IE, but haven&#39;t tested):</p>
+<ul>
+<li>Google Chome<ul>
+<li>Version 27+</li>
+</ul>
+</li>
+<li>Firefox<ul>
+<li>Version 21+</li>
+</ul>
+</li>
+<li>Safari<ul>
+<li>Version 6+</li>
+</ul>
+</li>
+<li>Opera<ul>
+<li>Version 12+</li>
+</ul>
+</li>
+</ul>
+<h2 id="development">Development</h2>
+<ul>
+<li>Source hosted at <a href="https://github.com/bmarshall511/jquery-smartModal">GitHub</a></li>
+<li>Report issues, questions, feature requests on <a href="https://github.com/bmarshall511/jquery-smartModal/issues">GitHub Issues</a></li>
+</ul>
+<h3 id="changelog">Changelog</h3>
+<h4 id="version-2-2-1">Version 2.2.1</h4>
+<ul>
+<li>Updated the jquery.cookie plugin to v1.4.1</li>
+<li>Added grunt configuration files</li>
+<li>Updated the jQuery UI plugin to v1.11.0</li>
+<li>Integrated GA Universal Analytics</li>
+</ul>
+<h4 id="version-2-2-0">Version 2.2.0</h4>
+<ul>
+<li>Created callback functions for on open and on close (<a href="https://github.com/bmarshall511/jquery-smartModal/issues/19">https://github.com/bmarshall511/jquery-smartModal/issues/19</a>)</li>
+</ul>
+<h4 id="version-2-1-0">Version 2.1.0</h4>
+<ul>
+<li>Added the ability to manually trigger a modal that&#39;s set to show only once (<a href="https://github.com/bmarshall511/jquery-smartModal/issues/15">https://github.com/bmarshall511/jquery-smartModal/issues/15</a>)</li>
+</ul>
+<h4 id="version-2-0-0">Version 2.0.0</h4>
+<ul>
+<li>Fixed issue the modal woudn&#39;t initialize the settings object is defined</li>
+<li>Changed the GA event tracking naming convention structure</li>
+<li>Fixed JS error when the GA tracking script hasn&#39;t be loaded</li>
+<li>Fixed the missing <code>shortkey</code> setting</li>
+</ul>
+<h4 id="version-1-1-2">Version 1.1.2</h4>
+<ul>
+<li>Fixed issue where the modal wouldn&#39;t initialize when no settings are defined</li>
+<li>Fixed problem when trying to detect if Google Analytics tracking script has been loaded</li>
+<li>Integrated Google Event Tracking (<a href="https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide">https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide</a>)</li>
+</ul>
+<h4 id="version-1-1-1">Version 1.1.1</h4>
+<ul>
+<li>Fixed issue with close trigger</li>
+<li>Added the ability for modal animations</li>
+<li>Added minified version of the script</li>
+<li>Cleaned-up JS with JSlint.com</li>
+<li>Started on integrating Google Analytics event tracking</li>
+</ul>
+<h4 id="version-1-1-0">Version 1.1.0</h4>
+<ul>
+<li>Added API methods</li>
+<li>Fixed issue with timeouts and intervals</li>
+<li>Added the ability to create sticky timed modals</li>
+<li>Added the ability for a <em>close</em> trigger in the modal</li>
+<li>Added debugging check for smartModals with duplicate id attributes</li>
+</ul>
+<h2 id="authors">Authors</h2>
+<p><a href="http://www.benmarshall.me">Ben Marshall</a></p>
+
+      </div>
+    </div>
+    <script src="/scripts/libraries/jquery.min.js"></script>
+    <script src="/scripts/libraries/highlight.min.js">  </script>
+    <script src="/scripts/one.js"></script><script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
+
+<script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+    FastClick.attach(document.body);
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
