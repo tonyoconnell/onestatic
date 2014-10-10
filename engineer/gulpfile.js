@@ -81,6 +81,7 @@ var gulp = require('gulp'), // Gulp.js
     fontface = require('stylus-font-face'),
     uncss = require('gulp-uncss'),
     autoprefixer = require('autoprefixer-stylus'),
+    prettify = require('gulp-jsbeautifier'),
     browsersync  = require('browser-sync'), // Live Reload 
     wait = require('gulp-wait'), // Waits a while
     uglify = require('gulp-uglify'), // Minifies CSS
@@ -164,7 +165,7 @@ Build CSS classes from Stylus
     .pipe(changed(styles + '*.styl'))
     .pipe(stylus({compress: false, use: fontface()}))
     .pipe(gulp.dest(server_styles))
-     gulp.src(styles + '**/*.css')
+     gulp.src(styles + 'css/*.css')
     .pipe(gulp.dest(server_styles)) 
     .pipe(browsersync.reload({stream: true}))
     .pipe(size())
@@ -180,15 +181,9 @@ Build your scripts
 */
 
    gulp.task('script', function () {
-    gulp.src(['../build/scripts/one.js','../build/scripts/plugins/**/*.js', '!../build/scripts/**/*.min.js'])
+    gulp.src(['../build/scripts/one.js','../build/scripts/plugins/**/*.js', '../build/scripts/libraries/**/*.js'])
     .pipe(plumber())
     .pipe(changed(scripts + '**/*.js'))
-    .pipe(jshint())
-/*    .pipe(jshint.reporter('default')) */
-    .pipe(concat('one.js'))
-    .pipe(gulp.dest(server_scripts))
-//    .pipe(uglify())
-     gulp.src(['../build/scripts/libraries/*.min.js'])
     .pipe(gulp.dest(server_scripts))
     .pipe(browsersync.reload({stream: true}))
     .pipe(size())

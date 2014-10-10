@@ -8,7 +8,27 @@
     <meta name="description" content="Welcome home">
     <meta name="keywords" content="home, keyword2">
     <link rel="stylesheet" href="/styles/one.css">
-    <!-- link(rel='stylesheet', href='styles/semantic.css') -->
+    <link rel="stylesheet" href="/styles/semantic.css">
+<script>
+(function () {
+  var
+    eventSupport = ('querySelector' in document && 'addEventListener' in window)
+    jsonSupport  = (typeof JSON !== 'undefined'),
+    jQuery       = (eventSupport && jsonSupport)
+      ? '/scripts/jquery.min.js'
+      : '/scripts/jquery.legacy.min.js'
+  ;
+  document.write('<script src="' + jQuery + '"><\/script>');
+}());
+</script>
+<script src="/scripts/history.js"></script>
+<script src="/scripts/easing.js"></script>
+<script src="/scripts/ace/ace.js"></script>
+<script src="/scripts/tablesort.js"></script>
+<script src="/scripts/waypoints.js"></script>
+<script src="/scripts/semantic.min.js"></script>
+<script src="/scripts/semantic.js"></script>
+
   </head>
   <body ontouchstart=""><div class="ui menu">
   <a class="active item">
@@ -73,15 +93,14 @@
                 </pre>
       </div>
     </div>
-    <script src="/scripts/jquery.min.js"></script>
-    <script src="/scripts/highlight.min.js">  </script>
-    <script src="/scripts/one.js"></script><script type="text/javascript">
-var snapper = new Snap({
-      element: document.getElementById('screen')
-  });
-</script>
-
-<script type="text/javascript" language="javascript">
+    <script src="/scripts/highlight.min.js"></script>
+    <script src="/scripts/snap.js"></script>
+    <script src="/scripts/jquery.smartModal.js"></script>
+    <script src="/scripts/FlameViewportScale.js"></script>
+    <script src="/scripts/hammer.js"> </script>
+    <script src="/scripts/jquery.cookie.js"></script>
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
+    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
 	jQuery(function( $ ) {
 		$('#lightbox a').tosrus({
 		   infinite   : true,

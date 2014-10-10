@@ -4,7 +4,7 @@ doctype html
 html(lang='en')
   head  
     include ../blocks/head
-    link(rel='stylesheet', href='../styles/side-navigation.css') 
+    link(rel='stylesheet', href='/styles/side-navigation.css') 
   body
     include ../blocks/navigation/side-navigation
     #screen
@@ -15,6 +15,15 @@ html(lang='en')
         block content
     
     script(src='/scripts/jquery.min.js')
-    script(src='/scripts/highlight.min.js')   
-    script(src='/scripts/one.js')
+    script(src='/scripts/highlight.min.js')
+    script(src='/scripts/snap.js')
+    script(src='/scripts/jquery.smartModal.js')
+    script(src='/scripts/FlameViewportScale.js')
+    script(src='/scripts/hammer.js')  
+    script(src='/scripts/jquery.cookie.js')
+    script(src='/scripts/jquery.tosrus.min.all.js')   
+    script(src='/scripts/one-side-navigation.js')
+    script(src='/scripts/nav.js')
     include ../scripts/footer-scripts.html
+    include ../scripts/footer-scripts-side-navigation.html
+

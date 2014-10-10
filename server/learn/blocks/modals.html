@@ -8,8 +8,8 @@
     <meta name="description" content="Modals">
     <meta name="keywords" content="Modals">
     <link rel="stylesheet" href="/styles/one.css">
-    <!-- link(rel='stylesheet', href='styles/semantic.css') -->
-    <link rel="stylesheet" href="../styles/side-navigation.css">
+    <link rel="stylesheet" href="/styles/semantic.css">
+    <link rel="stylesheet" href="/styles/side-navigation.css">
   </head>
   <body>
     <div class="side-navigations">
@@ -257,14 +257,15 @@ $.smartModal(&#39;init&#39;, settingsObj); // Initialize the smartModal plugin
       </div>
     </div>
     <script src="/scripts/jquery.min.js"></script>
-    <script src="/scripts/highlight.min.js">  </script>
-    <script src="/scripts/one.js"></script><script type="text/javascript">
-var snapper = new Snap({
-      element: document.getElementById('screen')
-  });
-</script>
-
-<script type="text/javascript" language="javascript">
+    <script src="/scripts/highlight.min.js"></script>
+    <script src="/scripts/snap.js"></script>
+    <script src="/scripts/jquery.smartModal.js"></script>
+    <script src="/scripts/FlameViewportScale.js"></script>
+    <script src="/scripts/hammer.js"> </script>
+    <script src="/scripts/jquery.cookie.js"></script>
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
+    <script src="/scripts/one-side-navigation.js"></script>
+    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
 	jQuery(function( $ ) {
 		$('#lightbox a').tosrus({
 		   infinite   : true,
@@ -324,6 +325,10 @@ $(function() {
   $.smartModal();
 });
 </script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>hljs.initHighlightingOnLoad();</script><script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
   </body>
 </html>
