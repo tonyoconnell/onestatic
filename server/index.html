@@ -7,63 +7,72 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Welcome home">
     <meta name="keywords" content="home, keyword2">
-    <link rel="stylesheet" href="/styles/one.css">
-    <link rel="stylesheet" href="/styles/semantic.css">
-<script>
-(function () {
-  var
-    eventSupport = ('querySelector' in document && 'addEventListener' in window)
-    jsonSupport  = (typeof JSON !== 'undefined'),
-    jQuery       = (eventSupport && jsonSupport)
-      ? '/scripts/jquery.min.js'
-      : '/scripts/jquery.legacy.min.js'
-  ;
-  document.write('<script src="' + jQuery + '"><\/script>');
-}());
-</script>
-<script src="/scripts/history.js"></script>
-<script src="/scripts/easing.js"></script>
-<script src="/scripts/ace/ace.js"></script>
-<script src="/scripts/tablesort.js"></script>
-<script src="/scripts/waypoints.js"></script>
-<script src="/scripts/semantic.min.js"></script>
-<script src="/scripts/semantic.js"></script>
+    <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
+    <link rel="stylesheet" href="/styles/doc-icon.css">
+    <link rel="stylesheet" href="/styles/one.css">  <script>
+  (function () {
+    var
+      eventSupport = ('querySelector' in document && 'addEventListener' in window)
+      jsonSupport  = (typeof JSON !== 'undefined'),
+      jQuery       = (eventSupport && jsonSupport)
+        ? '/scripts/jquery.min.js'
+        : '/scripts/jquery.legacy.min.js'
+    ;
+    document.write('<script src="' + jQuery + '"><\/script>');
+  }());
+  </script>
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+  <script src="/scripts/history.js"></script>
+  <script src="/scripts/easing.js"></script>
+  <script src="/scripts/tablesort.js"></script>
+  <script src="/scripts/typing.js"></script>
+  <script src="/scripts/semantic.min.js"></script>
+  <script src="/scripts/one.js"></script>
 
   </head>
-  <body ontouchstart=""><div class="ui menu">
-  <a class="active item">
-    <i class="home icon"></i> Home
-  </a>
-  <a class="item">
-    <i class="mail icon"></i> Messages
-  </a>
-  <div class="right menu">
-    <div class="item">
-      <div class="ui icon input">
-        <input type="text" placeholder="Search...">
-        <i class="search link icon"></i>
+  <body ontouchstart="" class="pusshable">
+    <header>
+      <div id="logo"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="logo circular picture"></a></div>
+      <div id="header-container">
+        <div id="logo-text">
+          <h1>Mid-century Online</h1>
+        </div><nav>
+  <ul>
+    <li>Furniture</li>
+    <li>Lighting</li>
+    <li>Book</li>
+  </ul>
+</nav>
       </div>
+    </header>
+    <div id="top-picture">
     </div>
-  </div>
+    <main><div id="breadcrumbs">
+	<ul>
+		<li class="home">
+			<a data-metric="Clicked Breadcrumb" data-metric-link="home" href="http://mid-centuryonline.com/" title="Go to Home Page">Home</a>
+			<span>/ </span>
+		</li>
+		<li class="category9">
+			<a data-metric="Clicked Breadcrumb" data-metric-link="category9" href="http://mid-centuryonline.com/furniture" title="">Furniture</a>
+			<span>/ </span>
+		</li>
+		<li class="category11">
+			<strong>Objects</strong>
+		</li>
+	</ul>
 </div>
-    <div id="screen">
-      <logo><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="logo circular picture"></a></logo>
-      <div id="top-picture">
-      </div>
-      <div id="content">
-        <h1>Mid-century Online Template
-          <h2><a href="book">Book </a><a href="blocks/pictures.html">Pictures </a><a href="components/navigation/side-navigation">components </a></h2>
-        </h1>
-      </div>
-    </div>
-    <script src="/scripts/highlight.min.js"></script>
-    <script src="/scripts/snap.js"></script>
+      <h1>Mid-century Online Template
+        <h2><a href="book">Book </a><a href="blocks/pictures.html">Pictures </a><a href="components/navigation/side-navigation">components </a></h2>
+      </h1>
+    </main>
     <script src="/scripts/jquery.smartModal.js"></script>
     <script src="/scripts/FlameViewportScale.js"></script>
     <script src="/scripts/hammer.js"> </script>
     <script src="/scripts/jquery.cookie.js"></script>
-    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
-    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script><script type="text/javascript" language="javascript">
 	jQuery(function( $ ) {
 		$('#lightbox a').tosrus({
 		   infinite   : true,
@@ -124,5 +133,51 @@ $(function() {
 });
 </script>
 <script>hljs.initHighlightingOnLoad();</script>
+<script>
+semantic.menu = {};
+
+// ready event
+semantic.menu.ready = function() {
+
+  // selector cache
+  var
+    $menuItem = $('.menu a.item, .menu .link.item'),
+    $dropdown = $('.main.container .menu .dropdown'),
+    // alias
+    handler = {
+
+      activate: function() {
+        if(!$(this).hasClass('dropdown')) {
+          $(this)
+            .addClass('active')
+            .closest('.ui.menu')
+            .find('.item')
+              .not($(this))
+              .removeClass('active')
+          ;
+        }
+      }
+
+    }
+  ;
+
+  $dropdown
+    .dropdown({
+      on: 'hover'
+    })
+  ;
+
+  $menuItem
+    .on('click', handler.activate)
+  ;
+
+};
+
+
+// attach ready event
+$(document)
+  .ready(semantic.menu.ready)
+;
+</script>
   </body>
 </html>

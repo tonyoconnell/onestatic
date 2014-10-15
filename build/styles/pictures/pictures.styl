@@ -1,41 +1,62 @@
-lesscss-percentage(n)
-  (n * 100)%
-/*
- * # Semantic - picture
- * http://github.com/jlukic/semantic-ui/
- *
- *
- * Copyright 2013 Contributors
- * Released under the MIT license
- * http://opensource.org/licenses/MIT
- * 
- */
+/*******************************
+             Logo
+*******************************/
+ #logo
+  z-index 999999
+  fixed top left
+  margin-top 3px
+
+#logo img 
+  width 35px
+  height 35px
+  border 0 !important
+      
+  +tablet()
+    width 45px
+    height 45px  
+  +desktop()
+    width 55px
+    height 55px 
+
+#logo-text
+  +mobile()
+    padding-left 55px
+  +tablet()
+    column(1/2)
+    margin-top 5px
+  +desktop()
+    margin-top 3px
+    column(1/2)  
+
 /*******************************
              picture
 *******************************/
 img
-  max-width 100%
+  max-width 100% !important
+  padding 5px
+  border thin solid #eee !important
+  background white
 .picture
   position relative
   display inline-block
   vertical-align middle
-  max-width 100%
+  max-width 100% !important
+  padding 5px
+  background white
 img.picture
   display block
   background white
+  max-width 100% !important
 .picture img
   display block
-  max-width 100%
+  max-width 100% !important
   height auto
-/*******************************
-            States
-*******************************/
-.disabled.picture
-  cursor default
-  opacity 0.3
-/*******************************
-          Variations
-*******************************/
+  
+#lightbox img
+  max-width 98% !important
+#lightbox
+  max-width 100% !important   
+
 /*--------------
      Rounded
 ---------------*/
@@ -102,3 +123,5 @@ img.picture
 .pictures .picture, .pictures img
   display inline-block
   margin 0em 0.25em 0.5em
+  max-width 100%
+  

@@ -1,31 +1,31 @@
-.button
-  position relative
-  font-size 28px
-  top 0px
-  box-shadow 0 2px 10px rgba(1, 1, 1, 0.25)
-  transition top 0.1s, border-bottom 0.1s, box-shadow 0.1s
-  margin 5px 0px
-  display inline
-  border-radius 1px
-
-  &:first-child
-    border-radius 5px 0 0 5px
-  &:last-child
-    border-radius 0 5px 5px 0
-
-hoverable(color)
-  @extend button
-  background color
-  border solid 1px darken(color, 20%)
-  border-bottom solid 10px darken(color, 20%)
-
-  &:hover
-    top 4px
-    border-bottom solid 6px darken(color, 20%)
-    box-shadow 0 1px 10px rgba(1, 1, 1, 0.25)
+/*
+Buttons
+========
+*/
+.button 
+  margin 10px auto
+  padding 20px 25px
+  background primary-color
+  border 1px solid white
+  color #fff
+  text-align center
+  text-decoration none
+  text-transform uppercase
+  transform-style flat
+  transition all 250ms ease-out
+  box-shadow 0 18px 10px -10px rgba(31,31,31,0.5)
+  font-size 16px
+  cursor pointer
   
+.button:hover 
+  border-color #dedede
+  background-color #fff
+  background #fff
+  color #000
+  border 1px solid goldenrod
+  box-shadow 0 20px 20px -10px rgba(31,31,31,0.5)
 
-  &:active
-    top 9px
-    border-bottom solid 1px darken(color, 20%)
-    box-shadow 0 0px 0px rgba(1, 1, 1, 0.25)
+.large
+    font-size 20px
+
+

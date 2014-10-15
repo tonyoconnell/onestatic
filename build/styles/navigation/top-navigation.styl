@@ -1,0 +1,68 @@
+nav
+  +mobile
+    column(1/1)
+    width 100%
+    background white
+  +tablet
+    column(1/2)
+
+nav ul
+  text-align left
+  display inline
+  margin 0
+  padding 5px 0
+  list-style none
+  float right
+  font-size 90%
+
+  li
+    display inline-block
+    margin-right -4px
+    position relative
+    padding 10px 15px
+    background #fff
+    cursor pointer
+    -webkit-transition all 0.2s
+    -moz-transition all 0.2s
+    -ms-transition all 0.2s
+    -o-transition all 0.2s
+    transition all 0.2s
+    &:hover
+      background #111
+      color #fff
+      ul
+        display block
+        opacity 1
+        visibility visible
+    ul
+      padding 0
+      position absolute
+      top 48px
+      left 0
+      width 200px
+      -webkit-box-shadow none
+      -moz-box-shadow none
+      box-shadow none
+      display none
+      opacity 0
+      visibility hidden
+      -webkit-transiton opacity 0.2s
+      -moz-transition opacity 0.2s
+      -ms-transition opacity 0.2s
+      -o-transition opacity 0.2s
+      -transition opacity 0.2s
+      li
+        background #111
+        display block
+        color #fff
+        text-shadow 0 -1px 0 #000
+        &:hover
+          background #666
+
+#breadcrumbs
+  padding-left 70px 0
+	ul
+	  list-style none
+	  margin 10px 0  
+  li
+	  display inline-block

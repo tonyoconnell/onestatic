@@ -163,11 +163,11 @@ Build CSS classes from Stylus
      gulp.src(styles + '*.styl')
     .pipe(plumber())
     .pipe(changed(styles + '*.styl'))
-    .pipe(stylus({compress: false, use: fontface()}))
+    .pipe(stylus({ use:[fontface()], sourcemap: { inline: true } }))
     .pipe(gulp.dest(server_styles))
+    .pipe(browsersync.reload({stream: true}))
      gulp.src(styles + 'css/*.css')
     .pipe(gulp.dest(server_styles)) 
-    .pipe(browsersync.reload({stream: true}))
     .pipe(size())
     .pipe(notify({message: 'Styles Applied'}));
 });

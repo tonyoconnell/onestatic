@@ -18,172 +18,26 @@ ONE
 “Art is the elimination of the unnecessary.”
 ― Pablo Picasso
 
-Follow a concise, easy way to converse with your customers, staff and friends in style.  
-Design elegant web and mobile experiences quickly. 
-
-1. Define your colours
-2. Add your logo
-3. Design your type
-4. Layout screens - text first, progresively enhancing to large, high definition displays 
-5. Display media - pages, pictures, animation and video. 
+If you want to add a new add a new stylesheet import it here. 
+If you want to customise your style open my.styl
 
 /*
-Colors 
-=========
+Libraries and Stylesheets 
+=========================
 */
-
-// Your brand color. Used in logo, links, buttons etc.
-primary-color = #111
-// Complimentary colour used for hover and secondary buttons
-secondary-color = goldenrod
-
-
-// Dark color for font, backgrounds etc.
-dark-color = #111
-// Light color font, backgrounds etc.
-light-color = #eee
-
-/*
-Patterns
-========
-*/
-// Light Background Pattern
-light-background()
-  background: url('/pictures/patterns/background.png') repeat
-light-background-secondary()
-  background: url('/pictures/patterns/furley.png') repeat
-grey-background()
-  background: url('/pictures/patterns/furley.png') repeat  
-// Dark Background Pattern
-dark-background()
-  background: url('/pictures/patterns/assault.png') repeat
-
-/*
-Logo 
-=========
-*/
-
-// Location of logo
-logo = '/pictures/logo.png'
-
-// High definition version of logo for retina screens
-logo-xl = '/pictures/logo-xl.png'
-
-logo-text  
-  font-size 30px 
-  
-logo
-  padding 10px 5px
-logo img
-  padding 5px
-  
-/*
-Screens 
-====
-*/
-
-@import 'screens'
-
-
-
-/*
-Type 
-====
-*/
-
-// Font : Your font
-
-font = mco
-base-font-size = 16px
-
-// Paragraph Text : Mobile first 
-
-    
-// Line height 
-p
-  line-height 150%
-// Margin
-  margin = 10px 0
-
-// Smallest Text  
-tiny 
-  font-size 10px
-
-// Heading Font : Font for headings
-font-headings = mco
-
+@import 'my'
+@import 'libraries/jeet'
+@import 'layouts/positions'
+@import 'libraries/rupture'
+@import 'layouts/full'
+@import 'navigation'
 @import 'typography'
 @import 'libraries/nib'
 @import 'libraries/axis'
-
-body  
-  light-background()
-  font-face(mco, '../fonts')
-  
-#content
-  light-background()
-
-
-
-/*
-Buttons
-========
-*/
-.button
-  position relative
-  display inline-block
-  margin 20px auto
-  padding 15px
-  
-  dark-background()
-
-  border: 1px solid #ccc;
-
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  
-  transform-style: flat;
-  transition: all 250ms ease-out;
-  
-  &:before,
-  &:after 
-      content: "";
-      position: absolute;
-      z-index: -2;
-      transition: all 250ms ease-out;
-  
-  &:before 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
-  
-  &:hover 
-    border-color: #dedede;
-    background-color: white
-    light-background-secondary()
-    color black
-    
-    &:before 
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1) inset;
-
-.button-secondary
-  background: #fff;
-  color black
-  padding: 7px 15px;
-
-/*
-Plugins
-========
-*/
-
 @import 'pictures'
-@import 'forms/label'
 @import 'code/monokai'
 @import 'slides/slides'
 @import 'modals/modals'
-
-
+@import 'forms/buttons'
+@import 'forms/tables'
+@import 'pages/products'

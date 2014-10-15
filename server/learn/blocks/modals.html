@@ -7,38 +7,63 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Modals">
     <meta name="keywords" content="Modals">
-    <link rel="stylesheet" href="/styles/one.css">
-    <link rel="stylesheet" href="/styles/semantic.css">
-    <link rel="stylesheet" href="/styles/side-navigation.css">
+    <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
+    <link rel="stylesheet" href="/styles/doc-icon.css">
+    <link rel="stylesheet" href="/styles/one.css">  <script>
+  (function () {
+    var
+      eventSupport = ('querySelector' in document && 'addEventListener' in window)
+      jsonSupport  = (typeof JSON !== 'undefined'),
+      jQuery       = (eventSupport && jsonSupport)
+        ? '/scripts/jquery.min.js'
+        : '/scripts/jquery.legacy.min.js'
+    ;
+    document.write('<script src="' + jQuery + '"><\/script>');
+  }());
+  </script>
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+  <script src="/scripts/history.js"></script>
+  <script src="/scripts/easing.js"></script>
+  <script src="/scripts/tablesort.js"></script>
+  <script src="/scripts/typing.js"></script>
+  <script src="/scripts/semantic.min.js"></script>
+  <script src="/scripts/one.js"></script>
+
   </head>
-  <body>
-    <div class="side-navigations">
-      <div class="side-navigation side-navigation-left nav">
-        <ul id="nav">
-          <li><a href="/index.html">Home</a>
-            <ul>
-              <li><a href="/index.html">Test</a></li>
-            </ul>
-          </li>
-          <li><a href="/book">Book</a></li>
-          <li><a href="dragElement.html">Drag Element</a></li>
-          <li><a href="rightDisabled.html">Right Disabled</a></li>
-          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
-        </ul>
+  <body ontouchstart="" class="pusshable">
+    <header>
+      <div id="logo"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="logo circular picture"></a></div>
+      <div id="header-container">
+        <div id="logo-text">
+          <h1>Mid-century Online</h1>
+        </div><nav>
+  <ul>
+    <li>Furniture</li>
+    <li>Lighting</li>
+    <li>Book</li>
+  </ul>
+</nav>
       </div>
-      <div class="side-navigation side-navigation-right">
-        <ul>
-          <li><a href="/learn/index.html">Learn</a>
-            <ul>
-              <li><a href="/learn/layout">Layout</a><a href="/learn/install/plugins.html">Install Plugins</a><a href="/learn/blocks/modals.html">Modals</a><a href="/learn/blocks/lightbox.html">Lightbox</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+    </header>
+    <div id="top-picture">
     </div>
-    <div id="screen">
-      <logo><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="circular picture"></a></logo>
-      <div id="content"><a href="#" class="triggerID">Click me</a> to trigger a normal modal.<br>
+    <main><div id="breadcrumbs">
+	<ul>
+		<li class="home">
+			<a data-metric="Clicked Breadcrumb" data-metric-link="home" href="http://mid-centuryonline.com/" title="Go to Home Page">Home</a>
+			<span>/ </span>
+		</li>
+		<li class="category9">
+			<a data-metric="Clicked Breadcrumb" data-metric-link="category9" href="http://mid-centuryonline.com/furniture" title="">Furniture</a>
+			<span>/ </span>
+		</li>
+		<li class="category11">
+			<strong>Objects</strong>
+		</li>
+	</ul>
+</div><a href="#" class="triggerID">Click me</a> to trigger a normal modal.<br>
 <br>
 <b>For more information, see <a href="http://www.benmarshall.me/jquery-smartmodal/">jQuery.smartModal Documentation</a></b>.
 <div class="smartmodal auto" data-wait="5" id="triggerID">I'm a normal modal!<br>hello</div>
@@ -254,18 +279,12 @@ $.smartModal(&#39;init&#39;, settingsObj); // Initialize the smartModal plugin
 <h2 id="authors">Authors</h2>
 <p><a href="http://www.benmarshall.me">Ben Marshall</a></p>
 
-      </div>
-    </div>
-    <script src="/scripts/jquery.min.js"></script>
-    <script src="/scripts/highlight.min.js"></script>
-    <script src="/scripts/snap.js"></script>
+    </main>
     <script src="/scripts/jquery.smartModal.js"></script>
     <script src="/scripts/FlameViewportScale.js"></script>
     <script src="/scripts/hammer.js"> </script>
     <script src="/scripts/jquery.cookie.js"></script>
-    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
-    <script src="/scripts/one-side-navigation.js"></script>
-    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script><script type="text/javascript" language="javascript">
 	jQuery(function( $ ) {
 		$('#lightbox a').tosrus({
 		   infinite   : true,
@@ -325,10 +344,52 @@ $(function() {
   $.smartModal();
 });
 </script>
-<script>hljs.initHighlightingOnLoad();</script><script type="text/javascript">
-var snapper = new Snap({
-      element: document.getElementById('screen')
-  });
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+semantic.menu = {};
+
+// ready event
+semantic.menu.ready = function() {
+
+  // selector cache
+  var
+    $menuItem = $('.menu a.item, .menu .link.item'),
+    $dropdown = $('.main.container .menu .dropdown'),
+    // alias
+    handler = {
+
+      activate: function() {
+        if(!$(this).hasClass('dropdown')) {
+          $(this)
+            .addClass('active')
+            .closest('.ui.menu')
+            .find('.item')
+              .not($(this))
+              .removeClass('active')
+          ;
+        }
+      }
+
+    }
+  ;
+
+  $dropdown
+    .dropdown({
+      on: 'hover'
+    })
+  ;
+
+  $menuItem
+    .on('click', handler.activate)
+  ;
+
+};
+
+
+// attach ready event
+$(document)
+  .ready(semantic.menu.ready)
+;
 </script>
   </body>
 </html>

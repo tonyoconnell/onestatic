@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head  
+    include ../blocks/head
+    include ../scripts/header-scripts.html
+  body(ontouchstart='')
+    include ../blocks/navigation/top-navigation.html
+    #screen
+      logo
+        a(href='/index.html')  
+          img.logo.circular.picture(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")
+      #top-picture
+        block top-picture
+      #content
+        block content
+    script(src='/scripts/highlight.min.js')
+    script(src='/scripts/snap.js')
+    script(src='/scripts/jquery.smartModal.js')
+    script(src='/scripts/FlameViewportScale.js')
+    script(src='/scripts/hammer.js')  
+    script(src='/scripts/jquery.cookie.js')
+    script(src='/scripts/jquery.tosrus.min.all.js')   
+    script(src='/scripts/nav.js')
+    script(src='/scripts/one.js')
+    include ../scripts/footer-scripts.html
+ 

@@ -1,45 +1,32 @@
-// 
 // Display fonts on all devices
 @import 'typography/font-face'
 
-
-html
-  font-family font
-  font-size base-font-size
   
+html, body
+  font-family font
+  color primary-color
+  font-size base-font-size
+  +tablet()
+    font-size 110%
+  +desktop()
+    font-size 120%
+
 p 
-// Size 
   font-size base-font-size
   margin 10px 0
-  +tablet()
-    font-size 120%
-    margin 15px 0
-  +desktop()
-    font-size 125%
-    margin 20px 0
-  
-// Progresively enhancing
+
 h3 
   font-size 120%
   margin 10px 0
-  +tablet()
-    font-size 140%
-  +desktop()
-    font-size 140%
+
 h2 
   font-size 130%
   margin 10px 0
-  +tablet()
-    font-size 160%
-  +desktop()
-    font-size 160%
+
 h1 
-  font-size 170%
+  font-size 180%
   margin 10px 0
-  +tablet()
-    font-size 220%
-  +desktop()
-    font-size 250%
+
 
 // Links 
 a
@@ -49,9 +36,3 @@ a
   &:hover 
     color secondary-color
  
-.col-main li 
-  font-size base-font-size
-  +tablet()
-    font-size 115%
-  +desktop()
-    font-size 125%

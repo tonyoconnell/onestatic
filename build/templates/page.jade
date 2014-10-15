@@ -3,23 +3,25 @@ html(lang='en')
   head  
     include ../blocks/head
     include ../scripts/header-scripts.html
-  body(ontouchstart='')
-    include ../blocks/navigation/top-navigation.html
-    #screen
-      logo
+  body.pusshable(ontouchstart='')
+    header
+      #logo
         a(href='/index.html')  
           img.logo.circular.picture(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")
-      #top-picture
-        block top-picture
-      #content
-        block content
-    script(src='/scripts/highlight.min.js')
-    script(src='/scripts/snap.js')
+      #header-container
+        #logo-text
+          h1 Mid-century Online
+        include ../blocks/navigation/navigation.html
+    #top-picture
+        block top-picture      
+    main
+      include ../blocks/navigation/breadcrumbs.html
+      block content
+
     script(src='/scripts/jquery.smartModal.js')
     script(src='/scripts/FlameViewportScale.js')
     script(src='/scripts/hammer.js')  
     script(src='/scripts/jquery.cookie.js')
     script(src='/scripts/jquery.tosrus.min.all.js')   
-    script(src='/scripts/nav.js')
     include ../scripts/footer-scripts.html
  

@@ -1,4 +1,0 @@
-default:
-  - 'jshint'
-  - 'uglify'
-  - 'watch'
