@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+ <html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="snap.css">
+
+    </head>
+    <body>
+
+ <body>
+<!-- Snap Js Code Comes Here -->
+		<div class="side-navigations">
+			<div class="side-navigation side-navigation-left">
+				<div>
+					<ul>
+						<li><a href="default.html">Left</a></li>
+						<li><a href="noDrag.html">No Drag</a></li>
+						<li><a href="dragElement.html">Drag Element</a></li>
+						<li><a href="rightDisabled.html">Right Disabled</a></li>
+						<li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="side-navigation side-navigation-right">
+				<ul>
+					<li><a href="default.html">Right</a></li>
+					<li><a href="noDrag.html">No Drag</a></li>
+					<li><a href="dragElement.html">Drag Element</a></li>
+					<li><a href="rightDisabled.html">Right Disabled</a></li>
+				</ul>
+			</div>
+		</div>
+        
+        <div id="content">
+            <div id="toolbar">
+                <a href="#" id="open-left"></a>
+                <h1>Toggles</h1>
+            </div>
+            <div class="toggler" id="ol">Open Left</div>
+            <div class="toggler" id="or">Open Right</div>
+        </div>
+        <script type="text/javascript" src="snap.js"></script>
+        <script type="text/javascript">
+            var snapper = new Snap({
+                element: document.getElementById('content')
+            });
+            addEvent(document.getElementById('ol'), 'click', function(){
+                snapper.open('left');
+            });
+
+            addEvent(document.getElementById('or'), 'click', function(){
+                snapper.open('right');
+            });
+            
+        </script>
+            
+    
+        
+    </body>
+    </body>
+</html>
+
+

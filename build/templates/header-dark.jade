@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+  head  
+    block page-info 
+    title #{title}
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width')
+    meta(name = 'description', content = description)
+    meta(name = 'keywords', content = keywords)
+    link(rel='stylesheet', href='/styles/doc-icon.css') 
+    link(rel='stylesheet', href='/styles/one.css')
+    link(rel='stylesheet', href='/styles/layout-dark.css')   
+    include ../scripts/header-scripts.html
+  body.pusshable(ontouchstart='')
+    header
+      #logo
+        a(href='/index.html')  
+          img.logo.circular.picture(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")
+      #header-container
+        #logo-text
+          h1 Mid-century Online
+        include ../blocks/navigation/navigation.html
+    #top-picture
+        block top-picture      
+    main
+      include ../blocks/navigation/breadcrumbs.html
+      block content
+
+    script(src='/scripts/jquery.smartModal.js')
+    script(src='/scripts/FlameViewportScale.js')
+    script(src='/scripts/hammer.js')  
+    script(src='/scripts/jquery.cookie.js')
+    script(src='/scripts/jquery.tosrus.min.all.js')   
+    include ../scripts/footer-scripts.html
+ 

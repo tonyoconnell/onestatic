@@ -1,0 +1,73 @@
+global-reset()
+@import 'libraries/jeet'
+
+body
+  light-background()
+
+header
+  box-shadow: 0px 5px 3px -3px #ccc;
+  height 70px
+  z-index 99999999
+  width 100%
+  background #fff
+  color #111
+  +tablet()
+    height 62px
+  +desktop 
+    height 65px
+  
+#header-container
+  +tablet()
+    margin-left 60px
+    margin-right 10px
+  +desktop()
+    center(100%) 
+    margin-left 70px
+    margin-right 10px
+    margin-bottom 5px
+       
+#screen
+  background white
+
+#top-picture
+  margin-bottom 10px  
+
+main
+  center(100%)
+  +mobile()
+    margin 0px 5px
+  +tablet()
+    padding 0px 5px  
+   +desktop()
+    padding-left 10px
+    padding-right 10px
+
+footer
+  margin-top 40px
+  center(100%)
+  dark-background()
+  color white
+  padding 20px
+
+footer .box
+  +tablet()
+    column(1/2, uncycle: 4, cycle: 2)
+  +desktop()
+    column (4/16)
+  font-size 90%
+
+footer .box li 
+  padding 10px
+  color grey
+
+footer a
+  color grey
+  
+footer i
+  padding 10px 10px 10px 0px  
+  
+.icon-text
+    +mobile() 
+      display none
+      
+ 

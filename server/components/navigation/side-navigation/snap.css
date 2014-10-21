@@ -1,0 +1,131 @@
+html, body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+}
+
+
+
+#content {
+  background: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  z-index: 2;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+       -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.side-navigations {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+}
+
+.side-navigation {
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: auto;
+  width: 265px;
+  height: auto;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: width 0.3s ease;
+     -moz-transition: width 0.3s ease;
+      -ms-transition: width 0.3s ease;
+       -o-transition: width 0.3s ease;
+          transition: width 0.3s ease;
+}
+
+.side-navigation-left {
+  left: 0;
+  z-index: 1;
+}
+
+.side-navigation-right {
+  right: 0;
+  z-index: 1;
+}
+
+.snapjs-left .side-navigation-right,
+.snapjs-right .side-navigation-left {
+  display: none;
+}
+
+.snapjs-expand-left .side-navigation-left,
+.snapjs-expand-right .side-navigation-right {
+  width: 100%;
+}
+
+
+
+
+
+/* Default demo styles */
+.snap-content {
+  background: #222;
+}
+
+.side-navigations {
+  background: #222;
+}
+
+.side-navigation {
+  background: #222;
+  color: #eee;
+}
+
+.side-navigation h3 {
+  font-size: 36px;
+  font-weight: normal;
+  margin: 15px;
+}
+
+.side-navigation h4 {
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0;
+}
+
+.side-navigation ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.side-navigation li > a {
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #000;
+  text-decoration: none;
+  color: #ccc;
+  text-indent: 20px;
+}
+
+.side-navigation p {
+  opacity: 0.5;
+  padding: 15px;
+  font-size: 12px;
+}

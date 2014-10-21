@@ -1,0 +1,43 @@
+global-reset()
+
+body
+  light-background()
+
+header
+  fixed: top left
+  border-bottom thin solid #fff
+  height 70px
+  z-index 99999999
+  width 100%
+  background #111
+  color white
+  +tablet()
+    height 62px
+  +desktop 
+    height 65px
+  
+#header-container
+  +tablet()
+    margin-left 60px
+    margin-right 10px
+  +desktop()
+    center(100%) 
+    margin-left 70px
+    margin-right 10px
+    margin-bottom 5px
+       
+#screen
+  background white
+
+main
+  +mobile()
+    margin 0px 5px
+  +tablet()
+    padding 0px 5px  
+   +desktop()
+    padding-left 10px
+    padding-right 10px
+    
+.hidden
+  display none
+

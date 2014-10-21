@@ -15,9 +15,10 @@ html(lang='en')
     #top-picture
         block top-picture      
     main
-      include ../blocks/navigation/breadcrumbs.html
       block content
 
+    include ../blocks/footer.html
+    include ../blocks/contact.html
     script(src='/scripts/jquery.smartModal.js')
     script(src='/scripts/FlameViewportScale.js')
     script(src='/scripts/hammer.js')  

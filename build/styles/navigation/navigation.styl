@@ -5,7 +5,7 @@ nav
   +desktop
     column(1/2)
 
-  ul
+nav  ul
     list-style none
     +tablet()
       margin-top 15px
@@ -14,7 +14,7 @@ nav
       margin-top 15px
       float right  
 
-  li
+nav  li
     display inline-block
     padding 10px 15px
     cursor pointer
@@ -29,9 +29,32 @@ nav
 
 #breadcrumbs
   padding 10px 0
-	ul
-	  list-style none
-	  margin 10px 0  
-  li
-	  display inline-block
-    
+
+#breadcrumbs ul
+  list-style none
+  margin 10px 0  
+  
+#breadcrumbs li
+  display inline-block
+  list-style none
+
+.tag-cloud 
+  padding-top 20px
+  
+.tag-cloud ul li 
+  float: left
+  margin: 4px 4px 4px 0
+  height: 32px
+  list-style none
+  font-size 12px
+  padding 0px 
+  
+.tag-cloud ul li a 
+  padding 10px 17px
+  color #cacaca
+  border-radius 3px
+  background #323232
+  
+.tag-cloud ul li:hover a 
+  background #000000
+  color #fff
