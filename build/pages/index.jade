@@ -1,16 +1,17 @@
 extends ../templates/page
 
 append page-info
-    - title = 'Template : Home'
-    - description = 'Welcome home'
-    - keywords = 'home, keyword2'
+	- title = 'Template : Home'
+	- description = 'Welcome home'
+	- keywords = 'home, keyword2'
  
 
 block top-picture
-    include ../blocks/slideshows/slideshow-home
+	include ../blocks/slideshows/slideshow-home
 
 block content
-    include ../blocks/just-in.html
+	include ../blocks/forms/register.html
+	include ../blocks/just-in.html
 
 
 

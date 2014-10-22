@@ -32,6 +32,7 @@
   <script src="/scripts/semantic.min.js"></script>
   <script src="/scripts/one.js"></script>
 
+    <script src="/scripts/jquery.promin.js"></script>
   </head>
   <body ontouchstart="" class="pusshable">
     <header>
@@ -51,14 +52,56 @@
     <div id="top-picture">
       <div id="slideshow"><a href="#" title="Lamps"><img src="/pictures/slideshows/slide-1.jpg"></a><a href="#" title="Chair"><img src="/pictures/slideshows/slide-2.jpg"></a><a href="#" title="Lots of Chairs"><img src="/pictures/slideshows/slide-3.jpg"></a><a href="#" title="More Chairs"><img src="/pictures/slideshows/slide-2.jpg"></a></div>
     </div>
-    <main><div class="smartmodal auto" data-wait="5" id="triggerID">Find Rare and Beautiful Mid-century Modern Furniture<br><br>
-<form action="#" method="post" id="subscribe-form" name="subscribe-form">
-	<input type="email" name="email" id="subscribe-email" placeholder="Your Email" class="email-form">
-	<button type="submit" class="button">Shop Now</button>
+    <main><div class="smartmodal auto" data-wait="5" id="triggerID">
+<img src="/pictures/logos/logo.png" class="logo-m">
+<form action="https://mid-centuryonline.com/customer/account/createpost/" id="form" enctype="application/x-www-form-urlencoded" method="post">
+    <input type="hidden" name="success_url" value="">
+    <input type="hidden" name="error_url" value="">
+      <div class="pm-step">
+        <p>Input your email to sign up for exclusive membership</p>
+        <input type="text" name="email" id="email_address" placeholder="name@company.com" value="" title="Email Address" class="input-text validate-email required-entry">
+    </div>
+    <div class="pm-step">
+        <p>What is your first name?</p>
+        <input type="text" id="firstname" name="firstname" value="" title="First Name" maxlength="255" class="input-text required-entry">
+    </div>
+    <div class="pm-step">
+        <p>What's your last name</p>
+        <input type="text" id="lastname" name="lastname" value="" title="Last Name" maxlength="255" class="input-text required-entry">
+    </div>
+  
+    <div class="pm-step">
+        <p>Please choose a password</span></p>
+        <input type="password" name="password" id="password" title="Password" class="input-text required-entry validate-password">
+    </div>
+    <div class="pm-step">
+        <p>Finally, confirm your password</span></p>
+        <input type="password" name="confirmation" title="Confirm Password" id="confirmation" class="input-text required-entry validate-cpassword">
+    </div>
+    <input type="button" id="navigation" class="button shop-now" value="Shop Now" />
 </form>
-</div>
+<script type="text/javascript">
+// Cache the form
+var $form = $('#form');
+// Stuff for the progress bar
+var $bar = $('.progress-bar .bar');
+var steps = $('.pm-step').length;
+// Initialize Promin
+$form.promin({
+// Want to update the bar on every change
+events: {
+change: function(i) {
+$bar.css('width', (i / steps * 100) + '%');
+}
+}
+});
+// Tell the button to go to the next step
+$('#navigation').on('click', function() {
+$form.promin('next');
+});
+</script>
 
-<div id="home-top">
+</div><div id="home-top">
 <div id="just-in">
 
 <h2>Just <span>In</span></h2>

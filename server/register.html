@@ -32,6 +32,7 @@
   <script src="/scripts/semantic.min.js"></script>
   <script src="/scripts/one.js"></script>
 
+    <script src="/scripts/jquery.promin.js"></script>
   </head>
   <body ontouchstart="" class="pusshable">
     <header>
@@ -50,18 +51,54 @@
     </header>
     <div id="top-picture">
     </div>
-    <main><p>
-Sign up for free, exclusive membership
-</p>
-<form>
-<label>Username</label>
-<input type="email" placeholder="Email">
-<button class="button">Shop Now</button>
+    <main><form action="https://mid-centuryonline.com/customer/account/createpost/" id="form" enctype="application/x-www-form-urlencoded" method="post">
+    <input type="hidden" name="success_url" value="">
+    <input type="hidden" name="error_url" value="">
+    <div class="pm-step">
+        <p>First Name</p>
+        <input type="text" id="firstname" name="firstname" value="" title="First Name" maxlength="255" class="input-text required-entry">
+    </div>
+    <div class="pm-step">
+        <p>Last Name</p>
+        <input type="text" id="lastname" name="lastname" value="" title="Last Name" maxlength="255" class="input-text required-entry">
+    </div>
+    <div class="pm-step">
+        <p>Could you fill in your e-mail adress please?</p>
+        <input type="text" name="email" id="email_address" value="" title="Email Address" class="input-text validate-email required-entry">
+    </div>
+    <div class="pm-step">
+        <p>Please choose a password</span></p>
+        <input type="password" name="password" id="password" title="Password" class="input-text required-entry validate-password">
+    </div>
+    <div class="pm-step">
+        <p>Confirm your password</span></p>
+        <input type="password" name="confirmation" title="Confirm Password" id="confirmation" class="input-text required-entry validate-cpassword">
+    </div>
+    <p class="progress-bar">
+                        <span class="bar"></span>
+    </p>
+    <input type="button" id="navigation" class="button shop-now" value="Shop Now" />
 </form>
-<div class="ui horizontal divider">
-    Or
-</div>
-
+<script type="text/javascript">
+// Cache the form
+var $form = $('#form');
+// Stuff for the progress bar
+var $bar = $('.progress-bar .bar');
+var steps = $('.pm-step').length;
+// Initialize Promin
+$form.promin({
+// Want to update the bar on every change
+events: {
+change: function(i) {
+$bar.css('width', (i / steps * 100) + '%');
+}
+}
+});
+// Tell the button to go to the next step
+$('#navigation').on('click', function() {
+$form.promin('next');
+});
+</script>
     </main><!-- Footer -->
 <!--Start Footer -->
 <footer>
