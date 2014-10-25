@@ -34,8 +34,10 @@ var pages = '../build/pages/', // Web pages
 
 
 Server
--------------
-Where you want to broadcast pure HTML to web and mobile users. 
+=======
+Development Server
+------------------
+Static server for pure HTML and CSS
 
 */
 
@@ -45,8 +47,14 @@ var server = '../server/', // This is the root of your local web server
     server_styles = server + 'styles/', // Stylesheets generated, mapped, cleaned, combined, minified and obfuscated. 
     server_scripts = server + 'scripts/'; // Javascript combined, minified and obfuscated
     server_components = server + 'components/'; // Javascript combined, minified and obfuscated
-
 /*
+
+MAMP Server
+------------
+Your local server for magento
+*/
+
+var mamp_server = '/Users/tony/Websites/mco/'; // This is the root of your local web server
 
 
 /*
@@ -63,7 +71,6 @@ var gulp = require('gulp'), // Gulp.js
     clean = require('gulp-clean'), // Cleans files and folders
     concat = require('gulp-concat'), // Combines CSS and Javascript
     notify = require('gulp-notify'), // Growl notification on completion of tasks
-    csslint = require('gulp-csslint'),
     path = require('path'), // Rewrites paths
     watch = require('gulp-watch'), //Watches for changes
     size = require('gulp-size'), //Lets you know the size of your optimised files
@@ -85,7 +92,6 @@ var gulp = require('gulp'), // Gulp.js
     browsersync  = require('browser-sync'), // Live Reload 
     wait = require('gulp-wait'), // Waits a while
     uglify = require('gulp-uglify'), // Minifies CSS
-    atomic = require('gulp-atomicscss'), // Creates SCSS classes from HTML
     stylus = require('gulp-stylus');
 
 /*
@@ -172,6 +178,15 @@ Build CSS classes from Stylus
     .pipe(notify({message: 'Styles Applied'}));
 });
 
+   gulp.task('stage-style', function () {
+     gulp.src(styles + 'one.styl')
+    .pipe(plumber())
+    .pipe(changed(styles + '*.styl'))
+    .pipe(stylus({ use:[fontface()], compress: true}))
+    .pipe(gulp.dest(mamp_server + 'skin/frontend/one/default/css/'))
+    .pipe(size())
+    .pipe(notify({message: 'Styles on Staging Server'}));
+});
 
 
 /*
@@ -217,11 +232,8 @@ gulp.task('default', function() {
         gulp.watch('../build/pages/**/*', function(event){
             gulp.start('page', 'reload');
         });
-        gulp.watch('../build/templates/**/*', function(event){
+        gulp.watch('../build/templates/*.jade', function(event){
             gulp.start('page', 'reload');
-        });
-        gulp.watch('../build/components/**/*', function(event){
-            gulp.start('component');
         });
         gulp.watch('../build/blocks/**/*', function(event){
             gulp.start('page', 'reload');
@@ -232,11 +244,13 @@ gulp.task('default', function() {
         gulp.watch(fonts  + '**/*', function(event){
             gulp.start('font');
         });
-        gulp.watch(styles + '**/*', function(event){
+        gulp.watch(styles + '**/*.styl', function(event){
             gulp.start('style');
+        });
+        gulp.watch(styles + '**/*.styl', function(event){
+            gulp.start('stage-style');
         });
         gulp.watch(scripts + '**/*', function(event){
             gulp.start('script', 'reload');
         });
     });
-

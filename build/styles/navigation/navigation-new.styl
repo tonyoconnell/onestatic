@@ -1,0 +1,28 @@
+nav
+  margin-top -5px
+  +tablet
+    column(1/2)
+  +desktop
+    column(1/2)
+
+nav  ul
+    list-style none
+    +tablet()
+      margin-top 15px
+      float right
+    +desktop()
+      margin-top 15px
+      float right  
+
+nav  li
+    display inline-block
+    padding 10px 15px
+    cursor pointer
+    -webkit-transition all 0.2s
+    -moz-transition all 0.2s
+    -ms-transition all 0.2s
+    -o-transition all 0.2s
+    transition all 0.2s
+    &:hover
+      background #111
+      color #fff
