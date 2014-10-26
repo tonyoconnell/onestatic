@@ -85,13 +85,18 @@ var gulp = require('gulp'), // Gulp.js
     rename = require('gulp-rename'), // Renames files
     changed = require('gulp-changed'), // Only executes tasks if files were changed
     es = require('event-stream'), 
+    static_site = require('gulp-static-site'),
     fontface = require('stylus-font-face'),
     uncss = require('gulp-uncss'),
+    pureJade = require('jade'),
     autoprefixer = require('autoprefixer-stylus'),
     prettify = require('gulp-jsbeautifier'),
     browsersync  = require('browser-sync'), // Live Reload 
     wait = require('gulp-wait'), // Waits a while
     uglify = require('gulp-uglify'), // Minifies CSS
+    fs = require('fs'),
+    frontMatter = require('front-matter'),
+    map = require('vinyl-map'),
     stylus = require('gulp-stylus');
 
 /*
@@ -116,6 +121,39 @@ Pages
 ---------
 Convert Jade to HTML and copy to the server. 
 */
+
+gulp.task('site', function () {
+    return gulp.src('../build/words/**/*.md')
+        .pipe(static_site())
+        .pipe(gulp.dest('../server/'))
+});
+
+gulp.task('blog', function (cb) {
+  var
+    tpl = fs.readFileSync('../build/templates/blank.jade'),
+    jadeTpl = pureJade.compile(tpl),
+    renderPost = map(function(code, filename) {
+      // .attributes .body
+      var parsed = frontMatter(String(code)),
+          data = parsed.attributes,
+          body = parsed.body;
+
+      body = marked.parse(body);
+
+      data.content = body;
+      data.filename = filename;
+
+      return jadeTpl(data);
+    });
+
+  return gulp.src('../build/words/*.md')
+    .pipe(renderPost)
+    .pipe(rename({extname: '.html'}))
+    .pipe(gulp.dest('../server/'))
+});
+
+
+
 
     gulp.task('page', function() {
      gulp.src('../build/pages/**/*.jade')
