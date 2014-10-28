@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title>Modals: ONE</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Modals">
+    <meta name="keywords" content="Modals">
+    <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
+    <link rel="stylesheet" href="/styles/doc-icon.css">
+    <link rel="stylesheet" href="/styles/icons.css">
+    <link rel="stylesheet" href="/styles/one.css">  <script>
+  (function () {
+    var
+      eventSupport = ('querySelector' in document && 'addEventListener' in window)
+      jsonSupport  = (typeof JSON !== 'undefined'),
+      jQuery       = (eventSupport && jsonSupport)
+        ? '/scripts/jquery.min.js'
+        : '/scripts/jquery.legacy.min.js'
+    ;
+    document.write('<script src="' + jQuery + '"><\/script>');
+  }());
+  </script>
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+  <script src="/scripts/history.js"></script>
+  <script src="/scripts/easing.js"></script>
+  <script src="/scripts/tablesort.js"></script>
+  <script src="/scripts/typing.js"></script>
+  <script src="/scripts/semantic.min.js"></script>
+  <script src="/scripts/one.js"></script>
+
+    <script src="/scripts/jquery.promin.js"></script>
+  </head>
+  <body ontouchstart="" class="pusshable">
+    <header>
+      <div id="logo"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="logo circular picture"></a></div>
+      <div id="header-container">
+        <div id="logo-text">
+          <h1>Mid-century Online</h1>
+        </div><nav>
+  <ul>
+    <li>Furniture</li>
+    <li>Lighting</li>
+    <li>Book</li>
+  </ul>
+</nav>
+      </div>
+    </header>
+    <div id="top-picture">
+    </div>
+    <main><a href="#" class="triggerID">Click me</a> to trigger a normal modal.<br>
+<br>
+<b>For more information, see <a href="http://www.benmarshall.me/jquery-smartmodal/">jQuery.smartModal Documentation</a></b>.
+<div class="smartmodal auto" data-wait="5" id="triggerID">I'm a normal modal!<br>hello</div>
+<h1 id="modals">Modals</h1>
+<p>A simple, lightweight jQuery modal plugin that&#39;s highly configurable, easy-to-use &amp; implement. Includes multiple implementation options like timed, automatic, sticky modals and more! It has the ability to show modals only once per user </p>
+<p>To get started, create your modal box by adding the class, <code>smartmodal</code> to it. You can define a <em>trigger class</em> by specifying the <code>id</code> attribute:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot; id=&quot;triggerID&quot;&gt;I&#39;m a normal modal!&lt;/div&gt;
+&lt;a href=&quot;#&quot; class=&quot;triggerID&quot;&gt;Click me&lt;/a&gt; to trigger a normal modal.
+</code></pre>
+<p>Now when a user clicks on an element with the <code>triggerID</code> class, the modal will popup.</p>
+<h2 id="examples">Examples</h2>
+<p>A basic modal with a trigger:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot; id=&quot;triggerID&quot;&gt;I&#39;m a normal modal!&lt;/div&gt;
+&lt;a href=&quot;#&quot; class=&quot;triggerID&quot;&gt;Click me&lt;/a&gt;
+</code></pre>
+<p>A modal that only get&#39;s shown once:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal once&quot; id=&quot;triggerID&quot; data-expires=&quot;7&quot;&gt;I&#39;ll only get shown once!&lt;/div&gt;
+&lt;a href=&quot;#&quot; class=&quot;triggerID&quot;&gt;Click me&lt;/a&gt;
+</code></pre>
+<p>A modal that disappears after so many seconds:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot; id=&quot;triggerID&quot; data-time=&quot;5&quot;&gt;I&#39;m a timed modal!&lt;/div&gt;
+&lt;a href=&quot;#&quot; class=&quot;triggerID&quot;&gt;Click me&lt;/a&gt;
+</code></pre>
+<p>A modal that disappears after so many seconds and shows the number of remaining seconds left:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot; id=&quot;triggerID&quot; data-time=&quot;10&quot;&gt;I&#39;m a timed modal, &lt;span class=&quot;sec&quot;&gt;&lt;/span&gt; seconds before I close!&lt;/div&gt;
+&lt;a href=&quot;#&quot; class=&quot;triggerID&quot;&gt;Click me&lt;/a&gt;
+</code></pre>
+<p>A modal that automatically pops up after the page loads:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal auto&quot;&gt;I&#39;m automatic after page load!&lt;/div&gt;
+</code></pre>
+<p>A modal that automatically pops up after a specified number of seconds:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal auto&quot; data-wait=&quot;10&quot;&gt;I&#39;m automatic after 10 seconds!&lt;/div&gt;
+</code></pre>
+<p>A modal that can&#39;t be closed (sticky):</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal sticky auto&quot;&gt;I can&#39;t be closed!&lt;/div&gt;
+</code></pre>
+<p>A sticky modal that&#39;s closed after a specified number of seconds:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal sticky auto&quot; data-time=&quot;9&quot;&gt;You can&#39;t close me, but I&#39;ll close myself after &lt;span class=&quot;sec&quot;&gt;&lt;/span&gt; seconds!&lt;/div&gt;
+</code></pre>
+<p>A sticky modal that can be manually closed after a specified number of seconds:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal sticky auto&quot; data-time=&quot;9&quot; data-close=&quot;manual&quot;&gt;I can&#39;t be closed until &lt;span class=&quot;sec&quot;&gt;&lt;/span&gt; seconds! &lt;a href=&quot;#&quot; class=&quot;close&quot;&gt;Close Me&lt;/a&gt;&lt;/div&gt;
+</code></pre>
+<p>An automated timed sticky modal that can be manually closed after a specified number of seconds:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal sticky auto&quot; data-wait=&quot;10&quot;  data-time=&quot;9&quot; data-close=&quot;manual&quot;&gt;I can&#39;t be closed until &lt;span class=&quot;sec&quot;&gt;&lt;/span&gt; seconds! &lt;a href=&quot;#&quot; class=&quot;close&quot;&gt;Close Me&lt;/a&gt;&lt;/div&gt;
+</code></pre>
+<p>An animated modal:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal sticky auto&quot; data-animation=&quot;top|easeOutBounce|5000&quot;&gt;I&#39;m animated with the easeOutBounce effect that lastes 5 seconds.&lt;/div&gt;
+</code></pre>
+<h2 id="configuration-options">Configuration Options</h2>
+<p><em>smartModal</em> allows for additional configuration options to allow for more flexibility and control over the modals.</p>
+<h3 id="initialization-options">Initialization Options</h3>
+<p>You can set some default options for your modals with initializating the plugin like so:</p>
+<pre><code class="lang-javascript">$.smartModal({
+  overlayDelay: 300,
+  hideDelay: 300,
+  cookieExpires: 7
+});
+</code></pre>
+<h4 id="available-initialization-options">Available Initialization Options</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>overlayDelay</code></td>
+<td><em>Integer.</em> Number of milliseconds it takes for the modal to fade in.</td>
+</tr>
+<tr>
+<td><code>hideDelay</code></td>
+<td><em>Integer.</em> Number of milliseconds it takes for the modal to fade out.</td>
+</tr>
+<tr>
+<td><code>cookieExpires</code></td>
+<td><em>Integer.</em> Number of days until the modal cookies expire.</td>
+</tr>
+<tr>
+<td><code>debug</code></td>
+<td><em>Boolean.</em> Enable/disbale debug mode.</td>
+</tr>
+<tr>
+<td><code>shortkeys</code></td>
+<td><em>Boolean.</em> Enable/disable shortcut keys.</td>
+</tr>
+<tr>
+<td><code>clickClose</code></td>
+<td><em>Boolean.</em> Enable/disbale the ability to close the modals by clicking on the overlay.</td>
+</tr>
+<tr>
+<td><code>animationDuration</code></td>
+<td><em>Integer.</em> Default number of milliseconds for the animation duration.</td>
+</tr>
+<tr>
+<td><code>animationEasing</code></td>
+<td><em>String.</em> The default easing effect for the modal animation. See <a href="http://easings.net/">http://easings.net/</a></td>
+</tr>
+<tr>
+<td><code>gaTracking</code></td>
+<td><em>Boolean.</em> Enable/disable Google Analytics event tracking.</td>
+</tr>
+<tr>
+<td><code>onOpen</code></td>
+<td><em>Function.</em> Callback function when the modal is opened. Returns the modal ID.</td>
+</tr>
+<tr>
+<td><code>onClose</code></td>
+<td><em>Function.</em> Callback function when the modal is closed. Returns the modal ID.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modal-class-attribute-options">Modal Class Attribute Options</h3>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>once</code></td>
+<td>Will only show the modal once per page load. <a href="https://github.com/carhartl/jquery-cookie">jquery.cookie</a> will need to be loaded to enable modals to be shown once per visit.</td>
+</tr>
+<tr>
+<td><code>auto</code></td>
+<td>Enables the modal to popup automatically when the page is loaded. You can specify the <code>data-wait</code> attribute to set the number of seconds before the modal pops up.</td>
+</tr>
+<tr>
+<td><code>sticky</code></td>
+<td>Disables the ability to close the modal.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modal-attribute-options">Modal Attribute Options</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data-expires</code></td>
+<td><em>Integer.</em> Specify the number of days until the cookie expires.</td>
+</tr>
+<tr>
+<td><code>data-time</code></td>
+<td><em>Integer.</em> Specify the number of seconds the modal should be visible.</td>
+</tr>
+<tr>
+<td><code>data-wait</code></td>
+<td><em>Integer</em> Specify the number of seconds before the modal should popup. Should be used with the <code>auto</code> class.</td>
+</tr>
+<tr>
+<td><code>data-close</code></td>
+<td><em>String (manual).</em> Disables the modal from closing automatically. Used in conjunction with <code>data-time</code> and the <code>sticky</code> class.</td>
+</tr>
+<tr>
+<td><code>data-animation</code></td>
+<td><em>String (start effect duration).</em> Specifies the modals animation settings. <strong>Requires jQuery UI Effects component.</strong></td>
+</tr>
+<tr>
+<td><code>data-name</code></td>
+<td><em>String.</em> The name of the modal. Used for GA event tracking.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="additional-modal-options">Additional Modal Options</h3>
+<h4 id="show-number-of-seconds-remaining">Show number of seconds remaining</h4>
+<p>You can display the number of remaining seconds until the modal disappears within the modal by applying the <code>sec</code> class to an element:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot; data-time=&quot;10&quot;&gt;I&#39;m a timed modal &lt;span class=&quot;sec&quot;&gt;&lt;/span&gt; seconds before I close!&lt;/div&gt;
+</code></pre>
+<h4 id="add-a-close-trigger-in-the-modal">Add a close trigger in the modal</h4>
+<p>You can easily add a close trigger to allow the modal to close when a user clicks on it:</p>
+<pre><code class="lang-html">&lt;div class=&quot;smartmodal&quot;&gt;I&#39;m a normal modal! &lt;a href=&quot;#&quot; class=&quot;close&quot;&gt;Close Me&lt;/a&gt;&lt;/div&gt;
+</code></pre>
+<h2 id="api-methods">API Methods</h2>
+<p>To make it easy to call jQuery.smartModal&#39;s methods, you can use it&#39;s API:</p>
+<pre><code class="lang-javascript">$.smartModal(&#39;show&#39;, &#39;modalID&#39;); // Shows a modal
+$.smartModal(&#39;hide&#39;, &#39;modalID&#39;); // Hides a modal
+$.smartModal(&#39;settings&#39;, settingsObj); // Define smartModal&#39;s default settings
+$.smartModal(&#39;init&#39;, settingsObj); // Initialize the smartModal plugin
+</code></pre>
+<h2 id="cross-browser-compatibility">Cross-Browser Compatibility</h2>
+<p>This plugin has been tested in the following browsers (should also work in IE, but haven&#39;t tested):</p>
+<ul>
+<li>Google Chome<ul>
+<li>Version 27+</li>
+</ul>
+</li>
+<li>Firefox<ul>
+<li>Version 21+</li>
+</ul>
+</li>
+<li>Safari<ul>
+<li>Version 6+</li>
+</ul>
+</li>
+<li>Opera<ul>
+<li>Version 12+</li>
+</ul>
+</li>
+</ul>
+<h2 id="development">Development</h2>
+<ul>
+<li>Source hosted at <a href="https://github.com/bmarshall511/jquery-smartModal">GitHub</a></li>
+<li>Report issues, questions, feature requests on <a href="https://github.com/bmarshall511/jquery-smartModal/issues">GitHub Issues</a></li>
+</ul>
+<h2 id="authors">Authors</h2>
+<p><a href="http://www.benmarshall.me">Ben Marshall</a></p>
+
+    </main><!-- Footer -->
+<!--Start Footer -->
+<footer>
+    <!-- Box 1 -->
+    <div class="box contact">
+        <h4>Contact Us Now</h4>
+        <ul>
+            <li><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone" data-metric-location="Footer"><i class="icon-phone-1 pull-left widget-icon"></i>UK 0203 1297965</a></li>
+            <li> <a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email" data-metric-location="Footer"><i class="icon-email pull-left widget-icon"></i>info@mid-centuryonline.com</a></li>
+            <li><i class="icon-address pull-left widget-icon"></i>Oberstown, Lusk, County Dublin,  <Br> Ireland </li>
+        </ul>
+    </div>
+    
+    
+    <!-- Box 2 -->
+    <div class="box social">
+        <h4>Connect with Us</h4>
+        <ul>
+            <li><a target="_blank" href="http://facebook.com/midcenturymodern" data-metric="Clicked Social Link" data-metric-location="Footer" data-metric-media="Facebook"><i class="icon-facebook pull-left widget-icon"></i>Facebook</a></li>
+            <li><a target="_blank" href="http://twitter.com/mmodern" data-metric="Clicked Social Link" data-metric-location="Footer" data-metric-media="Twitter"><i class="icon-twitter pull-left widget-icon"></i>Twitter</a></li>
+            <li><a target="_blank" href="http://www.pinterest.com/midcenturypin/" data-metric="Clicked Social Link" data-metric-location="Footer" data-metric-mediae="Pinterest"><i class="icon-path widget-icon"></i>Pinterest</a></li>
+            <li><a target="_blank" href="https://plus.google.com/+Mid-centuryonline" data-metric="Clicked Social Link" data-metric-location="Footer" data-metric-media="Google"><i class="icon-google-plus pull-left widget-icon"></i>Google+</a></li>
+        </ul>
+    </div>
+    
+    <!-- Box 3 -->
+    <div class="box company">
+        <h4>Company</h4>
+        <ul>
+            <li><a href="http://mid-centuryonline.com/about" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="About">About us</a></li>
+            <li><a href="http://mid-centuryonline.com/shipping" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="Shipping">Shipping & Gurantee</a></li>
+            <li><a href="http://mid-centuryonline.com/payment" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="Payment">Payment</a></li>
+            <li><a href="http://mid-centuryonline.com/terms" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="Terms">Terms & Conditions</a></li>
+            <li><a href="http://mid-centuryonline.com/privacy" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="Privacy">Privacy Policy</a></li>
+        </ul>
+    </div>
+    
+    <!-- Box 4 -->
+    <div class="box tags">
+        <h4>Mid-century Modern</h4>
+        <div class="tag-cloud">
+        <ul>
+            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=Lamps" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Lamps" data-metric-navigation-type="Tag">Lamps</a></li>
+            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=chairs" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Chairs" data-metric-navigation-type="Tag">Chairs</a></li>
+            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=dining chairs" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Dining Chairs" data-metric-navigation-type="Tag">Dining Chairs</a></li>
+            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=sofas" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Sofas" data-metric-navigation-type="Tag">Sofas</a></li>
+            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=desks" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Desks" data-metric-navigation-type="Tag">Desks</a></li>
+            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=tables" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Tables" data-metric-navigation-type="Tag">Tables</a></li>
+            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=designers" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Designers" data-metric-navigation-type="Tag">Designers</a></li>
+            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=benches" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Benches" data-metric-navigation-type="Tag">Benches</a></li>
+            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=chess sets" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Chess Sets" data-metric-navigation-type="Tag">Chess Sets</a></li>
+            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=lounge chairs" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Lounge Chairs" data-metric-navigation-type="Tag">Lounge Chairs</a></li>
+            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=stools" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Stools" data-metric-navigation-type="Tag">Stools</a></li>
+        </ul>
+        </div>
+    </div>
+</footer>
+<!-- Contact --><div class="contact-bar">
+<!-- Contact -->
+  <div class="contact-left">
+    <a href="tel:+442031297965" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Phone">
+      <span class="circle"><i class="icon-telephone"></i></span>
+    </a>
+    <a href="tel:+442031297965" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Phone"><span class="icon-text hiddex-sm">+44 (0)203 1297965</span></a>
+    <a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Email"><span class="circle"><i class="icon-email"></i></span></a>
+    <a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Email"><span class="icon-text hidden-mobile">info@mid-centuryonline.com</a>
+    <a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Skype"><span class="circle"><i class="icon-skype"></i></span></a>
+    <a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Skype"><span class="icon-text hidden-mobile">Skype</span></a>
+<!--End Contact -->
+  </div>
+    <div class="sign-in">
+      <!--  Sign In -->
+      Sign In
+      <!-- End Sign In -->
+    </div>
+</div>
+    <script src="/scripts/jquery.smartModal.js"></script>
+    <script src="/scripts/FlameViewportScale.js"></script>
+    <script src="/scripts/hammer.js"> </script>
+    <script src="/scripts/jquery.cookie.js"></script>
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script><script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+semantic.menu = {};
+
+// ready event
+semantic.menu.ready = function() {
+
+  // selector cache
+  var
+    $menuItem = $('.menu a.item, .menu .link.item'),
+    $dropdown = $('.main.container .menu .dropdown'),
+    // alias
+    handler = {
+
+      activate: function() {
+        if(!$(this).hasClass('dropdown')) {
+          $(this)
+            .addClass('active')
+            .closest('.ui.menu')
+            .find('.item')
+              .not($(this))
+              .removeClass('active')
+          ;
+        }
+      }
+
+    }
+  ;
+
+  $dropdown
+    .dropdown({
+      on: 'hover'
+    })
+  ;
+
+  $menuItem
+    .on('click', handler.activate)
+  ;
+
+};
+
+
+// attach ready event
+$(document)
+  .ready(semantic.menu.ready)
+;
+</script>
+
+  </body>
+</html>

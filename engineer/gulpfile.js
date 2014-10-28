@@ -84,6 +84,7 @@ var gulp = require('gulp'), // Gulp.js
     path = require('path'), // Normalises, joins and resolves paths
     rename = require('gulp-rename'), // Renames files
     changed = require('gulp-changed'), // Only executes tasks if files were changed
+    cache = require('gulp-cached'),
     es = require('event-stream'), 
     static_site = require('gulp-static-site'),
     fontface = require('stylus-font-face'),
@@ -115,6 +116,25 @@ gulp.task('reload', function () {
     browsersync.reload();
 });
 
+// Auto Restart Server on Change 
+
+var spawn = require('child_process').spawn;
+
+gulp.task('auto-restart', function() {
+    var process;
+
+    function restart() {
+        if (process) {
+            process.kill();
+        }
+
+        process = spawn('gulp', ['default'], {stdio: 'inherit'});
+    }
+
+    gulp.watch('gulpfile.js', restart);
+    restart();
+});
+
 /*
 
 Pages
@@ -122,7 +142,7 @@ Pages
 Convert Jade to HTML and copy to the server. 
 */
 
-gulp.task('site', function () {
+gulp.task('words', function () {
     return gulp.src('../build/words/**/*.md')
         .pipe(static_site())
         .pipe(gulp.dest('../server/'))
@@ -157,6 +177,7 @@ gulp.task('blog', function (cb) {
 
     gulp.task('page', function() {
      gulp.src('../build/pages/**/*.jade')
+    .pipe(cache()) 
     .pipe(plumber())
     .pipe(changed(pages + '**/*.jade'))    
     .pipe(jade({
@@ -175,6 +196,7 @@ Pictures
 */
     gulp.task('picture', function() {
     gulp.src(pictures + '**/*.{jpg,png,gif,svg}')
+    .pipe(cache()) 
     .pipe(changed(server_pictures))
     .pipe(gulp.dest(server_pictures))
     .pipe(browsersync.reload({stream: true}));
@@ -186,6 +208,7 @@ Fonts
 */
     gulp.task('font', function() {
     gulp.src(fonts + '*')
+    .pipe(cache()) 
     .pipe(changed(server_fonts))
     .pipe(gulp.dest(server_fonts))
     .pipe(browsersync.reload({stream: true}));
@@ -206,6 +229,7 @@ Build CSS classes from Stylus
    gulp.task('style', function () {
      gulp.src(styles + '*.styl')
     .pipe(plumber())
+    .pipe(cache()) 
     .pipe(changed(styles + '*.styl'))
     .pipe(stylus({ use:[fontface()], sourcemap: { inline: true } }))
     .pipe(gulp.dest(server_styles))
@@ -219,6 +243,7 @@ Build CSS classes from Stylus
    gulp.task('stage-style', function () {
      gulp.src(styles + 'one.styl')
     .pipe(plumber())
+    .pipe(cache()) 
     .pipe(changed(styles + '*.styl'))
     .pipe(stylus({ use:[fontface()], compress: true}))
     .pipe(gulp.dest(mamp_server + 'skin/frontend/one/default/css/'))
@@ -236,6 +261,7 @@ Build your scripts
    gulp.task('script', function () {
     gulp.src(['../build/scripts/one.js','../build/scripts/plugins/**/*.js', '../build/scripts/libraries/**/*.js'])
     .pipe(plumber())
+    .pipe(cache()) 
     .pipe(changed(scripts + '**/*.js'))
     .pipe(gulp.dest(server_scripts))
     .pipe(browsersync.reload({stream: true}))
@@ -264,7 +290,7 @@ Run Tasks
 gulp.task('default', function() {
 
 // start these tasks 
-    gulp.start( 'page', 'picture', 'font', 'style', 'script' ,'server')
+    gulp.start( 'page', 'picture', 'font', 'style', 'script', 'words', 'server')
 
 // watch for changes and run tasks
         gulp.watch('../build/pages/**/*', function(event){
@@ -275,6 +301,9 @@ gulp.task('default', function() {
         });
         gulp.watch('../build/blocks/**/*', function(event){
             gulp.start('page', 'reload');
+        });
+        gulp.watch('../build/words/**/*.md', function(event){
+            gulp.start('words', 'reload');
         });
         gulp.watch(pictures + '**/*', function(event){
             gulp.start('picture');
