@@ -1,0 +1,12 @@
+extends ../../templates/page
+
+append page-info
+	- title = 'Template : Home'
+	- description = 'Welcome home'
+	- keywords = 'home, keyword2'
+
+block content
+	article
+		include:md ../book/milo-baughman.md
+
+

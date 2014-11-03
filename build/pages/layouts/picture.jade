@@ -1,0 +1,15 @@
+extends ../../templates/page
+
+append page-info
+	- title = 'Template : Home'
+	- description = 'Welcome home'
+	- keywords = 'home, keyword2'
+
+block top-picture
+	img(src='/pictures/products/product-1.jpg')
+
+block content
+	article
+		include:md ../book/milo-baughman.md
+
+

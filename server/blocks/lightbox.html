@@ -36,62 +36,62 @@
   </head>
   <body ontouchstart="" class="pusshable">
     <header>
-      <div id="logo"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-Century Online" class="logo circular picture"></a></div>
-      <div id="header-container">
-        <div id="logo-text">
-          <h1>Mid-century Online</h1>
-        </div><nav>
+      <div id="logo"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-century Online" class="logo circular picture">
+          <div id="logo-text">
+            <h1>Mid-century Online</h1>
+          </div></a></div><nav>
   <ul>
     <li>Furniture</li>
     <li>Lighting</li>
     <li>Book</li>
   </ul>
 </nav>
-      </div>
     </header>
     <div id="top-picture">
     </div>
     <main>
-      <h1>Lightbox</h1>
-      <p>Pop up a beautiful full screen responsive lightbox customised for each device</p>
-      <h2>Lightbox Slideshow</h2>
-      <p>Pops up a slideshow with thumbnails for a group of images  </p>
-      <div id="lightbox" class="small pictures"><a href="/pictures/products/product-1.jpg" title="Lamps"><img src="/pictures/products/product-1-sm.jpg"></a><a href="/pictures/products/product-2.jpg" title="Chair"><img src="/pictures/products/product-2-sm.jpg"></a><a href="/pictures/products/product-3.jpg" title="Lots of Chairs"><img src="/pictures/products/product-3-sm.jpg"></a><a href="/pictures/products/product-4.jpg" title="More Chairs"><img src="/pictures/products/product-4-sm.jpg"></a></div>
-      <p>Code  : Put your pictures inside an element with an id of lightbox. </p>
-      <pre><code class="jade">#lightbox
+      <div class="inner">
+        <h1>Lightbox</h1>
+        <p>Pop up a beautiful full screen responsive lightbox customised for each device</p>
+        <h2>Lightbox Slideshow</h2>
+        <p>Pops up a slideshow with thumbnails for a group of images  </p>
+        <div id="lightbox" class="small pictures"><a href="/pictures/products/product-1.jpg" title="Lamps"><img src="/pictures/products/product-1-sm.jpg"></a><a href="/pictures/products/product-2.jpg" title="Chair"><img src="/pictures/products/product-2-sm.jpg"></a><a href="/pictures/products/product-3.jpg" title="Lots of Chairs"><img src="/pictures/products/product-3-sm.jpg"></a><a href="/pictures/products/product-4.jpg" title="More Chairs"><img src="/pictures/products/product-4-sm.jpg"></a></div>
+        <p>Code  : Put your pictures inside an element with an id of lightbox. </p>
+        <pre><code class="jade">#lightbox
   a(href='/pictures/products/product-1.jpg', title='Lamps')
     img(src='/pictures/products/product-1-sm.jpg')
   a(href='/pictures/products/product-2.jpg', title='Chair')
     img(src='/pictures/products/product-2-sm.jpg')</code></pre>
-      <h2>Lightbox Slideshow with Thumbnails</h2>
-      <p>Pops up a slideshow with thumbnails for a group of images  </p>
-      <div id="lightbox-thumbnails" class="small pictures"><a href="/pictures/products/product-1.jpg" title="Lamps"><img src="/pictures/products/product-1-sm.jpg"></a><a href="/pictures/products/product-2.jpg" title="Chair"><img src="/pictures/products/product-2-sm.jpg"></a><a href="/pictures/products/product-3.jpg" title="Lots of Chairs"><img src="/pictures/products/product-3-sm.jpg"></a><a href="/pictures/products/product-4.jpg" title="More Chairs"><img src="/pictures/products/product-4-sm.jpg"></a></div>
-      <p>Code  : Put your pictures inside an element with an id of lightbox-thumbnails. </p>
-      <pre><code class="jade">#lightbox-thumbnails
+        <h2>Lightbox Slideshow with Thumbnails</h2>
+        <p>Pops up a slideshow with thumbnails for a group of images  </p>
+        <div id="lightbox-thumbnails" class="small pictures"><a href="/pictures/products/product-1.jpg" title="Lamps"><img src="/pictures/products/product-1-sm.jpg"></a><a href="/pictures/products/product-2.jpg" title="Chair"><img src="/pictures/products/product-2-sm.jpg"></a><a href="/pictures/products/product-3.jpg" title="Lots of Chairs"><img src="/pictures/products/product-3-sm.jpg"></a><a href="/pictures/products/product-4.jpg" title="More Chairs"><img src="/pictures/products/product-4-sm.jpg"></a></div>
+        <p>Code  : Put your pictures inside an element with an id of lightbox-thumbnails. </p>
+        <pre><code class="jade">#lightbox-thumbnails
   a(href='/pictures/products/product-1.jpg', title='Lamps')
     img(src='/pictures/products/product-1-sm.jpg')
   a(href='/pictures/products/product-2.jpg', title='Chair')
     img(src='/pictures/products/product-2-sm.jpg')</code></pre>
-      <h2>Lightbox Slideshow with Bullets</h2>
-      <p>Pops up a slideshow with thumbnails for a group of images  </p>
-      <div id="lightbox-bullets" class="small pictures"><a href="/pictures/products/product-1.jpg" title="Lamps"><img src="/pictures/products/product-1-sm.jpg"></a><a href="/pictures/products/product-2.jpg" title="Chair"><img src="/pictures/products/product-2-sm.jpg"></a><a href="/pictures/products/product-3.jpg" title="Lots of Chairs"><img src="/pictures/products/product-3-sm.jpg"></a><a href="/pictures/products/product-4.jpg" title="More Chairs"><img src="/pictures/products/product-4-sm.jpg"></a></div>
-      <p>Code  : Put your pictures inside an element with an id of lightbox. </p>
-      <pre><code class="jade">#lightbox
+        <h2>Lightbox Slideshow with Bullets</h2>
+        <p>Pops up a slideshow with thumbnails for a group of images  </p>
+        <div id="lightbox-bullets" class="small pictures"><a href="/pictures/products/product-1.jpg" title="Lamps"><img src="/pictures/products/product-1-sm.jpg"></a><a href="/pictures/products/product-2.jpg" title="Chair"><img src="/pictures/products/product-2-sm.jpg"></a><a href="/pictures/products/product-3.jpg" title="Lots of Chairs"><img src="/pictures/products/product-3-sm.jpg"></a><a href="/pictures/products/product-4.jpg" title="More Chairs"><img src="/pictures/products/product-4-sm.jpg"></a></div>
+        <p>Code  : Put your pictures inside an element with an id of lightbox. </p>
+        <pre><code class="jade">#lightbox
   a(href='/pictures/products/product-1.jpg', title='Lamps')
     img(src='/pictures/products/product-1-sm.jpg')
   a(href='/pictures/products/product-2.jpg', title='Chair')
     img(src='/pictures/products/product-2-sm.jpg')</code></pre>
-      <p>Besides images, you can also scroll through YouTube and Vimeo video&apos;s and any other type of HTML:</p>
-      <div id="example-3" class="links"><a href="http://www.youtube.com/watch?v=INscMGmhmX4">YouTube: Grumpy cat.</a><br><a href="http://vimeo.com/37328349">Vimeo: Flying cat.</a><br><a href="#hidden-content">Some hidden HTML.</a></div>
-      <div class="hidden">
-        <div id="hidden-content" style="max-width: 750px;"><img src="http://lorempixel.com/200/200/cats/5/" style="float: right; margin: 0 0 20px 20px;">
-          <h3>Kitty ipsum dolor sit amet</h3>
-          <p>Purr attack in viverra nullam, jump on the table puking chase the red dot biting run fluffy fur tempus et. Jump on the table iaculis tortor tail flick eat egestas, jump on the table zzz sleep in the sink chuf. Lay down in your way orci turpis knock over the lamp vestibulum aliquam, ac shed everywhere non judging you shed everywhere scratched. Accumsan egestas scratched puking scratched tincidunt a, purr dolor enim ut jump on the table orci turpis libero. Vel non vel amet, stretching jump litter box eat sagittis nunc non. Nunc chuf pellentesque leap et ac, tortor climb the curtains stuck in a tree sollicitudin. Sagittis nibh aliquam nunc, tortor stretching rhoncus suspendisse hiss accumsan rhoncus litter box. Consectetur jump on the table dolor suscipit suscipit hiss, iaculis biting mauris a I don&apos;t like that food.</p>
-          <p>Purr judging you nam dolor rip the couch, purr tincidunt a tristique give me fish aliquam climb the curtains pharetra. I don&apos;t like that food vel puking hairball, nam pellentesque attack consectetur suspendisse sleep in the sink feed me. Sleep on your face tortor faucibus chuf hairball, leap quis nunc sleep in the sink egestas meow. Tail flick sleep in the sink tincidunt a sunbathe enim, pellentesque scratched purr sleep on your face sagittis. Litter box hiss shed everywhere etiam, biting non aliquam egestas tincidunt a enim ut tail flick iaculis. Et mauris a aliquam run suscipit mauris a, attack stuck in a tree stuck in a tree iaculis lay down in your way sollicitudin.</p>
+        <p>Besides images, you can also scroll through YouTube and Vimeo video&apos;s and any other type of HTML:</p>
+        <div id="example-3" class="links"><a href="http://www.youtube.com/watch?v=INscMGmhmX4">YouTube: Grumpy cat.</a><br><a href="http://vimeo.com/37328349">Vimeo: Flying cat.</a><br><a href="#hidden-content">Some hidden HTML.</a></div>
+        <div class="hidden">
+          <div id="hidden-content" style="max-width: 750px;"><img src="http://lorempixel.com/200/200/cats/5/" style="float: right; margin: 0 0 20px 20px;">
+            <h3>Kitty ipsum dolor sit amet</h3>
+            <p>Purr attack in viverra nullam, jump on the table puking chase the red dot biting run fluffy fur tempus et. Jump on the table iaculis tortor tail flick eat egestas, jump on the table zzz sleep in the sink chuf. Lay down in your way orci turpis knock over the lamp vestibulum aliquam, ac shed everywhere non judging you shed everywhere scratched. Accumsan egestas scratched puking scratched tincidunt a, purr dolor enim ut jump on the table orci turpis libero. Vel non vel amet, stretching jump litter box eat sagittis nunc non. Nunc chuf pellentesque leap et ac, tortor climb the curtains stuck in a tree sollicitudin. Sagittis nibh aliquam nunc, tortor stretching rhoncus suspendisse hiss accumsan rhoncus litter box. Consectetur jump on the table dolor suscipit suscipit hiss, iaculis biting mauris a I don&apos;t like that food.</p>
+            <p>Purr judging you nam dolor rip the couch, purr tincidunt a tristique give me fish aliquam climb the curtains pharetra. I don&apos;t like that food vel puking hairball, nam pellentesque attack consectetur suspendisse sleep in the sink feed me. Sleep on your face tortor faucibus chuf hairball, leap quis nunc sleep in the sink egestas meow. Tail flick sleep in the sink tincidunt a sunbathe enim, pellentesque scratched purr sleep on your face sagittis. Litter box hiss shed everywhere etiam, biting non aliquam egestas tincidunt a enim ut tail flick iaculis. Et mauris a aliquam run suscipit mauris a, attack stuck in a tree stuck in a tree iaculis lay down in your way sollicitudin.</p>
+          </div>
         </div>
-      </div>
-      <pre>\n$("#example a").tosrus();
+        <pre>\n$("#example a").tosrus();
                 </pre>
+      </div>
     </main><!-- Footer -->
 <!--Start Footer -->
 <footer>
@@ -101,7 +101,7 @@
         <ul>
             <li><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone" data-metric-location="Footer"><i class="icon-phone-1 pull-left widget-icon"></i>UK 0203 1297965</a></li>
             <li> <a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email" data-metric-location="Footer"><i class="icon-email pull-left widget-icon"></i>info@mid-centuryonline.com</a></li>
-            <li><i class="icon-address pull-left widget-icon"></i>Oberstown, Lusk, County Dublin,  <Br> Ireland </li>
+            <li><i class="icon-address pull-left widget-icon"></i>Oberstown, Lusk, County Dublin, Ireland </li>
         </ul>
     </div>
     
@@ -150,7 +150,7 @@
     </div>
 </footer>
 <!-- Contact --><div class="contact-bar">
-<!-- Contact -->
+  <!-- Contact -->
   <div class="contact-left">
     <a href="tel:+442031297965" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Phone">
       <span class="circle"><i class="icon-telephone"></i></span>
@@ -160,13 +160,13 @@
     <a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Email"><span class="icon-text hidden-mobile">info@mid-centuryonline.com</a>
     <a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Skype"><span class="circle"><i class="icon-skype"></i></span></a>
     <a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Skype"><span class="icon-text hidden-mobile">Skype</span></a>
-<!--End Contact -->
+    <!--End Contact -->
   </div>
-    <div class="sign-in">
-      <!--  Sign In -->
-      Sign In
-      <!-- End Sign In -->
-    </div>
+  <div class="sign-in">
+    <!--  Sign In -->
+    Sign In
+    <!-- End Sign In -->
+  </div>
 </div>
     <script src="/scripts/jquery.smartModal.js"></script>
     <script src="/scripts/FlameViewportScale.js"></script>

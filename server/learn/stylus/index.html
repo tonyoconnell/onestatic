@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description">
+    <meta name="keywords">
+    <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
+    <link rel="stylesheet" href="/styles/doc-icon.css">
+    <link rel="stylesheet" href="/styles/icons.css">
+    <link rel="stylesheet" href="/styles/one.css">
+    <link rel="stylesheet" href="/styles/side-navigation.css">
+  </head>
+  <body>
+    <div id="logo-fixed"><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo.png" alt="ONE" class="circular picture"></a></div>
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
+      </div>
+      <div class="side-navigation side-navigation-right">
+        <ul>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/index.html">
+                   
+                  Get Started</a></li>
+              <li><a href="/learn/git/index.html">
+                   
+                  Git</a></li>
+              <li><a href="/learn/gulp/index.html">
+                   
+                  Gulp</a></li>
+              <li><a href="/learn/markdown/index.html">
+                   
+                  Markdown</a></li>
+              <li><a href="/learn/jade/index.html">
+                   
+                  Jade</a></li>
+              <li><a href="/learn/stylus/index.html">
+                   
+                  Stylus</a></li>
+              <li><a href="/learn/jeet/index.html">
+                   
+                  Jeet</a></li>
+              <li><a href="/learn/rupture/index.html">
+                   
+                  Rupture</a></li>
+              <li><a href="/learn/nib/index.html">
+                   
+                  Nib     </a></li>
+              <li><a href="/learn/axis/index.html">
+                   
+                  Axis  </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="screen">
+      <div id="content"><h1 id="stylus">Stylus</h1>
+<p><a href="http://www.youtube.com/watch?v=xnI4fqXsu2s">http://www.youtube.com/watch?v=xnI4fqXsu2s</a></p>
+<p>Stylus is the simplist way to write CSS. You don&#39;t need to use commas, curly braces, colons or semi-colons. Instead you use spaces - indents and outdents as shown below.</p>
+<pre><code class="lang-stylus">body
+  color white</code></pre>
+<p>Becomes this CSS</p>
+<pre><code class="lang-css">body {
+  color: #fff;
+}</code></pre>
+<h2 id="parent-references">Parent References</h2>
+<p>The &amp; character references the parent selector(s). In the example below our two selectors (textarea and input) both alter the color on the :hover pseudo selector.</p>
+<pre><code class="lang-stylus">textarea
+input
+  color #A7A7A7
+  &amp;:hover
+    color #000</code></pre>
+<p>Compiles to:</p>
+<pre><code class="lang-css">textarea,
+input {
+  color: #a7a7a7;
+}
+textarea:hover,
+input:hover {
+  color: #000;
+}</code></pre>
+<h2 id="variables">Variables</h2>
+<p><a href="http://www.youtube.com/watch?v=VN6trmTBCVs">http://www.youtube.com/watch?v=VN6trmTBCVs</a></p>
+<p>Define a variable, something you can use throughout your stylesheet. </p>
+<pre><code class="lang-css">primary-color = red
+font-size = 14px
+font = font-size &quot;Lucida Grande&quot;, Arial
+
+body
+  font font sans-serif
+  background primary-color</code></pre>
+<p>Property lookup will “bubble up” the stack until found, or return null if the property cannot be resolved. In the following example, @color will resolve to blue:</p>
+<pre><code class="lang-css">  body
+    color: red
+    ul
+      li
+        color: blue
+        a
+          background-color: @color</code></pre>
+<h2 id="mixins">Mixins</h2>
+<p>Mixins allow you to define a combination of values that can be reused. </p>
+<p>When border-radius() is invoked within a selector, the properties are expanded and copied into the selector.</p>
+<pre><code class="lang-css">border-radius(n)
+  -webkit-border-radius n
+  -moz-border-radius n
+  border-radius n
+
+form input[type=button]
+  border-radius 5px</code></pre>
+<p>Compiles to:</p>
+<pre><code class="lang-css">form input[type=button] {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}</code></pre>
+<pre><code class="lang-css">border-radius()
+  -webkit-border-radius arguments
+  -moz-border-radius arguments
+  border-radius arguments
+
+a.button
+  border-radius 1px 2px / 3px 4px!</code></pre>
+<h2 id="built-in-functions">Built in Functions</h2>
+<p>Lighten(color, amount)</p>
+<p>Lighten the given color by amount. This function is unit-sensitive, for example supporting percentages as shown below.</p>
+<pre><code>lighten(#2c2c2c, 30%)</code></pre>
+<p>Compiles to</p>
+<pre><code>#787878</code></pre>
+<p>Also ...</p>
+<ul>
+<li>darken(color, amount)</li>
+<li>desaturate(color, amount)</li>
+<li>saturate(color, amount)</li>
+<li>complement(color) - Gives the complementary color. Equals to spinning hue to 180deg.</li>
+<li>invert(color) - Inverts the color. The red, green, and blue values are inverted, while the opacity is left alone.</li>
+<li>grayscale(color) - Gives the grayscale equivalent of the given color. Equals to desaturate by 100%.</li>
+<li>tint(color, amount) - Mix the given color with white e.g. tint(#fd0cc7,66%)</li>
+<li>shade(color, amount) - Mix the given color with black.</li>
+</ul>
+<h2 id="comments">Comments</h2>
+<p>Stylus supports three kinds of comments: single-line, and multi-line comments, and multi-line buffered comments.</p>
+<h3 id="single-line">Single-line</h3>
+<p>Single-line comments look like JavaScript comments, and do not output in the resulting CSS:</p>
+<pre><code>// I&#39;m a comment!
+body
+  padding 5px // some awesome padding</code></pre>
+<h3 id="multi-line">Multi-line</h3>
+<p>Multi-line comments look identical to regular CSS comments. However, they only output when the compress option is not enabled.</p>
+<pre><code>/*
+ * Adds the given numbers together.
+ */
+add(a, b)
+  a + b</code></pre>
+<p>Multi-line buffered</p>
+<p>Multi-line comments which are not suppressed start with /*!. This tells Stylus to output the comment regardless of compression.</p>
+<pre><code>/*!
+ * Adds the given numbers together.
+ */
+
+add(a, b)
+  a + b</code></pre>
+<h2 id="importing">Importing</h2>
+<p>Stylus supports both literal @import for CSS, as well as dynamic importing or requiring of other Stylus sheets.</p>
+<p>Literal CSS</p>
+<p>Any filename with the extension .css will become a literal. For example:</p>
+<pre><code class="lang-css"> @import &quot;reset.css&quot;</code></pre>
+<p>When using @import without the .css extension, it’s assumed to be a Stylus sheet (e.g., @import &quot;mixins/border-radius&quot;).</p>
+<h3 id="file-globbing">File globbing</h3>
+<p>Stylus supports globbing. With it you could import many files using a file mask:</p>
+<pre><code class="lang-css">@import &#39;product/*&#39;</code></pre>
+<p>This would import all the stylus sheets from the product directory in such structure:</p>
+<pre><code class="lang-css">./product
+  |-- body.styl
+  |-- foot.styl
+  |-- head.styl</code></pre>
+<p>Note that this works with @require too, so if you would have also a ./product/index.styl with this content:</p>
+<pre><code class="lang-css">@require &#39;head&#39;
+@require &#39;body&#39;
+@require &#39;foot&#39;</code></pre>
+<p>then @require &#39;product/*&#39; would include each individual sheet only once.</p>
+<h2 id="extends">Extends</h2>
+<p>You can extend a class with another one. </p>
+<pre><code>  .message {
+    padding: 10px;
+    border: 1px solid #eee;
+  }
+
+  .warning {
+    @extend .message;
+    color: #E2E21E;
+  }</code></pre>
+<p>Extending multiple selectors</p>
+<p>Stylus allows you to extend multiple selectors at once, just write them with the comma:</p>
+<pre><code>.a
+  color: red
+
+.b
+  width: 100px
+
+.c
+  @extend .a, .b
+  height: 200px</code></pre>
+<p>Would render to</p>
+<pre><code>.a,
+.c {
+  color: #f00;
+}
+.b,
+.c {
+  width: 100px;
+}
+.c {
+  height: 200px;
+}</code></pre>
+<h2 id="-block">@block</h2>
+<p>You can define blocks that can be inserted anywhere. </p>
+<pre><code>foo =
+  width: 20px
+  height: 20px
+
+.icon
+  {foo}</code></pre>
+<p>Would render to</p>
+<pre><code>.icon {
+  width: 20px;
+  height: 20px;
+}</code></pre>
+
+      </div>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script src="/scripts/highlight.min.js"></script>
+    <script src="/scripts/snap.js"></script>
+    <script src="/scripts/jquery.smartModal.js"></script>
+    <script src="/scripts/FlameViewportScale.js"></script>
+    <script src="/scripts/hammer.js"> </script>
+    <script src="/scripts/jquery.cookie.js"></script>
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
+    <script src="/scripts/one-side-navigation.js"></script>
+    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+semantic.menu = {};
+
+// ready event
+semantic.menu.ready = function() {
+
+  // selector cache
+  var
+    $menuItem = $('.menu a.item, .menu .link.item'),
+    $dropdown = $('.main.container .menu .dropdown'),
+    // alias
+    handler = {
+
+      activate: function() {
+        if(!$(this).hasClass('dropdown')) {
+          $(this)
+            .addClass('active')
+            .closest('.ui.menu')
+            .find('.item')
+              .not($(this))
+              .removeClass('active')
+          ;
+        }
+      }
+
+    }
+  ;
+
+  $dropdown
+    .dropdown({
+      on: 'hover'
+    })
+  ;
+
+  $menuItem
+    .on('click', handler.activate)
+  ;
+
+};
+
+
+// attach ready event
+$(document)
+  .ready(semantic.menu.ready)
+;
+</script>
+<script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
+  </body>
+</html>

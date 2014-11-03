@@ -3,37 +3,45 @@
 *******************************/
  #logo
   z-index 999999
-  fixed top left
-  margin-top 3px
-
+  margin-top 0px
+  width 700px
+  float left
+  
+#logo-fixed
+  fixed left top
+  z-index 999999999
+  padding 10px
+  
 #logo img 
+  float left
   width 35px
   height 35px
   border 0 !important
-      
   +tablet()
     width 45px
     height 45px  
   +desktop()
-    width 45px
-    height 45px
-    margin-left 4px 
-    margin-top 4px
+    width 55px
+    height 55px
+    padding-right 10px
+    margin-top -10px
 
-#logo-text
+
+#logo-text h1
+  margin 0px
+  width 300px
+  float left
   +mobile()
     padding-left 55px
   +tablet()
     column(1/2)
     margin-top 5px
   +desktop()
-    margin-top 3px
     column(1/2)  
-.logo-m
-  width 450px
-  
-.logo .large
-  padding-left 20px
+
+i
+  padding-right 10px
+
 /*******************************
              picture
 *******************************/

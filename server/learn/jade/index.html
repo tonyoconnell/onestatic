@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description">
+    <meta name="keywords">
+    <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
+    <link rel="stylesheet" href="/styles/doc-icon.css">
+    <link rel="stylesheet" href="/styles/icons.css">
+    <link rel="stylesheet" href="/styles/one.css">
+    <link rel="stylesheet" href="/styles/side-navigation.css">
+  </head>
+  <body>
+    <div id="logo-fixed"><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo.png" alt="ONE" class="circular picture"></a></div>
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
+      </div>
+      <div class="side-navigation side-navigation-right">
+        <ul>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/index.html">
+                   
+                  Get Started</a></li>
+              <li><a href="/learn/git/index.html">
+                   
+                  Git</a></li>
+              <li><a href="/learn/gulp/index.html">
+                   
+                  Gulp</a></li>
+              <li><a href="/learn/markdown/index.html">
+                   
+                  Markdown</a></li>
+              <li><a href="/learn/jade/index.html">
+                   
+                  Jade</a></li>
+              <li><a href="/learn/stylus/index.html">
+                   
+                  Stylus</a></li>
+              <li><a href="/learn/jeet/index.html">
+                   
+                  Jeet</a></li>
+              <li><a href="/learn/rupture/index.html">
+                   
+                  Rupture</a></li>
+              <li><a href="/learn/nib/index.html">
+                   
+                  Nib     </a></li>
+              <li><a href="/learn/axis/index.html">
+                   
+                  Axis  </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="screen">
+      <div id="content"><h1 id="jade">Jade</h1>
+<p>Jade is an elegant templating language focused on enabling very quick HTML coding. </p>
+<h2 id="import">Import</h2>
+<p>To convert a web page to Jade paste your HTML here
+<a href="http://html2jade.aaron-powell.com/">http://html2jade.aaron-powell.com/</a></p>
+<p>or install HTML2Jade</p>
+<pre><code class="lang-text">npm install -g html2jade</code></pre>
+<p>Then use these commands</p>
+<pre><code class="lang-html">html2jade http://twitter.com &gt; twitter.jade
+html2jade mywebpage.html # outputs mywebpage.jade
+html2jade public/*.html  # converts all .html files to .jade</code></pre>
+<h2 id="tags">Tags</h2>
+<p>The first word in your line is your HTML tag. To add classes use a dot. </p>
+<pre><code>p.message</code></pre>
+<p>Compiles to</p>
+<pre><code>&lt;p class=&quot;message&quot;&gt;&lt;/p&gt;</code></pre>
+<p>Divs are very common in HTML. You can imply the div tag by just specifying IDs and classes.</p>
+<pre><code>#menu.column</code></pre>
+<p>Compiles to</p>
+<div id="menu" class="column"></div>
+
+<pre><code>p Hello, World!</code></pre>
+<pre><code>p
+  | Hello, World!
+  | This is a block of text.
+  | I hope you enjoy using Jade.</code></pre>
+<pre><code>&lt;p&gt;Hello, World!
+This is a block of text.
+I hope you enjoy using Jade.
+&lt;/p&gt;</code></pre>
+<pre><code>div
+  p hi</code></pre>
+<pre><code>&lt;div&gt;
+  &lt;p&gt;hi&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<h2 id="commments">Commments</h2>
+<p>To comment precede with a double slash</p>
+<pre><code>//This is a comment</code></pre>
+<h2 id="nesting">Nesting</h2>
+<pre><code>//hide me
+  .row
+    .column
+      p Foo
+    .column
+      p Bar</code></pre>
+<pre><code>&lt;!--hide me
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;column&quot;&gt;
+    &lt;p&gt;Foo&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;column&quot;&gt;
+    &lt;p&gt;Bar&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;--&gt;</code></pre>
+<p>You can use colons to nest</p>
+<pre><code>div: p: span Hello</code></pre>
+<pre><code>&lt;div&gt;
+  &lt;p&gt;&lt;span&gt;Hello&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<h2 id="attributes">Attributes</h2>
+<p>Attributes start and end with brackets. Multiple attributes are separated with commas.</p>
+<pre><code>input(type=&quot;text&quot;, name=&quot;login&quot;)</code></pre>
+<pre><code>&lt;input type=&quot;text&quot; name=&quot;login&quot;/&gt;</code></pre>
+<h2 id="variables">Variables</h2>
+<p>Assigning a value to a variable just requires an equal sign with a space before and after. If a space is omitted it will output the value inside a tag instead of assigning it, so be careful.</p>
+<pre><code>- var foo = &quot;bar&quot;
+p= foo</code></pre>
+<pre><code>&lt;p&gt;bar&lt;/p&gt;</code></pre>
+<h2 id="iteration">Iteration</h2>
+<pre><code>each item in [&#39;product1&#39;, &#39;product2&#39;, &#39;product3&#39;]
+  li= item</code></pre>
+<pre><code>&lt;li&gt;product1&lt;/li&gt;
+&lt;li&gt;product2&lt;/li&gt;
+&lt;li&gt;product3&lt;/li&gt;</code></pre>
+<h2 id="conditions">Conditions</h2>
+<pre><code>- var language = &quot;Jade&quot;
+if language == &quot;Jade&quot;
+  p Awesome
+else
+  p Not awesome</code></pre>
+<pre><code>&lt;p&gt;Awesome&lt;/p&gt;</code></pre>
+<h2 id="templates">Templates</h2>
+<p>Template inheritance is a way to define base template structure and reuse it in multiple places. The parent templates define areas for the child templates to overwrite with the &quot;block&quot; keyword. The child inherits this template with the &quot;extends&quot; keyword.</p>
+<p>Example: if we have the parent template base.jade:</p>
+<pre><code>// base.jade
+h1 Hello from the base
+block content</code></pre>
+<p>And we want our child to use it:</p>
+<pre><code>// child.jade
+extends base
+block content
+    p This is the child&#39;s content</code></pre>
+<p>This will output:</p>
+<pre><code>&lt;h1&gt;Hello from the base&lt;/h1&gt;
+&lt;p&gt;This is the child&#39;s content&lt;/p&gt;</code></pre>
+<p>Templates can have many blocks and inherit multiple levels.</p>
+<p>Block Append and Prepend
+When using inheritance and blocks, sometimes we want to add to the content instead of overwriting it. We can do so with the &quot;append&quot; and &quot;prepend&quot; keywords. Either by itself along with the block name, or as a parameter to the &quot;block&quot; keyword.</p>
+<p>Example: if we have the parent template base.jade:</p>
+<pre><code>// base.jade
+h1 Hello from the base
+block content
+    p Welcome</code></pre>
+<p>And we want our child to append to the content block:</p>
+<pre><code>// child.jade
+extends base
+block append content
+    p And goodbye</code></pre>
+<p>This will output:</p>
+<pre><code>&lt;h1&gt;Hello from the base&lt;/h1&gt;
+&lt;p&gt;Welcome&lt;/p&gt;
+&lt;p&gt;And goodbye&lt;/p&gt;</code></pre>
+<p>As mentioned you can skip the block keyword and just use append or prepend.</p>
+<pre><code>// child.jade
+extends base
+append content
+    p And goodbye</code></pre>
+<p>Inheritance is nice and all, but sometimes we just need a snippet to add at certain parts of the page in various places. Doing this with inheritance is not a good idea. Using the &quot;include&quot; keyword allows us to add on the source of another file.</p>
+<p>If we have the following jade files:</p>
+<pre><code>// widget.jade
+.widget
+    p The weather is sunny today</code></pre>
+<pre><code>// page.jade
+p I wonder what the weather is like today?
+include widget</code></pre>
+<p>The output of page.jade will logically be equivalent and compile to:</p>
+<pre><code class="lang-HTML">&lt;p&gt;I wonder what the weather is like today?&lt;/p&gt;
+&lt;div class=&quot;widget&quot;&gt;
+  &lt;p&gt;The weather is sunny today&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<h2 id="include-markdown-in-jade">Include Markdown in Jade</h2>
+<pre><code class="lang-text">html
+  body
+    include:md ../path/to/markdown/file.md</code></pre>
+<pre><code>+filter(&#39;markdown&#39;).
+  # Heading 1
+  Hello from some **markdown**.</code></pre>
+<h1 id="blocks-and-extends">Blocks and Extends</h1>
+<pre><code>// my-template.jade
+extends my-layout
+
+block head
+  script(src=&quot;myfile.js&quot;)
+
+block content
+  h1 My page</code></pre>
+<pre><code>// my-layout.jade
+doctype 5
+html
+  head
+    title My title
+    block head
+  body
+    #content
+      block content</code></pre>
+<h1 id="microdata">Microdata</h1>
+<p><a href="http://stackoverflow.com/questions/9332441/java-scala-library-template-engine-">http://stackoverflow.com/questions/9332441/java-scala-library-template-engine-</a>
+to-produce-microdata</p>
+<p>The next listing is an example of manually adding the Microdata tags in a 
+template engine (Scalate with Jade syntax):</p>
+<pre><code>-@ var vcard: VCard
+
+div( itemscope itemtype=&quot;http://schema.org/Person&quot; 
+     itemid=#{vcard.getProperty(&quot;uid&quot;)} )
+  span( itemprop=&quot;name&quot; )
+    #{vcard.getProperty(&quot;fn&quot;)}
+  span( itemprop=&quot;telephone&quot; ) 
+    #{vcard.getProperty(&quot;tel&quot;)}</code></pre>
+<p>The next listing shows a template using a data structure that is aware
+of the used Microdata vocabulary and wraps an instance of a typed Microdata 
+item with its
+properties:</p>
+<pre><code>-@ var md: MicroData
+
+= md.scope
+  div
+    = md.prop(&quot;name&quot;)
+      span( style=&quot;color:red&quot; )
+    = md.prop(&quot;telephone&quot;)
+    = md.prop(&quot;email&quot;)</code></pre>
+<p>The scope method of the Microdata interface will add the itemscope, itemtype
+and itemid attributes to the nested div element. The prop method either 
+augments a nested
+element as shown for the name property or creates the correct nested element. 
+The method
+adds the itemprop attribute and puts the value for this property inside the 
+element.</p>
+<p>An implementation of this approach must take care of a few peculiarities. Some
+properties don’t necessarily use simple span elements, e.g. dates can be 
+better expressed with time elements or URI values most likely appear in an 
+a,img,link or object element. Property values could also be put in a content 
+attribute while the element’s nested text content is optimized for human 
+consumption. Items can be nested, e.g. an item of type PostalAddress could be 
+nested inside a Person item.</p>
+<p>A template engine that should be extended as described above should allow to 
+capture
+and manipulate nested HTML elements and to call methods of passed in objects</p>
+
+      </div>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script src="/scripts/highlight.min.js"></script>
+    <script src="/scripts/snap.js"></script>
+    <script src="/scripts/jquery.smartModal.js"></script>
+    <script src="/scripts/FlameViewportScale.js"></script>
+    <script src="/scripts/hammer.js"> </script>
+    <script src="/scripts/jquery.cookie.js"></script>
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
+    <script src="/scripts/one-side-navigation.js"></script>
+    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+semantic.menu = {};
+
+// ready event
+semantic.menu.ready = function() {
+
+  // selector cache
+  var
+    $menuItem = $('.menu a.item, .menu .link.item'),
+    $dropdown = $('.main.container .menu .dropdown'),
+    // alias
+    handler = {
+
+      activate: function() {
+        if(!$(this).hasClass('dropdown')) {
+          $(this)
+            .addClass('active')
+            .closest('.ui.menu')
+            .find('.item')
+              .not($(this))
+              .removeClass('active')
+          ;
+        }
+      }
+
+    }
+  ;
+
+  $dropdown
+    .dropdown({
+      on: 'hover'
+    })
+  ;
+
+  $menuItem
+    .on('click', handler.activate)
+  ;
+
+};
+
+
+// attach ready event
+$(document)
+  .ready(semantic.menu.ready)
+;
+</script>
+<script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
+  </body>
+</html>

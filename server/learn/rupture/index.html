@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description">
+    <meta name="keywords">
+    <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
+    <link rel="stylesheet" href="/styles/doc-icon.css">
+    <link rel="stylesheet" href="/styles/icons.css">
+    <link rel="stylesheet" href="/styles/one.css">
+    <link rel="stylesheet" href="/styles/side-navigation.css">
+  </head>
+  <body>
+    <div id="logo-fixed"><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo.png" alt="ONE" class="circular picture"></a></div>
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
+      </div>
+      <div class="side-navigation side-navigation-right">
+        <ul>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/index.html">
+                   
+                  Get Started</a></li>
+              <li><a href="/learn/git/index.html">
+                   
+                  Git</a></li>
+              <li><a href="/learn/gulp/index.html">
+                   
+                  Gulp</a></li>
+              <li><a href="/learn/markdown/index.html">
+                   
+                  Markdown</a></li>
+              <li><a href="/learn/jade/index.html">
+                   
+                  Jade</a></li>
+              <li><a href="/learn/stylus/index.html">
+                   
+                  Stylus</a></li>
+              <li><a href="/learn/jeet/index.html">
+                   
+                  Jeet</a></li>
+              <li><a href="/learn/rupture/index.html">
+                   
+                  Rupture</a></li>
+              <li><a href="/learn/nib/index.html">
+                   
+                  Nib     </a></li>
+              <li><a href="/learn/axis/index.html">
+                   
+                  Axis  </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="screen">
+      <div id="content"><h1 id="rupture">Rupture</h1>
+<p>All of the functions provided by rupture are block mixins, which means that they must be called with a + prefix and a block of stylus should be nested inside them.</p>
+<p>Before getting started, I would recommend reading this to better understand the concept that we&#39;re trying to hit.</p>
+<p>Variables</p>
+<p>A few variables are exposed that can be customized, each of them are listed below:</p>
+<p>mobile-cutoff</p>
+<p>Pixel value where the mobile mixin kicks in, also the lower bound of the tablet mixin.</p>
+<p>desktop-cutoff</p>
+<p>Pixel value where the desktop mixin kicks in, also the upper bound of the tablet mixin.</p>
+<p>scale</p>
+<p>A list of values that you can reference by index in most of the mixins listed below. This works exactly like breakpoint-slicer. Default looks like this:</p>
+<p>scale = 0 400px 600px 800px 1050px
+Mixins</p>
+<p>So there are two &quot;categories&quot; of mixins that are a part of rupture. The first is a very basic set designed to simply shorten and sweeten standard media queries, and the second is a very close port of the fantastic breakpoint-slicer library, which can be used almost as a grid. We&#39;ll go through these in order.</p>
+<p>+above(measure)</p>
+<p>When the screen size is above the provided measure, the styles in the block will take effect.</p>
+<p>+from(measure)</p>
+<p>Alias of above. Styles take effect from the provided measure and above.</p>
+<p>+below(measure)</p>
+<p>When the screen size is below the provided measure, the styles in the block will take effect.</p>
+<p>+to(measure)</p>
+<p>Alias of below. Styles take effect from zero up to the provided measure.</p>
+<p>+between(measure, measure)</p>
+<p>When the screen size is between the two provided measure, the styles in the block will take effect.</p>
+<p>+at(measure)</p>
+<p>Intended for use with scale measures, when the screen size is between the provided scale measure and the one below it, the styles in the block will take effect. For example, if your scale was something like scale = 0 400px 600px, and you used the mixin like +at(2), it would kick in between 400 and 600px (remember, scale is zero indexed, so 2 is the third value, and one less is the second). If you use this with a value, it will not have much effect, as it will be at one specific pixel value rather than a range like you want.</p>
+<p>+mobile()</p>
+<p>When the screen size is 400px (defined by mobile-cutoff) or less, the styles in the block will take effect.</p>
+<p>+tablet()</p>
+<p>When the screen size is between 1050px (defined by desktop-cutoff) and 400px (defined by mobile-cutoff), the styles in the block will take effect.</p>
+<p>+desktop()</p>
+<p>When the screen size is 1050px (defined by desktop-cutoff) or more, the styles in the block will take effect.</p>
+<p>+retina()</p>
+<p>When the device has a pixel density of over 1.5 (retina), the styles in the block will take effect.</p>
+
+      </div>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script src="/scripts/highlight.min.js"></script>
+    <script src="/scripts/snap.js"></script>
+    <script src="/scripts/jquery.smartModal.js"></script>
+    <script src="/scripts/FlameViewportScale.js"></script>
+    <script src="/scripts/hammer.js"> </script>
+    <script src="/scripts/jquery.cookie.js"></script>
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
+    <script src="/scripts/one-side-navigation.js"></script>
+    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+semantic.menu = {};
+
+// ready event
+semantic.menu.ready = function() {
+
+  // selector cache
+  var
+    $menuItem = $('.menu a.item, .menu .link.item'),
+    $dropdown = $('.main.container .menu .dropdown'),
+    // alias
+    handler = {
+
+      activate: function() {
+        if(!$(this).hasClass('dropdown')) {
+          $(this)
+            .addClass('active')
+            .closest('.ui.menu')
+            .find('.item')
+              .not($(this))
+              .removeClass('active')
+          ;
+        }
+      }
+
+    }
+  ;
+
+  $dropdown
+    .dropdown({
+      on: 'hover'
+    })
+  ;
+
+  $menuItem
+    .on('click', handler.activate)
+  ;
+
+};
+
+
+// attach ready event
+$(document)
+  .ready(semantic.menu.ready)
+;
+</script>
+<script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
+  </body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description">
+    <meta name="keywords">
+    <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
+    <link rel="stylesheet" href="/styles/doc-icon.css">
+    <link rel="stylesheet" href="/styles/icons.css">
+    <link rel="stylesheet" href="/styles/one.css">
+    <link rel="stylesheet" href="/styles/side-navigation.css">
+  </head>
+  <body>
+    <div id="logo-fixed"><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo.png" alt="ONE" class="circular picture"></a></div>
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
+      </div>
+      <div class="side-navigation side-navigation-right">
+        <ul>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/index.html">
+                   
+                  Get Started</a></li>
+              <li><a href="/learn/git/index.html">
+                   
+                  Git</a></li>
+              <li><a href="/learn/gulp/index.html">
+                   
+                  Gulp</a></li>
+              <li><a href="/learn/markdown/index.html">
+                   
+                  Markdown</a></li>
+              <li><a href="/learn/jade/index.html">
+                   
+                  Jade</a></li>
+              <li><a href="/learn/stylus/index.html">
+                   
+                  Stylus</a></li>
+              <li><a href="/learn/jeet/index.html">
+                   
+                  Jeet</a></li>
+              <li><a href="/learn/rupture/index.html">
+                   
+                  Rupture</a></li>
+              <li><a href="/learn/nib/index.html">
+                   
+                  Nib     </a></li>
+              <li><a href="/learn/axis/index.html">
+                   
+                  Axis  </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="screen">
+      <div id="content"><h1 id="nib">NIB</h1>
+<h2 id="position">Position</h2>
+<p>The position mixins absolute, fixed, and relative provide a shorthand variant to what is otherwise three CSS properties. The syntax is as follows:</p>
+<p>fixed|absolute|relative: top|bottom [n] left|right [n]</p>
+<p>The following example will default to (0,0):</p>
+<h1 id="back-to-top-">back-to-top {</h1>
+<p>  fixed: bottom right;
+}</p>
+<p>yielding:</p>
+<h1 id="back-to-top-">back-to-top {</h1>
+<p>  position: fixed;
+  bottom: 0;
+  right: 0;
+}</p>
+<p>You may also specify the units:</p>
+<h1 id="back-to-top-">back-to-top {</h1>
+<p>  fixed: bottom 10px right 5px;
+}</p>
+<p>yielding:</p>
+<h1 id="back-to-top-">back-to-top {</h1>
+<p>  position: fixed;
+  bottom: 10px;
+  right: 5px;
+}</p>
+<h2 id="border-radius">Border radius</h2>
+<p>Nib&#39;s border-radius supports both the regular syntax as well as augmenting it to make the value more expressive.</p>
+<p>button {
+  border-radius: 1px 2px / 3px 4px;
+}</p>
+<p>button {
+  border-radius: 5px;
+}</p>
+<p>button {
+  border-radius: bottom 10px;
+}</p>
+<p>yielding:</p>
+<p>button {
+  -webkit-border-radius: 1px 2px/3px 4px;
+  -moz-border-radius: 1px 2px/3px 4px;
+  border-radius: 1px 2px/3px 4px;
+}
+button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+button {
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}</p>
+<h2 id="responsive">Responsive</h2>
+<p>The image mixin allows you to define a background-image for both the normal image, and a doubled image for devices with a higher pixel ratio such as retina displays. This works by using a @media query to serve an &quot;@2x&quot; version of the file.</p>
+<h1 id="logo-">logo {</h1>
+<p>  image: &#39;/images/branding/logo.main.png&#39;
+}</p>
+<h1 id="logo-">logo {</h1>
+<p>  image: &#39;/images/branding/logo.main.png&#39; 50px 100px
+}</p>
+<p>yields: </p>
+<h1 id="logo-">logo {</h1>
+<p>  background-image: url(&quot;/images/branding/logo.main.png&quot;);
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {</p>
+<h1 id="logo-">logo {</h1>
+<pre><code>background-image: url(&quot;/images/branding/logo.main@2x.png&quot;);
+background-size: auto auto;</code></pre>
+<p>  }
+}</p>
+<h1 id="logo-">logo {</h1>
+<p>  background-image: url(&quot;/images/branding/logo.main.png&quot;);
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {</p>
+<h1 id="logo-">logo {</h1>
+<pre><code>background-image: url(&quot;/images/branding/logo.main@2x.png&quot;);
+background-size: 50px 100px;</code></pre>
+<p>  }
+}</p>
+<p>Miscellaneous properties</p>
+<p>The following properties follow vendor expansion much like border-radius, however without augmentation, as well as some aliases such as whitespace instead of white-space.</p>
+<p>no-wrap == nowrap
+whitespace == white-space
+box-shadow
+user-select
+column-count
+column-gap
+column-rule
+column-rule-color
+column-rule-width
+column-rule-style
+column-width
+background-size
+transform
+border-image
+transition
+transition-property
+transition-duration
+transition-timing-function
+transition-delay
+backface-visibility
+opacity
+box-sizing
+box-orient
+box-flex
+box-flex-group
+box-align
+box-pack
+box-direction
+animation
+animation-name
+animation-duration
+animation-delay
+animation-direction
+animation-iteration-count
+animation-timing-function
+animation-play-state
+animation-fill-mode
+border-image
+hyphens
+appearance</p>
+
+      </div>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script src="/scripts/highlight.min.js"></script>
+    <script src="/scripts/snap.js"></script>
+    <script src="/scripts/jquery.smartModal.js"></script>
+    <script src="/scripts/FlameViewportScale.js"></script>
+    <script src="/scripts/hammer.js"> </script>
+    <script src="/scripts/jquery.cookie.js"></script>
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
+    <script src="/scripts/one-side-navigation.js"></script>
+    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+semantic.menu = {};
+
+// ready event
+semantic.menu.ready = function() {
+
+  // selector cache
+  var
+    $menuItem = $('.menu a.item, .menu .link.item'),
+    $dropdown = $('.main.container .menu .dropdown'),
+    // alias
+    handler = {
+
+      activate: function() {
+        if(!$(this).hasClass('dropdown')) {
+          $(this)
+            .addClass('active')
+            .closest('.ui.menu')
+            .find('.item')
+              .not($(this))
+              .removeClass('active')
+          ;
+        }
+      }
+
+    }
+  ;
+
+  $dropdown
+    .dropdown({
+      on: 'hover'
+    })
+  ;
+
+  $menuItem
+    .on('click', handler.activate)
+  ;
+
+};
+
+
+// attach ready event
+$(document)
+  .ready(semantic.menu.ready)
+;
+</script>
+<script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
+  </body>
+</html>

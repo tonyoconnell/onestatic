@@ -1,4 +1,4 @@
-extends ../templates/page
+extends ../templates/one
 
 append page-info
 	- title = 'ONE'
@@ -6,8 +6,110 @@ append page-info
 	- keywords = 'ONE, ecommerce'
  
 block content
-	h1 ONE
-	p Sell Faster
-
-
-
+	.home
+		p Layouts
+		.grid
+			.box
+				.item
+					.name
+						a(href='/layouts/1-column.html') 
+							| 1 Column
+			.box
+				.item
+					.name
+						a(href='/layouts/picture.html') 
+							| 1 Column with Picture
+			.box
+				.item
+					.name
+						a(href='/layouts/2-columns-left.html') 
+							| 2 Columns Left
+			.box
+				.item
+					.name
+						a(href='/layouts/2-columns-right.html') 
+							| 2 Columns Right
+			.box
+				.item
+					.name
+						a(href='/3-columns.html') 
+							| 3 Columns
+		p Pages
+		.grid
+			.box
+				.item
+					.name
+						a(href='/shop/category.html') 
+							| Category
+			.box
+				.item
+					.name
+						a(href='/shop/product.html') 
+							| Product
+			.box
+				.item
+					.name
+						a(href='/home.html') 
+							| Home
+			.box
+				.item
+					.name
+						a(href='/book/index.html') 
+							| Book
+			.box
+				.item
+					.name
+						a(href='/3-columns.html') 
+							| Cart
+		p Learn
+		.grid
+			.box
+				.item
+					.name
+						a(href='/learn/index.html') 
+							| Get Started
+			.box
+				.item
+					.name
+						a(href='/learn/git/index.html') 
+							| Git
+			.box
+				.item
+					.name
+						a(href='/learn/gulp/index.html') 
+							| Gulp
+			.box
+				.item
+					.name
+						a(href='/learn/markdown/index.html') 
+							| Markdown
+			.box
+				.item
+					.name
+						a(href='/learn/jade/index.html') 
+							| Jade
+			.box
+				.item
+					.name
+						a(href='/learn/stylus/index.html') 
+							| Stylus
+			.box
+				.item
+					.name
+						a(href='/learn/jeet/index.html') 
+							| Jeet
+			.box
+				.item
+					.name
+						a(href='/learn/rupture/index.html') 
+							| Rupture
+			.box
+				.item
+					.name
+						a(href='/learn/nib/index.html') 
+							| Nib			
+			.box
+				.item
+					.name
+						a(href='/learn/axis/index.html') 
+							| Axis									

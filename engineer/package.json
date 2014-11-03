@@ -17,7 +17,7 @@
     "axis": "^0.2.1",
     "browser-sync": "^1.5.7",
     "event-stream": "^3.1.5",
-    "gulp": "~3.8.8",
+    "gulp": "~3.8.9",
     "gulp-atomicscss": "^0.4.0",
     "gulp-autoprefixer": "0.0.10",
     "gulp-cache": "^0.2.4",
@@ -44,6 +44,7 @@
     "gulp-wait": "0.0.2",
     "gulp-watch": "^1.1.0",
     "imagemin": "^1.0.3",
+    "jade-highlight": "0.0.1",
     "jshint-stylish": "^0.4.0",
     "marked": "^0.3.2",
     "moment": "2.3.x",
@@ -60,6 +61,7 @@
     "gulp-cached": "^1.0.1",
     "gulp-static-site": "0.0.6",
     "jade": "^1.7.0",
+    "run-wintersmith": "0.0.2",
     "vinyl-map": "^1.0.1"
   }
 }

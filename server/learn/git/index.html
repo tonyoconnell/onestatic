@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description">
+    <meta name="keywords">
+    <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
+    <link rel="stylesheet" href="/styles/doc-icon.css">
+    <link rel="stylesheet" href="/styles/icons.css">
+    <link rel="stylesheet" href="/styles/one.css">
+    <link rel="stylesheet" href="/styles/side-navigation.css">
+  </head>
+  <body>
+    <div id="logo-fixed"><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo.png" alt="ONE" class="circular picture"></a></div>
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
+      </div>
+      <div class="side-navigation side-navigation-right">
+        <ul>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/index.html">
+                   
+                  Get Started</a></li>
+              <li><a href="/learn/git/index.html">
+                   
+                  Git</a></li>
+              <li><a href="/learn/gulp/index.html">
+                   
+                  Gulp</a></li>
+              <li><a href="/learn/markdown/index.html">
+                   
+                  Markdown</a></li>
+              <li><a href="/learn/jade/index.html">
+                   
+                  Jade</a></li>
+              <li><a href="/learn/stylus/index.html">
+                   
+                  Stylus</a></li>
+              <li><a href="/learn/jeet/index.html">
+                   
+                  Jeet</a></li>
+              <li><a href="/learn/rupture/index.html">
+                   
+                  Rupture</a></li>
+              <li><a href="/learn/nib/index.html">
+                   
+                  Nib     </a></li>
+              <li><a href="/learn/axis/index.html">
+                   
+                  Axis  </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="screen">
+      <div id="content"><h1 id="git">Git</h1>
+<h2 id="quick-start">Quick start</h2>
+<pre><code>cd ~/Websites/one/
+git checkout -b slideshow
+git add --all
+git commit -m &quot;message&quot;
+git push -u origin importing
+git checkout master
+git merge importing
+git push -u origin master</code></pre>
+<h2 id="get-software">Get software</h2>
+<p>Go into the folder where you want to place the software</p>
+<pre><code>cd ~/Websites/</code></pre>
+<p>Clone the software from GitHub to your machine</p>
+<pre><code>git clone https://github.com/tonyoconnell/one.git one</code></pre>
+<h2 id="navigate">Navigate</h2>
+<p>Branches make it easy to add, integrate and undo changes. Create one for each new each feature, app or design. Checking out a branch makes the entire working folder match that branch. This can be used to view a different state of your project without altering your current state in any way. Lets make a new branch for a slideshow and check it out.</p>
+<pre><code>git checkout -b slideshow</code></pre>
+<p>Adding -b tells git to make a new branch. It is the same as ...</p>
+<pre><code>git branch slideshow
+git checkout slideshow</code></pre>
+<p>Make sure you are working in (have checked out) the right branch while you make your changes.</p>
+<pre><code>git branch    </code></pre>
+<h2 id="stage-your-changes">Stage your changes</h2>
+<p>The staging area allows you to save changes until you are ready to commit them. Add changes into your staging area using git add.</p>
+<pre><code>git add --all
+git add directory
+git add file</code></pre>
+<h2 id="commit-your-changes">Commit your changes</h2>
+<p>Commit your staged snapshot to the project.</p>
+<pre><code>git commit -m &quot;message&quot;</code></pre>
+<p>Add extra files to your commit from your staged area</p>
+<pre><code>git commit --amend    </code></pre>
+<h2 id="undo">Undo</h2>
+<p>Revert to old repo</p>
+<pre><code>git reset --hard 70be30bf41
+git push –f origin master</code></pre>
+<p>Return to the master branch. All files on in your local folder will be the same as the last time you committed </p>
+<pre><code>git checkout master (makes everything like your master repo on GitHub)
+git checkout HEAD^ file.zip (for one revision back)
+git checkout engineering/gulpfile.js 
+git checkout 324234324 
+git checkout master~5 image.png</code></pre>
+<h3 id="undo-git-add-all">Undo git add -all</h3>
+<p>Unstage changes added to the staging area. Move mistakenly committed files back to the staging area from the previous commit, without cancelling the changes done to them. </p>
+<pre><code>git reset</code></pre>
+<h2 id="rollback-">Rollback </h2>
+<p>Delete all changes (not committed) and return to the last committed state. WARNING: you will loose all work that has not been committed. </p>
+<pre><code>git reset --hard HEAD
+
+git checkout 4353453 .</code></pre>
+<p>The . at the end will apply changes to the whole tree. </p>
+<h2 id="remove-untracked-changes">Remove Untracked Changes</h2>
+<p>Delete all (untracked) local files from current branck
+git clean -f -d </p>
+<p>Try a dry run first by adding -n to it</p>
+<p>git clean -f works only in the directory where it&#39;s called (and subdirectories). If you want to clean the whole working copy, you should call it in its root directory</p>
+<h2 id="merge-a-branch">Merge a branch</h2>
+<p>Merge work from slideshow branch and its parents into master. You can merge into any branch</p>
+<pre><code>git merge master</code></pre>
+<h2 id="deploy">Deploy</h2>
+<p>Git add moves local changes into the staging area. 
+    cd ~/Websites/one/
+    git add --all
+    git commit -m &quot;one&quot;
+    git push -u origin master</p>
+<h2 id="observe">Observe</h2>
+<p>Show what files changed</p>
+<pre><code>git status </code></pre>
+<p>Show files committed to the staging server</p>
+<pre><code>git diff --cached </code></pre>
+<p>git log --oneline | shows the log of comits. q quits out of it
+git show –format=oneline a3456456 | show what happened
+git diff | what’s different in all files
+gif diff file.text 
+git diff --staged | show difference between working and staging
+git branch | lists branches </p>
+<p>Then reset the unwanted files in order to leave them out from the commit:</p>
+<p>git reset HEAD path/to/unwanted_file</p>
+<p>Now commit again.</p>
+<p>Undo a commit - move mistakenly 
+   git push -u origin master</p>
+<p>git rm file.txt | removes file from pc and repo</p>
+<p>git checkout | go to repo get the named thing and make local system look like it
+git checkout -- file.html | get that file. the dash says stay in that branch
+git reset HEAD file.html | unstage that file</p>
+<p>escape + :q | quits vim</p>
+<p>git clean -f | removes files in staging directory</p>
+<p>git branch | lists branches 
+git branch new-branch | creates a new branch
+git checkout new-branch
+git checkout -b new-branch | create new branch and checkout
+git diff master..new-branch
+git diff color-words master..new-branch
+git branch -merged | shows the branches that are merged into the current branch
+git branch -m new-branch newname | rename branch
+git branch -d delete-this | delete branch</p>
+<p>to merge
+git checkout master 
+git merge new-branch
+to exit vim press ESC &gt; ZZ</p>
+<p>pulling down repo for the first time</p>
+<p>git init .
+cd ~/.ssh
+ssh-keygen -t rsa -C &quot;tony@one.ie&quot;
+less id_rsa.pub 
+copy the key and add it to github <a href="https://github.com/tonyoconnell/one/settings/keys">https://github.com/tonyoconnell/one/settings/keys</a>
+git pull git@github.com:tonyoconnell/mco.git
+password 1hundred$</p>
+<p>git clone git@github.com:tonyoconnell/one.git public_html
+git clone git@github.com:tonyoconnell/mco.git html one2345$
+git clone <a href="https://github.com/sferik/sign-in-with-twitter.git">https://github.com/sferik/sign-in-with-twitter.git</a> newfolder (sets name of folder) </p>
+<p>git clone git@github.com:tonyoconnell/nilpeter.git www    </p>
+<p>git reset --hard HEAD~5 | go back 5</p>
+<p>To Remove All gitignored files on Github
+git rm -r --cached . 
+git add . 
+git commit -m &quot;.gitignore is now working&quot;</p>
+<h1 id="this-will-detach-your-head-i-e-leave-you-with-no-branch-checked-out-">This will detach your HEAD, i.e. leave you with no branch checked out:</h1>
+<p>git checkout 0d1d7fc32
+or if you want to make commits while you&#39;re there, go ahead and make a new branch while you&#39;re at it:</p>
+<p>git checkout -b old-state 0d1d7fc32
+If, on the other hand, you want to really get rid of everything you&#39;ve done since then, there are two possibilities. One, if you haven&#39;t published any of these commits, simply reset:</p>
+<h1 id="this-will-destroy-any-local-modifications-">This will destroy any local modifications.</h1>
+<h1 id="don-t-do-it-if-you-have-uncommitted-work-you-want-to-keep-">Don&#39;t do it if you have uncommitted work you want to keep.</h1>
+<p>git reset --hard 0d1d7fc32</p>
+<h1 id="alternatively-if-there-s-work-to-keep-">Alternatively, if there&#39;s work to keep:</h1>
+<p>git stash
+git reset --hard 0d1d7fc32
+git stash pop</p>
+<h1 id="this-saves-the-modifications-then-reapplies-that-patch-after-resetting-">This saves the modifications, then reapplies that patch after resetting.</h1>
+<h1 id="you-could-get-merge-conflicts-if-you-ve-modified-things-which-were">You could get merge conflicts, if you&#39;ve modified things which were</h1>
+<h1 id="changed-since-the-commit-you-reset-to">changed since the commit you reset to</h1>
+<p>On the other hand, if you&#39;ve published the work, you probably don&#39;t want to reset the branch, since that&#39;s effectively rewriting history. In that case, you could indeed revert the commits. With git, revert has a very specific meaning: create a commit with the reverse patch to cancel it out. This way you don&#39;t rewrite any history.</p>
+<h1 id="this-will-create-three-separate-revert-commits-">This will create three separate revert commits:</h1>
+<p>git revert 0766c053 25eee4ca a867b4af</p>
+<h1 id="it-also-takes-ranges-this-will-revert-the-last-two-commits-">It also takes ranges. This will revert the last two commits:</h1>
+<p>git revert HEAD~2..HEAD</p>
+<h1 id="to-get-just-one-you-could-use-rebase-i-to-squash-them-afterwards">To get just one, you could use <code>rebase -i</code> to squash them afterwards</h1>
+<h1 id="or-you-could-do-it-manually-be-sure-to-do-this-at-top-level-of-the-repo-">Or, you could do it manually (be sure to do this at top level of the repo)</h1>
+<h1 id="get-your-index-and-work-tree-into-the-desired-state-without-changing-head-">get your index and work tree into the desired state, without changing HEAD:</h1>
+<p>git checkout 0d1d7fc32 .</p>
+<h1 id="and-then-commit">and then commit</h1>
+<p>git commit    # be sure and write a good message describing what you just did</p>
+<p>Troubleshooting</p>
+<pre><code>.git/index.lock</code></pre>
+
+      </div>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script src="/scripts/highlight.min.js"></script>
+    <script src="/scripts/snap.js"></script>
+    <script src="/scripts/jquery.smartModal.js"></script>
+    <script src="/scripts/FlameViewportScale.js"></script>
+    <script src="/scripts/hammer.js"> </script>
+    <script src="/scripts/jquery.cookie.js"></script>
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
+    <script src="/scripts/one-side-navigation.js"></script>
+    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+semantic.menu = {};
+
+// ready event
+semantic.menu.ready = function() {
+
+  // selector cache
+  var
+    $menuItem = $('.menu a.item, .menu .link.item'),
+    $dropdown = $('.main.container .menu .dropdown'),
+    // alias
+    handler = {
+
+      activate: function() {
+        if(!$(this).hasClass('dropdown')) {
+          $(this)
+            .addClass('active')
+            .closest('.ui.menu')
+            .find('.item')
+              .not($(this))
+              .removeClass('active')
+          ;
+        }
+      }
+
+    }
+  ;
+
+  $dropdown
+    .dropdown({
+      on: 'hover'
+    })
+  ;
+
+  $menuItem
+    .on('click', handler.activate)
+  ;
+
+};
+
+
+// attach ready event
+$(document)
+  .ready(semantic.menu.ready)
+;
+</script>
+<script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
+  </body>
+</html>

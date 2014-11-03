@@ -1,3 +1,21 @@
+nav
+  margin-right 30px
+nav  ul
+    list-style none
+    +tablet()
+      float right
+    +desktop()
+      float right  
+
+nav  li
+    display inline-block
+    padding 10px 15px
+    cursor pointer
+    transition all 0.2s
+    &:hover
+      background #111
+      color #fff
+      
 .breadcrumbs
     margin 0px 0 20px 0  
 
@@ -32,3 +50,11 @@
 .tag-cloud ul li:hover a 
   background #000000
   color #fff
+  
+.contact-left
+  width 700px
+  float left
+  
+.sign-in 
+  float right
+  color #111

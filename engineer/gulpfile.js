@@ -111,7 +111,6 @@ gulp.task('server', function(){
   return browsersync.init(null, {server: {baseDir: '../server/'}})
 });
 
-
 gulp.task('reload', function () {
     browsersync.reload();
 });
@@ -142,44 +141,10 @@ Pages
 Convert Jade to HTML and copy to the server. 
 */
 
-gulp.task('words', function () {
-    return gulp.src('../build/words/**/*.md')
-        .pipe(static_site())
-        .pipe(gulp.dest('../server/'))
-});
-
-gulp.task('blog', function (cb) {
-  var
-    tpl = fs.readFileSync('../build/templates/blank.jade'),
-    jadeTpl = pureJade.compile(tpl),
-    renderPost = map(function(code, filename) {
-      // .attributes .body
-      var parsed = frontMatter(String(code)),
-          data = parsed.attributes,
-          body = parsed.body;
-
-      body = marked.parse(body);
-
-      data.content = body;
-      data.filename = filename;
-
-      return jadeTpl(data);
-    });
-
-  return gulp.src('../build/words/*.md')
-    .pipe(renderPost)
-    .pipe(rename({extname: '.html'}))
-    .pipe(gulp.dest('../server/'))
-});
-
-
-
-
     gulp.task('page', function() {
      gulp.src('../build/pages/**/*.jade')
     .pipe(cache()) 
     .pipe(plumber())
-    .pipe(changed(pages + '**/*.jade'))    
     .pipe(jade({
       pretty: true
     }))
@@ -190,14 +155,45 @@ gulp.task('blog', function (cb) {
 });
 
 /*
+Templates
+---------
+Convert Jade to HTML and copy to server. 
+*/
 
+    gulp.task('template', function() {
+     gulp.src('../build/pages/**/*.jade')
+    .pipe(plumber())
+    .pipe(jade({
+      pretty: true
+    }))
+    .pipe(gulp.dest(server))
+    .pipe(wait(1500))
+    .pipe(browsersync.reload({stream: true}))
+    .pipe(notify({message: 'Template Applied'}));
+});
+
+/*
+
+Text
+---------
+Convert markdown to HTML 
+*/
+
+gulp.task('text', function () {
+    return gulp.src('../build/text/**/**/*.md')
+        .pipe(static_site())
+        .pipe(gulp.dest('../server/'))
+});
+
+
+
+/*
 Pictures
 ----------
 */
     gulp.task('picture', function() {
     gulp.src(pictures + '**/*.{jpg,png,gif,svg}')
     .pipe(cache()) 
-    .pipe(changed(server_pictures))
     .pipe(gulp.dest(server_pictures))
     .pipe(browsersync.reload({stream: true}));
 });
@@ -227,9 +223,8 @@ Build CSS classes from Stylus
 */
 
    gulp.task('style', function () {
-     gulp.src(styles + '*.styl')
+     gulp.src(styles + 'one.styl')
     .pipe(plumber())
-    .pipe(cache()) 
     .pipe(changed(styles + '*.styl'))
     .pipe(stylus({ use:[fontface()], sourcemap: { inline: true } }))
     .pipe(gulp.dest(server_styles))
@@ -290,20 +285,20 @@ Run Tasks
 gulp.task('default', function() {
 
 // start these tasks 
-    gulp.start( 'page', 'picture', 'font', 'style', 'script', 'words', 'server')
+    gulp.start( 'page', 'picture', 'font', 'style', 'script', 'text', 'server')
 
 // watch for changes and run tasks
         gulp.watch('../build/pages/**/*', function(event){
             gulp.start('page', 'reload');
         });
         gulp.watch('../build/templates/*.jade', function(event){
-            gulp.start('page', 'reload');
+            gulp.start('template', 'reload');
         });
         gulp.watch('../build/blocks/**/*', function(event){
             gulp.start('page', 'reload');
         });
-        gulp.watch('../build/words/**/*.md', function(event){
-            gulp.start('words', 'reload');
+        gulp.watch('../build/text/**/**/*.md', function(event){
+            gulp.start('text', 'reload');
         });
         gulp.watch(pictures + '**/*', function(event){
             gulp.start('picture');

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description">
+    <meta name="keywords">
+    <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
+    <link rel="stylesheet" href="/styles/doc-icon.css">
+    <link rel="stylesheet" href="/styles/icons.css">
+    <link rel="stylesheet" href="/styles/one.css">
+    <link rel="stylesheet" href="/styles/side-navigation.css">
+  </head>
+  <body>
+    <div id="logo-fixed"><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo.png" alt="ONE" class="circular picture"></a></div>
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
+      </div>
+      <div class="side-navigation side-navigation-right">
+        <ul>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/index.html">
+                   
+                  Get Started</a></li>
+              <li><a href="/learn/git/index.html">
+                   
+                  Git</a></li>
+              <li><a href="/learn/gulp/index.html">
+                   
+                  Gulp</a></li>
+              <li><a href="/learn/markdown/index.html">
+                   
+                  Markdown</a></li>
+              <li><a href="/learn/jade/index.html">
+                   
+                  Jade</a></li>
+              <li><a href="/learn/stylus/index.html">
+                   
+                  Stylus</a></li>
+              <li><a href="/learn/jeet/index.html">
+                   
+                  Jeet</a></li>
+              <li><a href="/learn/rupture/index.html">
+                   
+                  Rupture</a></li>
+              <li><a href="/learn/nib/index.html">
+                   
+                  Nib     </a></li>
+              <li><a href="/learn/axis/index.html">
+                   
+                  Axis  </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="screen">
+      <div id="content"><h1 id="gulp">Gulp</h1>
+<h2 id="install">Install</h2>
+<p>mkdir yourproject
+cd yourproject
+npm init</p>
+<h3 id="install-globally">Install Globally</h3>
+<pre><code>npm i -g gulp </code></pre>
+<h3 id="install-gulp-into-your-project">Install Gulp into your project</h3>
+<pre><code>npm i -D gulp</code></pre>
+<h3 id="create-a-blank-gulpfile-js-and-save-it-into-the-root-directory">Create a blank Gulpfile.js and save it into the root directory</h3>
+<pre><code>var gulp = require(&#39;gulp&#39;);
+
+gulp.task(&#39;default&#39;, function () {
+
+});</code></pre>
+<h2 id="use">Use</h2>
+<p>Install a few modules</p>
+<pre><code>npm i -D gulp-uglify gulp-concat gulp-rename</code></pre>
+<p>gulp only has 5 methods. These methods are as follows: task, run, watch, src, and dest. These are all you will need to write your tasks.</p>
+<p>In the root directory of your project create a new file and name it gulpfile.js and paste the following code inside.</p>
+<pre><code>var gulp = require(&#39;gulp&#39;);
+var concat = require(&#39;gulp-concat&#39;);
+var rename = require(&#39;gulp-rename&#39;);
+var uglify = require(&#39;gulp-uglify&#39;);
+var pkg = require(&#39;./package.json&#39;);
+
+gulp.task(&#39;build&#39;, function () {
+  return gulp.src(&#39;build/js/*.js&#39;)
+    .pipe(concat(pkg.name + &#39;.js&#39;))
+    .pipe(gulp.dest(&#39;publish&#39;))
+    .pipe(rename(pkg.name + &#39;.min.js&#39;))
+    .pipe(uglify())
+    .pipe(gulp.dest(&#39;publish&#39;));
+});</code></pre>
+<h2 id="copy-">Copy </h2>
+<pre><code>gulp.src(create_fonts + &#39;/*&#39;)
+.pipe(gulp.dest(broadcast_fonts))</code></pre>
+<h2 id="clean">Clean</h2>
+<p>// Copy Fonts
+    gulp.task(&#39;copy&#39;, function() {
+    gulp.src(create_fonts + &#39;/*&#39;, {read: false})
+    .pipe(clean({force: true}))
+    .pipe(gulp.dest(broadcast_fonts));
+});
+// Run Server
+gulp.task(&#39;express&#39;, function() {
+  app.use(express.static(path.resolve(broadcast_folder)));
+  app.listen(10000);
+  gutil.log(&#39;Server started - point your browser to <a href="http://localhost:10000">http://localhost:10000</a>&#39;)
+});</p>
+<h2 id="size">Size</h2>
+<p>Lets look at the size</p>
+<pre><code>npm install gulp-size --save-dev</code></pre>
+<p>Then require it</p>
+<pre><code>var size = require(&#39;gulp-size&#39;); </code></pre>
+<p>Then add it to the task</p>
+<pre><code>.pipe(size())</code></pre>
+<h2 id="embed-">Embed </h2>
+<pre><code>var     live        = false;</code></pre>
+<p>// check to see if --live was set
+process.argv.forEach(function(val, index, array) {
+    if(val === &#39;--live&#39;) {
+        live = false;
+    }
+});</p>
+<p>gulp.task(&#39;jade&#39;, function() {
+    return gulp.src(&#39;src/jade/*.jade&#39;)
+        .pipe(jade({&#39;pretty&#39;:true}))
+        .pipe(livereload(lrserver))
+        .pipe(gulpif(live, embedlr()))
+        .pipe(gulp.dest(&#39;dist&#39;));
+});</p>
+<hr>
+<h1 id="gulp-template">Gulp Template</h1>
+<p>Basic Template Front-end with <a href="http://gulpjs.com/">Gulp</a></p>
+<p>Page <a href="http://tiagoporto.github.io/gulp-template/">Gulp Template</a>.</p>
+<p>This template includes</p>
+<ul>
+<li><a href="http://sass-lang.com/">Sass</a> + <a href="http://compass-style.org/">Compass</a></li>
+<li><a href="http://jquery.com/">jQuery</a></li>
+<li><a href="http://jqueryui.com/">jQuery UI</a></li>
+<li><a href="http://jquerymobile.com/">Jquery Mobile</a></li>
+<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+<li><a href="http://angularjs.org/">AngularJS</a></li>
+</ul>
+<p>Just remove what you will not use or include in specific directories: libraries, frameworks or plugins which you want use.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Compress Images</li>
+<li>Compile Sass</li>
+<li>Minify JavaScript</li>
+<li>Monitors changes in the file with LiveReload - reload browser</li>
+<li>Clean the assets (img, css, js) in the project to maintain the directory organized</li>
+<li>Notify when tasks are complete</li>
+</ul>
+<h2 id="directories-structures">Directories Structures</h2>
+<pre><code>./
+├───┐
+│   ├── .sass-cache
+│   │   └─ //SASS Cache
+│   │
+│   ├── node-modules //Will appear after installed the NPM modules
+│   │   └─ //All Gulp.js plugins
+│   │
+│   ├── project //Files for deployment
+│   │   ├─ css
+│   │   │  └─ //CSS public css
+│   │   │
+│   │   ├─ fonts
+│   │   │  └─ //Web Fonts
+│   │   │
+│   │   ├─ img
+│   │   │  └─ //public images
+│   │   │
+│   │   ├─ js
+│   │   │  └─ //public scripts
+│   │   │
+│   │   ├─ //Favicons Files
+│   │   │
+│   │   └─ //HTML or PHP Files
+│   │
+│   │
+│   └── src //Source files for the projects
+│       ├── images
+│       │   └─ //Original imagens, don&#39;t compressed
+│       │
+│       ├── scripts
+│       │   ├─ frameworks
+│       │   │
+│       │   ├─ libs
+│       │   │
+│       │   ├─ onread
+│       │   │
+│       │   ├─ plugins
+│       │   │
+│       │   └─ //Javascript files will be concatenated and minify
+│       │
+│       └── stylesheets
+│           │
+│           ├─ bootstrap
+│           │
+│           ├─ media_queries
+│           │
+│           └─ //SASS files be concatenated and minify
+│
+│
+├── .gitignore //Ignored files to GIT commit
+├── gulpfile.js //Gulp.js configuration file
+├── package.json //NPM dependencies
+├── README.md //Descrition of project
+└── config.rb //Additional configurations for the SASS</code></pre>
+<h2 id="dependencies">Dependencies</h2>
+<ol>
+<li><p><a href="http://nodejs.org/">Node.js</a> installation</p>
+<p><code>Mark npm package manager</code></p>
+</li>
+</ol>
+<ol>
+<li><p>Install Gulp</p>
+<pre><code>$ npm install -g gulp</code></pre>
+<p>For Mac or Linux User</p>
+<pre><code>$ sudo npm install gulp -g</code></pre>
+</li>
+</ol>
+<ol>
+<li><p><a href="https://www.npmjs.org/package/gulp-compass">gulp-compass</a> require ruby and compass</p>
+<p>For Windows Users Only is necessary installer ruby</p>
+<p>Download <a href="https://www.ruby-lang.org/pt/">Ruby</a></p>
+<p>Download Development Kit from <a href="http://rubyinstaller.org/downloads/">Ruby Installer</a></p>
+<ul>
+<li>Unzip the zip</li>
+<li>Open command-line and go to unzipped folder</li>
+<li><code>ruby dk.rb init</code></li>
+<li><code>ruby dk.rb install</code></li>
+<li><code>gem install rdiscount --platform=ruby</code></li>
+</ul>
+</li>
+</ol>
+<pre><code>$ gem update --system
+$ gem install compass</code></pre>
+<p>Go to the local folder</p>
+<pre><code>$ cd local/gulp-template</code></pre>
+<p>Install dependences of npm</p>
+<pre><code>$ npm install</code></pre>
+<h2 id="usage">Usage</h2>
+<p>Go to the local folder</p>
+<pre><code>$ cd local/gulp-template</code></pre>
+<p>Execute</p>
+<pre><code>$ gulp</code></pre>
+<h2 id="bugs">Bugs</h2>
+<p><a href="https://github.com/appleboy/gulp-compass/issues/15">Error: ENOENT, no such file or directory</a></p>
+<pre><code>sudo gem uninstall sass
+sudo gem install sass -v 3.2.12</code></pre>
+<h2 id="too-many-open-files">Too Many Open Files</h2>
+<p>How do I fix the error EMFILE: Too many opened files.? 
+Increase the limit</p>
+<pre><code>sudo ulimit -n 10480</code></pre>
+<p><a href="https://github.com/julien/gulp-processhtml">https://github.com/julien/gulp-processhtml</a>
+<a href="https://www.npmjs.org/package/gulp-include">https://www.npmjs.org/package/gulp-include</a>
+<a href="https://www.npmjs.org/package/gulp-file-include">https://www.npmjs.org/package/gulp-file-include</a></p>
+<p><a href="https://github.com/paulwib/gulp-ssg">https://github.com/paulwib/gulp-ssg</a>
+<a href="https://github.com/lmtm/gulp-front-matter">https://github.com/lmtm/gulp-front-matter</a></p>
+<p><a href="http://krasimir.github.io/techy/docs/">http://krasimir.github.io/techy/docs/</a>
+<a href="https://github.com/0x01/gulp-static-site">https://github.com/0x01/gulp-static-site</a></p>
+<p>// fileinclude: grab partials from templates and render out html files
+// ==========================================
+gulp.task(&#39;fileinclude&#39;, function() {
+  return  gulp.src(path.join(paths.templates, &#39;*.tpl.html&#39;))
+    .pipe(fileinclude())
+    .pipe(rename({
+      extname: &quot;&quot;
+     }))
+    .pipe(rename({
+      extname: &quot;.html&quot;
+     }))
+    .pipe(gulp.dest(&#39;./&#39;))
+    .pipe(livereload(server))
+    .pipe(notify({ message: &#39;Includes: included&#39; }));
+});</p>
+<h2 id="to-do">To do</h2>
+<p><a href="https://www.npmjs.org/package/gulp-open">https://www.npmjs.org/package/gulp-open</a>
+<a href="https://www.npmjs.org/package/gulp-sketch">https://www.npmjs.org/package/gulp-sketch</a>
+<a href="https://www.npmjs.org/package/gulp-gzip">https://www.npmjs.org/package/gulp-gzip</a>
+<a href="https://www.npmjs.org/package/gulp-prefix">https://www.npmjs.org/package/gulp-prefix</a>
+<a href="https://www.npmjs.org/package/gulp-inline">https://www.npmjs.org/package/gulp-inline</a>
+<a href="https://www.npmjs.org/package/gulp-inc">https://www.npmjs.org/package/gulp-inc</a>
+<a href="https://www.npmjs.org/package/gulp-build">https://www.npmjs.org/package/gulp-build</a>
+<a href="https://www.npmjs.org/package/gulp-if-else">https://www.npmjs.org/package/gulp-if-else</a>
+<a href="https://www.npmjs.org/package/gulp-premailer">https://www.npmjs.org/package/gulp-premailer</a>
+<a href="https://www.npmjs.org/package/gulp-uncss-task">https://www.npmjs.org/package/gulp-uncss-task</a>
+<a href="https://www.npmjs.org/package/gulp-inject">https://www.npmjs.org/package/gulp-inject</a>
+<a href="https://www.npmjs.org/package/gulp-mc-inline-css">https://www.npmjs.org/package/gulp-mc-inline-css</a>
+<a href="https://www.npmjs.org/package/gulp-assetpaths">https://www.npmjs.org/package/gulp-assetpaths</a>
+<a href="https://www.npmjs.org/package/gulp-atomicscss">https://www.npmjs.org/package/gulp-atomicscss</a>
+<a href="https://www.npmjs.org/package/compass-options">https://www.npmjs.org/package/compass-options</a>
+<a href="https://www.npmjs.org/package/gulp-usemin2">https://www.npmjs.org/package/gulp-usemin2</a> //changes references to minified js css
+<a href="https://www.npmjs.org/package/generator-emi">https://www.npmjs.org/package/generator-emi</a> //wordpress</p>
+<p><a href="https://www.npmjs.org/package/techy">https://www.npmjs.org/package/techy</a> static
+<a href="https://www.npmjs.org/package/swig-tiny-cms">https://www.npmjs.org/package/swig-tiny-cms</a>
+<a href="https://www.npmjs.org/package/gulp-html2md">https://www.npmjs.org/package/gulp-html2md</a>
+<a href="https://www.npmjs.org/package/gulp-ssg">https://www.npmjs.org/package/gulp-ssg</a> static site
+<a href="https://www.npmjs.org/package/gulp-front-matter">https://www.npmjs.org/package/gulp-front-matter</a>
+<a href="https://www.npmjs.org/package/gulp-rewrite-css">https://www.npmjs.org/package/gulp-rewrite-css</a>
+<a href="https://www.npmjs.org/package/gulp-group-css-media-queries">https://www.npmjs.org/package/gulp-group-css-media-queries</a>
+<a href="https://www.npmjs.org/package/gulp-local-screenshots">https://www.npmjs.org/package/gulp-local-screenshots</a>
+<a href="https://www.npmjs.org/package/generator-ghost-h5bp">https://www.npmjs.org/package/generator-ghost-h5bp</a>
+<a href="https://www.npmjs.org/package/squareboy">https://www.npmjs.org/package/squareboy</a> static
+<a href="https://www.npmjs.org/package/gulp-html-file-to-directory">https://www.npmjs.org/package/gulp-html-file-to-directory</a> 
+<a href="https://www.npmjs.org/package/markded-middleware">https://www.npmjs.org/package/markded-middleware</a></p>
+<p><a href="https://www.npmjs.org/package/meanframework">https://www.npmjs.org/package/meanframework</a></p>
+
+      </div>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script src="/scripts/highlight.min.js"></script>
+    <script src="/scripts/snap.js"></script>
+    <script src="/scripts/jquery.smartModal.js"></script>
+    <script src="/scripts/FlameViewportScale.js"></script>
+    <script src="/scripts/hammer.js"> </script>
+    <script src="/scripts/jquery.cookie.js"></script>
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
+    <script src="/scripts/one-side-navigation.js"></script>
+    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+semantic.menu = {};
+
+// ready event
+semantic.menu.ready = function() {
+
+  // selector cache
+  var
+    $menuItem = $('.menu a.item, .menu .link.item'),
+    $dropdown = $('.main.container .menu .dropdown'),
+    // alias
+    handler = {
+
+      activate: function() {
+        if(!$(this).hasClass('dropdown')) {
+          $(this)
+            .addClass('active')
+            .closest('.ui.menu')
+            .find('.item')
+              .not($(this))
+              .removeClass('active')
+          ;
+        }
+      }
+
+    }
+  ;
+
+  $dropdown
+    .dropdown({
+      on: 'hover'
+    })
+  ;
+
+  $menuItem
+    .on('click', handler.activate)
+  ;
+
+};
+
+
+// attach ready event
+$(document)
+  .ready(semantic.menu.ready)
+;
+</script>
+<script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
+  </body>
+</html>
