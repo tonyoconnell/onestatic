@@ -126,7 +126,11 @@ input(type="text", name="login")
 
 ```
 <input type="text" name="login"/>
+
 ```
+
+
+
 
 Variables
 --------
@@ -139,7 +143,14 @@ p= foo
 
 ```
 <p>bar</p>
+
 ```
+
+a(href=local) Test Link
+
+- var id = product_view
+
+body(id=id)
 
 Iteration
 -------

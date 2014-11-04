@@ -1,0 +1,16 @@
+extends ../../templates/one
+
+append page-info
+	- id = '2-columns-left'
+	- title = 'Template : Home'
+	- description = 'Welcome home'
+	- keywords = 'home, keyword2'
+	- layout = 'two-columns-left'
+
+block content
+	include:md ../book/milo-baughman.md
+
+block aside
+	include ../../blocks/navigation/product-filter
+
+

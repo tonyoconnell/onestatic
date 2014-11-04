@@ -4,7 +4,7 @@ html(lang='en')
     include ../blocks/head
     include ../scripts/header-scripts.html
     script(src='/scripts/jquery.promin.js')
-  body.pusshable(ontouchstart='')
+  body(class=layout)
     header
       #logo
         a(href='/index.html')  
@@ -14,9 +14,11 @@ html(lang='en')
       include ../blocks/navigation/navigation.html
     #top-picture
         block top-picture      
-    main
-      block content
-
+    #middle
+      article
+        block content
+      aside
+        block aside
     include ../blocks/footer.html
     include ../blocks/contact/contact.html
     script(src='/scripts/jquery.smartModal.js')

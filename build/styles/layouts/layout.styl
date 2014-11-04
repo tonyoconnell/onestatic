@@ -21,7 +21,7 @@ header
 #top-picture
   margin-bottom 10px  
 
-main
+#middle
   center(100%)
   +mobile()
     margin 0px 5px
@@ -31,8 +31,21 @@ main
     padding-left 20px
     padding-right 20px
 
-article
-  center(800px)    
+  
+.two-columns-left article
+  column(3/4)
+  shift(1/4)
+  
+.two-columns-left aside
+  column(1/4)
+  shift(-3/4)
+  
+.two-columns-right article
+  column(3/4)
+  
+.two-columns-right aside
+  column(1/4)
+
 
 footer
   margin-top 40px
@@ -54,6 +67,7 @@ footer .box li
 
 footer a
   color grey
+
 #content
   center(800px)
   
@@ -87,6 +101,9 @@ footer a
     column(1/6, cycle: 6)
     +mobile()
       stack()
+
+
+  
 
 .item
   padding 4px
