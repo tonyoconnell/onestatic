@@ -1,0 +1,15 @@
+{
+  "name": "jquery-smartModal",
+  "homepage": "https://github.com/bmarshall511/jquery-smartModal",
+  "version": "2.2.1",
+  "_release": "2.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.2.1",
+    "commit": "bf410a63d22e0d6ea5e28acac33589502c7dea3b"
+  },
+  "_source": "git://github.com/bmarshall511/jquery-smartModal.git",
+  "_target": "~2.2.1",
+  "_originalSource": "bmarshall511/jquery-smartModal",
+  "_direct": true
+}

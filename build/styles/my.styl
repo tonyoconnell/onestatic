@@ -18,14 +18,25 @@ ONE
 “Art is the elimination of the unnecessary.”
 ― Pablo Picasso
 
-Follow a concise, easy way to converse with your customers, staff and friends in style.  
-Design elegant web and mobile experiences quickly. 
+Start designing your web and mobile pages here. 
 
-1. Define your colours
-2. Add your logo
-3. Design your type
-4. Layout screens - text first, progresively enhancing to large, high definition displays 
-5. Display media - pages, pictures, animation and video. 
+1. Add your logo
+2. Define your colours
+3. Choose some patterns
+4. Set your typography
+
+
+/*
+Logo 
+=====
+Point to your logo or simply replace the logo's with your own. 
+*/
+
+// Location of logo
+logo = '../pictures/logo.png'
+
+// High definition version of logo for retina screens
+logo-xl = '../pictures/logo-xl.png'
 
 /*
 Colors 
@@ -44,6 +55,7 @@ light-color = #eee
 /*
 Patterns
 ========
+See the /pictures/patterns folder for some beautiful subtle pattterns.
 */
 // Light Background Patterns
 light-background()
@@ -56,57 +68,29 @@ grey-background()
 dark-background()
   background: url('../pictures/patterns/stressed.png') repeat
 
-/*
-Logo 
-=========
-*/
-
-// Location of logo
-logo = '../pictures/logo.png'
-
-// High definition version of logo for retina screens
-logo-xl = '../pictures/logo-xl.png'
-
-.logo-text  
-  font-size 40px 
-  
-logo
-  padding 2px 5px
-logo img
-  padding 5px
-  border 0
-  
-
 
 /*
-Type 
-====
+Typography
+==========
 */
 
 // Font : Your font
-
 font = mco
+
+// Font Size : The size of your font on the smallest screen (it grows with the size of your screen)
 base-font-size = 16px
 
+// Heading Font : Font for headings
+font-headings = mco
     
 // Line height 
 p
   line-height 150%
+  
 // Margin
   margin = 10px 0
 
 // Smallest Text  
 .tiny 
   font-size 10px
-
-// Heading Font : Font for headings
-font-headings = mco
-
-@import 'typography'
-@import 'libraries/nib'
-@import 'libraries/axis'
-
-body  
-  font-face(mco, '../fonts')
-  
 

@@ -19,30 +19,81 @@ ONE
 ― Pablo Picasso
 
 If you want to add a new add a new stylesheet import it here. 
-If you want to customise your style open my.styl
+To import plain CSS just add .CSS like this @import 'styles.css'
+Open my.styl to start customising your style
+*/
+
+@import 'my'
 
 /*
-Libraries and Stylesheets 
-=========================
+Libraries 
+==========
 */
-@import 'bootstrap'
-@import 'my'
+// Beautiful Semantic Grid.
 @import 'libraries/jeet'
-@import 'layouts/positions'
+// Responsive Media Queries.
 @import 'libraries/rupture'
-@import 'layouts/layout'
-@import 'navigation'
-@import 'blocks/blocks'
-@import 'typography'
+// Stylus mixins, utilities, components, and gradient image generation.
 @import 'libraries/nib'
+// More stylus mixins.
 @import 'libraries/axis'
-@import 'pictures/pictures.styl'
-@import 'code/monokai' 
-@import 'slides/slides'
-@import 'modals/modals'
+// Twitter boostrap convered to stylus. Edit /libraries/bootstrap/index.styl to include components.
+@import 'libraries/bootstrap'
+
+/*
+Templates
+==========
+The layout of your site and styles for your header and footer. 
+*/
+@import 'templates'
+@import 'templates/positions'
+
+/*
+Pictures
+========
+Styles for images.
+*/
+@import 'pictures'
+
+/*
+Blocks
+======
+*/
+@import 'blocks'
+@import 'blocks/navigation'
+@import 'blocks/slides'
+@import 'blocks/modals'
+@import 'blocks/divider'
+
+
+/*
+Forms
+=====
+Styles for your forms and tables
+*/
+
 @import 'forms/buttons'
 @import 'forms/tables'
-@import 'pages/products'
+
+/*
+Typography
+==========
+Vertical rythm for your type
+*/
+@import 'text/typography'
+
+/*
+Scripts
+======
+Hightlight your code snippets
+*/
+@import 'scripts/monokai' 
+
+/*
+Pages
+======
+Styles specific to pages
+*/
 @import 'pages/home'
-@import 'blocks/divider'
+@import 'pages/products'
 

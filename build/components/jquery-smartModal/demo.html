@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html prefix='og: http://ogp.me/ns#'>
+<head>
+<title>jQuery.smartModal Demo</title>
+<meta name='description' content="">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='jquery.smartModal.css'>
+<style>
+body {
+  font-family: Arial;
+}
+</style>
+</head>
+<body>
+<div class="smartmodal" id="triggerID">I'm a normal modal!</div>
+<div class="smartmodal once auto" id="triggerID2">I'm a modal that only shows once!</div>
+
+<a href="#" class="triggerID">Click me</a> to trigger a normal modal.<br>
+<a href="#" class="triggerID2">Click me</a> to trigger a modal that only shows once<br>
+<br>
+<b>For more information, see <a href="http://www.benmarshall.me/jquery-smartmodal/">jQuery.smartModal Documentation</a></b>.
+<script src='http://code.jquery.com/jquery-1.10.1.min.js'></script>
+<script src="jquery.smartModal.js"></script>
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+</body>
+</html>

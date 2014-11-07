@@ -28,6 +28,7 @@ var pages = '../build/pages/', // Web pages
     pictures = '../build/pictures/', //  Original pictures (highest resolution .JPG, .GIF, PNG, SVG) 
     styles = '../build/styles/', // Stylesheets in Stylus Format
     fonts = '../build/fonts/', //  Fonts in any format
+    components = '../build/components/', //  Fonts in any format
     scripts = '../build/scripts/'; // Javascript
 
 /*
@@ -82,7 +83,6 @@ var gulp = require('gulp'), // Gulp.js
     markdownpdf = require('gulp-markdown-pdf'),
     gulpif = require('gulp-if'), // Reloads web pages when they are changed
     path = require('path'), // Normalises, joins and resolves paths
-    rename = require('gulp-rename'), // Renames files
     changed = require('gulp-changed'), // Only executes tasks if files were changed
     cache = require('gulp-cached'),
     es = require('event-stream'), 
@@ -181,8 +181,9 @@ Convert markdown to HTML
 
 gulp.task('text', function () {
     return gulp.src('../build/text/**/**/*.md')
-        .pipe(static_site())
-        .pipe(gulp.dest('../server/'))
+    .pipe(cache()) 
+    .pipe(static_site())
+    .pipe(gulp.dest('../server/'))
 });
 
 
@@ -229,8 +230,6 @@ Build CSS classes from Stylus
     .pipe(stylus({ use:[fontface()], sourcemap: { inline: true } }))
     .pipe(gulp.dest(server_styles))
     .pipe(browsersync.reload({stream: true}))
-     gulp.src(styles + 'css/*.css')
-    .pipe(gulp.dest(server_styles)) 
     .pipe(size())
     .pipe(notify({message: 'Styles Applied'}));
 });
@@ -238,8 +237,6 @@ Build CSS classes from Stylus
    gulp.task('stage-style', function () {
      gulp.src(styles + 'one.styl')
     .pipe(plumber())
-    .pipe(cache()) 
-    .pipe(changed(styles + '*.styl'))
     .pipe(stylus({ use:[fontface()], compress: true}))
     .pipe(gulp.dest(mamp_server + 'skin/frontend/one/default/css/'))
     .pipe(size())
@@ -259,11 +256,21 @@ Build your scripts
     .pipe(cache()) 
     .pipe(changed(scripts + '**/*.js'))
     .pipe(gulp.dest(server_scripts))
-    .pipe(browsersync.reload({stream: true}))
     .pipe(size())
     .pipe(notify({message: 'Scripts Optimised'}));
 });
 
+   gulp.task('script2', function () {
+    gulp.src(['../build/scripts/scripts.jade'])
+    .pipe(plumber())
+    .pipe(jade({
+      pretty: false
+    }))
+    .pipe(rename("scripts.js"))
+    .pipe(gulp.dest(server_scripts))
+    .pipe(size())
+    .pipe(notify({message: 'Scripts Optimised'}));
+});
 
 /*
 
@@ -272,8 +279,8 @@ Components
 */
     gulp.task('component', function() {
     gulp.src(['../build/components/**/*'])
+    .pipe(cache()) 
     .pipe(gulp.dest(server_components))
-    .pipe(browsersync.reload({stream: true}));
 });
 
 
@@ -285,7 +292,7 @@ Run Tasks
 gulp.task('default', function() {
 
 // start these tasks 
-    gulp.start( 'page', 'picture', 'font', 'style', 'script', 'text', 'server')
+    gulp.start( 'page', 'picture', 'font', 'style', 'script', 'component', 'text', 'stage-style', 'server')
 
 // watch for changes and run tasks
         gulp.watch('../build/pages/**/*', function(event){
@@ -302,6 +309,9 @@ gulp.task('default', function() {
         });
         gulp.watch(pictures + '**/*', function(event){
             gulp.start('picture');
+        });
+        gulp.watch(components + '**/*', function(event){
+            gulp.start('component');
         });
         gulp.watch(fonts  + '**/*', function(event){
             gulp.start('font');

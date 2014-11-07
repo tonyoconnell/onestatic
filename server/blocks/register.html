@@ -34,7 +34,7 @@
 
     <script src="/scripts/jquery.promin.js"></script>
   </head>
-  <body ontouchstart="" class="pusshable">
+  <body>
     <header>
       <div id="logo"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-century Online" class="logo circular picture">
           <div id="logo-text">
@@ -49,8 +49,8 @@
     </header>
     <div id="top-picture">
     </div>
-    <main>
-      <div class="inner"><form action="https://mid-centuryonline.com/customer/account/createpost/" id="form" enctype="application/x-www-form-urlencoded" method="post">
+    <div id="middle">
+      <article><form action="https://mid-centuryonline.com/customer/account/createpost/" id="form" enctype="application/x-www-form-urlencoded" method="post">
     <input type="hidden" name="success_url" value="">
     <input type="hidden" name="error_url" value="">
     <div class="pm-step">
@@ -98,8 +98,10 @@ $('#navigation').on('click', function() {
 $form.promin('next');
 });
 </script>
-      </div>
-    </main><!-- Footer -->
+      </article>
+      <aside>
+      </aside>
+    </div><!-- Footer -->
 <!--Start Footer -->
 <footer>
     <!-- Box 1 -->

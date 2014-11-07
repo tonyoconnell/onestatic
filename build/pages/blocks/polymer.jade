@@ -1,0 +1,23 @@
+extends ../../templates/one
+
+append page-info
+    - id = 'polymer'
+    - title = 'ONE'
+    - description = 'Sell Faster'
+    - keywords = 'ONE, ecommerce'
+    - layout = 'one-column'
+ 
+block content
+    polymer-element(name='hello-tony', noscript='noscript')
+          template
+            h1 Yo
+        hello-tony hello
+    paper-button
+        core-icon(icon='favorite')
+            | custom
+    paper-button raised yo
+    paper-dropdown-menu(selected='Financier', valueattr='label')
+        paper-item(label='Croissant')
+        paper-item(label='Donut')
+        paper-item(label='Financier')
+        paper-item(label='Madeleine')

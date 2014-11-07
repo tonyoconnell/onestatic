@@ -1,0 +1,14 @@
+{
+  "name": "Promin",
+  "homepage": "https://github.com/timseverien/Promin",
+  "_release": "cdeafe3e6c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "cdeafe3e6cdd64e0edd8b684eedfb7fe95c9ebbd"
+  },
+  "_source": "git://github.com/timseverien/Promin.git",
+  "_target": "*",
+  "_originalSource": "timseverien/Promin",
+  "_direct": true
+}

@@ -4,7 +4,11 @@ html(lang='en')
     include ../blocks/head
     include ../scripts/header-scripts.html
     script(src='/scripts/jquery.promin.js')
-  body(class=layout)
+    script(src='/components/platform/platform.js')
+    link(rel='import', href='/components/polymer/polymer.html')  
+    link(rel='import', href='/components/paper-button/paper-button.html') 
+    link(rel='import', href='/components/paper-dropdown-menu/paper-dropdown-menu.html') 
+  body(class=id)
     header
       #logo
         a(href='/index.html')  
@@ -15,9 +19,9 @@ html(lang='en')
     #top-picture
         block top-picture      
     #middle
-      article
+      article(class=layout)
         block content
-      aside
+      aside(class=layout)
         block aside
     include ../blocks/footer.html
     include ../blocks/contact/contact.html

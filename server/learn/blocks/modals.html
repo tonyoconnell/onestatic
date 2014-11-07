@@ -34,7 +34,7 @@
 
     <script src="/scripts/jquery.promin.js"></script>
   </head>
-  <body ontouchstart="" class="pusshable">
+  <body>
     <header>
       <div id="logo"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-century Online" class="logo circular picture">
           <div id="logo-text">
@@ -49,8 +49,8 @@
     </header>
     <div id="top-picture">
     </div>
-    <main>
-      <div class="inner"><a href="#" class="triggerID">Click me</a> to trigger a normal modal.<br>
+    <div id="middle">
+      <article><a href="#" class="triggerID">Click me</a> to trigger a normal modal.<br>
 <br>
 <b>For more information, see <a href="http://www.benmarshall.me/jquery-smartmodal/">jQuery.smartModal Documentation</a></b>.
 <div class="smartmodal auto" data-wait="5" id="triggerID">I'm a normal modal!<br>hello</div>
@@ -266,8 +266,10 @@ $.smartModal(&#39;init&#39;, settingsObj); // Initialize the smartModal plugin
 <h2 id="authors">Authors</h2>
 <p><a href="http://www.benmarshall.me">Ben Marshall</a></p>
 
-      </div>
-    </main><!-- Footer -->
+      </article>
+      <aside>
+      </aside>
+    </div><!-- Footer -->
 <!--Start Footer -->
 <footer>
     <!-- Box 1 -->

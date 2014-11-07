@@ -4,7 +4,7 @@ html(lang='en')
     include ../blocks/head
     include ../scripts/header-scripts.html
     script(src='/scripts/jquery.promin.js')
-  body.pusshable(ontouchstart='')
+  body(class=id)
     header
       #logo
         a(href='/index.html')  
@@ -14,10 +14,11 @@ html(lang='en')
       include ../blocks/navigation/navigation.html
     #top-picture
         block top-picture      
-    main
-      .inner
+    #middle
+      article(class=layout)
         block content
-
+      aside(class=layout)
+        block aside
     include ../blocks/footer.html
     include ../blocks/contact/contact.html
     script(src='/scripts/jquery.smartModal.js')
@@ -26,4 +27,3 @@ html(lang='en')
     script(src='/scripts/jquery.cookie.js')
     script(src='/scripts/jquery.tosrus.min.all.js')   
     include ../scripts/footer-scripts.html
- 

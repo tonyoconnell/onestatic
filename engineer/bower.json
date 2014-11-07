@@ -1,0 +1,25 @@
+{
+  "name": "poly",
+  "version": "0.0.0",
+  "authors": [
+    "tonyoconnell <tony@one.ie>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~0.4.2",
+    "jquery-waypoints": "imakewebthings/jquery-waypoints#~2.0.5",
+    "Promin": "timseverien/Promin",
+    "jquery-smartModal": "bmarshall511/jquery-smartModal#~2.2.1",
+    "jquery.cookie": "carhartl/jquery-cookie#~1.4.1",
+    "jQuery.TosRUs": "BeSite/jQuery.TosRUs#~2.2.2",
+    "hammerjs": "hammerjs/hammer.js#~2.0.4"
+  }
+}

@@ -1,0 +1,180 @@
+/*******************************
+             Logo
+*******************************/
+ #logo
+  z-index 999999
+  margin-top 0px
+  width 700px
+  float left
+  
+#logo-fixed
+  fixed left top
+  z-index 999999999
+  padding 10px
+  
+#logo img 
+  float left
+  width 35px
+  height 35px
+  border 0 !important
+  +tablet()
+    width 45px
+    height 45px  
+  +desktop()
+    width 55px
+    height 55px
+    padding-right 10px
+    margin-top -10px
+
+
+#logo-text h1
+  margin 0px
+  width 300px
+  float left
+  +mobile()
+    padding-left 55px
+  +tablet()
+    column(1/2)
+    margin-top 5px
+  +desktop()
+    column(1/2)  
+
+
+  
+.logo-m
+  max-width 550px
+
+i 
+  padding-right 10px
+  
+/*******************************
+             picture
+*******************************/
+#top-picture img
+  border 0
+  padding 0
+  margin 0
+
+img
+  max-width 100% !important
+
+.picture
+  position relative
+  display inline-block
+  vertical-align middle
+  max-width 100% !important
+img.picture
+  display block
+  background white
+  max-width 100% !important
+.picture img
+  display block
+  max-width 100% !important
+  height auto
+  
+#lightbox img
+  max-width 98% !important
+#lightbox
+  max-width 100% !important   
+
+/*--------------
+     Rounded
+---------------*/
+.rounded.pictures .picture, .rounded.pictures img, .rounded.picture img, .rounded.picture
+  border-radius 0.3125em
+/*--------------
+     Circular
+---------------*/
+.circular.pictures .picture, .circular.pictures img, .circular.picture img, .circular.picture
+  border-radius 500rem
+/*--------------
+     Fluid
+---------------*/
+.fluid.pictures, .fluid.picture, .fluid.pictures img, .fluid.picture img
+  display block
+  width 100%
+/*--------------
+     Avatar
+---------------*/
+.avatar.pictures .picture, .avatar.pictures img, .avatar.picture img, .avatar.picture
+  margin-right 0.5em
+  display inline-block
+  width 2em
+  height 2em
+  border-radius 500rem
+/*-------------------
+       Floated
+--------------------*/
+.floated.picture, .floated.pictures
+  float left
+  margin-right 1em
+  margin-bottom 1em
+.right.floated.pictures, .right.floated.picture
+  float right
+  margin-bottom 1em
+  margin-left 1em
+/*--------------
+     Sizes
+---------------*/
+.tiny.pictures .picture, .tiny.pictures img, .tiny.picture
+  width 20px
+  font-size 0.7rem
+.mini.pictures .picture, .mini.pictures img, .mini.picture
+  width 35px
+  font-size 0.8rem
+.small.pictures .picture, .small.pictures img, .small.picture
+  width 100px
+  font-size 0.9rem
+.medium.pictures .picture, .medium.pictures img, .medium.picture
+  width 300px
+  font-size 1rem
+.large.pictures .picture, .large.pictures img, .large.picture
+  width 450px
+  font-size 1.1rem
+.huge.pictures .picture, .huge.pictures img, .huge.picture
+  width 600px
+  font-size 1.2rem
+/*******************************
+              Groups
+*******************************/
+.pictures
+  font-size 0em
+  margin 0em -0.25rem 0rem
+.pictures .picture, .pictures img
+  display inline-block
+  margin 0em 0.25em 0.5em
+  max-width 100%
+  
+
+.circle-light i {
+float: left;
+width: 28px;
+height: 28px;
+border: 0px solid black;
+border-radius: 100%;
+background: white;
+color: black;
+margin-right: 6px;
+font-size: 18px;
+text-align: center;
+padding-top: 5px;
+padding-left: 5px;
+}
+
+.circle i {
+float: left;
+width: 28px;
+height: 28px;
+border: 0 solid #222;
+border-radius: 100%;
+background: #222;
+color: #fff;
+margin-right: 6px;
+font-size: 18px;
+text-align: center;
+padding-top: 4px;
+padding-left: 4px;
+padding-right: 4px;
+padding-bottom: 8px;
+}
+  
