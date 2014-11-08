@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head> 
-    <title>Template : Home</title>
+    <title>Template : Product</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Welcome home">
-    <meta name="keywords" content="home, keyword2">
+    <meta name="description" content="This is a lovely product">
+    <meta name="keywords" content="product, keyword2">
     <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
     <link rel="stylesheet" href="/styles/doc-icon.css">
     <link rel="stylesheet" href="/styles/icons.css">
@@ -36,21 +36,21 @@
   </head>
   <body>
     <header>
-      <div id="logo"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-century Online" class="logo circular picture">
+      <div class="content">
+        <div id="logo">
+          <div id="logo-picture"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-century Online"></a></div>
           <div id="logo-text">
             <h1>Mid-century Online</h1>
-          </div></a></div><nav>
-  <ul>
-    <li>Furniture</li>
-    <li>Lighting</li>
-    <li>Book</li>
-  </ul>
-</nav>
+          </div>
+        </div>
+      </div>
     </header>
+    <!-- include ../blocks/navigation/navigation.html-->
     <div id="top-picture">
     </div>
-    <div id="middle">
-      <article><div class="product-gallery">
+    <main>
+      <div class="content">
+        <div id="product"><div class="product-gallery">
     <div id="lightbox">
     <a href="/pictures/products/product-1.jpg" title="Lamps"><img class="product-picture" src="/pictures/products/product-1.jpg"></a>
     </div>
@@ -94,10 +94,11 @@
 		</tbody>
 	</table>
 </div>
-      </article>
-      <aside>
-      </aside>
-    </div><!-- Footer -->
+        </div>
+        <aside>
+        </aside>
+      </div>
+    </main><!-- Footer -->
 <!--Start Footer -->
 <footer>
     <!-- Box 1 -->

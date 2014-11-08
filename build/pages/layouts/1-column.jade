@@ -1,12 +1,11 @@
-extends ../../templates/page
+extends ../../templates/text
 
 append page-info
-	- title = 'Template : Home'
-	- description = 'Welcome home'
-	- keywords = 'home, keyword2'
+	- title = '1 Column'
+	- description = '1 column article'
+	- keywords = 'keyword, keyword2'
 
 block content
-	article
-		include:md ../book/milo-baughman.md
+	include:md ../book/milo-baughman.md
 
 

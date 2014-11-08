@@ -3,41 +3,43 @@
 *******************************/
  #logo
   z-index 999999
-  margin-top 0px
-  width 700px
-  float left
   
 #logo-fixed
   fixed left top
   z-index 999999999
   padding 10px
-  
-#logo img 
+ 
+#logo-picture 
   float left
   width 35px
   height 35px
-  border 0 !important
+  padding-top 2px
+  padding-left 2px
   +tablet()
     width 45px
     height 45px  
   +desktop()
     width 55px
     height 55px
-    padding-right 10px
-    margin-top -10px
 
+#logo img 
+  border 0 !important
+  padding 5px
+  background white
+  border-radius 100%
 
 #logo-text h1
-  margin 0px
-  width 300px
+  font-size 180%
+  margin 10px
   float left
-  +mobile()
-    padding-left 55px
+  padding-left 10px
   +tablet()
-    column(1/2)
-    margin-top 5px
+    margin-top 10px
   +desktop()
-    column(1/2)  
+    margin-top 15px
+    
+#logo-text h1 a 
+  color white !important
 
 
   
@@ -146,6 +148,16 @@ img.picture
   max-width 100%
   
 
+.circle i {
+border: 0 solid #222;
+border-radius: 100%;
+background: #222;
+color: #fff;
+margin-right: 6px;
+font-size: 18px;
+
+}
+
 .circle-light i {
 float: left;
 width: 28px;
@@ -160,21 +172,3 @@ text-align: center;
 padding-top: 5px;
 padding-left: 5px;
 }
-
-.circle i {
-float: left;
-width: 28px;
-height: 28px;
-border: 0 solid #222;
-border-radius: 100%;
-background: #222;
-color: #fff;
-margin-right: 6px;
-font-size: 18px;
-text-align: center;
-padding-top: 4px;
-padding-left: 4px;
-padding-right: 4px;
-padding-bottom: 8px;
-}
-  

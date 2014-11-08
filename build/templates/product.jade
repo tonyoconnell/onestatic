@@ -8,16 +8,17 @@ html(lang='en')
     header
       .content
         #logo
-          a(href='/index.html')  
-            img.logo.circular.picture(src="/pictures/logos/logo-ram.png", alt="Mid-century Online")
-            #logo-text
-              h1 Mid-century Online
+          #logo-picture
+            a(href='/index.html')  
+              img(src="/pictures/logos/logo-ram.png", alt="Mid-century Online")
+          #logo-text
+            h1 Mid-century Online
     // include ../blocks/navigation/navigation.html
     #top-picture
         block top-picture      
     main
       .content
-        article(class=layout)
+        #product(class=layout)
           block content
         aside(class=layout)
           block aside

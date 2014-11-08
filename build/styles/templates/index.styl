@@ -1,34 +1,37 @@
 global-reset()
 
 body
-  light-background()
-  
-header
-  center(100%)
-  background white
-  box-shadow: 0px 5px 3px -3px #ccc;
+  center(page-width)
+
+.content
+  center(content-width)
   +mobile
-    padding 5px
+    padding 15px !important
+    margin 10px !important
+    background red !important
   +tablet()
-    padding 10px
+    padding 10px 
   +desktop()
-    padding 20px
-       
+    padding 10px 20px 
+    
+header
+  center(page-width)
+  min-width 100% !important 
+  .content
+      box-shadow: 0px 5px 3px -3px #ccc;
+
 #screen
   background white
 
 #top-picture
   margin-bottom 10px  
 
-#middle
+main
+  center(page-width)
+  padding 10px
+  
+article
   center(800px)
-  +mobile()
-    margin 0px 5px
-  +tablet()
-    padding 0px 5px  
-   +desktop()
-    padding-left 20px
-    padding-right 20px
 
 .two-columns-left #middle
   center(100%)
@@ -81,8 +84,7 @@ footer .box li
 footer a
   color grey
 
-#content
-  center(800px)
+
   
 .icon-text
     +mobile() 

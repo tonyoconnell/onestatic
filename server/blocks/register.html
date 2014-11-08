@@ -36,21 +36,19 @@
   </head>
   <body>
     <header>
-      <div id="logo"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-century Online" class="logo circular picture">
-          <div id="logo-text">
-            <h1>Mid-century Online</h1>
-          </div></a></div><nav>
-  <ul>
-    <li>Furniture</li>
-    <li>Lighting</li>
-    <li>Book</li>
-  </ul>
-</nav>
+      <div class="content">
+        <div id="logo"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-century Online" class="logo circular picture">
+            <div id="logo-text">
+              <h1>Mid-century Online</h1>
+            </div></a></div>
+      </div>
     </header>
+    <!-- include ../blocks/navigation/navigation.html-->
     <div id="top-picture">
     </div>
-    <div id="middle">
-      <article><form action="https://mid-centuryonline.com/customer/account/createpost/" id="form" enctype="application/x-www-form-urlencoded" method="post">
+    <main>
+      <div class="content">
+        <article><form action="https://mid-centuryonline.com/customer/account/createpost/" id="form" enctype="application/x-www-form-urlencoded" method="post">
     <input type="hidden" name="success_url" value="">
     <input type="hidden" name="error_url" value="">
     <div class="pm-step">
@@ -98,10 +96,11 @@ $('#navigation').on('click', function() {
 $form.promin('next');
 });
 </script>
-      </article>
-      <aside>
-      </aside>
-    </div><!-- Footer -->
+        </article>
+        <aside>
+        </aside>
+      </div>
+    </main><!-- Footer -->
 <!--Start Footer -->
 <footer>
     <!-- Box 1 -->

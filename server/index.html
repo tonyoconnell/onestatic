@@ -32,25 +32,28 @@
   <script src="/scripts/semantic.min.js"></script>
   <script src="/scripts/one.js"></script>
 
-    <script src="/scripts/scripts.js"> </script>
+    <script src="/scripts/jquery.promin.js"></script>
+    <script src="/components/platform/platform.js"></script>
+    <link rel="import" href="/components/polymer/polymer.html">
+    <link rel="import" href="/components/paper-button/paper-button.html">
+    <link rel="import" href="/components/paper-dropdown-menu/paper-dropdown-menu.html">
   </head>
   <body class="home">
     <header>
-      <div id="logo"><a href="/index.html"> <img src="/pictures/logos/logo.png" alt="ONE" class="logo circular picture">
+      <div class="content">
+        <div id="logo">
+          <div id="logo-picture"><a href="/index.html"> <img src="/pictures/logos/logo.png" alt="Mid-century Online"></a></div>
           <div id="logo-text">
             <h1>ONE</h1>
-          </div></a></div><nav>
-  <ul>
-    <li>Furniture</li>
-    <li>Lighting</li>
-    <li>Book</li>
-  </ul>
-</nav>
+          </div>
+        </div>
+      </div>
     </header>
+    <!-- include ../blocks/navigation/navigation.html-->
     <div id="top-picture">
     </div>
-    <div id="middle">
-      <article class="1-column">
+    <main>
+      <div class="content">
         <div class="home">
           <p>Layouts</p>
           <div class="grid">
@@ -202,10 +205,8 @@
             </div>
           </div>
         </div>
-      </article>
-      <aside class="1-column">
-      </aside>
-    </div><!-- Footer -->
+      </div>
+    </main><!-- Footer -->
 <!--Start Footer -->
 <footer>
     <!-- Box 1 -->
@@ -280,7 +281,12 @@
     Sign In
     <!-- End Sign In -->
   </div>
-</div><script type="text/javascript" language="javascript">
+</div>
+    <script src="/scripts/jquery.smartModal.js"></script>
+    <script src="/scripts/FlameViewportScale.js"></script>
+    <script src="/scripts/hammer.js"> </script>
+    <script src="/scripts/jquery.cookie.js"></script>
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script><script type="text/javascript" language="javascript">
 	jQuery(function( $ ) {
 		$('#lightbox a').tosrus({
 		   infinite   : true,

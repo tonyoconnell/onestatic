@@ -10,19 +10,19 @@ html(lang='en')
     link(rel='import', href='/components/paper-dropdown-menu/paper-dropdown-menu.html') 
   body(class=id)
     header
-      #logo
-        a(href='/index.html')  
-          img.logo.circular.picture(src="/pictures/logos/logo.png", alt="ONE")
+      .content
+        #logo
+          #logo-picture
+            a(href='/index.html')  
+              img(src="/pictures/logos/logo.png", alt="Mid-century Online")
           #logo-text
             h1 ONE
-      include ../blocks/navigation/navigation.html
+    // include ../blocks/navigation/navigation.html
     #top-picture
         block top-picture      
-    #middle
-      article(class=layout)
+    main
+      .content
         block content
-      aside(class=layout)
-        block aside
     include ../blocks/footer.html
     include ../blocks/contact/contact.html
     script(src='/scripts/jquery.smartModal.js')

@@ -50,7 +50,7 @@ secondary-color = goldenrod
 // Dark color for font, backgrounds etc.
 dark-color = #111
 // Light color font, backgrounds etc.
-light-color = #eee
+light-color = white
 
 /*
 Patterns
@@ -67,6 +67,9 @@ grey-background()
 // Dark Background Patterns
 dark-background()
   background: url('../pictures/patterns/stressed.png') repeat
+  color light-color
+  h1, h2, h3, h4, h5, h6
+  	color light-color
 
 
 /*
@@ -93,4 +96,40 @@ p
 // Smallest Text  
 .tiny 
   font-size 10px
+
+/*
+Layout
+==========
+Choose fixed (e.g. 1000px) or fluid  (e.g. 100%) width.
+*/
+// Width of the page
+page-width = 100%
+
+// Width of the content 
+content-width = 100%
+
+// Width of an article
+article-width = 800px
+
+/*
+Template Style
+===============
+Choose the style of the blocks that build up your pages. 
+*/
+
+body
+	light-background()
+
+header
+	background white
+	
+main 
+  light-background()
+	
+footer
+	dark-background()
+	
+
+
+
 

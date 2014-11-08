@@ -1,22 +1,20 @@
 .product-gallery
   padding 0
   margin 0
+  +mobile
+    column(1)
   +tablet()
-    col(1/2)
-    max-width 47%
+    col(2/4)
   +desktop()
-    col(.5)
-    max-width 47%
+    col(2/4)
 
 .product-info
   margin 0
   padding 0
   +tablet()
-    col(1/2)
-    max-width 47%
+    col(2/4)
   +desktop()
-    col(.5)
-    max-width 47%
+    col(2/4)
 
 #price
   font-size 150%
