@@ -6,14 +6,13 @@ body
 .content
   center(content-width)
   +mobile
-    padding 15px !important
+    padding 5px !important
     margin 10px !important
-    background red !important
   +tablet()
     padding 10px 
   +desktop()
     padding 10px 20px 
-    
+      
 header
   center(page-width)
   min-width 100% !important 
@@ -30,6 +29,58 @@ main
   center(page-width)
   padding 10px
   
+
+footer
+  center(100%)
+  dark-background()
+
+footer .box
+  margin 40px
+  +tablet()
+    column(1/2, uncycle: 4, cycle: 2)
+  +desktop()
+    column (4/16)
+  font-size 90%
+
+footer .box li 
+  padding 10px
+  color grey
+
+footer a
+  color grey
+
+
+  
+
+
+.grid .box
+  margin-bottom 20px 
+
+.grid-3
+  .box
+    column(1/3, cycle: 3)
+  +mobile()
+     stack()  
+    
+.grid-4
+  .box
+    column(1/4, cycle: 4)
+  +mobile()
+    stack()
+    
+.grid-5
+  .box
+    column(1/5, cycle: 5)
+  +mobile()
+    stack()  
+
+.grid-6
+  .box
+    column(1/6, cycle: 6)
+    +mobile()
+      stack()
+
+
 article
   center(800px)
 
@@ -62,63 +113,6 @@ two-columns-right
   
 // .home article
 //  @extend two-columns-right
-
-footer
-  margin-top 40px
-  center(100%)
-  dark-background()
-  color white
-  padding 20px
-
-footer .box
-  +tablet()
-    column(1/2, uncycle: 4, cycle: 2)
-  +desktop()
-    column (4/16)
-  font-size 90%
-
-footer .box li 
-  padding 10px
-  color grey
-
-footer a
-  color grey
-
-
-  
-.icon-text
-    +mobile() 
-      display none
-
-.grid .box
-  margin-bottom 20px 
-
-.grid-3
-  .box
-    column(1/3, cycle: 3)
-  +mobile()
-     stack()  
-    
-.grid-4
-  .box
-    column(1/4, cycle: 4)
-  +mobile()
-    stack()
-    
-.grid-5
-  .box
-    column(1/5, cycle: 5)
-  +mobile()
-    stack()  
-
-.grid-6
-  .box
-    column(1/6, cycle: 6)
-    +mobile()
-      stack()
-
-
-
 
 .home .grid
   @extend .grid-5
