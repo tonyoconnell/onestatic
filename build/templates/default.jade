@@ -11,8 +11,10 @@ html(lang='en')
           img.circular.picture(src="/pictures/logos/logo.png", alt="ONE")
     include ../blocks/navigation/side-navigation
     #screen
-      #content
-        != page.contents
+      main
+        .content
+            article
+                != page.contents
     
     script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js')
     script(src='/scripts/highlight.min.js')

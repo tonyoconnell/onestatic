@@ -1,7 +1,10 @@
-ONE 
-====
-Simple, semantic, succint. 
-ONE is a simple, yet sophisticated framework for escalating ecommerce stores, traffic, leads and sales.
+ONE
+===
+
+Internet sales. Simple. Swift. Succint.
+
+“Art is the elimination of the unnecessary.”
+― Pablo Picasso
 
 ```html
 Folder Structure

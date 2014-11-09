@@ -119,7 +119,7 @@ gulp.task('reload', function () {
 
 var spawn = require('child_process').spawn;
 
-gulp.task('auto-restart', function() {
+gulp.task('auto', function() {
     var process;
 
     function restart() {
@@ -184,6 +184,9 @@ gulp.task('text', function () {
     .pipe(cache()) 
     .pipe(static_site())
     .pipe(gulp.dest('../server/'))
+    .pipe(wait(1500))
+    .pipe(browsersync.reload({stream: true}))
+    .pipe(notify({message: 'Template Applied'}));
 });
 
 
