@@ -1,4 +1,4 @@
-extends ../../templates/text
+extends ../../templates/template
 
 append page-info
 	- id = 'two-columns-left'
@@ -8,9 +8,9 @@ append page-info
 	- layout = 'two-columns-left'
 
 block content
-	include:md ../book/milo-baughman.md
-
-block aside
-	include ../../blocks/navigation/product-filter
+	main
+		include:md ../book/milo-baughman.md
+	#block-one
+		include ../../blocks/navigation/product-filter
 
 

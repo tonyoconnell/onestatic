@@ -34,7 +34,7 @@ header
 #top-picture
   margin-bottom 10px  
 
-main
+#middle
   center(page-width)
   
 /*********************
@@ -78,39 +78,53 @@ grid(n)
   margin-bottom 20px 
   
 /*********************
-         Article
+         Layout
 *********************/ 
-
 article
   center(800px)
 
-.two-columns-left #middle
-  center(100%)
+#block-one
+  display none  // This hides the sidebars until you give the body a class that contains columns
+#block-two
+  display none
+    
+two-columns-left()
+  main
+    column(3/4)
+    shift(1/4)
+  #block-one
+    display block
+    column(1/4)
+    shift(-3/4)
+    
+two-columns-right()
+  main
+    column(3/4)
+  #block-one
+    display block
+    column(1/4)
   
-.home #middle
-  center(100%)
-  
-article.two-columns-left 
-  column(3/4)
-  shift(1/4)
-  
-aside.two-columns-left 
-  column(1/4)
-  shift(-3/4)
-  
-article.two-columns-right 
-  column(3/4)
-  
-aside.two-columns-right 
-  column(1/4)
+three-columns()
+  main
+    center(100%)
+    column(3/5)
+    shift(1/5)
+  #block-one
+    display block
+    column(1/5)
+    shift(-3/5)
+  #block-two
+    display block
+    column(1/5)
 
-two-columns-left
-  column(3/4)
-  shift(1/4)
+.two-columns-left
+  two-columns-left()
 
-two-columns-right
-  column(3/4)
-  
+.two-columns-right
+  two-columns-right()
+
+.three-columns
+  three-columns()
 
 .middle
   text-align center

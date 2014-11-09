@@ -1,7 +1,7 @@
 extends ../../templates/template
 
 append page-info
-	- id = 'two-columns-right'
+	- id = 'three-columns'
 	- title = 'Template : Home'
 	- description = 'Welcome home'
 	- keywords = 'home, keyword2'
@@ -12,5 +12,7 @@ block content
 		include:md ../book/milo-baughman.md
 	#block-one
 		include ../../blocks/navigation/product-filter
+	#block-two
+		include ../../blocks/navigation/product-filter	
 
 
