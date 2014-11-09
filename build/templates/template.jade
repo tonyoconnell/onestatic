@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  head  
+    include ../blocks/head
+    include ../scripts/header-scripts.html
+    script(src='/scripts/jquery.promin.js')
+  body(class=id)
+    header
+      .content
+        #logo
+          #logo-picture
+            a(href='/index.html')  
+              img(src="/pictures/logos/logo-ram.png", alt="Mid-century Online")
+          #logo-text
+            h1 Mid-century Online
+    // include ../blocks/navigation/navigation.html
+    #top-picture
+        block top-picture      
+    main
+      .content
+        block content
+    include ../blocks/footer
+    include ../blocks/contact/contact
+    script(src='/scripts/jquery.smartModal.js')
+    script(src='/scripts/FlameViewportScale.js')
+    script(src='/scripts/hammer.js')  
+    script(src='/scripts/jquery.cookie.js')
+    script(src='/scripts/jquery.tosrus.min.all.js')   
+    include ../scripts/footer-scripts.html

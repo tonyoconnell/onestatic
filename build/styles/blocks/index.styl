@@ -1,50 +1,7 @@
-/* =======================
-        Contact Bar
-======================== */
+/**************************
+        Side Blocks
+***************************/
 
-.contact-bar
-  center(100%)
-  background white
-  padding 10px 5px 10px 0px
-  a
-    color black
-    letter-spacing 1px
-    text-decoration none
-    display block
-    float left
-    padding 2px
-    font-size 90%
-a
-  &:hover
-    .circle
-      i
-        color goldenrod
-
-
-.sign-in 
-  float right
-  color #111
-  
-
-        
-
-.icon-text
-    +mobile() 
-      display none    
-  
-
-
-.heading-1
-  color white!important
-  background-repeat repeat
-  margin 0px!important
-  padding 0px
-  h1
-    color white!important
-    margin 0px!important
-    padding 10px
-  span
-    color white!important
 
 .block-title
   padding 5px 10px 10px 10px!important
@@ -56,3 +13,40 @@ a
 
 .block-content
   background white
+  
+/**************************
+        Contact Bar
+***************************/
+
+.contact-bar
+  center(100%)
+  background white
+  padding 10px 5px 10px 0px
+  a
+    color black
+    letter-spacing 0.5px
+    text-decoration none
+    display block
+    float left
+    padding 2px
+    font-size 90%
+    vertical-align middle
+  a
+    &:hover
+      .circle
+        i
+          color secondary-color
+
+
+.sign-in 
+  float right
+  color #111
+  
+span.icon-text
+  vertical-align middle
+
+.icon-text
+    +mobile() 
+      display none    
+  
+
