@@ -165,20 +165,6 @@ $.smartModal('settings', settingsObj); // Define smartModal's default settings
 $.smartModal('init', settingsObj); // Initialize the smartModal plugin
 ```
 
-## Cross-Browser Compatibility
-
-This plugin has been tested in the following browsers (should also work in IE, but haven't tested):
-
-* Google Chome
- * Version 27+
-* Firefox
- * Version 21+
-* Safari
- * Version 6+
-* Opera
- * Version 12+
-
-
 ## Development
 
 * Source hosted at [GitHub](https://github.com/bmarshall511/jquery-smartModal)

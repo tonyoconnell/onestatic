@@ -126,6 +126,7 @@ Compiles to
 #787878
 ```
 Also ...
+```
 * darken(color, amount)
 * desaturate(color, amount)
 * saturate(color, amount)
@@ -134,6 +135,7 @@ Also ...
 * grayscale(color) - Gives the grayscale equivalent of the given color. Equals to desaturate by 100%.
 * tint(color, amount) - Mix the given color with white e.g. tint(#fd0cc7,66%)
 * shade(color, amount) - Mix the given color with black.
+```
 
 Comments
 --------

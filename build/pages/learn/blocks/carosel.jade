@@ -1,0 +1,29 @@
+extends ../../../templates/learn
+
+append page-info
+    - title = 'Layout'
+    - description = 'Welcome home'
+    - keywords = 'home, keyword2'
+
+block content
+        h1 Carosel
+        #carosel.gallery(data-snap-ignore='true')
+          a(href='/pictures/products/product-1.jpg', title='Lamps')
+            img(src='/pictures/products/product-1-sm.jpg')
+          a(href='/pictures/products/product-2.jpg', title='Chair')
+            img(src='/pictures/products/product-2-sm.jpg')
+          a(href='/pictures/products/product-3.jpg', title='Lots of Chairs')
+            img(src='/pictures/products/product-3-sm.jpg')
+          a(href='/pictures/products/product-4.jpg', title='More Chairs')
+            img(src='/pictures/products/product-4-sm.jpg')
+        p
+          | Fire the plugin on a &quot;wrapper&quot; with existing content, and it's replaced with an inline slider.
+          | Just like the lightbox popup, the slides in this slider are responsive by default. This slider has been set up to show three slides and is infinite:
+        pre
+          code.jade
+            |  $("#example").tosrus({
+            |     infinite   : true,
+            |     slides     : {
+            |        visible    : 3
+            |     }
+            |  });

@@ -6,13 +6,15 @@ html(lang='en')
     include ../blocks/head
     link(rel='stylesheet', href='/styles/side-navigation.css') 
   body
+    #logo-fixed
+        a#open-left.toggler(href='#') 
+          img.circular.picture(src="/pictures/logos/logo.png", alt="ONE")
     include ../blocks/navigation/side-navigation
     #screen
-      logo
-        a#open-left.toggler(href='#') 
-          img.circular.picture(src="/pictures/logos/logo-ram.png", alt="Mid-Century Online")
-      #content
-        block content
+      main
+        .content
+            article
+              block content
     
     script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js')
     script(src='/scripts/highlight.min.js')

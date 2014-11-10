@@ -1,0 +1,55 @@
+extends ../../../templates/one
+
+append page-info
+    - title = 'Layout'
+    - description = 'Welcome home'
+    - keywords = 'home, keyword2'
+
+block content
+        h1 Slideshow
+        p
+          | Fire the plugin on a &quot;wrapper&quot; with existing content, and the popup gallery is replaced with an inline slider.
+          br
+          | &#x9;&#x9;&#x9;&#x9;&#x9;Just like the lightbox popup, the slides in this slider are responsive by default.
+        p This slider has been set up to show three slides and is infinite:
+        #carosel.gallery(data-snap-ignore='true')
+          a(href='/pictures/products/product-1.jpg', title='Lamps')
+            img(src='/pictures/products/product-1-sm.jpg')
+          a(href='/pictures/products/product-2.jpg', title='Chair')
+            img(src='/pictures/products/product-2-sm.jpg')
+          a(href='/pictures/products/product-3.jpg', title='Lots of Chairs')
+            img(src='/pictures/products/product-3-sm.jpg')
+          a(href='/pictures/products/product-4.jpg', title='More Chairs')
+            img(src='/pictures/products/product-4-sm.jpg')
+        pre
+          .code.javascript
+            | $("#example").tosrus({
+            |  infinite   : true,
+            |  slides     : {
+            |      visible    : 3
+            |   }
+            | });
+                    
+        br
+        p
+          | This slider has been set up to so that the images fill up the wrapper. It has no buttons, only a pagination:
+        #slideshow.slider(data-snap-ignore='true')
+          a(href='#', title='Lamps')
+            img(src='/pictures/products/product-1.jpg')
+          a(href='#', title='Chair')
+            img(src='/pictures/products/product-2.jpg')
+          a(href='#', title='Lots of Chairs')
+            img(src='/pictures/products/product-3.jpg')
+          a(href='#', title='More Chairs')
+            img(src='/pictures/products/product-4.jpg')
+        pre
+          .code.javascript
+            | ("#example").tosrus({
+            |    buttons    : false,
+            |    pagination : {
+            |    add          : true
+            |   },
+            |   slides     : {
+            |   scale      : "fill"
+            |   }
+            | });

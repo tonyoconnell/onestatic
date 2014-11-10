@@ -10,45 +10,59 @@
     <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
     <link rel="stylesheet" href="/styles/doc-icon.css">
     <link rel="stylesheet" href="/styles/icons.css">
-    <link rel="stylesheet" href="/styles/one.css">  <script>
-  (function () {
-    var
-      eventSupport = ('querySelector' in document && 'addEventListener' in window)
-      jsonSupport  = (typeof JSON !== 'undefined'),
-      jQuery       = (eventSupport && jsonSupport)
-        ? '/scripts/jquery.min.js'
-        : '/scripts/jquery.legacy.min.js'
-    ;
-    document.write('<script src="' + jQuery + '"><\/script>');
-  }());
-  </script>
-  
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
-  <script src="/scripts/history.js"></script>
-  <script src="/scripts/easing.js"></script>
-  <script src="/scripts/tablesort.js"></script>
-  <script src="/scripts/typing.js"></script>
-  <script src="/scripts/semantic.min.js"></script>
-  <script src="/scripts/one.js"></script>
-
-    <script src="/scripts/jquery.promin.js"></script>
+    <link rel="stylesheet" href="/styles/one.css">
+    <link rel="stylesheet" href="/styles/side-navigation.css">
   </head>
   <body>
-    <header>
-      <div class="content">
-        <div id="logo"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-century Online" class="logo circular picture">
-            <div id="logo-text">
-              <h1>Mid-century Online</h1>
-            </div></a></div>
+    <div id="logo-fixed"><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo.png" alt="ONE" class="circular picture"></a></div>
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
       </div>
-    </header>
-    <!-- include ../blocks/navigation/navigation.html-->
-    <div id="top-picture">
+      <div class="side-navigation side-navigation-right">
+        <ul>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/install/index.html">
+                   
+                  Install</a></li>
+              <li><a href="/learn/gulp/index.html">
+                   
+                  Gulp</a></li>
+              <li><a href="/learn/markdown/index.html">
+                   
+                  Markdown</a></li>
+              <li><a href="/learn/jade/index.html">
+                   
+                  Jade</a></li>
+              <li><a href="/learn/stylus/index.html">
+                   
+                  Stylus</a></li>
+              <li><a href="/learn/jeet/index.html">
+                   
+                  Jeet</a></li>
+              <li><a href="/learn/rupture/index.html">
+                   
+                  Rupture</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
-    <main>
-      <div class="content">
-        <article><a href="#" class="triggerID">Click me</a> to trigger a normal modal.<br>
+    <div id="screen">
+      <main>
+        <div class="content">
+          <article><a href="#" class="triggerID">Click me</a> to trigger a normal modal.<br>
 <br>
 <b>For more information, see <a href="http://www.benmarshall.me/jquery-smartmodal/">jQuery.smartModal Documentation</a></b>.
 <div class="smartmodal auto" data-wait="5" id="triggerID">I'm a normal modal!<br>hello</div>
@@ -236,26 +250,6 @@ $.smartModal(&#39;hide&#39;, &#39;modalID&#39;); // Hides a modal
 $.smartModal(&#39;settings&#39;, settingsObj); // Define smartModal&#39;s default settings
 $.smartModal(&#39;init&#39;, settingsObj); // Initialize the smartModal plugin
 </code></pre>
-<h2 id="cross-browser-compatibility">Cross-Browser Compatibility</h2>
-<p>This plugin has been tested in the following browsers (should also work in IE, but haven&#39;t tested):</p>
-<ul>
-<li>Google Chome<ul>
-<li>Version 27+</li>
-</ul>
-</li>
-<li>Firefox<ul>
-<li>Version 21+</li>
-</ul>
-</li>
-<li>Safari<ul>
-<li>Version 6+</li>
-</ul>
-</li>
-<li>Opera<ul>
-<li>Version 12+</li>
-</ul>
-</li>
-</ul>
 <h2 id="development">Development</h2>
 <ul>
 <li>Source hosted at <a href="https://github.com/bmarshall511/jquery-smartModal">GitHub</a></li>
@@ -264,91 +258,20 @@ $.smartModal(&#39;init&#39;, settingsObj); // Initialize the smartModal plugin
 <h2 id="authors">Authors</h2>
 <p><a href="http://www.benmarshall.me">Ben Marshall</a></p>
 
-        </article>
-        <aside>
-        </aside>
-      </div>
-    </main><!-- Footer -->
-<!--Start Footer -->
-<footer>
-    <!-- Box 1 -->
-    <div class="box contact">
-        <h4>Contact Us Now</h4>
-        <ul>
-            <li><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone" data-metric-location="Footer"><i class="icon-phone-1 pull-left widget-icon"></i>UK 0203 1297965</a></li>
-            <li> <a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email" data-metric-location="Footer"><i class="icon-email pull-left widget-icon"></i>info@mid-centuryonline.com</a></li>
-            <li><i class="icon-address pull-left widget-icon"></i>Oberstown, Lusk, County Dublin, Ireland </li>
-        </ul>
-    </div>
-    
-    
-    <!-- Box 2 -->
-    <div class="box social">
-        <h4>Connect with Us</h4>
-        <ul>
-            <li><a target="_blank" href="http://facebook.com/midcenturymodern" data-metric="Clicked Social Link" data-metric-location="Footer" data-metric-media="Facebook"><i class="icon-facebook pull-left widget-icon"></i>Facebook</a></li>
-            <li><a target="_blank" href="http://twitter.com/mmodern" data-metric="Clicked Social Link" data-metric-location="Footer" data-metric-media="Twitter"><i class="icon-twitter pull-left widget-icon"></i>Twitter</a></li>
-            <li><a target="_blank" href="http://www.pinterest.com/midcenturypin/" data-metric="Clicked Social Link" data-metric-location="Footer" data-metric-mediae="Pinterest"><i class="icon-path widget-icon"></i>Pinterest</a></li>
-            <li><a target="_blank" href="https://plus.google.com/+Mid-centuryonline" data-metric="Clicked Social Link" data-metric-location="Footer" data-metric-media="Google"><i class="icon-google-plus pull-left widget-icon"></i>Google+</a></li>
-        </ul>
-    </div>
-    
-    <!-- Box 3 -->
-    <div class="box company">
-        <h4>Company</h4>
-        <ul>
-            <li><a href="http://mid-centuryonline.com/about" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="About">About us</a></li>
-            <li><a href="http://mid-centuryonline.com/shipping" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="Shipping">Shipping & Gurantee</a></li>
-            <li><a href="http://mid-centuryonline.com/payment" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="Payment">Payment</a></li>
-            <li><a href="http://mid-centuryonline.com/terms" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="Terms">Terms & Conditions</a></li>
-            <li><a href="http://mid-centuryonline.com/privacy" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="Privacy">Privacy Policy</a></li>
-        </ul>
-    </div>
-    
-    <!-- Box 4 -->
-    <div class="box tags">
-        <h4>Mid-century Modern</h4>
-        <div class="tag-cloud">
-        <ul>
-            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=Lamps" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Lamps" data-metric-navigation-type="Tag">Lamps</a></li>
-            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=chairs" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Chairs" data-metric-navigation-type="Tag">Chairs</a></li>
-            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=dining chairs" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Dining Chairs" data-metric-navigation-type="Tag">Dining Chairs</a></li>
-            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=sofas" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Sofas" data-metric-navigation-type="Tag">Sofas</a></li>
-            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=desks" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Desks" data-metric-navigation-type="Tag">Desks</a></li>
-            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=tables" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Tables" data-metric-navigation-type="Tag">Tables</a></li>
-            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=designers" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Designers" data-metric-navigation-type="Tag">Designers</a></li>
-            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=benches" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Benches" data-metric-navigation-type="Tag">Benches</a></li>
-            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=chess sets" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Chess Sets" data-metric-navigation-type="Tag">Chess Sets</a></li>
-            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=lounge chairs" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Lounge Chairs" data-metric-navigation-type="Tag">Lounge Chairs</a></li>
-            <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=stools" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Stools" data-metric-navigation-type="Tag">Stools</a></li>
-        </ul>
+          </article>
         </div>
+      </main>
     </div>
-</footer>
-<!-- Contact --><div class="contact-bar">
-  <!-- Contact -->
-  <div class="contact-left">
-    <a href="tel:+442031297965" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Phone">
-      <span class="circle"><i class="icon-telephone"></i></span>
-    </a>
-    <a href="tel:+442031297965" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Phone"><span class="icon-text hiddex-sm">+44 (0)203 1297965</span></a>
-    <a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Email"><span class="circle"><i class="icon-email"></i></span></a>
-    <a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Email"><span class="icon-text hidden-mobile">info@mid-centuryonline.com</a>
-    <a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Skype"><span class="circle"><i class="icon-skype"></i></span></a>
-    <a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric=location"Top" data-metric-contact-type="Skype"><span class="icon-text hidden-mobile">Skype</span></a>
-    <!--End Contact -->
-  </div>
-  <div class="sign-in">
-    <!--  Sign In -->
-    Sign In
-    <!-- End Sign In -->
-  </div>
-</div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script src="/scripts/highlight.min.js"></script>
+    <script src="/scripts/snap.js"></script>
     <script src="/scripts/jquery.smartModal.js"></script>
     <script src="/scripts/FlameViewportScale.js"></script>
     <script src="/scripts/hammer.js"> </script>
     <script src="/scripts/jquery.cookie.js"></script>
-    <script src="/scripts/jquery.tosrus.min.all.js">  </script><script type="text/javascript" language="javascript">
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
+    <script src="/scripts/one-side-navigation.js"></script>
+    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
 	jQuery(function( $ ) {
 		$('#lightbox a').tosrus({
 		   infinite   : true,
@@ -455,6 +378,10 @@ $(document)
   .ready(semantic.menu.ready)
 ;
 </script>
-
+<script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
   </body>
 </html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description">
+    <meta name="keywords">
+    <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
+    <link rel="stylesheet" href="/styles/doc-icon.css">
+    <link rel="stylesheet" href="/styles/icons.css">
+    <link rel="stylesheet" href="/styles/one.css">
+    <link rel="stylesheet" href="/styles/side-navigation.css">
+  </head>
+  <body>
+    <div id="logo-fixed"><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo.png" alt="ONE" class="circular picture"></a></div>
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
+      </div>
+      <div class="side-navigation side-navigation-right">
+        <ul>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/install/index.html">
+                   
+                  Install</a></li>
+              <li><a href="/learn/gulp/index.html">
+                   
+                  Gulp</a></li>
+              <li><a href="/learn/markdown/index.html">
+                   
+                  Markdown</a></li>
+              <li><a href="/learn/jade/index.html">
+                   
+                  Jade</a></li>
+              <li><a href="/learn/stylus/index.html">
+                   
+                  Stylus</a></li>
+              <li><a href="/learn/jeet/index.html">
+                   
+                  Jeet</a></li>
+              <li><a href="/learn/rupture/index.html">
+                   
+                  Rupture</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="screen">
+      <main>
+        <div class="content">
+          <article><p>Mac OSX Preperation
+<a href="http://bevry.me/learn/node-install">http://bevry.me/learn/node-install</a></p>
+<p>Download &amp; Install Git
+Download &amp; Install Xcode
+Install Xcode Command Line Tools:</p>
+<p>xcode-select --install</p>
+<p>//Install homebrew then Node
+ruby -e &quot;$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install">https://raw.github.com/Homebrew/homebrew/go/install</a>)&quot;
+brew install node</p>
+<p>Install Node.js Via Mac OSX Installer</p>
+<p>Uninstall any previous Node.js versions you may already have
+Download &amp; Install the Node.js Mac OSX Installer <a href="http://nodejs.org/dist/v0.10.25/node-v0.10.25.pkg">http://nodejs.org/dist/v0.10.25/node-v0.10.25.pkg</a>
+Ensure the correct permissions are set by running the following in Terminal:</p>
+<p>sudo chown -R $USER /usr/local</p>
+<p>Other ways</p>
+<p><a href="https://gist.github.com/isaacs/579814">https://gist.github.com/isaacs/579814</a></p>
+<h1 id="install-node-version-manager">Install Node Version Manager</h1>
+<p>Uninstall any previous Node.js versions you may already have
+Install NVM by running the following in Terminal:</p>
+<p>git clone git://github.com/creationix/nvm.git ~/.nvm
+printf &quot;\n\n# NVM\nif [ -s ~/.nvm/nvm.sh ]; then\n\tNVM_DIR=~/.nvm\n\tsource ~/.nvm/nvm.sh\nfi&quot; &gt;&gt; ~/.bashrc
+NVM_DIR=~/.nvm
+source ~/.nvm/nvm.sh
+Install Node.js by running the following in Terminal:</p>
+<p>nvm install v0.10.25
+nvm alias default 0.10
+nvm use 0.10</p>
+<h1 id="fix-permissions">Fix Permissions</h1>
+<p>whoami
+sudo chown -R tony /usr/local</p>
+<p>export PATH=./node_modules/.bin:$PATH</p>
+<h1 id="uninstall-node">Uninstall Node</h1>
+<p>wget <a href="https://gist.github.com/nicerobot/2697848/raw/uninstall-node.sh">https://gist.github.com/nicerobot/2697848/raw/uninstall-node.sh</a>
+chmod +x ./uninstall-node.sh
+./uninstall-node.sh
+rm uninstall-node.sh</p>
+<p>If you installed node from their website can try this</p>
+<p>sudo rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/<em>/node.</em>}</p>
+
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script src="/scripts/highlight.min.js"></script>
+    <script src="/scripts/snap.js"></script>
+    <script src="/scripts/jquery.smartModal.js"></script>
+    <script src="/scripts/FlameViewportScale.js"></script>
+    <script src="/scripts/hammer.js"> </script>
+    <script src="/scripts/jquery.cookie.js"></script>
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
+    <script src="/scripts/one-side-navigation.js"></script>
+    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+semantic.menu = {};
+
+// ready event
+semantic.menu.ready = function() {
+
+  // selector cache
+  var
+    $menuItem = $('.menu a.item, .menu .link.item'),
+    $dropdown = $('.main.container .menu .dropdown'),
+    // alias
+    handler = {
+
+      activate: function() {
+        if(!$(this).hasClass('dropdown')) {
+          $(this)
+            .addClass('active')
+            .closest('.ui.menu')
+            .find('.item')
+              .not($(this))
+              .removeClass('active')
+          ;
+        }
+      }
+
+    }
+  ;
+
+  $dropdown
+    .dropdown({
+      on: 'hover'
+    })
+  ;
+
+  $menuItem
+    .on('click', handler.activate)
+  ;
+
+};
+
+
+// attach ready event
+$(document)
+  .ready(semantic.menu.ready)
+;
+</script>
+<script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
+  </body>
+</html>

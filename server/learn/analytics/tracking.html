@@ -1,309 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
   <head> 
-    <title></title>
+    <title>Home</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-    <meta name="description">
-    <meta name="keywords">
+    <meta name="description" content="Welcome home">
+    <meta name="keywords" content="home, keyword2">
     <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
     <link rel="stylesheet" href="/styles/doc-icon.css">
     <link rel="stylesheet" href="/styles/icons.css">
-    <link rel="stylesheet" href="/styles/one.css">
-    <link rel="stylesheet" href="/styles/side-navigation.css">
+    <link rel="stylesheet" href="/styles/one.css">  <script>
+  (function () {
+    var
+      eventSupport = ('querySelector' in document && 'addEventListener' in window)
+      jsonSupport  = (typeof JSON !== 'undefined'),
+      jQuery       = (eventSupport && jsonSupport)
+        ? '/scripts/jquery.min.js'
+        : '/scripts/jquery.legacy.min.js'
+    ;
+    document.write('<script src="' + jQuery + '"><\/script>');
+  }());
+  </script>
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+  <script src="/scripts/history.js"></script>
+  <script src="/scripts/easing.js"></script>
+  <script src="/scripts/tablesort.js"></script>
+  <script src="/scripts/typing.js"></script>
+  <script src="/scripts/semantic.min.js"></script>
+  <script src="/scripts/one.js"></script>
+
+    <script src="/scripts/jquery.promin.js"></script>
   </head>
   <body>
-    <div id="logo-fixed"><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo.png" alt="ONE" class="circular picture"></a></div>
-    <div class="side-navigations">
-      <div class="side-navigation side-navigation-left nav">
-        <ul id="nav">
-          <li><a href="/index.html">Home</a>
-            <ul>
-              <li><a href="/index.html">Test</a></li>
-            </ul>
-          </li>
-          <li><a href="/book">Book</a></li>
-          <li><a href="dragElement.html">Drag Element</a></li>
-          <li><a href="rightDisabled.html">Right Disabled</a></li>
-          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
-        </ul>
-      </div>
-      <div class="side-navigation side-navigation-right">
-        <ul>
-          <li><a href="/learn/index.html">Learn</a>
-            <ul>
-              <li><a href="/learn/index.html">
-                   
-                  Get Started</a></li>
-              <li><a href="/learn/git/index.html">
-                   
-                  Git</a></li>
-              <li><a href="/learn/gulp/index.html">
-                   
-                  Gulp</a></li>
-              <li><a href="/learn/markdown/index.html">
-                   
-                  Markdown</a></li>
-              <li><a href="/learn/jade/index.html">
-                   
-                  Jade</a></li>
-              <li><a href="/learn/stylus/index.html">
-                   
-                  Stylus</a></li>
-              <li><a href="/learn/jeet/index.html">
-                   
-                  Jeet</a></li>
-              <li><a href="/learn/rupture/index.html">
-                   
-                  Rupture</a></li>
-              <li><a href="/learn/nib/index.html">
-                   
-                  Nib     </a></li>
-              <li><a href="/learn/axis/index.html">
-                   
-                  Axis  </a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div id="screen">
-      <main>
-        <div class="content">
-          <article><p>On magento html/page/footer.phtml calls tracking/tracking.phtml</p>
-<h1 id="analysjs">analysjs</h1>
-<p>page/html/header.phtml
-page/html/footer.phtml
-page/html/breadcrumbs.phtml
-page/html/topmenu/renderer.phtml
-catalog/product/view/add-to-cart
-list
-add to cart
-frontend/one/default/template/checkout/cart/shipping.phtml</p>
-<h2 id="install-load">Install/Load</h2>
-<p>You must call <code>analysjs.load(apiToken, identify)</code> in order to install the segment.io lib.</p>
-<p><strong>Note:</strong> Set <code>null</code> on <code>apiToken</code> in order to disable metric tracking.</p>
-<h2 id="element-metric-binding">Element metric binding</h2>
-<p>Through <code>data-metric-*</code> attributes it&#39;s possible to trigger metrics with zero JavaScript.</p>
-<p>The <code>data-metric</code> attribute will be the event name.
-The other <code>data-metric-*</code> attributes will be passed to the event as its properties, for example:</p>
-<pre><code class="lang-html">&lt;button type=&quot;button&quot;
-    data-metric=&quot;Signup&quot;
-    data-metric-cupom-code=&quot;A9XJL31&quot;
-    data-metric-revenue=&quot;9.90&quot;&gt;Sign Up&lt;/button&gt;</code></pre>
-<p>The metric name will be <strong>Signup</strong> and two properties will be sendt, <code>cuponCode</code> and <code>revenue</code>.</p>
-<h3 id="the-auto-bind-behaviour">The auto-bind behaviour</h3>
-<p>When the plugin is loaded it looks for all elements that have a valid <code>data-metric</code> attribute (which will be used as the name of the event) and register specific events/behavior for each case:</p>
-<h4 id="1-when-the-element-is-an-a-">1 - When the element is an <code>&lt;a&gt;</code></h4>
-<p>The library calls <code>analytics.trackLink</code> with the properties found on the element.</p>
-<pre><code class="lang-html">&lt;a href=&quot;/signup&quot;
-    data-metric=&quot;Signup intention&quot;
-    data-metric-plan=&quot;free&quot;&gt;Signup&lt;/a&gt;</code></pre>
-<p>Check the original documentation <a href="https://segment.io/libraries/analytics.js#trackLink">https://segment.io/libraries/analytics.js#trackLink</a></p>
-<h4 id="2-when-the-element-is-an-form-">2 - When the element is an <code>&lt;form&gt;</code></h4>
-<p>The library calls <code>analytics.trackForm</code> with the properties found on the element.</p>
-<pre><code class="lang-html">&lt;form action=&quot;/signup&quot; method=&quot;POST&quot;
-    data-metric=&quot;Signup&quot;&gt;Signup&lt;/a&gt;</code></pre>
-<p>Check the original documentation <a href="https://segment.io/libraries/analytics.js#trackForm">https://segment.io/libraries/analytics.js#trackForm</a></p>
-<h4 id="3-when-the-element-is-an-button-">3 - When the element is an <code>&lt;button&gt;</code></h4>
-<p>A click event will be binded and when triggered will call <code>analytics.track</code> with the properties found on the element.</p>
-<pre><code class="lang-html">&lt;button data-metric=&quot;Signin&quot;&gt;Sign In&lt;/button&gt;</code></pre>
-<h4 id="4-any-other-element">4 - Any other element</h4>
-<ul>
-<li><p>It will look for a <code>data-metric-page-view</code>, if found and <code>true</code> a page view event will be tracked, through <code>analytics.page</code>. Also a <code>data-metric-page-category</code> can be specified.</p>
-<pre><code class="lang-html">&lt;div data-metric=&quot;Home page&quot;
-  data-metric-page-view=&quot;true&quot;
-  data-metric-page-category=&quot;landing&quot;&gt;
-  ...
-&lt;/div&gt;</code></pre>
-<p>Check the original documentation <a href="https://segment.io/libraries/analytics.js#page">https://segment.io/libraries/analytics.js#page</a></p>
-</li>
-<li><p>It will look for a <code>data-metric-event</code>, if found the named event will be binded and <code>analytics.track</code> will be called when the event is triggered.</p>
-<pre><code class="lang-html">&lt;input type=&quot;text&quot; name=&quot;address&quot;
-  data-metric=&quot;Check address&quot;
-  data-metric-event=&quot;blur&quot;&gt;</code></pre>
-</li>
-<li><p>Otherwise it will be ignored by auto-bind, being useful only if you call the <code>triggerMetric</code> plugin. Check below.</p>
-</li>
-</ul>
-<h3 id="the-el-triggermetric-method">The <code>$(el).triggerMetric()</code> method</h3>
-<p>An useful method to trigger metric manually, using the properties defined on the element itself.</p>
-<pre><code class="lang-html">&lt;div id=&quot;success-notification&quot;
-    data-metric=&quot;Completed survey&quot;
-    data-metric-survey-type=&quot;satisfaction&quot;&gt;
-    ...
-&lt;/div&gt;</code></pre>
-<pre><code class="lang-js">function onSuccess() {
-    $(&#39;#success-notification&#39;).triggerMetric({
-        elapsedTime : 0 // time spent on survey
-    });
-}</code></pre>
-<!-- Identify -->
-
-<script type="text/javascript">
-  analytics.identify('<?php
- if(Mage::getSingleton('customer/session')->isLoggedIn()) {
-     $customerData = Mage::getSingleton('customer/session')->getCustomer();
-      echo $customerData->getId();
- }
- ?>', {
-  name: '<?php
- if(Mage::getSingleton('customer/session')->isLoggedIn()) {
-     $customerData = Mage::getSingleton('customer/session')->getCustomer();
-      echo $customerData->getName();
- }
- ?>',
-  email: '<?php
- if(Mage::getSingleton('customer/session')->isLoggedIn()) {
-     $customerData = Mage::getSingleton('customer/session')->getCustomer();
-      echo $customerData->getEmail();
- }
- ?>'
-});
-</script>
-
-<script type="text/javascript">
-  analytics.identify('<?php
- if(Mage::getSingleton('customer/session')->isLoggedIn()) {
-     $customerData = Mage::getSingleton('customer/session')->getCustomer();
-      echo $customerData->getId();
- }
- ?>', {
-  name: '<?php
- if(Mage::getSingleton('customer/session')->isLoggedIn()) {
-     $customerData = Mage::getSingleton('customer/session')->getCustomer();
-      echo $customerData->getName();
- }
- ?>',
-  email: '<?php
- if(Mage::getSingleton('customer/session')->isLoggedIn()) {
-     $customerData = Mage::getSingleton('customer/session')->getCustomer();
-      echo $customerData->getEmail();
- }
- ?>'
-});
-</script>
-
-
-<!-- Home -->
-<script type="text/javascript">
-var url= window.location.href;
-if(url.split(&quot;/&quot;).length&gt;3){
-    analytics.page(&#39;Home&#39;);
-}
-</script>
-
-&lt;?
-$homepage = &quot;/&quot;;
-$currentpage = $_SERVER[&#39;REQUEST_URI&#39;];
-if($homepage==$currentpage) {
-echo &quot;Yo Yo&quot;;
-}
-?&gt;
-
-
-
-
-<!-- Home -->
-&lt;?php
-if($this-&gt;getUrl(&#39;&#39;) == $this-&gt;getUrl(&#39;<em>/</em>/*&#39;, array(&#39;_current&#39;=&gt;true, &#39;_use_rewrite&#39;=&gt;true))):
-  echo &quot;Home&quot;;
-endif;
-?&gt;
-
-<!-- Category -->
-
-<p>&lt;?php
-if($product = Mage::registry(&#39;current_product&#39;)):
-elseif (Mage::registry(&#39;current_category&#39;)):
-  echo &quot;Category&quot;;
-  // Category ID
-  echo Mage::registry(&#39;current_category&#39;)-&gt;getName();
-  // Category ID
-  echo Mage::registry(&#39;current_category&#39;)-&gt;getId();
-endif;
-?&gt;</p>
-<p><!-- Content -->
-&lt;?php
-if(Mage::app()-&gt;getFrontController()-&gt;getRequest()-&gt;getRouteName() == &#39;cms&#39;):
-  echo &quot;Content&quot;;
-  echo Mage::getSingleton(&#39;cms/page&#39;)-&gt;getIdentifier();
-  echo Mage::getSingleton(&#39;cms/page&#39;)-&gt;getTitle(); 
-endif;
-?&gt;</p>
-<p><!-- Product -->
-&lt;?php
-if($product = Mage::registry(&#39;current_product&#39;)):
-  echo &quot;Product&quot;;
-  // Product Name
-  echo Mage::registry(&#39;current_product&#39;)-&gt;getName();
-  // Product ID
-  echo Mage::registry(&#39;current_product&#39;)-&gt;getId();
-  // Category Name
-  echo Mage::registry(&#39;current_category&#39;)-&gt;getName();
-  // Category ID
-  echo Mage::registry(&#39;current_category&#39;)-&gt;getId();
-endif;
-?&gt;</p>
-<p><!-- Account -->
-&lt;?php
-$url= Mage::getUrl(&#39;<em>/</em>/*&#39;, array(&#39;_current&#39;=&gt;true, &#39;_use_rewrite&#39;=&gt;true));
-if ( strstr( $url, &quot;customer/account/login&quot; ) )
-  echo &quot;Login&quot;;
-?&gt;</p>
-<p><!-- Register -->
-&lt;?php
-$url= Mage::getUrl(&#39;<em>/</em>/*&#39;, array(&#39;_current&#39;=&gt;true, &#39;_use_rewrite&#39;=&gt;true));
-if ( strstr( $url, &quot;customer/account/create&quot; ) )
-  echo &quot;Register&quot;;
-?&gt;</p>
-<p><!-- Cart -->
-&lt;?php
-$url= Mage::getUrl(&#39;<em>/</em>/*&#39;, array(&#39;_current&#39;=&gt;true, &#39;_use_rewrite&#39;=&gt;true));
-if ( strstr( $url, &quot;checkout/cart&quot; ) )
-  echo &quot;Cart&quot;;
-?&gt;</p>
-<p><!-- Checkout -->
-&lt;?php
-$url= Mage::getUrl(&#39;<em>/</em>/*&#39;, array(&#39;_current&#39;=&gt;true, &#39;_use_rewrite&#39;=&gt;true));
-if ( strstr( $url, &quot;checkout/onepage/index&quot; ) )
-  echo &quot;Checkout&quot;;
-?&gt;</p>
-<p><!-- Success -->
-&lt;?php
-$url= Mage::getUrl(&#39;<em>/</em>/*&#39;, array(&#39;_current&#39;=&gt;true, &#39;_use_rewrite&#39;=&gt;true));
-if ( strstr( $url, &quot;checkout/onepage/success&quot; ) )
-  echo &quot;Success&quot;;
-?&gt;</p>
-<p>&lt;?php
-// Retrieve Session Object
-$session = Mage::getSingleton(&#39;customer/session&#39;);</p>
-<p>// Check if user is logged in or not.
-if($session-&gt;isLoggedIn()) 
-{
-   $customer = $session-&gt;getCustomer();</p>
-<p>   // Get Customer ID
-   echo $customer-&gt;getID();</p>
-<p>   // Get Customer Name
-   echo $customer-&gt;getName();</p>
-<p>}
-?&gt;</p>
-
-          </article>
+    <header>
+      <div class="content">
+        <div id="logo">
+          <div id="logo-picture"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-century Online"></a></div>
+          <div id="logo-text">
+            <h1>Mid-century Online</h1>
+          </div>
         </div>
-      </main>
+      </div>
+    </header>
+    <!-- include ../blocks/navigation/navigation.html-->
+    <div id="top-picture">
     </div>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
-    <script src="/scripts/highlight.min.js"></script>
-    <script src="/scripts/snap.js"></script>
+    <div id="middle">
+      <div class="content">
+        <h1>Tracking
+          <div class="ui form segment">
+            <div class="field">
+              <label>Receive our newsletter</label>
+              <div class="ui left labeled icon input">
+                <input type="text" placeholder="Email"><i class="mail icon"></i>
+                <div class="ui corner label"><i class="asterisk icon"></i></div>
+              </div>
+            </div>
+            <div class="huge green ui labeled icon button"><i class="signup icon"></i>Sign up</div>
+          </div>
+        </h1><a href="/signup" data-metric="Signup intention" data-metric-plan="free">Signup Link
+          <button data-metric="Button" class="button">Button</button><a href="skype:mid-centuryonline.com?chat" data-metric="Contact" data-metric-type="skype">skype</a><a href="mailto:info@mid-centuryonline.com" data-metric="Contact" data-metric-type="email">email</a>
+          <div data-metric="Floor Lamps" data-metric-page-view="true" data-metric-page-category="Lighting"></div></a>
+      </div>
+    </div>
+    <footer>
+      <div class="content">
+        <!-- Box 1-->
+        <div class="box contact">
+          <h4>Contact Us Now</h4>
+          <ul>
+            <li><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone" data-metric-location="Footer"><i class="icon-phone-1 pull-left widget-icon"></i>UK 0203 1297965</a></li>
+            <li><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email" data-metric-location="Footer"><i class="icon-email pull-left widget-icon"></i>info@mid-centuryonline.com</a></li>
+            <li><i class="icon-address pull-left widget-icon"></i>Oberstown, Lusk, County Dublin, Ireland</li>
+          </ul>
+        </div>
+        <!-- Box 2-->
+        <div class="box social">
+          <h4>Connect with Us</h4>
+          <ul>
+            <li><a target="_blank" href="http://facebook.com/midcenturymodern" data-metric="Clicked Social Link" data-metric-location="Footer" data-metric-media="Facebook"><i class="icon-facebook pull-left widget-icon"></i>Facebook</a></li>
+            <li><a target="_blank" href="http://twitter.com/mmodern" data-metric="Clicked Social Link" data-metric-location="Footer" data-metric-media="Twitter"><i class="icon-twitter pull-left widget-icon"></i>Twitter</a></li>
+            <li><a target="_blank" href="http://www.pinterest.com/midcenturypin/" data-metric="Clicked Social Link" data-metric-location="Footer" data-metric-mediae="Pinterest"><i class="icon-path widget-icon"></i>Pinterest</a></li>
+            <li><a target="_blank" href="https://plus.google.com/+Mid-centuryonline" data-metric="Clicked Social Link" data-metric-location="Footer" data-metric-media="Google"><i class="icon-google-plus pull-left widget-icon"></i>Google+</a></li>
+          </ul>
+        </div>
+        <!-- Box 3-->
+        <div class="box company">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="http://mid-centuryonline.com/about" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="About">About us</a></li>
+            <li><a href="http://mid-centuryonline.com/shipping" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="Shipping">Shipping &amp; Gurantee</a></li>
+            <li><a href="http://mid-centuryonline.com/payment" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="Payment">Payment</a></li>
+            <li><a href="http://mid-centuryonline.com/terms" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="Terms">Terms &amp; Conditions</a></li>
+            <li><a href="http://mid-centuryonline.com/privacy" data-metric="Clicked Footer Link" data-metric-location="Footer" data-metric-link="Privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <!-- Box 4-->
+        <div class="box tags">
+          <h4>Mid-century Modern</h4>
+          <div class="tag-cloud">
+            <ul>
+              <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=Lamps" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Lamps" data-metric-navigation-type="Tag">Lamps</a></li>
+              <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=chairs" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Chairs" data-metric-navigation-type="Tag">Chairs</a></li>
+              <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=dining chairs" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Dining Chairs" data-metric-navigation-type="Tag">Dining Chairs</a></li>
+              <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=sofas" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Sofas" data-metric-navigation-type="Tag">Sofas</a></li>
+              <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=desks" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Desks" data-metric-navigation-type="Tag">Desks</a></li>
+              <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=tables" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Tables" data-metric-navigation-type="Tag">Tables</a></li>
+              <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=designers" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Designers" data-metric-navigation-type="Tag">Designers</a></li>
+              <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=benches" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Benches" data-metric-navigation-type="Tag">Benches</a></li>
+              <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=chess sets" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Chess Sets" data-metric-navigation-type="Tag">Chess Sets</a></li>
+              <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=lounge chairs" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Lounge Chairs" data-metric-navigation-type="Tag">Lounge Chairs</a></li>
+              <li><a href="http://mid-centuryonline.com/catalogsearch/result/?q=stools" data-metric="Clicked Tag" data-metric-location="Footer" data-metric-link="Stools" data-metric-navigation-type="Tag">Stools</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="contact-bar">
+      <!-- Contact-->
+      <div class="contact-info"><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="circle"><i class="icon-telephone"></i></span></a><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="icon-text">+44 (0)203 1297965</span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="circle"><i class="icon-email"></i></span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="icon-text">info@mid-centuryonline.com</span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="circle"><i class="icon-skype"></i></span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="icon-text">Skype</span></a>
+        <!-- End Contact-->
+      </div>
+      <div class="sign-in"><span class="circle"><i class="icon-login"></i></span><a href="/forms/login.html" data-metric="Clicked Sign In"><span class="icon-text">Sign In</span></a></div>
+    </div>
     <script src="/scripts/jquery.smartModal.js"></script>
     <script src="/scripts/FlameViewportScale.js"></script>
     <script src="/scripts/hammer.js"> </script>
     <script src="/scripts/jquery.cookie.js"></script>
-    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
-    <script src="/scripts/one-side-navigation.js"></script>
-    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script><script type="text/javascript" language="javascript">
 	jQuery(function( $ ) {
 		$('#lightbox a').tosrus({
 		   infinite   : true,
@@ -410,10 +237,6 @@ $(document)
   .ready(semantic.menu.ready)
 ;
 </script>
-<script type="text/javascript">
-var snapper = new Snap({
-      element: document.getElementById('screen')
-  });
-</script>
+
   </body>
 </html>

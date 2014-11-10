@@ -1,4 +1,4 @@
-extends ../../../templates/page
+extends ../../../templates/learn
 
 append page-info
     - title = 'Layout'
@@ -6,102 +6,64 @@ append page-info
     - keywords = 'home, keyword2'
 
 block content
+  h1 Lightbox
+  p
+    | Pop up a beautiful full screen responsive lightbox customised for each device
+  h2 Lightbox Slideshow
+  p
+    | Pops up a slideshow with thumbnails for a group of images  
+  
+  #lightbox.small.pictures
+    include ../../../blocks/pictures/products-thumbs
+  p Code  : Put your pictures inside an element with an id of lightbox. 
+  pre
+    code.jade
+      | #lightbox
+      |   a(href='/pictures/products/product-1.jpg', title='Lamps')
+      |     img(src='/pictures/products/product-1-sm.jpg')
+      |   a(href='/pictures/products/product-2.jpg', title='Chair')
+      |     img(src='/pictures/products/product-2-sm.jpg')
+  h2 Lightbox Slideshow with Thumbnails
+  p
+    | Pops up a slideshow with thumbnails for a group of images  
+  #lightbox-thumbnails.small.pictures
+    include ../../../blocks/pictures/products-thumbs
+  p Code  : Put your pictures inside an element with an id of lightbox-thumbnails. 
+  pre
+    code.jade
+      | #lightbox-thumbnails
+      |   a(href='/pictures/products/product-1.jpg', title='Lamps')
+      |     img(src='/pictures/products/product-1-sm.jpg')
+      |   a(href='/pictures/products/product-2.jpg', title='Chair')
+      |     img(src='/pictures/products/product-2-sm.jpg')
+  h2 Lightbox Slideshow with Bullets
+  p
+    | Pops up a slideshow with thumbnails for a group of images  
+  #lightbox-bullets.small.pictures
+    include ../../../blocks/pictures/products-thumbs
+  p Code  : Put your pictures inside an element with an id of lightbox. 
+  pre
+    code.jade
+      | #lightbox
+      |   a(href='/pictures/products/product-1.jpg', title='Lamps')
+      |     img(src='/pictures/products/product-1-sm.jpg')
+      |   a(href='/pictures/products/product-2.jpg', title='Chair')
+      |     img(src='/pictures/products/product-2-sm.jpg')
 
-      #intro
-        h1 Slideshow and Lightbox
-        p
-          | Scroll or swipe through all different kinds of content. On a desktop, tablet or smartphone, inside a HTML element or as a lightbox popup.
-        p
-      section
-        h2 Lightbox
-        p
-          | Fire the plugin on a (set of) thumbnail(s) and it will create a lightbox popup with a slider for the enlarged images.
-          br
-          | Create a gallery from the targeted anchors.
-        p This lightbox has been set up with a thumbnail pagination and inline-buttons:
-        #lightbox.small.pictures data-snap-ignore="true"
-          a(href='/pictures/products/product-1.jpg', title='Lamps')
-            img(src='/pictures/products/product-1-sm.jpg')
-          a(href='/pictures/products/product-2.jpg', title='Chair')
-            img(src='/pictures/products/product-2-sm.jpg')
-          a(href='/pictures/products/product-3.jpg', title='Lots of Chairs')
-            img(src='/pictures/products/product-3-sm.jpg')
-          a(href='/pictures/products/product-4.jpg', title='More Chairs')
-            img(src='/pictures/products/product-4-sm.jpg')
-        pre
-          code.js
-            | $("#lightbox a").tosrus({
-            |   buttons    : "inline",
-            |  pagination : {
-            |    add        : true,
-            |   type       : "thumbnails"
-            |   }
-            | });
+  p
+    | Besides images, you can also scroll through YouTube and Vimeo video&apos;s and any other type of HTML:
+  #example-3.links
+    a(href='http://www.youtube.com/watch?v=INscMGmhmX4') YouTube: Grumpy cat.
+    br
+    a(href='http://vimeo.com/37328349') Vimeo: Flying cat.
+    br
+    a(href='#hidden-content') Some hidden HTML.
+  .hidden
+    #hidden-content(style='max-width: 750px;')
+      img(src='http://lorempixel.com/200/200/cats/5/', style='float: right; margin: 0 0 20px 20px;')
+      h3 Kitty ipsum dolor sit amet
+  pre
+    code.jade
+      | $("#example a").tosrus();
                     
-        br
-        p
-          | Besides images, you can also scroll through YouTube and Vimeo video&apos;s and any other type of HTML:
-        #example-3.links
-          a(href='http://www.youtube.com/watch?v=INscMGmhmX4') YouTube: Grumpy cat.
-          br
-          a(href='http://vimeo.com/37328349') Vimeo: Flying cat.
-          br
-          a(href='#hidden-content') Some hidden HTML.
-        .hidden
-          #hidden-content(style='max-width: 750px;')
-            img(src='http://lorempixel.com/200/200/cats/5/', style='float: right; margin: 0 0 20px 20px;')
-            h3 Kitty ipsum dolor sit amet
-            p
-              | Purr attack in viverra nullam, jump on the table puking chase the red dot biting run fluffy fur tempus et. Jump on the table iaculis tortor tail flick eat egestas, jump on the table zzz sleep in the sink chuf. Lay down in your way orci turpis knock over the lamp vestibulum aliquam, ac shed everywhere non judging you shed everywhere scratched. Accumsan egestas scratched puking scratched tincidunt a, purr dolor enim ut jump on the table orci turpis libero. Vel non vel amet, stretching jump litter box eat sagittis nunc non. Nunc chuf pellentesque leap et ac, tortor climb the curtains stuck in a tree sollicitudin. Sagittis nibh aliquam nunc, tortor stretching rhoncus suspendisse hiss accumsan rhoncus litter box. Consectetur jump on the table dolor suscipit suscipit hiss, iaculis biting mauris a I don&apos;t like that food.
-            p
-              | Purr judging you nam dolor rip the couch, purr tincidunt a tristique give me fish aliquam climb the curtains pharetra. I don&apos;t like that food vel puking hairball, nam pellentesque attack consectetur suspendisse sleep in the sink feed me. Sleep on your face tortor faucibus chuf hairball, leap quis nunc sleep in the sink egestas meow. Tail flick sleep in the sink tincidunt a sunbathe enim, pellentesque scratched purr sleep on your face sagittis. Litter box hiss shed everywhere etiam, biting non aliquam egestas tincidunt a enim ut tail flick iaculis. Et mauris a aliquam run suscipit mauris a, attack stuck in a tree stuck in a tree iaculis lay down in your way sollicitudin.
-        pre.
-          \n$("#example a").tosrus();
-                    
-      hr
-      section
-        h2 Inline slider examples
-        p
-          | Fire the plugin on a &quot;wrapper&quot; with existing content, and the popup gallery is replaced with an inline slider.
-          br
-          | &#x9;&#x9;&#x9;&#x9;&#x9;Just like the lightbox popup, the slides in this slider are responsive by default.
-        p This slider has been set up to show three slides and is infinite:
-        #carosel.gallery(data-snap-ignore='true')
-          a(href='/pictures/products/product-1.jpg', title='Lamps')
-            img(src='/pictures/products/product-1-sm.jpg')
-          a(href='/pictures/products/product-2.jpg', title='Chair')
-            img(src='/pictures/products/product-2-sm.jpg')
-          a(href='/pictures/products/product-3.jpg', title='Lots of Chairs')
-            img(src='/pictures/products/product-3-sm.jpg')
-          a(href='/pictures/products/product-4.jpg', title='More Chairs')
-            img(src='/pictures/products/product-4-sm.jpg')
-        pre.
-          \n$("#example").tosrus({
-             infinite   : true,
-             slides     : {
-                visible    : 3
-             }
-          });
-                    
-        br
-        p
-          | This slider has been set up to so that the images fill up the wrapper. It has no buttons, only a pagination:
-        #slideshow.slider(data-snap-ignore='true')
-          a(href='#', title='Lamps')
-            img(src='/pictures/products/product-1.jpg')
-          a(href='#', title='Chair')
-            img(src='/pictures/products/product-2.jpg')
-          a(href='#', title='Lots of Chairs')
-            img(src='/pictures/products/product-3.jpg')
-          a(href='#', title='More Chairs')
-            img(src='/pictures/products/product-4.jpg')
-        pre.
-          \n$("#example").tosrus({
-             buttons    : false,
-             pagination : {
-                add          : true
-             },
-             slides     : {
-                scale      : "fill"
-             }
-          });
+  

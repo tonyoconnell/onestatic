@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description">
+    <meta name="keywords">
+    <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
+    <link rel="stylesheet" href="/styles/doc-icon.css">
+    <link rel="stylesheet" href="/styles/icons.css">
+    <link rel="stylesheet" href="/styles/one.css">
+    <link rel="stylesheet" href="/styles/side-navigation.css">
+  </head>
+  <body>
+    <div id="logo-fixed"><a id="open-left" href="#" class="toggler"> <img src="/pictures/logos/logo.png" alt="ONE" class="circular picture"></a></div>
+    <div class="side-navigations">
+      <div class="side-navigation side-navigation-left nav">
+        <ul id="nav">
+          <li><a href="/index.html">Home</a>
+            <ul>
+              <li><a href="/index.html">Test</a></li>
+            </ul>
+          </li>
+          <li><a href="/book">Book</a></li>
+          <li><a href="dragElement.html">Drag Element</a></li>
+          <li><a href="rightDisabled.html">Right Disabled</a></li>
+          <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
+        </ul>
+      </div>
+      <div class="side-navigation side-navigation-right">
+        <ul>
+          <li><a href="/learn/index.html">Learn</a>
+            <ul>
+              <li><a href="/learn/install/index.html">
+                   
+                  Install</a></li>
+              <li><a href="/learn/gulp/index.html">
+                   
+                  Gulp</a></li>
+              <li><a href="/learn/markdown/index.html">
+                   
+                  Markdown</a></li>
+              <li><a href="/learn/jade/index.html">
+                   
+                  Jade</a></li>
+              <li><a href="/learn/stylus/index.html">
+                   
+                  Stylus</a></li>
+              <li><a href="/learn/jeet/index.html">
+                   
+                  Jeet</a></li>
+              <li><a href="/learn/rupture/index.html">
+                   
+                  Rupture</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="screen">
+      <main>
+        <div class="content">
+          <article><h1 id="install">Install</h1>
+<p>Express install (if you already have Git and Node.js installed)</p>
+<pre><code>&gt; git clone https://github.com/tonyoconnell/one.git one
+&gt; cd one
+&gt; npm install
+&gt; gulp</code></pre>
+<p>If you don&#39;t have git or Node.js installed follow these instructions. </p>
+<h1 id="osx">OSX</h1>
+<p>Download and install Node.js </p>
+<pre><code>http://nodejs.org/dist/v0.10.33/node-v0.10.33.pkg </code></pre>
+<p>Download ONE</p>
+<pre><code>http://one.ie/ONE.zip</code></pre>
+<p>Unzip one.zip</p>
+<p>Open Terminal (type terminal into spotlight) </p>
+<p>Navigate into the folder where you unzipped ONE e.g.</p>
+<pre><code>cd ~/Websites/one</code></pre>
+<p>Install the node modules from NPM</p>
+<pre><code>npm install</code></pre>
+<p>Start your streaming build system</p>
+<pre><code>gulp</code></pre>
+<h1 id="windows">Windows</h1>
+<h2 id="install-nodejs">Install NodeJS</h2>
+<p><a href="http://nodejs.org/dist/v0.10.33/node-v0.10.33-x86.msi">http://nodejs.org/dist/v0.10.33/node-v0.10.33-x86.msi</a></p>
+<p>Download ONE</p>
+<pre><code>http://one.ie/ONE.zip</code></pre>
+<p>Unzip one.zip</p>
+<p>Open the command prompt</p>
+<pre><code>Click Start &gt; Run 
+Type cmd 
+Type npm</code></pre>
+<p>If there are no errors then Node.js has been installed correctly. If there are errors, try restarting your computer and install again. </p>
+<p>Install gulp</p>
+<pre><code>npm install -g gulp</code></pre>
+<p>Then navigate to the folder where you unzipped ONE</p>
+<pre><code>cd &quot;My Documents&quot;\one</code></pre>
+<p>Then install </p>
+<pre><code>npm install </code></pre>
+<p>Then run </p>
+<pre><code>gulp</code></pre>
+
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script src="/scripts/highlight.min.js"></script>
+    <script src="/scripts/snap.js"></script>
+    <script src="/scripts/jquery.smartModal.js"></script>
+    <script src="/scripts/FlameViewportScale.js"></script>
+    <script src="/scripts/hammer.js"> </script>
+    <script src="/scripts/jquery.cookie.js"></script>
+    <script src="/scripts/jquery.tosrus.min.all.js">  </script>
+    <script src="/scripts/one-side-navigation.js"></script>
+    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+semantic.menu = {};
+
+// ready event
+semantic.menu.ready = function() {
+
+  // selector cache
+  var
+    $menuItem = $('.menu a.item, .menu .link.item'),
+    $dropdown = $('.main.container .menu .dropdown'),
+    // alias
+    handler = {
+
+      activate: function() {
+        if(!$(this).hasClass('dropdown')) {
+          $(this)
+            .addClass('active')
+            .closest('.ui.menu')
+            .find('.item')
+              .not($(this))
+              .removeClass('active')
+          ;
+        }
+      }
+
+    }
+  ;
+
+  $dropdown
+    .dropdown({
+      on: 'hover'
+    })
+  ;
+
+  $menuItem
+    .on('click', handler.activate)
+  ;
+
+};
+
+
+// attach ready event
+$(document)
+  .ready(semantic.menu.ready)
+;
+</script>
+<script type="text/javascript">
+var snapper = new Snap({
+      element: document.getElementById('screen')
+  });
+</script>
+  </body>
+</html>
