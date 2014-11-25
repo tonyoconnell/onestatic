@@ -1,13 +1,16 @@
+block page-info 
+
 doctype html
 html(lang='en')
   head  
-    include ../blocks/head
-    include ../scripts/header-scripts.html
-    script(src='/scripts/jquery.promin.js')
-    script(src='/components/platform/platform.js')
-    link(rel='import', href='/components/polymer/polymer.html')  
-    link(rel='import', href='/components/paper-button/paper-button.html') 
-    link(rel='import', href='/components/paper-dropdown-menu/paper-dropdown-menu.html') 
+    title #{title}
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width')
+    meta(name = 'description', content = description)
+    meta(name = 'keywords', content = keywords)
+    link(rel='stylesheet', href='/styles/icons.css') 
+    link(rel='stylesheet', href='/styles/one.css')
   body(class=id)
     header
       .content
@@ -17,7 +20,7 @@ html(lang='en')
               img(src="/pictures/logos/logo.png", alt="Mid-century Online")
           #logo-text
             h1 ONE
-    // include ../blocks/navigation/navigation.html
+    //include ../blocks/navigation/mega-menu
     #top-picture
         block top-picture      
     main
@@ -25,10 +28,6 @@ html(lang='en')
         block content
     include ../blocks/footer
     include ../blocks/contact/contact
-    script(src='/scripts/jquery.smartModal.js')
-    script(src='/scripts/FlameViewportScale.js')
-    script(src='/scripts/hammer.js')  
-    script(src='/scripts/jquery.cookie.js')
-    script(src='/scripts/jquery.tosrus.min.all.js')   
-    include ../scripts/footer-scripts.html
+    script(src='/scripts/one.js')
+
  

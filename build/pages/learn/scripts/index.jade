@@ -1,0 +1,33 @@
+extends ../../../templates/one
+
+append page-info
+    - title = 'Modals: ONE'
+    - description = 'Modals'
+    - keywords = 'Modals'
+ 
+block content
+    ul#nav
+    li
+        a(href='#') Home
+    li
+        a.more(href='#') More
+        ul#popover
+            li
+            a(href='#') About
+            li
+            a(href='#') Blog
+    br
+    br
+    br
+    .accordian
+        h4.open Heading
+        p content
+        h4 Heading
+        p Content
+
+                  
+    code
+       | clicking on ".more" toggles class "visible" on "#popover"
+       | click ".more" to make "#popover" "visible"
+       | clicking on ".accordian" toggles class "open" on "h4.open"
+       | clicking on ".accordian" toggles class "open" on "target" 

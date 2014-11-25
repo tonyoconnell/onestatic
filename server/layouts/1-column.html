@@ -10,7 +10,8 @@
     <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
     <link rel="stylesheet" href="/styles/doc-icon.css">
     <link rel="stylesheet" href="/styles/icons.css">
-    <link rel="stylesheet" href="/styles/one.css">  <script>
+    <link rel="stylesheet" href="/styles/one.css">
+    <!--link(rel='stylesheet', href='/styles/old.css')-->  <script>
   (function () {
     var
       eventSupport = ('querySelector' in document && 'addEventListener' in window)
@@ -36,6 +37,10 @@
   </head>
   <body>
     <header>
+      <div class="contact-bar">
+        <div class="contact-info"><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="circle"><i class="icon-telephone"></i></span></a><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="icon-text">+44 (0)203 1297965</span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="circle"><i class="icon-email"></i></span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="icon-text">info@mid-centuryonline.com</span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="circle"><i class="icon-skype"></i></span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="icon-text">Skype</span></a></div>
+        <div class="sign-in"><span class="circle"><i class="icon-lock-2"></i></span><a href="/forms/login.html" data-metric="Clicked Sign In"><span class="icon-text">Sign In</span></a></div>
+      </div>
       <div class="content">
         <div id="logo">
           <div id="logo-picture"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-century Online"></a></div>
@@ -45,7 +50,7 @@
         </div>
       </div>
     </header>
-    <!-- include ../blocks/navigation/navigation.html-->
+    <!--include ../blocks/navigation/mega-menu-->
     <div id="top-picture">
     </div>
     <div id="middle">
@@ -121,17 +126,18 @@
       </div>
     </footer>
     <div class="contact-bar">
-      <!-- Contact-->
-      <div class="contact-info"><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="circle"><i class="icon-telephone"></i></span></a><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="icon-text">+44 (0)203 1297965</span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="circle"><i class="icon-email"></i></span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="icon-text">info@mid-centuryonline.com</span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="circle"><i class="icon-skype"></i></span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="icon-text">Skype</span></a>
-        <!-- End Contact-->
-      </div>
-      <div class="sign-in"><span class="circle"><i class="icon-login"></i></span><a href="/forms/login.html" data-metric="Clicked Sign In"><span class="icon-text">Sign In</span></a></div>
+      <div class="contact-info"><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="circle"><i class="icon-telephone"></i></span></a><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="icon-text">+44 (0)203 1297965</span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="circle"><i class="icon-email"></i></span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="icon-text">info@mid-centuryonline.com</span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="circle"><i class="icon-skype"></i></span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="icon-text">Skype</span></a></div>
+      <div class="sign-in"><span class="circle"><i class="icon-lock-2"></i></span><a href="/forms/login.html" data-metric="Clicked Sign In"><span class="icon-text">Sign In</span></a></div>
     </div>
     <script src="/scripts/jquery.smartModal.js"></script>
     <script src="/scripts/FlameViewportScale.js"></script>
     <script src="/scripts/hammer.js"> </script>
     <script src="/scripts/jquery.cookie.js"></script>
-    <script src="/scripts/jquery.tosrus.min.all.js">  </script><script type="text/javascript" language="javascript">
+    <script src="/scripts/jquery.tosrus.min.all.js"></script>
+    <script src="/scripts/one.js">   </script><code>
+clicking on "h1" removes class "active" on "h1.active"
+</code>
+<script type="text/javascript" language="javascript">
 	jQuery(function( $ ) {
 		$('#lightbox a').tosrus({
 		   infinite   : true,
@@ -192,52 +198,7 @@ $(function() {
 });
 </script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>
-semantic.menu = {};
 
-// ready event
-semantic.menu.ready = function() {
-
-  // selector cache
-  var
-    $menuItem = $('.menu a.item, .menu .link.item'),
-    $dropdown = $('.main.container .menu .dropdown'),
-    // alias
-    handler = {
-
-      activate: function() {
-        if(!$(this).hasClass('dropdown')) {
-          $(this)
-            .addClass('active')
-            .closest('.ui.menu')
-            .find('.item')
-              .not($(this))
-              .removeClass('active')
-          ;
-        }
-      }
-
-    }
-  ;
-
-  $dropdown
-    .dropdown({
-      on: 'hover'
-    })
-  ;
-
-  $menuItem
-    .on('click', handler.activate)
-  ;
-
-};
-
-
-// attach ready event
-$(document)
-  .ready(semantic.menu.ready)
-;
-</script>
 
   </body>
 </html>

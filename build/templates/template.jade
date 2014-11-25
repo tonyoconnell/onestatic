@@ -6,14 +6,15 @@ html(lang='en')
     script(src='/scripts/jquery.promin.js')
   body(class=id)
     header
-      .content
-        #logo
-          #logo-picture
-            a(href='/index.html')  
-              img(src="/pictures/logos/logo-ram.png", alt="Mid-century Online")
-          #logo-text
-            h1 Mid-century Online
-    // include ../blocks/navigation/navigation.html
+        include ../blocks/contact/contact
+        .content
+          #logo
+            #logo-picture
+              a(href='/index.html')  
+                img(src="/pictures/logos/logo-ram.png", alt="Mid-century Online")
+            #logo-text
+              h1 Mid-century Online
+    //include ../blocks/navigation/mega-menu
     #top-picture
         block top-picture      
     #middle
@@ -25,5 +26,6 @@ html(lang='en')
     script(src='/scripts/FlameViewportScale.js')
     script(src='/scripts/hammer.js')  
     script(src='/scripts/jquery.cookie.js')
-    script(src='/scripts/jquery.tosrus.min.all.js')   
+    script(src='/scripts/jquery.tosrus.min.all.js')
+    script(src='/scripts/one.js')    
     include ../scripts/footer-scripts.html

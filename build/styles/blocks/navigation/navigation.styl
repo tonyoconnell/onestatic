@@ -55,10 +55,65 @@ nav  ul
   background #000000
   color #fff
   
-.contact-left
-  width 700px
-  float left
+
+/*************************
+      Dropdown
+*************************/  
+#dropdown
+  text-align center
+  li
+    position relative
+    display inline-block
+  a
+    display block
+    padding 2px 12px
+    text-decoration none
+    color #1394BF
+    &:active
+      color #1BB3D7
+  .more
+    background url(blue-arrow.svg) no-repeat 100% 60%
+
+#popover
+  position absolute
+  padding 7px 7px 7px 1px
+  border 1px solid rgba(26,53,71,.12)
+  border-radius 4px
+  box-shadow 0 1px 2px rgba(26,53,71,.1)
+  opacity 0
+  pointer-events none
+  -webkit-transform scale(.8) translateY(-30%)
+  transform scale(.8) translateY(-30%)
+  transition .4s cubic-bezier(.3, 0, 0, 1.3)
+  &.visible
+    opacity 1
+    pointer-events auto
+    -webkit-transform none
+    transform none
+  li
+    list-style none
+    text-align left
+/*************************
+      Accordian
+*************************/ 
+.accordian    
+  h4, h4::before, p
+    transition: .4s
+  h4
+    cursor: pointer
+  h4::before
+    background: url(blue-arrow.svg);
+    transform: rotate(-90deg)
+  h4.open::before
+    transform: none
+  h4.open ~ h1
+    /* slide down all the h1 following the open one */
+    transform: translateY(14px)
+  p
+    opacity: 0;
+    pointer-events: none
+  h4.open + p
+    opacity: 1;
+    pointer-events: auto;
+      transform: translateY(8px)
   
-.sign-in 
-  float right
-  color #111

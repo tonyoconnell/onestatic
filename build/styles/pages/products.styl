@@ -1,12 +1,23 @@
-.product-gallery
+#product.long
+  .overview
+    +mobile
+      column(1)
+    +tablet()
+      col(2/5)
+    +desktop()
+      col(2/5)
+        
+    
+.product-picture
   padding 0
   margin 0
   +mobile
     column(1)
   +tablet()
-    col(2/4)
+    col(3/5)
   +desktop()
-    col(2/4)
+    col(3/5)
+
 
 .product-info
   margin 0
@@ -38,60 +49,4 @@
 #description
   margin 20px 0 
 
-.product .name
-    margin 5px
-    
-.more-views img 
-  padding 0 10px
-  background white
-  box-shadow: 0 10px 6px -6px #ccc;
 
-.table
-  background white
-  
-td, th  
-  border thin solid silver
-
-.data-table th 
-font-size 80%
-
-#product-attribute-specs-table 
-max-width 50em
-border: 1px solid silver
-font-size 70%
-background white
-    
-.grid .product
-  padding 4px
-  border #ccc
-  background white
-  box-shadow: 0 10px 6px -6px #ccc;
-
-.product-image
-  padding 4px
-  border #ccc
-  background white
-  box-shadow 0 10px 6px -6px #ccc
- 
-.product-name
-  margin-top -15px
-  
-.product-filter
-  padding 10px
-  
-li.level1
-  margin 10px
-  
-li.level1 a
-  font-weight normal
-  font-size 90%
-
-li.level0 a
-  font-weight normal  
-  font-size 110%
-  
-.toolbar-bottom
-  display none
-  
-.bottom .icon-text
-  color #111 !important

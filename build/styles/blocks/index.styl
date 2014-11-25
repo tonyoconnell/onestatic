@@ -12,7 +12,7 @@
   background-repeat repeat
 
 .block-content
-  background white
+  background #eee
   
 /**************************
         Contact Bar
@@ -21,14 +21,13 @@
 .contact-bar
   center(100%)
   background white
-  padding 10px 5px 10px 0px
+  padding 5px 20px
   a
     color black
-    letter-spacing 0.5px
     text-decoration none
     display block
     float left
-    padding 2px
+    padding 5px 5px 5px 5px
     font-size 90%
     vertical-align middle
   a
@@ -49,4 +48,34 @@ span.icon-text
     +mobile() 
       display none    
   
+
+header .contact-bar
+  dark()
+
+
+/**************************
+        Accordian
+***************************/
+ 
+.accordian, .accordian::before, p
+  transition .4s
+
+.accordian
+  cursor pointer
+  ::before
+    background url(blue-arrow.svg)
+    transform rotate(-90deg)
+  &.open
+    &::before
+      transform none
+    & ~ .accordian
+      transform translateY(4px)
+    & + p
+      opacity 1
+      pointer-events auto
+      transform translateY(8px)
+
+.accordian p
+  opacity 0
+  pointer-events none
 

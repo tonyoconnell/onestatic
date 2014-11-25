@@ -17,6 +17,17 @@ Reconstruct Your Ebusiness
 ONE is a simple way to create an intuitive structure for your business. 
 Its designed for CEOs, engineers and their mothers to build internet apps using plain English.
 
+Documents
+======
+*/
+
+var strategy = '../strategy/', // Strategy
+    marketing = '../marketing/', //  Fonts in any format
+    sales = '../sales/'; // Javascript
+
+/*
+
+
 Build
 ======
 The is the location of your source files. Its where you build your website from. 
@@ -34,7 +45,7 @@ var pages = '../build/pages/', // Web pages
 /*
 
 
-Server
+Servers
 =======
 Development Server
 ------------------
@@ -49,6 +60,19 @@ var server = '../server/', // This is the root of your local web server
     server_scripts = server + 'scripts/'; // Javascript combined, minified and obfuscated
     server_components = server + 'components/'; // Javascript combined, minified and obfuscated
 /*
+
+Intranet
+------------------
+Private company information
+
+*/
+
+var intranet = '../server/intranet/', // This is the root of your local web server
+    intranet_marketing = intranet + 'marketing/', //  Pictures resized and optimised (retina and web)
+    intranet_strategy = intranet + 'strategy/', //  Fonts converted for use on all devices (TTF, ODF)
+    intranet_sales = intranet + 'sales/'; // Javascript combined, minified and obfuscated
+/*
+
 
 MAMP Server
 ------------
@@ -98,6 +122,8 @@ var gulp = require('gulp'), // Gulp.js
     fs = require('fs'),
     frontMatter = require('front-matter'),
     map = require('vinyl-map'),
+    reveal = require('gulp-reveal'),
+    markdown = require('gulp-markdown'),
     stylus = require('gulp-stylus');
 
 /*
@@ -150,8 +176,7 @@ Convert Jade to HTML and copy to the server.
     }))
     .pipe(gulp.dest(server))
     .pipe(wait(1500))
-    .pipe(browsersync.reload({stream: true}))
-    .pipe(notify({message: 'Page Built'}));
+    .pipe(browsersync.reload({stream: true}));
 });
 
 /*
@@ -168,8 +193,7 @@ Convert Jade to HTML and copy to server.
     }))
     .pipe(gulp.dest(server))
     .pipe(wait(1500))
-    .pipe(browsersync.reload({stream: true}))
-    .pipe(notify({message: 'Template Applied'}));
+    .pipe(browsersync.reload({stream: true}));
 });
 
 /*
@@ -185,8 +209,7 @@ gulp.task('text', function () {
     .pipe(static_site())
     .pipe(gulp.dest('../server/'))
     .pipe(wait(1500))
-    .pipe(browsersync.reload({stream: true}))
-    .pipe(notify({message: 'Template Applied'}));
+    .pipe(browsersync.reload({stream: true}));
 });
 
 
@@ -218,7 +241,7 @@ Fonts
 /*
 Styles
 --------- 
-Build CSS classes from Stylus
+Build CSS classes from Styluss
 .pipe(stylus({
             use: [autoprefixer('iOS >= 7', 'last 1 Chrome version')]
         }))
@@ -233,8 +256,7 @@ Build CSS classes from Stylus
     .pipe(stylus({ use:[fontface()], sourcemap: { inline: true } }))
     .pipe(gulp.dest(server_styles))
     .pipe(browsersync.reload({stream: true}))
-    .pipe(size())
-    .pipe(notify({message: 'Styles Applied'}));
+    .pipe(size());
 });
 
    gulp.task('stage-style', function () {
@@ -242,8 +264,7 @@ Build CSS classes from Stylus
     .pipe(plumber())
     .pipe(stylus({ use:[fontface()], compress: true}))
     .pipe(gulp.dest(mamp_server + 'skin/frontend/one/default/css/'))
-    .pipe(size())
-    .pipe(notify({message: 'Styles on Staging Server'}));
+    .pipe(size());
 });
 
 
@@ -259,8 +280,7 @@ Build your scripts
     .pipe(cache()) 
     .pipe(changed(scripts + '**/*.js'))
     .pipe(gulp.dest(server_scripts))
-    .pipe(size())
-    .pipe(notify({message: 'Scripts Optimised'}));
+    .pipe(size());
 });
 
    gulp.task('script2', function () {
@@ -271,8 +291,7 @@ Build your scripts
     }))
     .pipe(rename("scripts.js"))
     .pipe(gulp.dest(server_scripts))
-    .pipe(size())
-    .pipe(notify({message: 'Scripts Optimised'}));
+    .pipe(size());
 });
 
 /*
@@ -286,6 +305,16 @@ Components
     .pipe(gulp.dest(server_components))
 });
 
+/*
+Marketing
+----------
+*/
+gulp.task('present', function () {
+  gulp.src(strategy + '*.md')
+    .pipe(markdown())
+    .pipe(reveal())
+    .pipe(gulp.dest(intranet));
+});
 
 /*
 Run Tasks
@@ -295,16 +324,16 @@ Run Tasks
 gulp.task('default', function() {
 
 // start these tasks 
-    gulp.start( 'page', 'picture', 'font', 'style', 'script', 'component', 'text', 'stage-style', 'server')
+    gulp.start( 'page', 'picture', 'font', 'style', 'script', 'component', 'text', 'stage-style', 'server', 'present')
 
 // watch for changes and run tasks
-        gulp.watch('../build/pages/**/*', function(event){
+        gulp.watch('../build/pages/**/**/**/*', function(event){
             gulp.start('page', 'reload');
         });
         gulp.watch('../build/templates/*.jade', function(event){
             gulp.start('template', 'reload');
         });
-        gulp.watch('../build/blocks/**/*', function(event){
+        gulp.watch('../build/blocks/**/*.jade', function(event){
             gulp.start('page', 'reload');
         });
         gulp.watch('../build/text/**/**/*.md', function(event){
@@ -326,6 +355,9 @@ gulp.task('default', function() {
             gulp.start('stage-style');
         });
         gulp.watch(scripts + '**/*', function(event){
-            gulp.start('script', 'reload');
+            gulp.start('script', 'template', 'reload');
+        });
+        gulp.watch(strategy + 'strategy.md', function(event){
+            gulp.start('present', 'reload');
         });
     });

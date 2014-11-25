@@ -22,7 +22,6 @@ If you want to add a new add a new stylesheet import it here.
 To import plain CSS just add .CSS like this @import 'styles.css'
 Open my.styl to start customising your style
 */
-
 @import 'my'
 
 /*
@@ -38,7 +37,7 @@ Libraries
 // More stylus mixins.
 @import 'libraries/axis'
 // Twitter boostrap convered to stylus. Edit /libraries/bootstrap/index.styl to include components.
-// @import 'libraries/bootstrap'
+@import 'libraries/bootstrap'
 
 /*
 Templates
@@ -47,6 +46,7 @@ The layout of your site and styles for your header and footer.
 */
 @import 'templates'
 @import 'templates/positions'
+@import 'templates/fullpage'
 
 /*
 Pictures
@@ -54,6 +54,7 @@ Pictures
 Styles for images.
 */
 @import 'pictures'
+@import 'pictures/shaddows'
 
 /*
 Blocks
@@ -88,6 +89,14 @@ Scripts
 Hightlight your code snippets
 */
 @import 'scripts/monokai' 
+
+/*
+Magento
+======
+Ugly Magento code
+*/
+@import 'blocks/magento' 
+
 
 /*
 Pages

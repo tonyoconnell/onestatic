@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/styles/doc-icon.css">
     <link rel="stylesheet" href="/styles/icons.css">
     <link rel="stylesheet" href="/styles/one.css">
+    <!--link(rel='stylesheet', href='/styles/old.css')-->
     <link rel="stylesheet" href="/styles/side-navigation.css">
   </head>
   <body>
@@ -245,7 +246,10 @@ add(a, b)
     <script src="/scripts/jquery.cookie.js"></script>
     <script src="/scripts/jquery.tosrus.min.all.js">  </script>
     <script src="/scripts/one-side-navigation.js"></script>
-    <script src="/scripts/nav.js"></script><script type="text/javascript" language="javascript">
+    <script src="/scripts/nav.js"></script><code>
+clicking on "h1" removes class "active" on "h1.active"
+</code>
+<script type="text/javascript" language="javascript">
 	jQuery(function( $ ) {
 		$('#lightbox a').tosrus({
 		   infinite   : true,
@@ -306,52 +310,7 @@ $(function() {
 });
 </script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>
-semantic.menu = {};
 
-// ready event
-semantic.menu.ready = function() {
-
-  // selector cache
-  var
-    $menuItem = $('.menu a.item, .menu .link.item'),
-    $dropdown = $('.main.container .menu .dropdown'),
-    // alias
-    handler = {
-
-      activate: function() {
-        if(!$(this).hasClass('dropdown')) {
-          $(this)
-            .addClass('active')
-            .closest('.ui.menu')
-            .find('.item')
-              .not($(this))
-              .removeClass('active')
-          ;
-        }
-      }
-
-    }
-  ;
-
-  $dropdown
-    .dropdown({
-      on: 'hover'
-    })
-  ;
-
-  $menuItem
-    .on('click', handler.activate)
-  ;
-
-};
-
-
-// attach ready event
-$(document)
-  .ready(semantic.menu.ready)
-;
-</script>
 <script type="text/javascript">
 var snapper = new Snap({
       element: document.getElementById('screen')

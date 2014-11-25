@@ -1,3 +1,12 @@
+// Reset
+*,
+*before,
+*after
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+  margin 0
+  padding 0
 
 .heading-1
   color white!important
@@ -11,3 +20,149 @@
   span
     color white!important
 
+/*
+a.skip-link
+  +desktop()
+    display none
+*/
+
+a.skip-link
++above(400)
+  background transparent
+  top 100px
+
+.skip-cart 
+position absolute
++above(400)
+  top 80
+  right 20px
+  width auto
+  padding 0 10px
+
+
+.skip-account 
+position absolute
++above(400)
+right 135px
+width auto
+padding 0 10px
+text-transform uppercase
+
+
+.nav-primary li.level0, .nav-primary a.level0 
+display inline-block
+margin-top -4px
+margin-bottom 2px
+
+.logo
+  padding-left 30px
+  
+
+.breadcrumbs .product 
+padding 0px
+border 0px solid #ccc */
+background #fff
+box-shadow 0 10px 6px -6px #ccc
+
+
+#header-cart.skip-active 
++above(400)
+  background goldenrod
+  border solid 1px #cccccc
+  display block
+  position absolute
+  z-index 200
+  top 140px
+  right 20px
+  width 320px
+  background white
+
+
+#header-account.skip-active 
++above(400)
+  background #FBFBFB
+  border solid 1px #cccccc
+  display block
+  position absolute
+  z-index 200
+  top 140px
+  right 135px
+  width 200px
+
+
+#header-search 
+display block
+position absolute
+top 10px
+right 0
+width 25%
+height 50px
+
+
+    
+#header-nav
+  background #eee
+  margin 1px -2px 2px 0px
+  border thin solid #ccc
+  
+.product-collateral
+  display none
+  
+
+.product .name
+    margin 5px
+    
+.more-views img 
+  padding 0 10px
+  background white
+  box-shadow: 0 10px 6px -6px #ccc;
+
+.table
+  background white
+  
+td, th  
+  border thin solid silver
+
+.data-table th 
+font-size 80%
+
+#product-attribute-specs-table 
+max-width 50em
+border: 1px solid silver
+font-size 70%
+background white
+    
+.grid .product
+  padding 4px
+  border #ccc
+  background white
+  box-shadow: 0 10px 6px -6px #ccc;
+
+.product-image
+  padding 4px
+  border #ccc
+  background white
+  box-shadow 0 10px 6px -6px #ccc
+ 
+.product-name
+  margin-top -15px
+  
+.product-filter
+  padding 10px
+  
+li.level1
+  margin 10px
+  
+li.level1 a
+  font-weight normal
+  font-size 90%
+
+li.level0 a
+  font-weight normal  
+  font-size 110%
+  
+.toolbar-bottom
+  display none
+  
+.bottom .icon-text
+  color #111 !important

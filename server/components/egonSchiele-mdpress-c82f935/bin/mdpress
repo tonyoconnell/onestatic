@@ -1,0 +1,194 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'redcarpet'
+require 'fileutils'
+require 'impress_renderer'
+require 'trollop'
+require 'tempfile'
+require 'launchy'
+require 'yaml'
+
+THEMES_DIRNAME = './themes/'
+
+def log(x)
+  puts "\033[94m" + x + "\033[0m" if OPTS[:verbose]
+end
+
+def base_dir
+  File.dirname(__FILE__) + "/../lib/"
+end
+
+def list_available_stylesheets
+  log "Available stylesheets:"
+  log "mdpress stylesheets"
+  Dir.glob(base_dir + "impress_css/*.css").each do |file|
+    puts File.basename(file, ".css")
+  end
+  log "Local stylesheets"
+  Dir.glob(THEMES_DIRNAME + "*.css").each do |file|
+    puts File.basename(file, ".css")
+  end
+end
+
+def readfile file
+  if file =~ /^http/
+    require 'httparty'
+    response = HTTParty.get(file)
+    if response
+      return response.body
+    else
+      raise "couldn't download url: #{file}"
+    end
+  else
+    return File.read(file)
+  end
+end
+
+def extract_metadata text
+  if md = text.match(/\A(---\s*\n.*?\n?)^(---\s*$\n?)/m)
+    [md.post_match, YAML.load(md[1])]
+  else
+    [text, {}]
+  end
+end
+
+def render opts
+  text, metadata = extract_metadata(readfile(FILENAME))
+  # ugly hack to get attributes for impress.js
+  # TODO make this pretty
+  lines = text.split("\n")
+  lines.drop_while { |l| l =~ /^\s*$/ }
+
+  attrs = [""]
+
+  new_lines = []
+  lines.each_with_index do |line, i|
+    if line =~ /^=(.*)$/ && (i == 0 || lines[i-1] =~ /^(-\s*){3,}$/)
+      line =~ /^=(.*)$/
+      attrs[attrs.size-1] = $~.to_a[1]
+      next
+    elsif line =~ /^(-\s*){3,}$/
+      attrs << ""
+    end
+    new_lines << line
+  end
+
+  text = new_lines.join("\n")
+
+  # now use those attributes and render the file
+  include Redcarpet
+  ImpressRenderer.init_with_attrs attrs, opts
+  ImpressRenderer.author= metadata['author'] if metadata['author']
+  ImpressRenderer.title= metadata['title'] if metadata['title']
+  if File.exist?(STYLESHEET_HEAD)
+    ImpressRenderer.head= File.read(STYLESHEET_HEAD)
+  end
+
+  m = Markdown.new(ImpressRenderer, :autolink => true, :fenced_code_blocks => true, :tables => true, :strikethrough => true, :superscript => true)
+  log "rendering presentation"
+  f = File.open(DIRNAME + "/index.html", "w+")
+  f.write(m.render(text))
+  f.close
+end
+
+OPTS = Trollop::options do
+  banner <<-EOS
+Usage: mdpress [filename] [options]
+where [options] are:
+EOS
+  opt :automatic, "Keeps running and automatically updates the presentation to reflect changes to markdown file."
+  opt :stylesheet,  "Specify what stylesheet to use.", :default => "default"
+  opt :list, "List all available stylesheets."
+  opt :run, "Run presentation (automatically compiles to a tmp directory and opens in a browser window)"
+  opt :latex, "Provide Latex support"
+  opt :verbose, "Be verbose."
+  opt :images, "Directory of images for the presentation", :type => :string
+end
+
+if OPTS[:list]
+  list_available_stylesheets
+  exit
+end
+
+Trollop::die("no file specified") if ARGV.empty? # show help screen
+
+if OPTS[:run]
+  file = ARGV[0]
+  tmp = Tempfile.new("mdpress")
+  tmp.write(readfile(file))
+  tmp.flush
+  FILENAME = tmp.path
+  DIRNAME = FILENAME + "_dir"
+else
+  FILENAME = ARGV[0]
+  DIRNAME = File.basename(FILENAME, File.extname(FILENAME))
+end
+
+if File.exist?(THEMES_DIRNAME + "#{OPTS[:stylesheet]}.css")
+    STYLESHEET = THEMES_DIRNAME + "#{OPTS[:stylesheet]}.css"
+    STYLESHEET_HEAD = THEMES_DIRNAME + "#{OPTS[:stylesheet]}.html"
+else
+    STYLESHEET = base_dir + "impress_css/#{OPTS[:stylesheet]}.css"
+    STYLESHEET_HEAD = base_dir + "impress_css/#{OPTS[:stylesheet]}.html"
+end
+
+unless File.exist?(STYLESHEET)
+  puts OPTS[:stylesheet] + " is not a valid stylesheet. See available stylesheets with `mdpress -l`."
+  exit
+end
+
+if File.exist?(DIRNAME)
+  unless File.directory?(DIRNAME)
+    puts "please delete the file: #{DIRNAME} before continuing."
+    exit
+  end
+else
+  log "making directory"
+  Dir.mkdir(DIRNAME)
+end
+
+if OPTS[:images]
+  if File.directory?(OPTS[:images])
+    FileUtils.cp_r(OPTS[:images], File.join(DIRNAME, OPTS[:images]))
+    log "copy the images into the presentation"
+  else
+    puts "'#{OPTS[:images]}' is not a valid directory."
+    exit
+  end
+end
+
+render OPTS
+
+log "copying files"
+FileUtils.cp_r(base_dir + "js", DIRNAME)
+FileUtils.cp_r(base_dir + "css", DIRNAME)
+FileUtils.cp(STYLESHEET, DIRNAME + "/css/style.css")
+
+def auto
+  while true
+    sleep 2
+    if FileUtils.uptodate?(FILENAME, [DIRNAME + "/index.html"])
+      log "updating from #{FILENAME}"
+      render OPTS
+    end
+    # Takes care of updating stylesheets for local styles.
+    if FileUtils.uptodate?(STYLESHEET, [DIRNAME + "/css/style.css"])
+      log "updating stylesheet #{STYLESHEET}"
+      FileUtils.cp(STYLESHEET, DIRNAME + "/css/style.css")
+    end
+  end
+end
+
+if OPTS[:automatic]
+  if ARGV[0] =~ /^http/
+    puts "Can't run in auto mode for remote files."
+  else
+    log "waiting for updates..."
+    auto
+  end
+elsif OPTS[:run]
+  log "opening in browser."
+  Launchy.open(DIRNAME + "/index.html", :application => :browser)
+else
+  log "done."
+end

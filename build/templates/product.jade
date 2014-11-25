@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+  head  
+    include ../blocks/head
+    include ../scripts/header-scripts.html
+    script(src='/scripts/jquery.promin.js')
+    script(src='/components/fullpage.js/jquery.fullpage.min.js')
+  body(class=id)
+    header
+      .product
+        block content
+    include ../blocks/footer
+    include ../blocks/contact/contact
+    script(src='/scripts/jquery.smartModal.js')
+    script(src='/scripts/FlameViewportScale.js')
+    script(src='/scripts/hammer.js')  
+    script(src='/scripts/jquery.cookie.js')
+    script(src='/scripts/jquery.tosrus.min.all.js')
+    include ../scripts/footer-scripts.html

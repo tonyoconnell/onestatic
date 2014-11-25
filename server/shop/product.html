@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head> 
-    <title>Template : Product</title>
+    <title></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="This is a lovely product">
-    <meta name="keywords" content="product, keyword2">
+    <meta name="description">
+    <meta name="keywords">
     <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
     <link rel="stylesheet" href="/styles/doc-icon.css">
     <link rel="stylesheet" href="/styles/icons.css">
-    <link rel="stylesheet" href="/styles/one.css">  <script>
+    <link rel="stylesheet" href="/styles/one.css">
+    <!--link(rel='stylesheet', href='/styles/old.css')-->  <script>
   (function () {
     var
       eventSupport = ('querySelector' in document && 'addEventListener' in window)
@@ -36,6 +37,10 @@
   </head>
   <body>
     <header>
+      <div class="contact-bar">
+        <div class="contact-info"><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="circle"><i class="icon-telephone"></i></span></a><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="icon-text">+44 (0)203 1297965</span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="circle"><i class="icon-email"></i></span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="icon-text">info@mid-centuryonline.com</span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="circle"><i class="icon-skype"></i></span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="icon-text">Skype</span></a></div>
+        <div class="sign-in"><span class="circle"><i class="icon-lock-2"></i></span><a href="/forms/login.html" data-metric="Clicked Sign In"><span class="icon-text">Sign In</span></a></div>
+      </div>
       <div class="content">
         <div id="logo">
           <div id="logo-picture"><a href="/index.html"> <img src="/pictures/logos/logo-ram.png" alt="Mid-century Online"></a></div>
@@ -45,54 +50,69 @@
         </div>
       </div>
     </header>
-    <!-- include ../blocks/navigation/navigation.html-->
+    <!--include ../blocks/navigation/mega-menu-->
     <div id="top-picture">
     </div>
     <div id="middle">
-      <div class="content"><div class="product-gallery">
-    <div id="lightbox">
-    <a href="/pictures/products/product-1.jpg" title="Lamps"><img class="product-picture" src="/pictures/products/product-1.jpg"></a>
-    </div>
-</br>
-    <div id="lightbox" class="small pictures">
-    <a href="/pictures/products/product-1-5.jpg" title="Lamps"><img src="/pictures/products/product-1-sm.jpg"></a>
-    <a href="/pictures/products/product-1-2.jpg" title="Chair"><img src="/pictures/products/product-2-sm.jpg"></a>
-    <a href="/pictures/products/product-1-3.jpg" title="Lots of Chairs"><img src="/pictures/products/product-3-sm.jpg"></a>
-    <a href="/pictures/products/product-1-4.jpg" title="More Chairs"><img src="/pictures/products/product-4-sm.jpg"></a>
-    </div>
-</div><div class="product-info">
-	<h1>Klaus Wettergen Desk </h1>
-	<div id="short-description"> 1980s Mahogany Desk by Klaus Wettergren.</div>
-	<div id="price">£2,650.00</div>
-	<button data-metric="Clicked Add to Cart" data-metric-product="Klaus Wettergen Desk " data-metric-product-id="407" data-metric-product-description="1980s Mahogany Desk by Klaus Wettergren." type="button" title="Add to Cart" class="button large" onclick="productAddToCartForm.submit(this)"><span><span>Add to Cart</span></span></button>
-	<p class="availability in-stock">
-	<span class="label">Availability:</span>
-	<span class="value">In stock</span>
-	</p>
-	<div id="description">
-		1980s Mahogany Desk designed by Klaus Wettergren. A V-shape leg supports another V-shape which houses 3 very deep drawers. The desk has a french polished finish and is in near excellent condition. A stand out design that is very well made and guaranteed to get noticed.
-	</div>
-	<table class="table" id="product-attributes">
-		<tbody>
-			<tr>
-				<th class="label">Condition</th>
-				<td class="data">Excellent vintage condintion </td>
-			</tr>
-			<tr>
-				<th class="label">Designer</th>
-				<td class="data">Klaus Wettergren</td>
-			</tr>
-			<tr>
-				<th class="label">Dimensions</th>
-				<td class="data">Depth:800mm Length:1950mm Height:740mm</td>
-			</tr>
-			<tr>
-				<th class="label">Period</th>
-				<td class="data">1980s</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
+      <div class="content">
+        <div id="product" class="long">
+          <div class="section one">
+            <div class="overview">
+              <div class="product-picture"><a href="/pictures/products/product-1.jpg" title="Lamps"><img src="/pictures/products/product-1.jpg" class="main-picture"></a></div>
+              <div class="product-description"></div>Origional 1980s Mahogany Desk designed by Klaus Wettergren
+            </div>
+            <div class="buy-box">
+              <product-name>Klauxs Wettergen Desk</product-name>
+              <buy-button>Buy Nowd</buy-button>
+              <view-button>View In Your Home</view-button>
+              <hold-button>Put on Hold</hold-button>
+            </div>
+          </div>
+          <div class="section two">
+            <div class="slideshow">
+              <div class="slide"><a href="/pictures/products/product-1-5.jpg" title="More Chairs"><img src="/pictures/products/product-1-5.jpg"></a></div>
+              <div class="slide"><a href="/pictures/products/product-1-7.jpg" title="More Chairs"><img src="/pictures/products/product-1-7.jpg"></a></div>
+              <div class="slide"><a href="/pictures/products/product-1-6.jpg" title="More Chairs"><img src="/pictures/products/product-1-6.jpg"></a></div>
+              <div class="slide"> Slide 4 </div>
+            </div>
+          </div>
+          <div class="section three">
+            <product-picture>          <a href="/pictures/products/product-1-1.jpg" title="Lamps">   <img src="/pictures/products/product-1-1.jpg"></a></product-picture>Outstanding V-shape leg supports another V-shape which houses 3 very deep drawers.
+          </div>
+          <div class="section four">
+            <product-picture><a href="/pictures/products/product-1-2.jpg" title="Chair"><img src="/pictures/products/product-1-2.jpg"></a></product-picture>The desk has a french polished finish and is in near excellent condition.
+          </div>
+          <div class="section five">
+            <product-picture></product-picture><a href="/pictures/products/product-1-3.jpg" title="Lots of Chairs"><img src="/pictures/products/product-1-3.jpg"></a>
+            <product-information></product-information>
+          </div>
+          <div class="section">   <a href="/pictures/products/product-1-4.jpg" title="More Chairs"><img src="/pictures/products/product-1-4.jpg"></a><a href="/pictures/products/product-1-5.jpg" title="More Chairs"><img src="/pictures/products/product-1-5.jpg"></a><a href="/pictures/products/product-1-6.jpg" title="More Chairs"><img src="/pictures/products/product-1-6.jpg"></a><a href="/pictures/products/product-1-7.jpg" title="More Chairs"><img src="/pictures/products/product-1-7.jpg"></a></div>
+          <short-description>Outstanding 1980s Mahogany Desk by Klaus Wettergren</short-description>
+          <sales-price>£2,650.00</sales-price>
+          <stock-avaiability>In stock </stock-avaiability>
+          <home-viewing>UK and Ireland</home-viewing>
+          <product-description></product-description>
+          <table id="product-attributes">
+            <tbody>
+              <tr>
+                <th class="label">Condition</th>
+                <td class="data">Excellent vintage condintion </td>
+              </tr>
+              <tr>
+                <th class="label">Designer</th>
+                <td class="data">Klaus Wettergren</td>
+              </tr>
+              <tr>
+                <th class="label">Dimensions</th>
+                <td class="data">Depth:800mm Length:1950mm Height:740mm</td>
+              </tr>
+              <tr>
+                <th class="label">Period</th>
+                <td class="data">1980s</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
     <footer>
@@ -149,17 +169,18 @@
       </div>
     </footer>
     <div class="contact-bar">
-      <!-- Contact-->
-      <div class="contact-info"><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="circle"><i class="icon-telephone"></i></span></a><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="icon-text">+44 (0)203 1297965</span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="circle"><i class="icon-email"></i></span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="icon-text">info@mid-centuryonline.com</span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="circle"><i class="icon-skype"></i></span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="icon-text">Skype</span></a>
-        <!-- End Contact-->
-      </div>
-      <div class="sign-in"><span class="circle"><i class="icon-login"></i></span><a href="/forms/login.html" data-metric="Clicked Sign In"><span class="icon-text">Sign In</span></a></div>
+      <div class="contact-info"><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="circle"><i class="icon-telephone"></i></span></a><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="icon-text">+44 (0)203 1297965</span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="circle"><i class="icon-email"></i></span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="icon-text">info@mid-centuryonline.com</span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="circle"><i class="icon-skype"></i></span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="icon-text">Skype</span></a></div>
+      <div class="sign-in"><span class="circle"><i class="icon-lock-2"></i></span><a href="/forms/login.html" data-metric="Clicked Sign In"><span class="icon-text">Sign In</span></a></div>
     </div>
     <script src="/scripts/jquery.smartModal.js"></script>
     <script src="/scripts/FlameViewportScale.js"></script>
     <script src="/scripts/hammer.js"> </script>
     <script src="/scripts/jquery.cookie.js"></script>
-    <script src="/scripts/jquery.tosrus.min.all.js">  </script><script type="text/javascript" language="javascript">
+    <script src="/scripts/jquery.tosrus.min.all.js"></script>
+    <script src="/scripts/one.js">   </script><code>
+clicking on "h1" removes class "active" on "h1.active"
+</code>
+<script type="text/javascript" language="javascript">
 	jQuery(function( $ ) {
 		$('#lightbox a').tosrus({
 		   infinite   : true,
@@ -220,52 +241,7 @@ $(function() {
 });
 </script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>
-semantic.menu = {};
 
-// ready event
-semantic.menu.ready = function() {
-
-  // selector cache
-  var
-    $menuItem = $('.menu a.item, .menu .link.item'),
-    $dropdown = $('.main.container .menu .dropdown'),
-    // alias
-    handler = {
-
-      activate: function() {
-        if(!$(this).hasClass('dropdown')) {
-          $(this)
-            .addClass('active')
-            .closest('.ui.menu')
-            .find('.item')
-              .not($(this))
-              .removeClass('active')
-          ;
-        }
-      }
-
-    }
-  ;
-
-  $dropdown
-    .dropdown({
-      on: 'hover'
-    })
-  ;
-
-  $menuItem
-    .on('click', handler.activate)
-  ;
-
-};
-
-
-// attach ready event
-$(document)
-  .ready(semantic.menu.ready)
-;
-</script>
 
   </body>
 </html>
