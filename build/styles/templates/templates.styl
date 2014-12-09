@@ -7,6 +7,7 @@ global-reset()
 
 body
   center(page-width) // Page-width is defined in my.styl (usually 100%)
+  light-background()
 
 .content
   center(content-width)  // Content-width is defined in my.styl 
@@ -60,6 +61,9 @@ footer .box li
 footer a
   color grey
 
+
+
+
 /*********************
          Grid
 *********************/ 
@@ -76,6 +80,7 @@ grid(n)
 
 .grid .box
   margin-bottom 20px 
+  
   
 /*********************
          Layout
@@ -141,5 +146,45 @@ three-columns()
 .hidden
   display none
   
+
+/*********************
+         Presentation
+*********************/ 
+// Short cuts for grid layout.
+.presentation
+  center(100%)
+  background red
+
+.reveal
+  light-background()
+  color black
+.reveal h1
+    color black
+.reveal h2 
+    color black
+.reveal h3
+    color black
+.reveal h4
+    color black
+    
+.reveal .controls div.navigate-left, .reveal .controls div.navigate-left.enabled {
+border-right-color: black;
+}
+
+.reveal .controls div.navigate-right, .reveal .controls div.navigate-right.enabled {
+border-left-color: black;
+}
+
+.reveal .controls div.navigate-up, .reveal .controls div.navigate-up.enabled {
+border-bottom-color: black;
+}
+
+.reveal .controls div.navigate-down, .reveal .controls div.navigate-down.enabled {
+border-top-color: black;
+}
+
+.reveal a:not(.image) 
+  color: goldenrod
+
 
   

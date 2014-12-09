@@ -12,10 +12,6 @@
 		{
 			"follow_symlinks": true,
 			"path": "/Users/tony/Websites/onestatic"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/Users/tony/Websites/semanticui"
 		}
 	]
 }

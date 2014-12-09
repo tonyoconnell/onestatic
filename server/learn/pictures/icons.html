@@ -8,13 +8,15 @@
     <meta name="description" content="Sell Faster">
     <meta name="keywords" content="ONE, ecommerce">
     <link rel="stylesheet" href="/styles/icons.css">
+    <link rel="stylesheet" href="/components/reveal.js/css/reveal.min.css">
+    <link id="theme" rel="stylesheet" href="/components/reveal.js/css/theme/default.css">
     <link rel="stylesheet" href="/styles/one.css">
   </head>
   <body class="home">
     <header>
       <div class="content">
         <div id="logo">
-          <div id="logo-picture"><a href="/index.html"> <img src="/pictures/logos/logo.png" alt="Mid-century Online"></a></div>
+          <div id="logo-picture"><a href="/index.html"> <img src="/pictures/logos/logo.png" alt="ONE"></a></div>
           <div id="logo-text">
             <h1>ONE</h1>
           </div>
@@ -1415,7 +1417,119 @@
     <div class="contact-bar">
       <div class="contact-info"><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="circle"><i class="icon-telephone"></i></span></a><a href="tel:+442031297965" data-metric="Clicked Contact" data-metric-contact-type="Phone"><span class="icon-text">+44 (0)203 1297965</span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="circle"><i class="icon-email"></i></span></a><a href="mailto:info@mid-centuryonline.com" data-metric="Clicked Contact" data-metric-contact-type="Email"><span class="icon-text">info@mid-centuryonline.com</span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="circle"><i class="icon-skype"></i></span></a><a href="skype:mid-centuryonline.com?chat" data-metric="Clicked Contact" data-metric-contact-type="Skype"><span class="icon-text">Skype</span></a></div>
       <div class="sign-in"><span class="circle"><i class="icon-lock-2"></i></span><a href="/forms/login.html" data-metric="Clicked Sign In"><span class="icon-text">Sign In</span></a></div>
-    </div>
+    </div><script>
+(function () {
+  var
+    eventSupport = ('querySelector' in document && 'addEventListener' in window)
+    jsonSupport  = (typeof JSON !== 'undefined'),
+    jQuery       = (eventSupport && jsonSupport)
+      ? '/scripts/jquery.min.js'
+      : '/scripts/jquery.legacy.min.js'
+  ;
+  document.write('<script src="' + jQuery + '"><\/script>');
+}());
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+<script src="/scripts/history.js"></script>
+<script src="/scripts/easing.js"></script>
+<script src="/scripts/tablesort.js"></script>
+<script src="/scripts/typing.js"></script>
+<script src="/scripts/semantic.min.js"></script>
+<script src="/scripts/one.js"></script><code>
+clicking on "h1" removes class "active" on "h1.active"
+</code>
+<script type="text/javascript" language="javascript">
+	jQuery(function( $ ) {
+		$('#lightbox a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: false,
+			}
+		});
+		$('#lightbox-bullets a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'bullets'
+			}
+		});
+		$('#lightbox-thumbnails a').tosrus({
+		   infinite   : true,
+			caption		: {
+				add			: false
+			},
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			}
+		});
+		$('#example-3 a').tosrus();
+
+		$('#carosel').tosrus({
+			infinite	: true,
+			slides		: {
+				visible		: 3
+			}
+		});
+
+		$('#slideshow').tosrus({
+			buttons		: true,
+            infinite   : true,
+			pagination	: {
+				add			: true,
+				type		: 'thumbnails'
+			},
+			slides		: {
+				scale		: 'fill'
+			}
+		});
+
+	});
+</script>
+
+<script>
+$(function() {
+  $.smartModal();
+});
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+    <script src="/components/reveal.js/js/reveal.min.js"></script>
     <script src="/scripts/one.js"></script>
   </body>
 </html>

@@ -9,7 +9,9 @@ html(lang='en')
     meta(name='viewport', content='width=device-width')
     meta(name = 'description', content = description)
     meta(name = 'keywords', content = keywords)
-    link(rel='stylesheet', href='/styles/icons.css') 
+    link(rel='stylesheet', href='/styles/icons.css')
+    link(rel='stylesheet', href='/components/reveal.js/css/reveal.min.css')
+    link#theme(rel='stylesheet', href='/components/reveal.js/css/theme/default.css') 
     link(rel='stylesheet', href='/styles/one.css')
   body(class=id)
     header
@@ -17,7 +19,7 @@ html(lang='en')
         #logo
           #logo-picture
             a(href='/index.html')  
-              img(src="/pictures/logos/logo.png", alt="Mid-century Online")
+              img(src="/pictures/logos/logo.png", alt="ONE")
           #logo-text
             h1 ONE
     //include ../blocks/navigation/mega-menu
@@ -28,6 +30,10 @@ html(lang='en')
         block content
     include ../blocks/footer
     include ../blocks/contact/contact
+    include ../scripts/header-scripts.html
+    include ../scripts/footer-scripts.html
+    script(src='/components/reveal.js/js/reveal.min.js')
     script(src='/scripts/one.js')
+      
 
  

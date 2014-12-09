@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+  head  
+    include ../blocks/head
+  body
+    header
+        include ../blocks/contact/contact
+        .content
+          #logo
+            #logo-picture
+              a(href='/index.html')  
+                img(src="/pictures/logos/logo-ram.png", alt="Mid-century Online")
+            #logo-text
+              h1 Mid-century Online    
+        block content

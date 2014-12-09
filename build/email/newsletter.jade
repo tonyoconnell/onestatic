@@ -1,0 +1,180 @@
+ extends ../templates/email
+
+append page-info
+  - id = 'home'
+  - title = 'ONE'
+  - description = 'Sell Faster'
+  - keywords = 'ONE, ecommerce'
+  - layout = '1-column'
+ 
+block content
+    table(border='0', width='640px', align='center', cellpadding='20', cellspacing='0', bgcolor='#eeeeee')
+      tr
+        td
+          br
+          // End Page Top
+
+          // Product 1
+          table(border='0', width='100%', align='center', cellpadding='20', cellspacing='0', bgcolor='#fff')
+            tr
+              td
+                a(style='color:#333;text-decoration:none', href='http://mid-centuryonline.com/willy-rizzo-lamps')
+                  img.main-image(style='display: block;', mc:edit='main-img', width='560', height='350', src='product1.jpg', alt='Click display images on your email app')
+                  h3= document.product1name
+                p
+                  | 
+                  = document.product1description
+                // Product 1 Buttons
+                table(border='0', cellpadding='5')
+                  tr
+                    td
+                      // Button View Product
+                      table
+                        tbody
+                          tr
+                            td(align='center', bgcolor='#42ACF1', style='background:#42ACF1;padding-top:6px;padding-right:10px;padding-bottom:6px;padding-left:10px;border-radius:0px;color:#fff;font-weight:bold;text-decoration:none;font-family:Helvetica,Arial,sans-serif;display:block', width='60')
+                              a(href='', style='color:#fff;text-decoration:none;font-weight:bold', target='_blank') View 
+                      // end button
+                    td
+                      // button hold
+                      table
+                        tbody
+                          tr
+                            td(align='center', bgcolor='#ccc', style='background:#ccc;padding-top:6px;padding-right:10px;padding-bottom:6px;padding-left:10px;border-radius:0px;color:#fff;font-weight:bold;text-decoration:none;font-family:Helvetica,Arial,sans-serif;display:block', width='120')
+                              a(href='https://mid-centuryonline.com/checkout/cart/add?product=390&qty=1', style='color:#000000;text-decoration:none;font-weight:bold', target='_blank') Put on Hold
+                      // end button
+                    td
+                      // button buy
+                      table
+                        tbody
+                          tr
+                            td(align='center', bgcolor='#000000', style='background:#00000000;padding-top:6px;padding-right:10px;padding-bottom:6px;padding-left:10px;border-radius:0px;color:#fff;font-weight:bold;text-decoration:none;font-family:Helvetica,Arial,sans-serif;display:block', width='40')
+                              a(href='https://mid-centuryonline.com/checkout/cart/add?product=390&qty=1', style='color:#fff;text-decoration:none;font-weight:bold') Buy
+                      // end button
+                    td(style='color:#000000;text-decoration:none;font-weight:bold;font-size: 22px;') 
+                      = document.product1price
+                // End Product 1 Buttons
+          // End Product 1
+          br
+          // Row 2
+          table(border='0', width='100%', align='center', cellpadding='20', cellspacing='0', bgcolor='#fff')
+            tr
+              td(valign='top')
+                // Product 2
+                a(style='color:#333;text-decoration:none', href='http://mid-centuryonline.com/austin-cox-chess-set')
+                  img.product2(style='display: block;', mc:edit='product2', width='260', height='200', src='pictures/product2.jpg', alt='Click display images on your email app')
+                  h3= document.product2name
+                p
+                  | 
+                  = document.product2description
+                br
+                // Product 2 Buttons
+                table(border='0', cellpadding='10')
+                  tr
+                    td(style='color:#000000;text-decoration:none;font-weight:bold;font-size: 22px;font-family:Helvetica,Arial,sans-serif')
+                      = document.product2price
+                    td
+                      table
+                        tbody
+                          tr
+                            td(align='center', bgcolor='#42ACF1', style='background:#42ACF1;padding-top:6px;padding-right:10px;padding-bottom:6px;padding-left:10px;border-radius:0px;color:#fff;font-weight:bold;text-decoration:none;font-family:Helvetica,Arial,sans-serif;display:block', width='0')
+                              a(href='http://mid-centuryonline.com/austin-cox-chess-set', style='color:#fff;text-decoration:none;font-weight:bold', target='_blank') View 
+              // End Product 2
+              // Product 3
+              td
+                a(style='color:#333;text-decoration:none', href='http://mid-centuryonline.com/brass-and-yellow-console')
+                  img.product3(style='display: block;', mc:edit='product3', width='260', height='200', src='pictures/product3.jpg', alt='Click display images on your email app')
+                  h3= document.product3name
+                p
+                  | 
+                  = document.product3description
+                  br
+                  br
+                // Product 3 Buttons
+                table(border='0', cellpadding='10')
+                  tr
+                    td(style='color:#000000;text-decoration:none;font-weight:bold;font-size: 22px;font-family:Helvetica,Arial,sans-serif') 
+                     = document.product3price
+                    td
+                      table
+                        tbody
+                          tr
+                            td(align='center', bgcolor='#42ACF1', style='background:#42ACF1;padding-top:6px;padding-right:10px;padding-bottom:6px;padding-left:10px;border-radius:0px;color:#fff;font-weight:bold;text-decoration:none;font-family:Helvetica,Arial,sans-serif;display:block', width='0')
+                              a(href='http://mid-centuryonline.com/brass-and-yellow-console', style='color:#fff;text-decoration:none;font-weight:bold', target='_blank') View 
+                // End Product 3 Buttons
+          // End Product 3
+          br
+          // Row 3
+          table(border='0', width='100%', align='center', cellpadding='20', cellspacing='0', bgcolor='#fff')
+            tr
+              td
+                // Product 4
+                a(style='color:#333;text-decoration:none', href='http://mid-centuryonline.com/poul-kjaerholm-pk-22-chair-by-e-kold-christensen')
+                  img.product4(style='display: block;', mc:edit='product4', width='160', height='100', src='pictures/product4.jpg', alt='Click display images on your email app')
+                  h3 
+                  = document.product4name
+                // End Product 4
+              td
+                // Product 5
+                a(style='color:#333;text-decoration:none', href='http://mid-centuryonline.com/burr-walnut-coffee-table')
+                  img.product5(style='display: block;', mc:edit='product5', width='160', height='100', src='pictures/product5.jpg', alt='Click display images on your email app')
+                  h3 
+                  = document.product5name
+                  br
+                // End Product 5
+              td
+                // Product 6
+                a(style='color:#333;text-decoration:none', href='http://mid-centuryonline.com/rams-coffee-table')
+                  img.product6(style='display: block;', mc:edit='product6', width='160', height='100', src='pictures/product6.jpg', alt='Click display images on your email app')
+                  h3 
+                  = document.product6name
+                  br
+                // End Product 6
+          // End Row 3
+          br
+          // Row 4
+          table(border='0', width='100%', align='center', cellpadding='20', cellspacing='0', bgcolor='#fff')
+            tr
+              td
+                // Product 7
+                a(style='color:#333;text-decoration:none', href='http://mid-centuryonline.com/maitland-smith-casket')
+                  img.product4(style='display: block;', mc:edit='product4', width='160', height='100', src='pictures/product7.jpg', alt='Click display images on your email app')
+                  h3 
+                  = document.product7name
+                // End Product 7
+              td
+                // Product 8
+                a(style='color:#333;text-decoration:none', href='http://mid-centuryonline.com/kai-kristiansen-dining-chairs')
+                  img.product8(style='display: block;', mc:edit='product8', width='160', height='100', src='pictures/product8.jpg', alt='Click display images on your email app')
+                  h3 
+                  = document.product8name
+                  br
+                // End Product 8
+              td
+                // Product 9
+                a(style='color:#333;text-decoration:none', href='http://mid-centuryonline.com/klaus-wettergen-desk')
+                  img.product9(style='display: block;', mc:edit='product9', width='160', height='100', src='pictures/product9.jpg', alt='Click display images on your email app')
+                  h3 
+                  = document.product9name
+                  br
+                // End Product 9
+          // End Row 4
+         
+          br
+          // Content
+          table(border='0', width='100%', align='center', cellpadding='20', cellspacing='0', bgcolor='#fff')
+            tr
+              td
+                p | Dear 
+                p
+                  | Tons of new stock has just arrived and we have been working feverishly to get it photographed and on to the website. Here is a selection of some of the pieces we have managed to get online so far. We have posted certain items in their original fabrics which can be changed if required. We work with a very good upholsterer and we can have items redone with your own fabric or we can help you pick a fabric so never be put off by how the piece is now especially if you have a vision of how it could be. There are plenty more pieces here that we will be working to get online over the coming weeks so keep an eye on our ever changing stock.
+                p
+                  | Don&rsquor;t forget we offer free delivery anywhere in the UK and Ireland and we also offer a full money back guarantee on anything purchased from us. If you have any questions about shipping or returns then either email me on killian@mid-centuryonline.com or phone me on +44 0203 1297965. Next delivery run will take place in the next fortnight, though we can store items indefinitely if you want to buy something now but get it delivered later.
+                p
+                  | To anyone looking to sell their items please feel free to email me directly with images and prices of what you wish to sell. We always look forward to seeing your pieces so please do not be shy. My email is killian@mid-centuryonline.com
+                p
+                  | Many thanks or looking and I hope you like our new offerings,
+                p
+                  | Killian
+          // End Content 2 Right
+    // End Page

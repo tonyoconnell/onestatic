@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <title>ONE</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Sell Faster">
+    <meta name="keywords" content="ONE, ecommerce">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/components/reveal.js/css/reveal.min.css">
+    <link id="theme" rel="stylesheet" href="/components/reveal.js/css/theme/default.css">
+    <link rel="stylesheet" href="/components/reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="/styles/one.css">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet-->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = '/components/reveal.js/css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+    <!--if lt IE 9script(src='/components/reveal.js/lib/js/html5shiv.js')
+    -->
+    <body>
+      <div class="reveal">
+        <div class="slide">
+          <section>hi Single Horizontal Slide
+            <section>
+              <section>Vertical Slide 1</section>
+              <section>Vertical Slide 2</section>
+            </section>
+          </section>
+        </div>
+      </div>
+    </body>
+    <script src="/components/reveal.js/lib/js/head.min.js"></script>
+    <script src="/components/reveal.js/js/reveal.js"></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: true,
+      autoSlide: 2500,
+      progress: true,
+      history: true,
+      center: true,
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+      // Parallax scrolling
+      // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+      // parallaxBackgroundSize: '2100px 900px',
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+      { src: '/components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: '/components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '/components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: '/components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: '/components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: '/components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+      });  
+    </script>
+  </head>
+</html>

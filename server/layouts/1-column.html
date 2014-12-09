@@ -11,28 +11,25 @@
     <link rel="stylesheet" href="/styles/doc-icon.css">
     <link rel="stylesheet" href="/styles/icons.css">
     <link rel="stylesheet" href="/styles/one.css">
-    <!--link(rel='stylesheet', href='/styles/old.css')-->  <script>
-  (function () {
-    var
-      eventSupport = ('querySelector' in document && 'addEventListener' in window)
-      jsonSupport  = (typeof JSON !== 'undefined'),
-      jQuery       = (eventSupport && jsonSupport)
-        ? '/scripts/jquery.min.js'
-        : '/scripts/jquery.legacy.min.js'
-    ;
-    document.write('<script src="' + jQuery + '"><\/script>');
-  }());
-  </script>
-  
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
-  <script src="/scripts/history.js"></script>
-  <script src="/scripts/easing.js"></script>
-  <script src="/scripts/tablesort.js"></script>
-  <script src="/scripts/typing.js"></script>
-  <script src="/scripts/semantic.min.js"></script>
-  <script src="/scripts/one.js"></script>
-
+    <!--link(rel='stylesheet', href='/styles/old.css')--><script>
+(function () {
+  var
+    eventSupport = ('querySelector' in document && 'addEventListener' in window)
+    jsonSupport  = (typeof JSON !== 'undefined'),
+    jQuery       = (eventSupport && jsonSupport)
+      ? '/scripts/jquery.min.js'
+      : '/scripts/jquery.legacy.min.js'
+  ;
+  document.write('<script src="' + jQuery + '"><\/script>');
+}());
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+<script src="/scripts/history.js"></script>
+<script src="/scripts/easing.js"></script>
+<script src="/scripts/tablesort.js"></script>
+<script src="/scripts/typing.js"></script>
+<script src="/scripts/semantic.min.js"></script>
+<script src="/scripts/one.js"></script>
     <script src="/scripts/jquery.promin.js"></script>
   </head>
   <body>
@@ -54,7 +51,8 @@
     <div id="top-picture">
     </div>
     <div id="middle">
-      <div class="content"><h1 id="milo-baughman">Milo Baughman</h1>
+      <div class="content">
+        <article><h1 id="milo-baughman">Milo Baughman</h1>
 <h2 id="early-life">Early Life</h2>
 <p>Milo Ray Baughman was an American modern furniture designer. He was born in Kansas on October 7, 1923. When he was very young, his family made a big move to Long Beach, California, which was where he grew up and got most of his influences. When Milo was only 13, he already took on the task of designing both interiors and exteriors of his family home.</p>
 <p>His family expected Baughman to pursue a design degree right after he graduated from high school but this was cut short as the designer signed up for the Army Air Forces instead during the Second World War. One fascinating fact about Baughman was despite being in the Air Forces, he still dabbled in design, designing many officer’s clubs. The end of the war had him return to his hometown, where he finally pursued architectural design at L.A’s Art Center School and Chouinard Art Institute.</p>
@@ -70,6 +68,7 @@
 <h2 id="milo-baughman-today">Milo Baughman Today</h2>
 <p>Baughman’s works have become so prolific that up to this day, numerous designers continue to mimic his pieces. A number of the furniture that he created, such as the Case sofa- a squarish, boxy looking couch and scoop chairs are already considered “modern classics”.</p>
 
+        </article>
       </div>
     </div>
     <footer>
@@ -198,7 +197,35 @@ $(function() {
 });
 </script>
 <script>hljs.initHighlightingOnLoad();</script>
+<script>
 
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
 
   </body>
 </html>

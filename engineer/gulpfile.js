@@ -21,9 +21,9 @@ Documents
 ======
 */
 
-var strategy = '../strategy/', // Strategy
-    marketing = '../marketing/', //  Fonts in any format
-    sales = '../sales/'; // Javascript
+var strategy = '../strategy/', // Strategy documents and spreadsheets
+    marketing = '../marketing/', //  Marketing campaigns
+    sales = '../sales/'; // Sales
 
 /*
 
@@ -306,14 +306,18 @@ Components
 });
 
 /*
-Marketing
+Presentations
 ----------
-*/
+
 gulp.task('present', function () {
-  gulp.src(strategy + '*.md')
-    .pipe(markdown())
-    .pipe(reveal())
-    .pipe(gulp.dest(intranet));
+  gulp.src(strategy + '*.jade')
+    .pipe(jade({
+      pretty: true
+    }))
+    .pipe(gulp.dest(intranet))
+    .pipe(wait(1500))
+    .pipe(browsersync.reload({stream: true}))
+    .pipe(size());
 });
 
 /*
@@ -324,7 +328,7 @@ Run Tasks
 gulp.task('default', function() {
 
 // start these tasks 
-    gulp.start( 'page', 'picture', 'font', 'style', 'script', 'component', 'text', 'stage-style', 'server', 'present')
+    gulp.start( 'page', 'picture', 'font', 'style', 'script', 'component', 'text', 'stage-style', 'server')
 
 // watch for changes and run tasks
         gulp.watch('../build/pages/**/**/**/*', function(event){
@@ -357,7 +361,7 @@ gulp.task('default', function() {
         gulp.watch(scripts + '**/*', function(event){
             gulp.start('script', 'template', 'reload');
         });
-        gulp.watch(strategy + 'strategy.md', function(event){
-            gulp.start('present', 'reload');
-        });
+//        gulp.watch(strategy + '*', function(event){
+//            gulp.start('present', 'reload');
+//        });
     });

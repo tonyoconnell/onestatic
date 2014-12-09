@@ -1,4 +1,4 @@
-extends ../templates/one
+extends ../templates/template
 
 append page-info
 	- id = 'home'
@@ -9,6 +9,33 @@ append page-info
  
 block content
 	.home
+		p Strategy
+		.grid
+			.box
+				.item
+					.name
+						a(href='/presentations/index.html') 
+							| Strategy
+			.box
+				.item
+					.name
+						a(href='/layouts/picture.html') 
+							| Campaign
+			.box
+				.item
+					.name
+						a(href='/presentations/reveal.html') 
+							| presentations
+			.box
+				.item
+					.name
+						a(href='/layouts/2-columns-right.html') 
+							| 2 Columns Right
+			.box
+				.item
+					.name
+						a(href='/layouts/3-columns.html') 
+							| 3 Columns
 		p Layouts
 		.grid
 			.box
