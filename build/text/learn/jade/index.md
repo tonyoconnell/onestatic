@@ -152,6 +152,24 @@ a(href=local) Test Link
 
 body(id=id)
 
+append page-info
+  - product1name = "Widdicomb Etageres"
+  - product1id = '434'
+ 
+block content
+    h1 hi
+    h3= product1description
+    h2 yo
+    a(href='https://mid-centuryonline.com/checkout/cart/add?product=#{product1id}&qty=1', style='color:#000000;text-decoration:none;font-weight:bold', target='_blank') Put on Hold
+
+
+Inside a tag
+
+```
+    a(href='https://mid-centuryonline.com/checkout/cart/add?product=#{product1id}&qty=1' target='_blank') Put on Hold
+
+```
+
 Iteration
 -------
 ```

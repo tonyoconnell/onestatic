@@ -1,4 +1,4 @@
- extends ../templates/email
+extends ../templates/email
 
 append page-info
   - id = 'home'
@@ -6,7 +6,8 @@ append page-info
   - description = 'Sell Faster'
   - keywords = 'ONE, ecommerce'
   - layout = '1-column'
- 
+product1name = "Widdicomb Etageres"
+
 block content
     table(border='0', width='640px', align='center', cellpadding='20', cellspacing='0', bgcolor='#eeeeee')
       tr
@@ -20,7 +21,7 @@ block content
               td
                 a(style='color:#333;text-decoration:none', href='http://mid-centuryonline.com/willy-rizzo-lamps')
                   img.main-image(style='display: block;', mc:edit='main-img', width='560', height='350', src='product1.jpg', alt='Click display images on your email app')
-                  h3= document.product1name
+                  h3= product1name
                 p
                   | 
                   = document.product1description

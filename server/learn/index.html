@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head> 
-    <title>ONE: Learn</title>
+    <title></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Learn to use Framework ONE">
-    <meta name="keywords" content="ONE, framework">
+    <meta name="description">
+    <meta name="keywords">
     <!-- link(rel='stylesheet', href='/styles/semantic.css') -->
     <link rel="stylesheet" href="/styles/doc-icon.css">
     <link rel="stylesheet" href="/styles/icons.css">
@@ -64,72 +64,41 @@
       <main>
         <div class="content">
           <article><h1 id="one">ONE</h1>
-<p>Create beautiful, responsive websites quickly. </p>
-<h2 id="get-started-">Get Started </h2>
-<h3 id="pages">Pages</h3>
-<p>Create pages for your website inside the pages folder. 
-Pages can be written in Jade, Markdown or HTML. 
-Jade is used for templating which allows you to extend (surround) your page with a template. </p>
-<pre><code>extends ../templates/one
+<p>Internet sales. Simple. Swift. Succint.</p>
+<p>“Art is the elimination of the unnecessary.”
+― Pablo Picasso</p>
+<p>ONE is a framework for rappidly escalating ecommerce stores, traffic, leads and sales. You can build apps very very quickly, because everything is beautifully organised. You can change your structure to suit your needs. </p>
+<h2 id="structure">Structure</h2>
+<pre><code class="lang-html">ONE
+|-- Build - where you build your app
+|    |-- Blocks - build with blocks
+|    |-- Components - automatically download and update components
+|    |-- Fonts - for your typography and icons
+|    |-- Pages - web and mobile pages
+|    |-- Pictures - your images
+|    |-- Scripts - javascript 
+|    |-- Styles - stylus stylesheets that will be compiled to CSS
+|    |-- Templates - construct pages with Jade
+|    +-- Text - write web pages with markdown
+|        
+|-- Engineer - the technology that builds your app
+|    |-- gulpfile.js - your streaming build system
+|    |-- node_modules - node.js apps
+|    |-- package.json - lists your node modules for install
+|    +-- bower.json - lists your javascript components for install
+|    
++-- Server - the technology that builds your app
+     |-- development - sorce code, beautified, with source maps
+     +-- staging - minified, compressed files ready for your production server</code></pre>
+<p>Documentation is structured like this. </p>
+<ul>
+<li>Text is written in text/learn</li>
+<li>Demo is located at pages/learn/blocks for example</li>
+</ul>
+<h2 id="how-it-works">How it works</h2>
+<p>ONE uses Gulp.js to streamline your workflow. Write in markdown, save your document to the <code>Text</code> folder and a web page will be built automatically. Templates are written in Jade and converted to HTML. Styles are written in Stylus and converted to CSS. Save your fonts in the <code>Fonts</code> folder and optimised fonts will be served for each device. Save a picture to the <code>Pictures</code> folder and it will be compressed and coppied to the server. Download web components with bower and include them in your application. Like a kid playing with blocks build your ecommece app with ease. </p>
+<p><a href="/learn/install/index.html"> Install &gt;&gt; </a></p>
 
-append page-info
-    - title = &#39;This is the title of the page&#39;
-    - description = &#39;This is the description of the page&#39;
-    - keywords = &#39;keyword, keyword2&#39;
-
-block content
-    h1 The first heading of the page
-      p Hello this is a paragraph
-        a(href=&quot;page.html&quot;) Link 
-    include:md page.md
-    include page.html
-</code></pre><p>To change a page template simply point to a different one. </p>
-<pre><code>extends ../templates/different-template
-</code></pre><h3 id="templates">Templates</h3>
-<p>Templates are found in the templates folder. 
-They generally include a head block (which contains links to CSS files and scripts), navigation block, content block (this pulls in the content of the page), and footer scripts. </p>
-<pre><code>block page-info 
-
-doctype html
-html(lang=&#39;en&#39;)
-  head  
-    include ../blocks/head
-  body
-    include ../blocks/navigation/side-navigation
-    #screen
-      logo
-        a#open-left(href=&#39;#&#39;)  
-          img.logo.circular.picture(src=&quot;/pictures/logos/logo-ram.png&quot;, alt=&quot;Mid-Century Online&quot;)
-      #top-picture
-        block top-picture
-      #content
-        block content
-    script(src=&#39;/scripts/libraries/jquery.min.js&#39;)
-    script(src=&#39;/scripts/one.js&#39;)
-    include ../blocks/footer-scripts.html
-</code></pre><h3 id="styles">Styles</h3>
-<p> You can find styles in the styles folder. Stylesheets are written in Stylus. The main stylesheet one.styl builds one.css. Other stylus files are imported into one.styl</p>
-<pre><code> Colors 
-=========
-*/
-
-// Your brand color. Used in logo, links, buttons etc.
-primary-color = #111
-// Complimentary colour used for hover and secondary buttons
-secondary-color = goldenrod
-// Light Background Pattern
-light-background()
-  background: url(&#39;/pictures/patterns/background.png&#39;) repeat
-// Location of logo
-logo = &#39;/pictures/logo.png&#39;
-logo-text  
-  font-size 30px 
-logo
-  padding 10px 5px
-logo img
-  padding 5px
-@import &#39;screens&#39;
-</code></pre>
           </article>
         </div>
       </main>
@@ -143,8 +112,7 @@ logo img
     <script src="/scripts/jquery.cookie.js"></script>
     <script src="/scripts/jquery.tosrus.min.all.js">  </script>
     <script src="/scripts/one-side-navigation.js"></script>
-    <script src="/scripts/nav.js"></script>
-    <script src="/scripts/one.js">   </script><code>
+    <script src="/scripts/nav.js"></script><code>
 clicking on "h1" removes class "active" on "h1.active"
 </code>
 <script type="text/javascript" language="javascript">

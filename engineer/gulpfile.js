@@ -40,7 +40,8 @@ var pages = '../build/pages/', // Web pages
     styles = '../build/styles/', // Stylesheets in Stylus Format
     fonts = '../build/fonts/', //  Fonts in any format
     components = '../build/components/', //  Fonts in any format
-    scripts = '../build/scripts/'; // Javascript
+    scripts = '../build/scripts/', // Javascript
+    email = '../build/email/'; // Email
 
 /*
 
@@ -57,7 +58,8 @@ var server = '../server/', // This is the root of your local web server
     server_pictures = server + 'pictures/', //  Pictures resized and optimised (retina and web)
     server_fonts = server + 'fonts/', //  Fonts converted for use on all devices (TTF, ODF)
     server_styles = server + 'styles/', // Stylesheets generated, mapped, cleaned, combined, minified and obfuscated. 
-    server_scripts = server + 'scripts/'; // Javascript combined, minified and obfuscated
+    server_scripts = server + 'scripts/', // Javascript combined, minified and obfuscated
+    server_email = server + 'email/', // Email
     server_components = server + 'components/'; // Javascript combined, minified and obfuscated
 /*
 
@@ -304,6 +306,25 @@ Components
     .pipe(cache()) 
     .pipe(gulp.dest(server_components))
 });
+
+/*
+Email 
+---------
+Build email templates
+*/
+
+    gulp.task('newsletter', function() {
+     gulp.src(['../build/email/*.jade'])
+    .pipe(cache()) 
+    .pipe(plumber())
+    .pipe(jade({
+      pretty: true
+    }))
+    .pipe(gulp.dest(server_email))
+    .pipe(wait(1500))
+    .pipe(browsersync.reload({stream: true}));
+});
+
 
 /*
 Presentations

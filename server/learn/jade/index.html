@@ -137,6 +137,18 @@ p= foo</code></pre>
 <li>var id = product_view</li>
 </ul>
 <p>body(id=id)</p>
+<p>append page-info</p>
+<ul>
+<li>product1name = &quot;Widdicomb Etageres&quot;</li>
+<li>product1id = &#39;434&#39;</li>
+</ul>
+<p>block content
+    h1 hi
+    h3= product1description
+    h2 yo
+    a(href=&#39;<a href="https://mid-centuryonline.com/checkout/cart/add?product=#{product1id}&amp;qty=1">https://mid-centuryonline.com/checkout/cart/add?product=#{product1id}&amp;qty=1</a>&#39;, style=&#39;color:#000000;text-decoration:none;font-weight:bold&#39;, target=&#39;_blank&#39;) Put on Hold</p>
+<p>Inside a tag</p>
+<pre><code>    a(href=&#39;https://mid-centuryonline.com/checkout/cart/add?product=#{product1id}&amp;qty=1&#39; target=&#39;_blank&#39;) Put on Hold</code></pre>
 <h2 id="iteration">Iteration</h2>
 <pre><code>each item in [&#39;product1&#39;, &#39;product2&#39;, &#39;product3&#39;]
   li= item</code></pre>
